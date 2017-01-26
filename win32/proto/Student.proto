@@ -1,0 +1,10 @@
+message Info
+{
+	required string name=1;
+}
+
+message Student
+{
+	required int32 count=1;
+	repeated Info infos=2;
+}
