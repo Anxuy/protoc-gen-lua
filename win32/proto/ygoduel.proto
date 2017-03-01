@@ -221,6 +221,14 @@ message RspSTOCPhasePB
     repeated ClientCardState cardstate = 2;
 }
 
+message RspSTOCTurnPB
+{
+    required uint32 playerid = 1;
+    required uint32 turn = 2;
+    required uint32 time = 3;
+    optional uint32 left = 4;
+}
+
 message RspSTOCContextPB
 {
     required uint32 timer = 1;
@@ -238,15 +246,10 @@ message RspSTOCRestorePB
     required uint32 hp0 = 2;
     required uint32 hp1 = 3;
     required bool isAuto = 4;
-    required uint32 turn = 5;
+    required RspSTOCTurnPB turntime = 5;
     required RspSTOCContextPB contextPlayer = 6;
     required RspSTOCContextPB contextEnemy = 7;
     optional uint32 phase = 8;
     repeated ClientCardState cardstate = 9;
 }
 
-message RspSTOCTurnPB
-{
-    required uint32 playerid = 1;
-    required uint32 turn = 2;
-}
