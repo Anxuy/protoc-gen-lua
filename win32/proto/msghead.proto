@@ -1,0 +1,13 @@
+option optimize_for = LITE_RUNTIME;
+
+message MsgHead
+{
+    optional int32 id = 1;
+    optional int32 type = 2 [default=1];
+    optional int32 seq = 3 [default=1];
+    optional int32 srcEt = 4;
+    optional int32 dstEt = 5;
+    optional uint32 srcId = 6;
+    optional uint32 dstId = 7;  // Destination player
+    optional double ts = 8;     // Unix time with micro seconds e.g. 1468393804.8715
+}

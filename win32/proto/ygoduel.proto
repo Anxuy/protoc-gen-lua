@@ -1,0 +1,252 @@
+option optimize_for = LITE_RUNTIME;
+
+//message ReqCTOSPlayerInfoPB
+//{
+//    optional uint32 uid = 1;
+//    optional bytes raw = 2;
+//}
+//message ReqCTOSJoinGamePB
+//{
+//    optional uint32 uid = 1;
+//    optional bytes raw = 2;
+//}
+//message ReqCTOSUpdateDeckPB
+//{
+//    optional uint32 uid = 1;
+//    optional bytes raw = 2;
+//}
+//message ReqCTOSHSReadyPB
+//{
+//    optional uint32 uid = 1;
+//    optional bytes raw = 2;
+//}
+//message ReqCTOSHSStartPB
+//{
+//    optional uint32 uid = 1;
+//    optional bytes raw = 2;
+//}
+
+message ReqCTOSHandResultPB
+{
+    optional uint32 uid = 1;
+    optional uint32 guess = 2;
+}
+message RspSTOCHandResultPB
+{
+    required uint32 myguess = 1;
+    required uint32 yourguess = 2;
+    required uint32 result = 3;
+}
+
+message ReqCTOSTPResultPB
+{
+    optional uint32 isfirst = 1;
+}
+
+message RspSTOCStartPB
+{
+    optional bool isfirst = 1;
+    optional uint32 hp0 = 2;
+    optional uint32 hp1 = 3;
+    optional uint32 deckc0 = 4;
+    optional uint32 extrac0 = 5;
+    optional uint32 deckc1 = 6;
+    optional uint32 extrac1 = 7;
+}
+
+message RspSTOCDrawPB
+{
+    optional uint32 id = 1;
+    optional uint32 count = 2;
+    repeated uint32 cardids = 3;
+}
+
+message ClientCardState
+{
+    optional uint32 cardid = 1;
+    required uint32 controller = 2;
+    required uint32 location = 3;
+    required uint32 seq = 4;
+    optional uint32 cmdFlag = 5;
+    optional uint32 numTribute = 6;
+}
+
+message ReqCTOSSwitchPhasePB
+{
+    required uint32 phase = 1;
+}
+
+message RspSTOCSelectCardPB
+{
+    required bool select_cancelable = 1;
+    required uint32 select_min = 2;
+    required uint32 select_max = 3;
+    repeated ClientCardState cards = 4;
+    optional bool isTribute = 5;
+}
+message ReqCTOSSelectCardPB
+{
+    repeated uint32 cardseqs = 1;
+}
+
+message RspSTOCMoveCardPB
+{
+    required uint32 cardid = 1;
+    required uint32 idFrom = 2;
+    required uint32 locationFrom = 3;
+    required uint32 seqFrom = 4;
+    required uint32 positionFrom = 5;
+    required uint32 idTo = 6;
+    required uint32 locationTo = 7;
+    required uint32 seqTo = 8;
+    required uint32 positionTo = 9;
+}
+
+message ClientCardInfo
+{
+    optional uint32 cardid = 1;
+    optional uint32 position = 2;
+    optional uint32 alias = 3;
+    optional uint32 type = 4;
+    optional uint32 level = 5;
+    optional uint32 rank = 6;
+    optional uint32 attribute = 7;
+    optional uint32 race = 8;
+    optional uint32 attack = 9;
+    optional uint32 defense = 10;
+    optional uint32 base_attack = 11;
+    optional uint32 base_defense = 12;
+    optional uint32 reason = 13;
+    optional uint32 seq = 14;
+}
+message RspSTOCUpdateDataPB
+{
+    required uint32 controller = 1;
+    required uint32 location = 2;
+    repeated ClientCardInfo cardinfo = 3;
+}
+
+message ReqCTOSOperationPB
+{
+    required uint32 location = 1;
+    required uint32 seq = 2;
+    required uint32 cmdid = 3;
+}
+
+message RspSTOCPosChangePB
+{
+    optional uint32 cardid = 1 [default=0];
+    required uint32 controller = 2;
+    required uint32 location = 3;
+    required uint32 seq = 4;
+    optional uint32 oldpos = 5;
+    required uint32 newpos = 6;
+}
+
+message RspSTOCWinPB
+{
+    required uint32 winnerid = 1;
+    required uint32 reason = 2;
+}
+
+message RspSTOCSelectYNPB
+{
+    required uint32 type = 1;
+    repeated ClientCardState cards = 2;
+}
+message ReqCTOSSelectYNPB
+{
+    required int32 result = 1;
+}
+
+message RspSTOCSelectSumPB
+{
+    required uint32 mode = 1;
+    required uint32 sumval = 2;
+    required uint32 min = 3;
+    required uint32 max = 4;
+    required uint32 countMust = 5;
+    required bool panelMode = 6;
+    repeated ClientCardState cardsMust = 7;
+    required uint32 count = 8;
+    repeated ClientCardState cards = 9;
+}
+
+message RspSTOCChangeLPPB
+{
+    required uint32 controller = 1;
+    required int32 value = 2;
+}
+
+message ReqCTOSAutoFight
+{
+    required bool isAuto = 1;
+}
+
+message ReqCTOSAnnounceAttrPB
+{
+    repeated uint32 attrs = 1;
+}
+message RspSTOCAnnounceAttrPB
+{
+    required uint32 announce_count = 1;
+    required uint32 available = 2;
+    repeated uint32 attrs = 3;
+}
+
+message ReqCTOSAnnounceRacePB
+{
+    repeated uint32 races = 1;
+}
+message RspSTOCAnnounceRacePB
+{
+    required uint32 announce_count = 1;
+    required uint32 available = 2;
+    repeated uint32 races = 3;
+}
+
+message RspSTOCSwapPB
+{
+    required ClientCardState card1 = 1;
+    optional ClientCardState card2 = 2;
+}
+message RspSTOCShuffleSetPB
+{
+    repeated RspSTOCSwapPB shuffles = 1;
+}
+
+message RspSTOCPhasePB
+{
+    optional uint32 phase = 1;
+    repeated ClientCardState cardstate = 2;
+}
+
+message RspSTOCContextPB
+{
+    required uint32 timer = 1;
+    repeated ClientCardInfo main = 2;
+    repeated ClientCardInfo hand = 3;
+    repeated ClientCardInfo mzone = 4;
+    repeated ClientCardInfo szone = 5;
+    repeated ClientCardInfo grave = 6;
+    repeated ClientCardInfo removed = 7;
+    repeated ClientCardInfo extra = 8;
+}
+message RspSTOCRestorePB
+{
+    required bool isFirst = 1;
+    required uint32 hp0 = 2;
+    required uint32 hp1 = 3;
+    required bool isAuto = 4;
+    required uint32 turn = 5;
+    required RspSTOCContextPB contextPlayer = 6;
+    required RspSTOCContextPB contextEnemy = 7;
+    optional uint32 phase = 8;
+    repeated ClientCardState cardstate = 9;
+}
+
+message RspSTOCTurnPB
+{
+    required uint32 playerid = 1;
+    required uint32 turn = 2;
+}

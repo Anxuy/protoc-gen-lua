@@ -1,0 +1,2377 @@
+option optimize_for = LITE_RUNTIME;
+
+///////////////////////////////////////////////////////////////////////////////
+// 房间类型
+enum RoomId
+{
+	Invite = 1;           // 好友邀请决斗
+	AutoMatch = 2;        // 自动匹配
+	VsDesk = 3;           // 决斗卓
+	Round90 = 4;          // 90秒决斗场
+	LP4000 = 5;           // 4000血决斗场
+	ScoreRace = 6;        // 积分赛自动匹配
+}
+
+// 错误类型
+enum ResultType
+{
+    Succeed = 100;                  // OK
+    Error = 1;                      // 普通异常
+    //----------------gwsvrd------------------------
+    NullUsr = 110;                  //
+    NullPwd = 111;                  // 密码为空
+    NullPid = 112;
+    NullPType = 113;
+    NullVersion = 114;
+    NullSType = 115;
+    InvalidPara = 116;              // 非法参数
+    UserNotExist = 117;             // 用户不存在
+    AuthFailed = 118;               // 授权失败
+    Database = 119;                 // 数据库异常
+    DupUsr = 120;                   // 重复用户
+    ExpiredVersion  = 121;        	// 版本过期
+    InvalidVCode = 122;           	// 无效的验证码
+    AlreadyBind = 123;            	// 已经绑定的手机号
+    InvalidVCodeType = 124;       	// 无效的验证码类型
+    NullUid = 125;                	// Uid 为空
+    NullPhone = 126;              	// 手机号为空
+    NullVCode = 127;              	// 验证码为空
+    FullBind = 128;    	            // 绑定已满
+    BizLimitCtl = 129;              // 业务限制
+
+    //-----------------novasvrd-----------------------
+    NovaInvalidPara = 250;         	// 非法参数
+    NovaUserNoExist = 251;         	// 不存在
+    NovaAuthFailed = 252;          	// 授权失败
+    NovaDatabase = 253;            	// 数据库异常
+    NotInRoom = 254;                // 不在房间里
+    NoRival = 255;                  // 没有对手
+    Unknown = 256;                  // 未知错误
+    Bind = 257;                     // 绑定失败
+    PlayerInfo = 258;               // 未完善玩家信息
+    ExchLimited = 259;              // 超出可兑换的最大数量
+    LevelLimited = 260;             // 玩家等级限制
+    UidNotMatch = 261;              // 玩家不匹配
+    InvalidState = 262;             // 通用状态错误
+    NetError = 263;                 // 通用网络错误
+    LowPermission = 264;            // 权限不够
+    MaxTeamPlayers = 265;           // 战队成员满
+    MaxTeamApplicants = 266;        // 战队申请列表满
+    MaxTeamViceCaptain = 267;       // 战队副队长已满
+    TeamExitLt7Day = 268;           // 退出战队不足７天
+    TeamDismissLt7Day = 269;        // 发起解散战队不足７天
+    NotInTeam = 270;                // 不在战队里
+    LowCaptainLevel = 271;          // 战队长等级太低
+    LowPower = 272;                 // 卡力太低
+    LowPoints = 273;                // 决斗点太低
+    LowContribute = 274;            // 贡献度太低
+    LowPlayerCount = 275;           // 玩家数量低
+    Expired = 276;                  // 配置过期，客户端需要重新拉取
+    Timeout = 277;                  // 通用超时
+    MaxVsCnt = 278;                 // 决斗局数用尽
+    WrongTiming = 279;              // 时间点错误
+    NoMatch = 280;                  // 没有匹配到
+    AbnormalExit = 281;             // 异常退出决斗
+    InvalidRaise = 282;             // 无效越级挑战
+    TeamNoExist = 283;              // 战队不存在
+    TeamFull = 284;                 // 战队成员已满
+    DupMonthlyCard = 285;           // 月卡重复购买
+    LowCard = 286;                  // 卡牌数量不足
+    MaxCard = 287;                  // 卡牌数量已满
+    LowMoney = 288;                 // 卡钻不足
+    MaxDeckGrid = 289;              // 卡组卡格已满(80个)
+    MaxDeck = 290;                  // 卡组数量已慢(5个)
+    LowLevel = 291;                 // 玩家等级太低
+    DupName = 292;                  // 名称重复
+    InvalidInviteCode = 300;        // 无效的邀请码
+    InviteCountFull = 301;          // 邀请数已经满了
+    LowCardFrag = 302;              // 卡牌碎片不足
+    AddMyselfAsFriend = 303;        // 不能加自己为好友
+    FriendListFull = 304;           // 好友列表已满
+    HasRestrictedCard = 305;        // 存在限制卡
+    TeamAlreadyApplied = 306;       // 已经申请过加入战队
+    TimeTooShort = 307;             // 聊天时间间隔太短
+    WordsToolLong = 308;            // 聊天信息太长
+    TeamAlreadyInOther = 309;       // 已经加入了别的战队
+    LowDeckCardCnt = 310;           // 卡组卡牌数不足
+    HighDeckCardCnt = 311;          // 卡组卡牌数太多
+    BindSelfInviteCode = 312;       // 绑定自己产生的邀请码
+    BindExistInviteCode = 313;      // 绑定已经存在的邀请码
+    LowTrunkey = 314;               // 钥匙不足
+    AmPunishAbnormal = 350;         // 处于自动匹配异常惩罚期间
+    WrongOrderMoney = 351;          // 无效充值金额
+    InPunishment = 352;             // 处于首充惩罚
+    NoFriend = 353;               // 不是好友
+    NotOldplayer = 354;           // 不是老玩家(注册时间大于n天,禁止小号参与老玩家回归活动)
+    NewSignin = 355;              // 老玩家n天内登录过，不是回归老玩家
+    LowLevelOld = 356;            // 老玩家等级低于n
+    SignedToday = 357;            // 今天已签到（签到活动: 老玩家回归、节日）
+    FinishSign = 358;             // 已完成签到活动（签到活动: 老玩家回归、节日）
+    NoEnoughFight = 359;          // 战斗次数不足n次（签到活动: 老玩家回归、节日）
+    OtherFriendListFull = 360;    // 好友列表已满
+    NoOnline = 361;               // 玩家不在线
+    LowGiftCard = 362;            // 礼品卡不足
+    YesFriend = 363;              // 是好友了
+    YesApplicant = 364;           // 已经申请好友了
+    FinishActivity = 365;         // 签到活动已结束（签到活动: 老玩家回归、节日）
+    InDuelking = 366;             // 玩家处于决斗中
+    // 客户端内部错误码
+    EffectOff = 1000;               // 功能暂未开启
+    AccountPasswordError = 1001;    // 帐号密码错误
+    NickNameNull = 1002;            // 昵称为空
+    AttributeNull = 1003;           // 属性为空
+    SensitiveWord = 1004;           // 敏感字
+    BuySuccess = 1005;              // 购买成功
+    GetAwardSuccess = 1006;         // 奖励发放成功
+    CreateTeamFailed = 1007;        // 战队创建失败
+    TeamDetails = 1008;             // 战队说明
+    ExchangeFailed = 1009;          // 商城兑换失败
+    TeamUngroup = 1010;             // 战队解散完成
+    DonateFailed = 1011;            // 捐献失败
+
+    TeamUpFailed = 1012;            // 战队升级失败code集合
+    DonateSuccess = 1013;           // 捐献成功
+    TeamIdNull = 1014;              // 战队Id为null
+    TeamUpSuccess = 1015;           // 战队升级成功
+    MatchAgain = 1016;              // 重新匹配
+    BreakupFailed = 1017;           // 分解失败
+	SelectedVecNull = 1018;					// 未有选中的卡牌，不可操作
+
+    Acc_Psw_Format_Error = 2000;    // 帐号密码格式错误
+    NickName_Format_Error = 2001;   // 昵称格式错误
+    TeamName_Format_Error = 2002;   // 战队名称格式错误
+    Invitation_Format_Error = 2003; // 邀请码格式错误
+
+    Cant_Raise = 2004;              // 等级过高，无法越级
+    ScoreRace_OpenTime = 2005;      // 积分赛开启时间
+
+    Perfect_Name_Format_Error = 2006;
+    Perfect_Phone_Format_Error = 2007;
+    Perfect_Home_Format_Error = 2008;
+    Perfect_QQ_Format_Error = 2009;
+    Perfect_Address_Format_Error = 2010;
+
+    FriendClose = 2011;
+    SpecialCardClose = 2012;
+    NPCClose = 2013;
+    FunnyClose = 2014;
+
+    NORESPONSE = 1111111;           // 服务器消息无响应
+}
+
+// 任务状态
+enum TaskState
+{
+    Init = 0;                       // 未达成
+    Done = 1;                       // 已达成
+    Bonus = 2;                      // 已经领取了奖励
+}
+
+// 奖励类型
+enum RewardType
+{
+    R_Card = 1;                     // 卡牌
+    R_Money = 2;                    // 卡钻
+    R_Fragment = 3;                 // 卡牌碎片
+}
+
+// 平台类型
+enum PlatformType
+{
+    Official = 0;                   // 官方版本
+    Qihoo = 1;                      // 奇虎360
+    Baidu = 2;                      // 百度
+    Uc = 3;                         // 阿里九游
+    Mi = 4;                         // 小米
+    Wdj = 5;                        // 豌豆荚
+    Ali = 6;                        // 支付宝(官方版本子类型, 主要用来区分充值)
+    Weixin = 7;                     // 微信(官方版本子类型)
+}
+
+// 排名类型
+enum RankType
+{
+    RoyalRoad = 1;                  // 王者之路 by level
+    Legend = 2;                     // 我是传说 by score
+    Collector = 3;                  // 我是收藏家 by ratio
+    Team = 4;                       // 战队排行 by team
+}
+
+// 消息类型
+enum MessageType
+{
+    Request = 0;                    // 请求消息
+    Response = 1;                   // 响应消息
+    Push = 2;                       // 通知消息
+    Ack = 3;                        // 确认消息
+    Internal = 4;                   // 内部通信消息
+    External = 5;
+}
+
+// 特殊商品类型
+enum SpecialGoodsType
+{
+    S_Normal = 0;                   // 正常商品
+    S_MonthlyCard = 1;              // 月卡
+    S_OfficialGift = 2;             // 官方赠送
+}
+
+// 玩家卡牌属性
+enum CardAttributeType
+{
+    Earth = 1;                      // 地
+    Water = 2;                      // 水
+    Fire = 3;                       // 炎
+    Wind = 4;                       // 风
+    Light = 5;                      // 光
+    Dark = 6;                       // 暗
+    God = 7;                        // 神
+}
+
+// 道具类型
+enum PropsType
+{
+    P_Card = 0;                     // 全卡
+    P_CardMonster = 1;              // 怪兽卡
+    P_CardMagic = 2;                // 魔法卡
+    P_CardTrap = 3;                 // 陷阱卡
+    P_CardStyled = 4;               // 主题卡
+    P_CardAll = 5;                  // 决斗王全卡
+    P_CardEffectMonster = 6;        // 效果怪兽卡
+    P_CardEarth = 7;                // 地属性卡
+    P_CardDark = 8;                 // 暗属性卡
+    P_CardWaterFire = 9;            // 水属性卡
+    P_CardWindLight = 10;           // 风属性卡
+    P_CardNew = 11;                 // 本期新卡
+    P_Money = 12;                   // 卡钻
+    P_Fragment = 13;                // 卡牌碎片
+    P_CustAvatar = 14;              // 个性化头像
+    P_CustCardCover = 15;           // 个性化卡背
+    P_Trunkey = 16;                 // 卡箱钥匙
+	P_GiftCard = 17;				// 礼品卡
+	P_RealCard = 18;				// 实卡
+}
+
+
+// 领取福利类型
+enum WelfareType
+{
+  W_Share = 1;
+  W_MonthlyCard = 2;
+  W_Activity = 3;                    //W_Celebra
+  W_Compensation = 4;
+  W_ScoreRace = 5;
+
+//     W_Share = 1;                    // 每日分享
+//     W_MonthlyCard = 2;              // 月卡
+//     W_Compensation = 3;             // 补偿
+// //    W_Bonus = 3;                    // 奖励
+//     W_Celebra = 4;                  // 庆典
+//     W_Activity = 5;                 // 活动
+//     W_ScoreRace = 6;                // 积分赛
+//     W_Upgrade = 7;                  // 升级
+}
+
+// 战队成员职位
+enum TeamMemberJob
+{
+    J_None = 0;                     // 无, 不在战队
+    J_Captain = 1;                  // 战队长
+    J_ViceCaptain = 2;              // 副队长
+    J_Major = 3;                    // 主力
+    Player = 4;                     // 普通队员
+}
+
+// 战队状态
+enum TeamState
+{
+    TS_Normal = 0;                  // 正常
+    TS_Dismiss = 1;                 // 发起解散
+    TS_DismissCancel = 2;           // 发起取消解散
+    TS_Dismissed = 3;               // 解散完毕
+}
+
+// 战队等级
+enum TeamLevel
+{
+    TL_None = 1;                    // 无
+    TL_Bronze = 2;                  // 青铜
+    TL_Silver = 3;                  // 白银
+    TL_Gold = 4;                    // 黄金
+    TL_Legend = 5;                  // 传说
+}
+
+//越级匹配等级
+enum RaiseType
+{
+  RT_None = 0;     // 不越级
+  RT_B7B10 = 1;    // 青7-青10 (闭区间)
+  RT_S2S6 = 2;     // 白银2-白银6 (闭区间)
+  RT_S6Plus = 3;   // 白银6以上
+}
+
+enum ProTrunkey
+{
+  KeyMonster = 1;
+  KeyMagic = 2;
+  KeyTrap = 3;
+}
+
+// 游戏结束状态
+enum EndStateType
+{
+  E_Normal = 0;       // 正常
+  E_GiveUp = 1;       // 认输
+  E_Force = 2;        // 强退
+  E_Offline = 3;      // 掉线
+}
+
+// 验证码类型
+enum VCodeType
+{
+    VC_General = 1;      // 通用类型
+    VC_Register = 2;     // 登录的时候
+    VC_ResetPwd = 3;     // 重置密码
+    VC_AlterInfo = 4;    // 变更信息, 目前就是解绑
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//登陆前绑定
+message ReqBind
+{
+    // 只是客户端用于统一合成数据包，无参数
+}
+
+message RspBind
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登录
+message ReqLogon
+{
+    optional uint32 uid = 1;
+    optional string token = 2;                      // Token
+}
+
+message RspLogon
+{
+    optional uint32 result = 1 [default=100];       // 登录结果（100成功，其他失败）
+    optional uint32 fillInfo = 2 [default=0];       // 是否需要补全注册信息
+    optional string lastError = 3;                  // 错误信息
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登出
+message ReqLogout
+{
+    optional uint32 uid = 1;
+}
+
+message RspLogout
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登录后心跳
+message ReqHello
+{
+    optional uint32 uid = 1;
+}
+
+message RspHello
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 补全信息
+message ReqFillPlayerInfo
+{
+    optional uint32 uid = 1;
+    optional uint32 attr = 2;                   // 属性ID(光、暗、风、地、水、炎)
+    optional bytes nickName = 3;                // 玩家昵称
+    optional uint32 avatarId = 4;               // 头像ID
+    optional string inviteCode = 5;             // 邀请码
+}
+
+message RspFillPlayerInfo
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取用户信息
+message ReqGetPlayerInfo
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoTrunkey
+{
+    optional uint32 type = 1;                 // 钥匙类型
+    optional uint32 value = 2;                // 钥匙数量
+}
+
+message ProtoPlayerInfo
+{
+    optional uint32 uid = 1;                    // 玩家id
+    optional bytes nickName = 2;                // 玩家昵称
+    optional uint32 attr = 3;                   // 玩家属性
+    optional uint32 avatarId = 4;               // 玩家头像索引
+    optional uint32 cardbackId = 5;             // 玩家卡背索引
+    optional uint32 level = 6;                  // 玩家等级
+    optional uint32 npcLevel = 7;               // NPC等级
+    optional uint32 money = 8;                  // 卡钻
+    optional uint32 cardFragment = 9;           // 卡牌碎片
+    optional uint32 deckIndex = 10;             // 默认卡组
+    optional uint32 deckCnt = 11;               // 卡组数量
+    optional uint32 power = 12;                 // 卡力
+    optional uint32 points = 13;                // 决斗点
+    optional uint32 nextPower = 14;             // 升级需要的卡力
+    optional uint32 nextPoints = 15;            // 升级需要的决斗点
+    optional uint32 teamId = 16;                // 战队id
+    optional bytes teamName = 17;               // 战队名称
+    optional uint32 teamRole = 18;              // 自己在战队中的角色
+    optional string inviteCode = 19;            // 自己生成的邀请码
+    optional uint32 inviteLeftCnt = 20;         // 邀请码剩余次数
+    optional string bindingCode = 21;           // 绑定的邀请码
+    optional double cardRatio = 22;             // 卡牌收集度
+    optional uint32 score = 23;                 // 积分
+    repeated ProtoTrunkey keys = 24;            // 钥匙
+    optional uint32 scoreTeam = 25;             // 积分赛：自己所在的积分组
+    optional bytes realName = 26;               // 真实姓名
+    optional string mobile = 27;                // 手机号码
+    optional string phone = 28;                 // 座机号码
+    optional string qq = 29;                    // QQ 号码
+    optional bytes address = 30;                // 邮寄地址
+    repeated ProtoCard specialCards = 31;       // 特效卡
+    optional uint32 vip = 32;                   // vip等级
+}
+
+message RspGetPlayerInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional ProtoPlayerInfo info = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取房间列表
+message ReqGetRoomList
+{
+    optional uint32 uid = 1;
+}
+
+message RoomInfo
+{
+    optional uint32 roomId = 1;
+    optional string name = 2;
+    optional uint32 maxCnt = 3;
+}
+
+message RspGetRoomList
+{
+    optional uint32 result = 1 [default=100];
+    repeated RoomInfo roomInfoList = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 普通决斗（进房间）
+message ReqEnterRoom
+{
+    optional uint32 uid = 1;
+    optional uint32 roomId = 2;                     // 要进入的房间ID（这个会在进房前有配置下发）
+}
+
+// 进房间回包
+message RspEnterRoom
+{
+    optional uint32 result = 1 [default=100];       // 进房间成功OR失败
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 离开房间
+message ReqLeaveRoom
+{
+    optional uint32 uid = 1;
+    optional uint32 roomId = 2;
+}
+
+message RspLeaveRoom
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 玩家准备请求
+message ReqGameReady
+{
+    optional uint32 uid = 1;
+}
+
+// 服务器收到玩家准备请求后反馈
+message RspGameReady
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取前导决斗信息
+message ReqGetPreVsInfo
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoPreVsInfo
+{
+    optional uint32 leftAmCnt = 1;                  // 自动匹配剩余决斗次数
+    optional uint32 leftAmRaiseCnt = 2;             // 自动匹配剩余越级次数
+    optional bool scoreRaceOpen = 3;                // 积分赛开启中
+}
+
+// 自动匹配越级挑战规则
+message ProtoAmRaiseRule
+{
+    optional uint32 id = 1;                         // 越级规则 id
+    optional uint32 lvb = 2;                        // 适用本规则的最小玩家等级
+    optional uint32 lve = 3;                        // 适用本规则的最大玩家等级
+    optional uint32 lvmb = 4;                       // 越级挑战最低等级
+    optional uint32 lvme = 5;                       // 越级挑战最高等级
+    optional uint32 points = 6;                     // 越级胜利额外获得的决斗点
+}
+
+message RspGetPreVsInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional ProtoPreVsInfo info = 2;               // 前导决斗信息
+    repeated ProtoAmRaiseRule raiseRule = 3;        // 适用的越级挑战规则
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 自动匹配决斗
+message ReqAutoMatch
+{
+    optional uint32 uid = 1;
+    optional uint32 raise = 2;                      // 0: 不越级  1: 青7-青10  2:银2-银6  3:银6+
+}
+
+message RspAutoMatch
+{
+    optional uint32 result = 1 [default=100];
+    optional ProtoPreVsInfo info = 2;              // 自动匹配信息, 复用前导决斗信息
+    optional uint32 leftAmPunishMins = 3;          // 自动匹配惩罚解除剩余分钟数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取积分赛信息
+message ReqGetScoreRaceInfo
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoScoreRaceInfo
+{
+    optional uint32 score = 1;                      // 积分
+    optional uint32 rank = 2;                       // 排名
+    optional uint32 leftVsCnt = 3;                  // 剩余决斗次数
+    optional bool canRaise = 4 [default=false];     // 是否可以降级(扩展)匹配
+    optional bool canDemote = 5 [default=false];    // 是否可以越级匹配
+}
+
+message ProtoScoreRaceTeam
+{
+    optional bytes name = 1;                        // 积分组名称
+    optional uint32 rankBegin = 2;                  // 开始排名
+    optional uint32 rankEnd = 3;                    // 结束排名
+    optional uint32 scoreWin = 4;                   // 胜利获得的积分
+    optional uint32 scoreLose = 5;                  // 失败获得的积分
+}
+
+message RspGetScoreRaceInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional ProtoScoreRaceInfo info = 2;           // 积分赛信息
+    repeated ProtoScoreRaceTeam teams = 3;          // 积分赛分组信息
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 积分赛决斗
+message ReqScoreRace
+{
+    optional uint32 uid = 1;
+    optional bool raise = 2 [default=false];        // 越级匹配
+    optional bool demote = 3 [default=false];       // 降级匹配
+}
+
+message RspScoreRace
+{
+    optional uint32 result = 1 [default=100];
+    optional ProtoScoreRaceInfo info = 2;           // 积分赛信息
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 玩家坐下
+message PushTableSitDown
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+}
+
+// 玩家站起来
+message PushTableStandUp
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+}
+
+// 有对手玩家坐下
+message PushTableOtherSitDown
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+    optional ProtoPlayerInfo userInfo = 3;
+    optional bool isObserver = 4 [default = false];    // 是否为观察者模式进入
+}
+
+// 有对手玩家站起
+message PushTableOtherStandUp
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+}
+
+// 对手玩家准备好了
+message PushTableOtherReady
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+}
+
+// 游戏开始
+message PushGameStart
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+    optional uint32 sec = 3;                        // 开局起始时间（秒）
+    optional uint32 mics = 4;                       // 开局起始时间（微妙）
+    repeated uint32 uids = 5;                       // 本局玩家的UIDs
+    ///////////////////////////////
+    optional uint32 maxlp = 6[default=8000];        // 本局最大血量
+    optional uint32 starthandcount = 7[default=5];  // 开局时手里有几张牌
+    optional uint32 drawcount = 8[default=1];       // 每轮抓几张牌
+    optional uint32 timelimit = 9[default=120];     // 每轮可以有的出牌时长
+    optional bool shuffle = 10[default=true];       // 开局前是否洗牌
+}
+
+// 服务器因为对家掉线判断游戏应该结束时下发此消息, 客户端收到后需要发送ReqGameOver来真正结束本局游戏
+message PushGameShouldOver
+{
+    repeated uint32 uids = 1;                       // 本局玩家的UIDs
+    optional uint32 endState = 2;                   // 结束状态 1:多方强退 2:对方超时掉线
+}
+
+// 游戏结束
+message PushGameOver
+{
+    optional uint32 roomId = 1;
+    optional uint32 result = 2;                     // 0: 输 1: 赢 2: 平局
+    repeated uint32 uids = 3;                       // 本局玩家的UIDs
+    optional uint32 vsCnt = 4;                      // 当天决斗次数
+    optional bool upgrade = 5[default=false];       // 是否触发了升级
+    optional uint32 money = 6;                      // 最新卡钻数量
+    optional uint32 level = 7;                      // 最新等级
+    optional uint32 nxtPower = 8;                   // 再次升级需要的卡力
+    optional uint32 nxtPoints = 9;                  // 再次升级需要的决斗点
+    optional uint32 endState = 10;                  // 游戏结束状态
+    optional uint32 topupPunishDays = 11;           // 非法充值惩罚期剩余天数
+    optional uint32 ygoplayer = 12;                 // YGO结束状态, 获胜玩家（0or1）客户端通过localplayer转换成对应玩家
+    optional uint32 victory = 13;                   // YGO结束状态, 参照strings.conf
+    optional uint32 points = 14;                    // 最新的决斗点
+    repeated ProtoTrunkey keys = 15;                // 钥匙
+    optional uint32 score = 16;                     // 积分
+    optional uint32 rank = 17;                      // 积分排名
+}
+
+// 对家掉线
+message PushRivalOffline
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+    optional uint32 rivalUid = 3;                   // 对家uid
+}
+
+// 对家重连
+message PushRivalReLogon
+{
+    optional uint32 roomId = 1;
+    optional uint32 tableId = 2;
+    optional uint32 rivalUid = 3;                   // 对家uid
+}
+
+message ProtoVsInfo
+{
+    optional uint32 result = 1 [default=100];       // 匹配结果, 100 成功, 280 没匹配到
+    optional uint32 roomId = 2;
+    optional uint32 tableId = 3;
+    optional ProtoPlayerInfo rival = 4;             // 对家信息
+    optional uint32 sec = 5;                        // 开局起始时间（秒）
+    optional uint32 mics = 6;                       // 开局起始时间（微妙）
+    repeated uint32 uids = 7;                       // 本局玩家的UIDs
+    ///////////////////////////////
+    optional uint32 maxLp = 8[default=8000];        // 本局最大血量
+    optional uint32 startHandCount = 9[default=5];  // 开局时手里有几张牌
+    optional uint32 drawCount = 10[default=1];      // 每轮抓几张牌
+    optional uint32 timeLimit = 11[default=180];    // 每轮可以有的出牌时长
+    optional bool shuffle = 12[default=true];       // 开局前是否洗牌
+}
+
+// 推送自动匹配结果
+message PushAutoMatch
+{
+    optional ProtoVsInfo info = 1;          // 决斗信息
+}
+
+// 推送积分赛匹配结果
+message PushScoreRace
+{
+    optional ProtoVsInfo info = 1;          // 决斗信息
+    optional uint32 teamSelf = 2;           // 自己的积分组
+    optional uint32 teamRival = 3;          // 对家的积分组, 用来判断是不是越级匹配
+}
+
+// 推送好友邀请决斗处理结果
+message PushInviteVs
+{
+    optional ProtoVsInfo info = 1;          // 决斗信息
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 请求换桌
+message ReqChangeTable
+{
+    optional uint32 uid = 1;
+    optional uint32 roomId = 2;
+}
+
+// 请求换桌回包
+message RspChangeTable
+{
+    optional uint32 result = 1 [default=100];       // 换桌成功OR失败（目前不用填）
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 结束游戏
+message ReqGameOver
+{
+    optional uint32 uid = 1;
+    optional uint32 rivalUid = 2;
+    optional uint32 result = 3;         // 0: 输     1: 赢    2: 平局
+    optional uint32 sec = 4;            // 开局起始时间（秒）
+    optional uint32 mics = 5;           // 开局起始时间（微妙）
+    optional uint32 lpSelf = 6;         // 自己损失的lp
+    optional uint32 lpLeftSelf = 7;     // 自己剩余的lp
+    optional uint32 lpRival = 8;        // 对方损失的lp
+    optional uint32 lpLeftRival = 9;    // 对方剩余的lp
+    optional uint32 roundCnt = 10;      // 总共的回合数
+    optional uint32 endState = 11;      // 结束状态 0:正常 其它值:异常
+    optional uint32 ygoplayer = 12;     // YGO结束状态, 获胜玩家（0or1）客户端通过localplayer转换成对应玩家
+    optional uint32 victory = 13;       // YGO结束状态, 参照strings.conf
+}
+
+message RspGameOver
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 请求获取卡钻商城列表
+message ReqGetMallManifest
+{
+    optional uint32 uid = 1;
+}
+
+message MallPriceItem
+{
+    optional uint32 cnt = 1;            // 卡牌张数
+    optional uint32 price = 2;          // 价格
+}
+
+message MallItem
+{
+    optional uint32 id = 1;             // 卡包id
+    optional bytes name = 2;            // 卡包的名字
+    optional uint32 type = 3;           // 卡包类型
+    optional uint32 cnt = 4;            // 卡包内卡片数量
+    optional uint32 money = 5;          // 价格: 卡钻
+    optional uint32 cf = 6;             // 价格: 卡牌碎片
+    optional uint32 yaoshi = 7;         // 价格: 钥匙
+    optional bytes attr = 8;            // 属性 （暗，炎等）
+    optional bytes detail = 9;          // 卡包详细信息
+    repeated ProtoCard cards = 10;      // 卡牌列表
+}
+
+message RspGetMallManifest
+{
+    optional uint32 result = 1 [default=100];
+    repeated MallItem items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//　通用道具类型
+message PropItem
+{
+    optional uint32 type = 1;       // 道具类型
+    optional uint32 val = 2;        // 道具(卡钻,碎片)数量或值(个性化头像或个性化卡背id)
+    repeated uint32 cards = 3;      // 卡牌id列表, 当道具类型为卡牌时下发
+    optional uint32 delta = 4;      // 道具(卡钻,碎片)数量或值(个性化头像或个性化卡背id)的增量
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//　请求购买
+message ReqMallBuy
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;         // 卡包id
+    optional uint32 type = 3;
+}
+
+message RspMallBuy
+{
+    optional uint32 result = 1 [default=100];
+    repeated PropItem items = 2;
+    optional double cardRatio = 3;
+    optional uint32 money = 4;
+    optional uint32 cfrg = 5;
+}
+///////////////////////////////////////////////////////////////////////////////
+// 请求兑换商城列表
+message ReqExchangeMallItem
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;         // 商城卡包id
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 请求获取碎片商场列表
+message ReqGetFragmentManifest
+{
+    optional uint32 uid = 1;
+}
+
+message PkgCard
+{
+    optional uint32 id = 1;         // 卡牌Id, 从1开始
+    optional uint32 claimed = 2;    // 玩家已经兑换本卡的数量
+}
+
+message SingleCard {
+    optional uint32 id = 1;         // 卡牌Id, 从1开始
+    optional uint32 claimed = 2;    // 玩家已经兑换本卡的数量
+    optional uint32 price = 3;      // 兑换消耗的碎片
+    optional uint32 limit = 4;      // 限制数量, 比如最多3张
+    optional uint32 level = 5;      // 限制等级, 比如最低青铜2级可以抽
+}
+
+message RspGetFragmentManifest
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 id = 2;         // 本期卡牌碎片id
+    optional uint32 date = 3;       // 下期更新时间(例如: 20150425), -1 代表更新时间未定
+    optional uint32 pkgLimit = 4;   // 卡包限制数量
+    optional uint32 pkgLevel = 5;   // 卡包限制等级
+    optional uint32 pkgCost = 6;    // 卡包兑换消耗的碎片
+    repeated SingleCard cards = 7;  // 独立卡牌列表
+    repeated PkgCard cardPkg = 8;   // 卡包卡牌
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取充值配置列表
+message ReqGetTopupList
+{
+    optional uint32 uid = 1;
+}
+
+message TopupItem
+{
+    optional uint32 id = 1;
+    optional uint32 rmb = 2;                // 价格，元
+    optional uint32 money = 3;              // 卡钻
+    optional uint32 bonus = 4;              // 赠送卡钻
+    optional uint32 cf = 5;                 // 赠送的卡牌碎片
+    optional uint32 renew = 6;              // 下次刷新时间
+    optional uint32 special = 7;            // 是不是特殊商品（如月卡）
+    optional bool fdouble = 8;              // 是否首充双倍
+    optional bool bought = 9;               // 是否购买过
+    optional bytes name = 10;               // 项目名称（特殊商品时使用）
+    optional bytes info = 11;               // 附加信息（特殊商品时使用）
+    optional bytes platforms = 12;          // 过滤平台，非空的时候用下划线分割，如：_1_2_
+}
+
+message RspGetTopupList
+{
+    optional uint32 result = 1 [default=100];
+    repeated TopupItem items = 2;
+}
+
+message OrderInfo
+{
+    optional uint32 platform = 1;           // 平台号
+    optional uint32 doubleFirst = 2;        // 首充双倍
+    optional uint32 uid = 3;                // 玩家id
+    optional uint32 cents = 4;              // 充值金额,单位分
+    optional uint32 gameMoney = 5;          // 应获得卡钻
+    optional uint32 productId = 6;          // 商品Id
+    optional uint32 cardFragment = 7;       // 赠送的碎片
+    optional string orderId = 8;            // 外部订单
+    optional string cpOrderId = 9;          // 内部订单
+    optional bytes name = 10;               // 商品名称
+    optional bytes info = 11;               // 商品附加信息
+}
+
+message ReqTopup
+{
+    optional uint32 uid = 1;
+    required OrderInfo order = 2;
+}
+
+message RspTopup
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//残局破解
+message ReqGetEndplayList
+{
+    optional uint32 uid = 1;
+}
+
+message EndplayItem
+{
+    optional uint32 id = 1;                 // ID  （从1开始）
+    optional uint32 status = 2;             // 状态（是否破解过，领取过） 0,1,2
+    optional uint32 level = 3;              // 等级（初级，中级，高级）
+    optional string bonus = 4;              // 奖励
+}
+
+message RspGetEndplayList
+{
+    optional uint32 result = 1 [default=100];
+    repeated EndplayItem endplays = 2;
+}
+
+message ReqGetEndplayBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetEndplayBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+    optional double cardRatio = 3;
+}
+
+message ReqUpdateEndplay
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspUpdateEndplay {
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//成就
+
+message GameAchieveItem
+{
+    optional uint32 id = 1;
+    optional uint32 status = 2;
+    optional uint32 progress = 3;
+    optional uint32 total = 4;
+    optional uint32 icon = 5;
+    optional string name = 6;
+    optional string info = 7;
+    optional PropItem bonus = 8;
+}
+
+message ReqGetGameAchieveList
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetGameAchieveList
+{
+    optional uint32 result = 1 [default=100];
+    repeated GameAchieveItem items = 2;
+}
+
+message ReqGetGameAchieveBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetGameAchieveBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+    optional double cardRatio = 3;
+}
+
+message GameAchieveUpdateItem
+{
+    optional uint32 id = 1;
+    optional uint32 progress = 2;
+    optional uint32 status = 3;
+}
+
+message PushGameAchieveNotify {
+    optional uint32 uid = 1;
+    repeated GameAchieveUpdateItem items = 2;
+}
+///////////////////////////////////////////////////////////////////////////////
+// 领取福利
+message ReqGetWelfareList
+{
+    optional uint32 uid = 1;
+}
+
+message WelfareItem
+{
+    optional uint32 id = 1;
+    optional uint32 type = 2;
+    optional uint32 icon = 3;
+    optional uint32 status = 4;
+    optional bytes name = 5;
+    optional bytes details = 6;     // 详细描述, 客户端判断长度, 超过1行显示详情按钮
+    optional uint32 extra1 = 7;     // 附加字段1:类型为积分赛时表示上月积分
+    optional uint32 extra2 = 8;     // 附加字段2: 根据类型意义不同
+    repeated PropItem bonus = 9;    // 奖励内容列表
+}
+
+message RspGetWelfareList
+{
+    optional uint32 result = 1 [default=100];
+    repeated WelfareItem items = 2;
+}
+
+message ReqGetWelfareBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetWelfareBonus
+{
+    optional uint32 result = 1 [default=100];
+    repeated PropItem bonus = 2;
+    optional double cardRatio = 3;
+    optional uint32 id = 4;
+}
+
+message WelfareUpdateItem
+{
+    optional uint32 id = 1;
+    optional uint32 status = 2;
+}
+
+message PushWelfareNotify {
+    optional uint32 uid = 1;
+    repeated WelfareUpdateItem items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取卡组
+message ReqGetCardDeck
+{
+    optional uint32 uid = 1;
+    optional uint32 deckId = 2;
+}
+
+message ProtoCard
+{
+    optional uint32 id = 1;
+    optional uint32 cnt = 2;
+}
+
+message RspGetCardDeck
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 deckId = 2;                 // 卡组id (1-5)
+    optional uint32 capacity = 3;               // 卡组容量,即卡格数量
+    optional uint32 cnt = 4;                    // 通常卡牌数量
+    optional uint32 fcnt = 5;                   // 融合卡牌数量
+    repeated ProtoCard cards = 6;               // 通常卡牌
+    repeated ProtoCard fcards = 7;              // 融合卡牌
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取卡库
+message ReqGetCardLib
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetCardLib
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoCard cards = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取卡库
+message ReqSetDefaultCardDeck
+{
+    optional uint32 uid = 1;
+    optional uint32 deckId = 2;                     // 期望设置的默认卡组id
+}
+
+message RspSetDefaultCardDeck
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 deckId = 2;                     // 当前默认卡组id
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 修改卡组卡牌
+message ReqModifyCardDeck
+{
+    optional uint32 uid = 1;
+    optional uint32 deckId = 2;                     // 卡组id (1-5)
+    optional bool isToDeck = 3 [default=true];      // 是否从卡库加入卡组
+    repeated ProtoCard cards = 4;                   // 通常卡牌
+    repeated ProtoCard fcards = 5;                  // 融合卡牌
+}
+
+message RspModifyCardDeck
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 购买卡组
+message ReqBuyCardDeck
+{
+    optional uint32 uid = 1;
+}
+
+message RspBuyCardDeck
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 deckId = 2;                 // 卡组的id
+    optional uint32 money = 3;                  // 最新卡钻数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 购买卡组卡格
+message ReqBuyCardDeckGrid
+{
+    optional uint32 uid = 1;
+    optional uint32 deckId = 2;                 // 卡组id (1-5)
+}
+
+message RspBuyCardDeckGrid
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 deckId = 2;                 // 卡组的id
+    optional uint32 capacity = 3;               // 卡组当前容量
+    optional uint32 money = 4;                  // 最新卡钻数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 出售卡牌
+message ReqSellCard
+{
+    optional uint32 uid = 1;
+    repeated ProtoCard cards = 2;               // 待出售的卡牌列表
+}
+
+message RspSellCard
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 money = 2;                  // 最新卡钻
+    optional double cardRatio = 3;              // 最新的卡牌收集度
+    optional uint32 power = 4;                  // 最新卡力
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 新手任务
+message ReqGetMissionList
+{
+    optional uint32 uid = 1;
+}
+
+message MissionItem
+{
+    optional uint32 id = 1;
+    optional uint32 status = 2;
+    optional uint32 level = 3;
+    optional string bonus = 4;
+    optional string title = 5;
+}
+
+message RspGetMissionList
+{
+    optional uint32 result = 1 [default=100];
+    repeated MissionItem items = 2;
+}
+
+message ReqGetMissionBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetMissionBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+    optional double cardRatio = 3;
+}
+
+message ReqUpdateMission
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspUpdateMission
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message ReqGetRankList
+{
+    optional uint32 uid = 1;
+    optional uint32 tag = 2;
+}
+
+message RankInfoItem
+{
+    optional uint32 uid = 1;
+    optional string nick = 2;
+    optional uint32 iconId = 3;
+    optional uint32 rank = 4;
+    optional uint32 level = 5;
+    optional uint32 power = 6;
+    optional uint32 point = 7;
+    optional double ratio = 8;
+    optional string team = 9;
+    optional uint32 score = 10;
+}
+
+message RspGetRankList
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 tag = 2;
+    optional uint32 platform = 3;
+    repeated RankInfoItem items = 4;
+}
+
+message ReqGetFragmentExchList
+{
+    optional uint32 uid = 1;
+}
+
+message FragmentExchItem
+{
+    optional uint32 id = 1;     // exchange id
+    optional string name = 2;   // card name or cardgrp name
+    optional uint32 type = 3;   // card or cardgrp
+    repeated uint32 cards = 4;  // card list
+    optional uint32 price = 5;  // exchange price
+    optional uint32 limit = 6;  // exchange limit cnt
+    optional uint32 level = 7;  // player level
+    optional uint32 memo = 8;   // remark
+}
+
+message RspGetFragmentExchList
+{
+    optional uint32 result = 1 [default=100];
+    repeated FragmentExchItem items = 2;
+}
+
+message ReqFragmentExch
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspFragmentExch
+{
+    optional uint32 result = 1 [default=100];
+    optional double cardRatio = 2;
+    repeated uint32 cardList = 3;
+    optional uint32 fragment = 4;
+}
+
+message ReqDisassembleCard
+{
+    optional uint32 uid = 1;
+    repeated uint32 cardList = 2;
+}
+
+message RspDisassembleCard
+{
+    optional uint32 result = 1 [default=100];
+    optional double cardRatio = 2;          // 最新卡牌收集度
+    optional uint32 fragment = 3;           // 最新卡牌碎片
+    optional uint32 power = 4;              // 最新卡力
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 创建战队
+message ReqTeamCreate
+{
+    optional uint32 uid = 1;
+    optional uint32 avatarId = 2;
+    optional string name = 3;
+}
+
+message RspTeamCreate
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 teamId = 2;             // 新创建的战队id
+    optional uint32 money = 3;              // 玩家最新卡钻
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取所在战队信息
+message ReqGetTeamInfo
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoTeamMemberInfo
+{
+    optional uint32 uid = 1;
+    optional string nick = 2;               // 昵称
+    optional uint32 avatarId = 3;           // 头像
+    optional uint32 level = 4;              // 等级
+    optional uint32 role = 5;               // 战队职位
+    optional bool online = 6;               // 是否在线
+    optional uint32 power = 7;              // 卡力
+    optional uint32 points = 8;             // 决斗点
+    optional uint32 contriHist = 9;         // 历史贡献度
+    optional uint32 contriPrev = 10;        // 上周贡献度
+    optional uint32 platform = 12;          // 玩家所属平台
+    optional uint32 tsJoin = 13;            // 加入战队时间 (unix 时间戳)
+    optional uint32 tsLastOnline = 14;      // 最近在线时间 (unix 时间戳), 0 表示玩家当前在线
+}
+
+message ProtoTeamUpgradeInfo
+{
+    optional uint32 level = 1;              // 战队等级
+    optional uint32 power = 2;              // 所需总卡力
+    optional uint32 points = 3;             // 所需总决斗点
+    optional uint32 contribute = 4;         // 所需贡献度
+    optional uint32 memberCnt = 5;          // 所需成员数量
+    optional uint32 captainLevel = 6;       // 战队长等级
+}
+
+message RspGetTeamInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 teamId = 2;                     // 战队id
+    optional string name = 3;                       // 战队名称
+    optional uint32 avatarId = 4;                   // 战队头像
+    optional uint32 level = 5;                      // 战队等级
+    optional uint32 power = 6;                      // 战队卡力
+    optional uint32 points = 7;                     // 战队决斗点
+    optional string declar = 8;                     // 战队宣言
+    optional uint32 contribute = 9;                 // 战队总贡献度
+    optional uint32 rank = 10;                      // 战队排名
+    optional uint32 state = 11;                     // 战队状态
+    optional uint32 dismissLeftDays = 12;           // 战队解散剩余天数
+    optional ProtoTeamUpgradeInfo upgrade = 13;     // 战队升级条件
+    repeated ProtoTeamMemberInfo members = 14;      // 战队成员列表
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取战队列表
+message ReqGetTeamList
+{
+    optional uint32 uid = 1;
+    optional uint32 index = 2;          // 战队列表偏移量(第一次是0)
+    optional uint32 count = 3;          // 从偏移量开始要获取的数量
+}
+
+message ProtoTeamInfo
+{
+    optional uint32 teamId = 1;         // 战队id
+    optional string name = 2;           // 战队名称
+    optional uint32 avatarId = 3;       // 战队头像
+    optional uint32 level = 4;          // 战队等级
+    optional uint32 power = 5;          // 战队总卡力
+    optional uint32 points = 6;         // 战队总决斗点
+    optional string declar = 7;         // 战队宣言
+    optional uint32 cnt = 8;            // 战队人数
+}
+
+message RspGetTeamList
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoTeamInfo teams = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取战队申请列表
+message ReqGetTeamApplyList
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoTeamApplicant
+{
+    optional uint32 uid = 1;            // 玩家id
+    optional bytes nick = 2;            // 玩家昵称
+    optional uint32 avatarId = 3;       // 玩家头像
+    optional uint32 level = 4;          // 玩家等级
+    optional uint32 power = 5;          // 玩家卡力
+    optional uint32 points = 6;         // 玩家决斗点
+}
+
+message RspGetTeamApplyList
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoTeamApplicant appls = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 设置战队宣言
+message ReqSetTeamDeclar
+{
+    optional uint32 uid = 1;
+    optional bytes declaration = 2;     // 战队宣言,最多20个汉字
+}
+
+message RspSetTeamDeclar
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取战队新闻(公告)
+message ReqGetTeamNews
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoTeamNewsItem
+{
+    optional uint32 ts = 1;                 // 事件时间 (unix 时间戳)
+    optional uint32 evt = 2;                // 事件id
+    optional uint32 srcUid = 3;             // 发起玩家uid
+    optional uint32 srcRole = 4;            // 发起玩家战队职位
+    optional string srcNick = 5;            // 发起玩家昵称
+    optional uint32 dstUid = 6;             // 目标玩家uid
+    optional uint32 dstRole = 7;            // 目标玩家战队职位
+    optional string dstNick = 8;            // 目标玩家昵称
+    optional uint32 donate = 9;             // 捐献的卡钻
+    optional string contribute = 10;        // 对应捐献的贡献度
+}
+
+message RspGetTeamNews
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoTeamNewsItem news = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取战队任务
+message ReqGetTeamQuestList
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoTeamQuestItem
+{
+    optional uint32 id = 1;                 // 任务id
+    optional uint32 status = 2;             // 任务状态 0:未完成 1:完成 2:完成并领取了奖励
+    optional uint32 progress = 3;           // 任务进度
+    optional uint32 total = 4;              // 任务总值
+    optional uint32 icon = 5;               // 任务图标
+    optional uint32 ptype = 6;              // 任务奖励的道具类型
+    optional bytes info = 7;                // 任务描述
+    optional bytes bonus = 8;               // 任务奖励的道具描述
+}
+
+message RspGetTeamQuestList
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoTeamQuestItem quests = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取战队任务奖励
+message ReqGetTeamQuestBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 questId = 2;                // 任务id
+}
+
+message RspGetTeamQuestBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;                // 奖励的道具
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 申请加入战队
+message ReqTeamApplyJoin
+{
+    optional uint32 uid = 1;
+    optional uint32 teamId = 2;
+}
+
+message RspTeamApplyJoin
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 leftDays = 2;               // 距离允许加入战队剩余天数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 同意加入战队
+message ReqTeamAgreeJoin
+{
+    optional uint32 uid = 1;
+    optional bool agree = 2;    // 是否同意加入
+    repeated uint32 uids = 3;   // 要处理玩家id列表, 注意: 同意的情况下只会处理列表第一个
+}
+
+message RspTeamAgreeJoin
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 战队任命
+message ReqTeamAppoint
+{
+    optional uint32 uid = 1;
+    optional uint32 dstUid = 2;     // 目标玩家uid
+    optional uint32 role = 3;       // 目标战队角色
+}
+
+message RspTeamAppoint
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 战队捐献
+message ReqTeamDonate
+{
+    optional uint32 uid = 1;
+    optional uint32 money = 2;      // 要捐献的卡钻
+}
+
+message RspTeamDonate
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 money = 2;                  // 最新的卡钻数量
+    optional uint32 contribute = 3;             // 最新的战队总贡献度
+    optional uint32 contriCurr = 4;             // 最新个人本周贡献度
+    optional uint32 contriHist = 5;             // 最新个人历史贡献度
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 退出战队
+message ReqTeamExit
+{
+    optional uint32 uid = 1;
+}
+
+message RspTeamExit
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 移除战队成员
+message ReqTeamKickout
+{
+    optional uint32 uid = 1;
+    optional uint32 koUid = 2;      // 要移除的玩家uid
+}
+
+message RspTeamKickout
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 战队升级
+message ReqTeamUpgrade
+{
+    optional uint32 uid = 1;
+}
+
+message RspTeamUpgrade
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 level = 2;                  // 最新战队等级
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 解散战队
+message ReqTeamDismiss
+{
+    optional uint32 uid = 1;
+}
+
+message RspTeamDismiss
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 leftDays = 2;               // 解散剩余天数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 取消解散战队
+message ReqTeamDismissCancel
+{
+    optional uint32 uid = 1;
+}
+
+message RspTeamDismissCancel
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 leftDays = 2;               // 解散剩余天数
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 推送申请加入战队
+message PushTeamApplyJoin
+{
+    optional uint32 teamId = 1;
+    optional ProtoTeamApplicant applicant = 2;    // 申请加入的玩家信息
+}
+
+// 推送允许加入战队
+message PushTeamJoin
+{
+    optional uint32 teamId = 1;
+    optional ProtoTeamMemberInfo player = 2;    // 刚加入的玩家信息
+}
+
+// 推送被移除战队
+message PushTeamKickout
+{
+    optional uint32 dstUid = 1;     // 被移除的玩家uid
+}
+
+// 推送退出战队
+message PushTeamExit
+{
+    optional uint32 dstUid = 1;     // 退出战队的玩家uid
+}
+
+// 推送战队任命
+message PushTeamAppoint
+{
+    optional uint32 dstUid = 1;     // 被任命的玩家uid
+    optional uint32 role = 2;       // 最新战队角色
+}
+
+// 推送战队升级
+message PushTeamUpgrade
+{
+    optional uint32 level = 1;      // 最新战队等级
+}
+
+// 推送战队解散
+message PushTeamDismiss
+{
+    optional uint32 status = 1;     // 战队解散状态 0: 解散 1: 取消解散 2: 完成解散
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 客户端掉线重连
+message ReqReLogon
+{
+    optional uint32 uid = 1;
+}
+
+message RspReLogon
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message ReqGetInviteCode
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetInviteCode
+{
+    optional uint32 result = 1 [default=100];
+    optional string inviteCode = 2;
+    optional uint32 leftCnt = 3;
+}
+
+message ReqBindInviteCode
+{
+    optional uint32 uid = 1;
+    optional string inviteCode = 2;
+}
+
+message RspBindInviteCode
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+}
+
+message ReqGetNpcList
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoNpcItem
+{
+    optional uint32 id = 1;
+    optional string name = 2;
+    optional uint32 moneyWin = 3;
+    optional uint32 moneyLos = 4;
+    optional uint32 fragWin = 5;
+    optional uint32 fragLos = 6;
+    optional uint32 pointWin = 7;
+    optional uint32 pointLos = 8;
+    repeated uint32 cards = 9;
+    optional string desc = 10;
+}
+
+message RspGetNpcList
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoNpcItem items = 2;
+}
+
+message ReqGetNpcBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 level = 2;
+    optional uint32 result = 3;
+}
+
+message RspGetNpcBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 level = 2;
+    optional uint32 money = 3;
+    optional uint32 fragment = 4;
+    optional uint32 point = 5;
+    repeated uint32 cards = 6;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//online achieve
+
+message OnlineAchieveItem
+{
+    optional uint32 id = 1;
+    optional uint32 status = 2;
+    optional uint32 progress = 3;
+    optional uint32 total = 4;
+    optional uint32 icon = 5;
+    optional uint32 type = 6;
+    optional string info = 7;
+    optional uint32 bonus = 8;
+}
+
+message ReqGetOnlineAchieveList
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetOnlineAchieveList
+{
+    optional uint32 result = 1 [default=100];
+    repeated OnlineAchieveItem items = 2;
+}
+
+message ReqGetOnlineAchieveBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetOnlineAchieveBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+    optional double cardRatio = 3;
+}
+
+message OnlineAchieveUpdateItem
+{
+    optional uint32 id = 1;
+    optional uint32 progress = 2;
+    optional uint32 status = 3;
+}
+
+message PushOnlineAchieveNotify {
+    optional uint32 uid = 1;
+    repeated OnlineAchieveUpdateItem items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//signin
+message SigninAchieveItem
+{
+    optional uint32 id = 1;
+    optional uint32 status = 2;
+    optional uint32 progress = 3;
+    optional uint32 total = 4;
+    optional uint32 icon = 5;
+    optional uint32 type = 6;
+    optional string info = 7;
+    optional string bonus = 8;
+}
+
+message ReqGetSigninAchieveList
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetSigninAchieveList
+{
+    optional uint32 result = 1 [default=100];
+    repeated SigninAchieveItem items = 2;
+}
+
+message ReqGetSigninAchieveBonus
+{
+    optional uint32 uid = 1;
+    optional uint32 id = 2;
+}
+
+message RspGetSigninAchieveBonus
+{
+    optional uint32 result = 1 [default=100];
+    optional PropItem bonus = 2;
+    optional double cardRatio = 3;
+}
+
+message SigninAchieveUpdateItem
+{
+    optional uint32 id = 1;
+    optional uint32 progress = 2;
+    optional uint32 status = 3;
+}
+
+message PushSigninAchieveNotify
+{
+    optional uint32 uid = 1;
+    repeated SigninAchieveUpdateItem items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message PushTrunkeyQuestNotify
+{
+    optional uint32 uid = 1;
+    repeated ProtoTrunkey items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message ReqWelfareUpdate
+{
+    optional uint32 uid = 1;
+    optional uint32 type = 2;
+}
+
+message RspWelfareUpdate
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message ReqGetRestrictedCardsRule
+{
+    optional uint32 uid = 1;
+}
+
+message SRCardItem
+{
+    repeated uint32 cards = 1;
+    optional uint32 lim = 2;
+}
+
+message RspGetRestrictedCardsRule
+{
+    optional uint32 result = 1 [default=100];
+    repeated SRCardItem items = 2;
+}
+
+message RCardItem
+{
+    optional uint32 cid = 1;
+    optional uint32 cnt = 2;
+    optional uint32 lim = 3;
+}
+
+message PushRestrictedCardNotify
+{
+    optional uint32 uid = 1;
+    repeated RCardItem items = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message CommonInfo
+{
+    optional uint32 rookieLevel = 1;
+    optional uint32 wcLevel = 2;
+    optional uint32 wcCost = 3;
+    optional uint32 wcWordsMax = 4;
+    optional uint32 wcInterval = 5;
+    optional uint32 cfDisaLevel = 6;
+    optional uint32 cfMonster = 7;
+    optional uint32 cfMagicTrap = 8;
+    optional uint32 cfOther = 9;
+    optional uint32 m2fRate = 10;
+    optional uint32 svrVersion = 11;
+    optional string officialQQ = 12;
+    optional string website = 13;
+    optional string inviteDesc = 14;
+    optional string shareContent = 15;
+    optional bool shareEnable = 16;
+    optional string wcNode = 17;
+    optional string sensiWords = 18;
+    optional uint32 teamCreateCost = 19;
+    optional uint32 teamCreateLevel = 20;
+    optional uint32 teamDonateLevel = 21;
+    optional uint32 teamDonateRate = 22;
+    optional uint32 teamRejoinDelay = 23;
+    optional uint32 teamDismissDelay = 24;
+    optional uint32 teamMaxViceCaptain = 25;
+    optional uint32 teamContributeNote = 26;
+    optional uint32 priceBuyDeck = 27;
+    optional uint32 priceBuyDeckGrid = 28;
+    optional uint32 scoreRaceBegin = 29;
+    optional uint32 scoreRaceEnd = 30;
+    optional uint32 scoreRaceRaiseCost = 31;
+    repeated ProtoCard specialCards = 32;
+    optional string topupDiscountSkip = 33;   // 充值打折需要跳过的商品id, 下划线分割, 比如: _10_110_111
+    optional uint32 vipDiscount = 34;
+}
+
+message PlatformInfo
+{
+    optional uint32 platform = 1;
+    repeated uint32 discount = 2;
+}
+
+message PushClientCfgNotify
+{
+    optional CommonInfo sinfo = 1;
+    optional PlatformInfo pinfo = 2;
+}
+
+message ActivityUnit
+{
+    optional uint32 id = 1;                     // 活动id
+    optional uint32 begin = 2;                  // 活动开始时间
+    optional uint32 end = 3;                    // 活动结束时间
+    optional bool isvalid = 4;                  // 活动是否生效
+    repeated PropItem bonus = 5;                // 奖励内容列表
+    optional string rules = 6;                  // 活动规则
+}
+message PushPlayerCfgNotify
+{
+    optional uint32 online = 1;
+    optional uint32 signin = 2;
+    repeated ActivityUnit activity = 3;       // 活动列表
+}
+
+message ReqGetNewCards
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetNewCards
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoCard cards = 2;
+}
+
+message ReqWorldChat
+{
+    optional uint32 uid = 1;
+    optional uint32 time = 2;
+    optional bytes msg = 3;
+}
+
+message RspWorldChat
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 money = 2;
+}
+
+message PushWorldChat
+{
+    optional uint32 uid = 1;
+    optional string nick = 2;
+    optional uint32 avatarId = 3;
+    optional uint32 time = 4;
+    optional bytes msg = 5;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 获取鉴赏卡
+message ReqGetBrowseCards
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetBrowseCards
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoCard cards = 2;
+}
+///////////////////////////////////////////////////////////////////////////////
+// 桌面聊天
+message ReqTableChat
+{
+    optional uint32 uid = 1;
+    optional bytes msg = 2;
+}
+
+message RspTableChat
+{
+    optional uint32 result = 1 [default=100];
+}
+
+message PushTableChat
+{
+    optional uint32 uid = 1;
+    optional uint32 rivalUid = 2;
+    optional uint32 time = 3;
+    optional bytes msg = 4;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 推送充值
+message PushTopup
+{
+    optional uint32 money = 1;                  // 最新卡钻数
+    optional uint32 cf = 2;                     // 最新卡牌碎片
+    optional uint32 chgMoney = 3;               // 卡钻变化值
+    optional uint32 chgCf = 4;                  // 卡牌碎片变化值
+    optional uint32 productId = 5;              // 商品id
+    optional string cpOrderId = 6;              // 内部订单号
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 请求填写社交信息
+message ReqSetSocialInfo
+{
+    optional uint32 uid = 1;
+    optional bytes name = 2;                    // 真实姓名
+    optional string mobile = 3;                 // 手机号码
+    optional string phone = 4;                  // 座机号码
+    optional string qq = 5;                     // QQ 号码
+    optional string address = 6;                // 邮寄地址
+}
+
+message RspSetSocialInfo
+{
+    optional uint32 result = 1 [default=100];
+}
+
+message PushRepeatLogonNotify
+{
+    optional string info = 1;                    //通知信息
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// 老玩家回归签到活动-签到信息
+message ReqOldplayerInfo
+{
+    optional uint32 uid = 1;
+}
+
+message RspOldplayerInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 daysSigned = 2;
+}
+
+// 老玩家回归签到活动-签到
+message ReqOldplayerSign
+{
+    optional uint32 uid = 1;
+}
+
+message RspOldplayerSign
+{
+    optional uint32 result = 1 [default=100];
+}
+// 节日签到活动-签到信息
+message ReqHolidayInfo
+{
+    optional uint32 uid = 1;
+}
+message RspHolidayInfo
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 daysSigned = 2;
+}
+
+// 节日签到活动-签到
+message ReqHolidaySign
+{
+    optional uint32 uid = 1;
+}
+
+message RspHolidaySign
+{
+    optional uint32 result = 1 [default=100];
+}
+
+////////////////////////////////////////////////////////
+//礼品卡
+message ReqGiftCardExchangeList
+{
+    optional uint32 uid = 1;
+}
+
+message GiftCardItem
+{
+    optional uint32 type = 1;
+    optional uint32 need = 2;
+    optional uint32 lim = 3;
+    optional uint32 cnt = 4;
+    optional PropItem exchItem = 5;
+    optional uint32 bought = 6;
+}
+
+message RspGiftCardExchangeList
+{
+    optional uint32 result = 1 [default=100];
+    repeated GiftCardItem items = 2;
+}
+
+message ReqGiftCardExchange
+{
+    optional uint32 uid = 1;
+    optional uint32 type = 2;
+    optional PropItem exchItem = 3;
+}
+
+message RspGiftCardExchange
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 type = 2;
+    optional PropItem item = 3;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//好友
+message ReqGetFriendList
+{
+    optional uint32 uid = 1;
+}
+
+message FriendInfo
+{
+    optional uint32 uid = 1;
+    optional string nick = 2;
+    optional uint32 level = 3;
+    optional uint32 online = 4;
+    optional uint32 icon = 5;
+    optional uint32 power = 6;
+    optional uint32 point = 7;
+    optional uint32 teamRole = 8;
+    optional uint32 teamId = 9;
+    optional string teamName = 10;
+    optional uint32 mateFlg = 11;
+    optional uint32 platform = 12;
+}
+
+message RspGetFriendList
+{
+    optional uint32 result = 1 [default=100];
+    repeated FriendInfo friends = 2;
+}
+
+message ReqModifyFriendList
+{
+    optional uint32 uid = 1;
+    optional uint32 friendUid = 2;
+    optional uint32 action = 3;
+}
+
+message RspModifyFriendList
+{
+    optional uint32 result = 1 [default=100];
+    optional uint32 friendUid = 2;
+    optional uint32 action = 3;
+}
+
+message PushFriendModifyNotify
+{
+    optional uint32 action = 1;
+    optional FriendInfo finfo = 2;
+}
+
+message PushFriendModifyNotifyAck
+{
+    optional uint32 action = 1;
+    optional uint32 accept = 2;
+    optional uint32 friendUid = 3;
+}
+
+// 好友邀请应答
+message ReqModifyFriendApplyList
+{
+    optional uint32 uid = 1;
+    optional uint32 friendUid = 2;
+    optional uint32 action = 3;
+    optional uint32 accept = 4;
+}
+
+message RspModifyFriendApplyList
+{
+    optional uint32 result = 1 [default=100];
+}
+///////////////////////////////////////////////////////////////////////////////
+// 好友申请列表
+message ReqGetFriendApplyList
+{
+    optional uint32 uid = 1;
+}
+
+message RspGetFriendApplyList
+{
+    optional uint32 result = 1 [default=100];
+    repeated FriendInfo friends = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//好友对战
+message PushInviteDuel
+{
+    optional uint32 uid = 1;
+    optional bytes nick = 2;
+    optional uint32 friendUid = 3;
+    optional uint32 inviteTime = 4;
+    optional uint32 eventId = 5;
+}
+
+message PushInviteDuelAck
+{
+    optional uint32 uid = 1;
+    optional uint32 accept = 2;                 //同意1 or拒绝2 (请求体里的参数)
+    optional uint32 eventId = 3;
+}
+
+//// 好友邀请决斗
+message ReqInviteDuel
+{
+    optional uint32 uid = 1;
+    optional uint32 friendUid = 2;
+    optional uint32 eventId = 3;
+}
+
+message RspInviteDuel
+{
+    optional uint32 result = 1 [default=100];
+}
+
+// 好友邀请决斗应答
+message ReqInviteDuelAck
+{
+    optional uint32 uid = 1;
+    optional uint32 friendUid = 2;
+    optional uint32 inviteTime = 3;
+    optional uint32 eventId = 4;
+    optional uint32 accept = 5;
+}
+
+message RspInviteDuelAck
+{
+    optional uint32 result = 1 [default=100];
+}
+
+message PushInviteDuelTimeout
+{
+    optional uint32 uid = 1;
+    optional uint32 friendUid = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+message ReqGetVipRule
+{
+    optional uint32 uid = 1;
+}
+
+message ProtoVipRule
+{
+    optional uint32 id = 1;     //索引
+    repeated uint32 levels = 2;  //玩家等级
+    optional uint32 vip = 3;     //vip等级
+    optional uint32 upRmb = 4;  //升级所需rmb
+    optional uint32 upMoney = 5; //升级所得卡钻
+    repeated uint32 rights = 6;  //权限配置
+}
+
+message RspGetVipRule
+{
+    optional uint32 result = 1 [default=100];
+    repeated ProtoVipRule rules = 2;
+}
+
+message PushVipUpdateNotify
+{
+    optional uint32 uid = 1;
+    optional uint32 vip = 2;    // vip 级别
+}
+
+message ReqRename
+{
+    required string newname = 1;
+}
+message RspRename
+{
+    optional uint32 result = 1 [default=100];
+    optional string newname = 2;
+}
+
+message ReqFriendChat
+{
+    required uint32 uidTo = 1;
+    required string chat = 2;
+}
+message RspFriendChat
+{
+    optional uint32 result = 1 [default=100];
+    required uint32 uidFrom = 2;
+    required uint32 uidTo = 3;
+    optional string chat = 4;
+}
+
+message ThemeBox
+{
+    required uint32 id = 1;
+    required string name = 2;
+    required uint32 stage = 3;
+    required uint32 price = 4;
+    required uint32 discount = 5;
+    optional bool isavailable = 6;
+    repeated uint32 cardids = 7;
+}
+message ReqThemeBoxInfo
+{
+}
+message RspThemeBoxInfo
+{
+    optional uint32 result = 1 [default=100];
+    repeated ThemeBox boxes = 2;
+}

@@ -1,0 +1,77 @@
+option optimize_for = LITE_RUNTIME;
+
+///////////////////////////////////////////////////////////////////////////////
+// 验证码类型
+enum VCodeType
+{
+    VC_General = 1;      // 通用类型
+    VC_Register = 2;     // 登录的时候
+    VC_ResetPwd = 3;     // 重置密码
+    VC_AlterInfo = 4;    // 变更信息, 目前就是解绑
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//登录前绑定id和fd
+message ReqBind
+{
+}
+
+message RspBind
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登录
+message ReqLogon
+{
+    optional uint32 uid = 1;
+    optional string token = 2;                      // Token
+}
+
+message RspLogon
+{
+    optional uint32 result = 1 [default=100];       // 登录结果
+    optional uint32 fillInfo = 2 [default=0];       // 是否需要补全注册信息
+    optional string lastError = 3;                  // 错误信息
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登出
+message ReqLogout
+{
+    optional uint32 uid = 1;
+}
+
+message RspLogout
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 登录后心跳
+message ReqHello
+{
+    optional uint32 uid = 1;
+}
+
+message RspHello
+{
+    optional uint32 result = 1 [default=100];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// 补全信息
+message ReqFillPlayerInfo
+{
+    optional uint32 uid = 1;
+    optional uint32 attr = 2;                   // 属性ID(光、暗、风、地、水、炎)
+    optional bytes nickName = 3;                // 玩家昵称
+    optional uint32 avatarId = 4;               // 头像ID
+    optional string inviteCode = 5;             // 邀请码
+}
+
+message RspFillPlayerInfo
+{
+    optional uint32 result = 1 [default=100];
+}
