@@ -193,6 +193,7 @@ message RspSTOCAnnounceAttrPB
 {
     required uint32 announce_count = 1;
     repeated uint32 attrs = 2;
+    required uint32 select_hint = 3;
 }
 
 message ReqCTOSAnnounceRacePB
@@ -203,6 +204,17 @@ message RspSTOCAnnounceRacePB
 {
     required uint32 announce_count = 1;
     repeated uint32 races = 2;
+    required uint32 select_hint = 3;
+}
+
+message ReqCTOSAnnounceNumberPB
+{
+    required uint32 number = 1;
+}
+message RspSTOCAnnounceNumberPB
+{
+    repeated uint32 numbers = 1;
+    required uint32 select_hint = 2;
 }
 
 message RspSTOCSwapPB
@@ -257,3 +269,14 @@ message RspSTOCNewPhasePB
 {
     required uint32 phase = 1;
 }
+
+message ReqCTOSSelectOptionPB
+{
+    required uint32 option = 1;
+}
+message RspSTOCSelectOptionPB
+{
+    repeated uint32 options = 1;
+    required uint32 select_hint = 2;
+}
+
