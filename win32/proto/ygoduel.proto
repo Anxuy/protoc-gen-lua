@@ -280,3 +280,7 @@ message RspSTOCSelectOptionPB
     required uint32 select_hint = 2;
 }
 
+message RspSTOCConfirmCardPB
+{
+    repeated ClientCardState cards = 1;
+}
