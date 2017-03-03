@@ -83,6 +83,8 @@ message RspSTOCSelectCardPB
     required uint32 select_max = 3;
     repeated ClientCardState cards = 4;
     optional bool isTribute = 5;
+    optional bool isPanel = 6;
+    required uint32 select_hint = 7;
 }
 message ReqCTOSSelectCardPB
 {
@@ -190,8 +192,7 @@ message ReqCTOSAnnounceAttrPB
 message RspSTOCAnnounceAttrPB
 {
     required uint32 announce_count = 1;
-    required uint32 available = 2;
-    repeated uint32 attrs = 3;
+    repeated uint32 attrs = 2;
 }
 
 message ReqCTOSAnnounceRacePB
@@ -201,8 +202,7 @@ message ReqCTOSAnnounceRacePB
 message RspSTOCAnnounceRacePB
 {
     required uint32 announce_count = 1;
-    required uint32 available = 2;
-    repeated uint32 races = 3;
+    repeated uint32 races = 2;
 }
 
 message RspSTOCSwapPB
@@ -215,7 +215,7 @@ message RspSTOCShuffleSetPB
     repeated RspSTOCSwapPB shuffles = 1;
 }
 
-message RspSTOCPhasePB
+message RspSTOCHandleablePB
 {
     optional uint32 phase = 1;
     repeated ClientCardState cardstate = 2;
@@ -253,3 +253,7 @@ message RspSTOCRestorePB
     repeated ClientCardState cardstate = 9;
 }
 
+message RspSTOCNewPhasePB
+{
+    required uint32 phase = 1;
+}
