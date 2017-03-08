@@ -243,26 +243,26 @@ message RspSTOCTurnPB
 
 message RspSTOCContextPB
 {
-    required uint32 timer = 1;
-    repeated ClientCardInfo main = 2;
-    repeated ClientCardInfo hand = 3;
-    repeated ClientCardInfo mzone = 4;
-    repeated ClientCardInfo szone = 5;
-    repeated ClientCardInfo grave = 6;
-    repeated ClientCardInfo removed = 7;
-    repeated ClientCardInfo extra = 8;
+    required uint32 playerid = 1;
+    required uint32 timer = 2;
+    repeated ClientCardInfo main = 3;
+    repeated ClientCardInfo hand = 4;
+    repeated ClientCardInfo mzone = 5;
+    repeated ClientCardInfo szone = 6;
+    repeated ClientCardInfo grave = 7;
+    repeated ClientCardInfo removed = 8;
+    repeated ClientCardInfo extra = 9;
 }
 message RspSTOCRestorePB
 {
-    required bool isFirst = 1;
+    required bool isfirst = 1;
     required uint32 hp0 = 2;
     required uint32 hp1 = 3;
     required bool isAuto = 4;
     required RspSTOCTurnPB turntime = 5;
-    required RspSTOCContextPB contextPlayer = 6;
-    required RspSTOCContextPB contextEnemy = 7;
-    optional uint32 phase = 8;
-    repeated ClientCardState cardstate = 9;
+    repeated RspSTOCContextPB contexts = 6;
+    optional uint32 phase = 7;
+    repeated ClientCardState cardstate = 8;
 }
 
 message RspSTOCNewPhasePB
@@ -283,4 +283,14 @@ message RspSTOCSelectOptionPB
 message RspSTOCConfirmCardPB
 {
     repeated ClientCardState cards = 1;
+    required uint32 type = 2;
+}
+
+message RspSTOCTossCoinPB
+{
+    repeated bool coins = 1;
+}
+
+message ReqCTOSSurrenderPB
+{
 }
