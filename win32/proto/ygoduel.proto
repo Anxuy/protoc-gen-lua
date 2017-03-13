@@ -290,7 +290,13 @@ message RspSTOCConfirmCardPB
 
 message RspSTOCTossCoinPB
 {
-    repeated bool coins = 1;
+    required uint32 playerid = 1;
+    repeated bool coins = 2;
+}
+message RspSTOCTossDicePB
+{
+    required uint32 playerid = 1;
+    repeated bool dices = 2;
 }
 
 message ReqCTOSSurrenderPB
