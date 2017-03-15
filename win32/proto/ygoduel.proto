@@ -291,12 +291,12 @@ message RspSTOCConfirmCardPB
 message RspSTOCTossCoinPB
 {
     required uint32 playerid = 1;
-    repeated bool coins = 2;
+    repeated uint32 coins = 2;
 }
 message RspSTOCTossDicePB
 {
     required uint32 playerid = 1;
-    repeated bool dices = 2;
+    repeated uint32 dices = 2;
 }
 
 message ReqCTOSSurrenderPB
@@ -312,4 +312,10 @@ message RspSTOCSelectPositionPB
     required uint32 playerid = 1;
     required uint32 cardid = 2;
     required uint32 positions = 3;
+}
+
+message RspSTOCShuffleHandsPB
+{
+    required uint32 playerid = 1;
+    repeated uint32 cardids = 2;
 }
