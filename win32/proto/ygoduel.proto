@@ -319,3 +319,10 @@ message RspSTOCShuffleHandsPB
     required uint32 playerid = 1;
     repeated uint32 cardids = 2;
 }
+
+message ReqCTOSConfigPB
+{
+    required bool isShuffle = 1;
+    required bool isRand = 2;
+}
+
