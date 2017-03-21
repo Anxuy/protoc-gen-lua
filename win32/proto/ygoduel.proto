@@ -326,3 +326,12 @@ message ReqCTOSConfigPB
     required bool isRand = 2;
 }
 
+message RspSTOCAttackPB
+{
+    required uint32 idAttacker = 1;
+    required uint32 locationAttacker = 2;
+    required uint32 seqAttacker = 3;
+    required uint32 idDefender = 4;
+    required uint32 locationDefender = 5;
+    required uint32 seqDefender = 6;
+}
