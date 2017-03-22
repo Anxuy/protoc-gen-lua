@@ -15,6 +15,11 @@ localTable.ROOM_NAME_FIELD = protobuf.FieldDescriptor()
 localTable.ROOM_TASKTYPE_FIELD = protobuf.FieldDescriptor()
 localTable.ROOM_NEEDHP_FIELD = protobuf.FieldDescriptor()
 
+NONE = 0
+MAINLINE = 1
+ACTIVITY = 2
+MATERIAL = 3
+
 localTable.TASKTYPE_NONE_ENUM.name = "NONE"
 localTable.TASKTYPE_NONE_ENUM.index = 0
 localTable.TASKTYPE_NONE_ENUM.number = 0
@@ -36,6 +41,7 @@ localTable.ROOM_ID_FIELD.number = 1
 localTable.ROOM_ID_FIELD.index = 0
 localTable.ROOM_ID_FIELD.label = 2
 localTable.ROOM_ID_FIELD.has_default_value = false
+localTable.ROOM_ID_FIELD.default_value = ""
 localTable.ROOM_ID_FIELD.type = 9
 localTable.ROOM_ID_FIELD.cpp_type = 9
 
@@ -45,6 +51,7 @@ localTable.ROOM_NAME_FIELD.number = 2
 localTable.ROOM_NAME_FIELD.index = 1
 localTable.ROOM_NAME_FIELD.label = 1
 localTable.ROOM_NAME_FIELD.has_default_value = false
+localTable.ROOM_NAME_FIELD.default_value = ""
 localTable.ROOM_NAME_FIELD.type = 9
 localTable.ROOM_NAME_FIELD.cpp_type = 9
 
@@ -54,7 +61,8 @@ localTable.ROOM_TASKTYPE_FIELD.number = 3
 localTable.ROOM_TASKTYPE_FIELD.index = 2
 localTable.ROOM_TASKTYPE_FIELD.label = 1
 localTable.ROOM_TASKTYPE_FIELD.has_default_value = false
-localTable.ROOM_TASKTYPE_FIELD.enum_type = TASKTYPE
+localTable.ROOM_TASKTYPE_FIELD.default_value = nil
+localTable.ROOM_TASKTYPE_FIELD.enum_type = localTable.TASKTYPE
 localTable.ROOM_TASKTYPE_FIELD.type = 14
 localTable.ROOM_TASKTYPE_FIELD.cpp_type = 8
 
@@ -76,9 +84,5 @@ ROOM.fields = {localTable.ROOM_ID_FIELD, localTable.ROOM_NAME_FIELD, localTable.
 ROOM.is_extendable = false
 ROOM.extensions = {}
 
-ACTIVITY = 2
-MAINLINE = 1
-MATERIAL = 3
-NONE = 0
 Room = protobuf.Message(ROOM)
 

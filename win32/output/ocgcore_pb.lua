@@ -47,6 +47,9 @@ GAMEMSGSELECTEFFECTYN = protobuf.Descriptor()
 GAMEMSGSELECTYESNO = protobuf.Descriptor()
 GAMEMSGSELECTOPTION = protobuf.Descriptor()
 
+OFFENSIVE = 1
+DEFENSIVE = 2
+
 localTable.TPTYPE_OFFENSIVE_ENUM.name = "OFFENSIVE"
 localTable.TPTYPE_OFFENSIVE_ENUM.index = 0
 localTable.TPTYPE_OFFENSIVE_ENUM.number = 1
@@ -62,6 +65,7 @@ localTable.RSPSYNCDECK_RESULT_FIELD.number = 1
 localTable.RSPSYNCDECK_RESULT_FIELD.index = 0
 localTable.RSPSYNCDECK_RESULT_FIELD.label = 1
 localTable.RSPSYNCDECK_RESULT_FIELD.has_default_value = false
+localTable.RSPSYNCDECK_RESULT_FIELD.default_value = nil
 localTable.RSPSYNCDECK_RESULT_FIELD.enum_type = NOVA_PB.RESULTTYPE
 localTable.RSPSYNCDECK_RESULT_FIELD.type = 14
 localTable.RSPSYNCDECK_RESULT_FIELD.cpp_type = 8
@@ -99,6 +103,7 @@ localTable.REQFINGERGUESSING_RESULT_FIELD.number = 1
 localTable.REQFINGERGUESSING_RESULT_FIELD.index = 0
 localTable.REQFINGERGUESSING_RESULT_FIELD.label = 1
 localTable.REQFINGERGUESSING_RESULT_FIELD.has_default_value = false
+localTable.REQFINGERGUESSING_RESULT_FIELD.default_value = 0
 localTable.REQFINGERGUESSING_RESULT_FIELD.type = 13
 localTable.REQFINGERGUESSING_RESULT_FIELD.cpp_type = 3
 
@@ -115,6 +120,7 @@ localTable.RSPFINGERGUESSING_WINNERUID_FIELD.number = 1
 localTable.RSPFINGERGUESSING_WINNERUID_FIELD.index = 0
 localTable.RSPFINGERGUESSING_WINNERUID_FIELD.label = 1
 localTable.RSPFINGERGUESSING_WINNERUID_FIELD.has_default_value = false
+localTable.RSPFINGERGUESSING_WINNERUID_FIELD.default_value = 0
 localTable.RSPFINGERGUESSING_WINNERUID_FIELD.type = 13
 localTable.RSPFINGERGUESSING_WINNERUID_FIELD.cpp_type = 3
 
@@ -124,6 +130,7 @@ localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.number = 2
 localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.index = 1
 localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.label = 1
 localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.has_default_value = false
+localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.default_value = 0
 localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.type = 13
 localTable.RSPFINGERGUESSING_WINNERHAND_FIELD.cpp_type = 3
 
@@ -147,6 +154,7 @@ localTable.REQCHATTEXT_TEXTINDEX_FIELD.number = 1
 localTable.REQCHATTEXT_TEXTINDEX_FIELD.index = 0
 localTable.REQCHATTEXT_TEXTINDEX_FIELD.label = 1
 localTable.REQCHATTEXT_TEXTINDEX_FIELD.has_default_value = false
+localTable.REQCHATTEXT_TEXTINDEX_FIELD.default_value = 0
 localTable.REQCHATTEXT_TEXTINDEX_FIELD.type = 13
 localTable.REQCHATTEXT_TEXTINDEX_FIELD.cpp_type = 3
 
@@ -180,6 +188,7 @@ localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.number = 1
 localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.index = 0
 localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.label = 1
 localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.has_default_value = false
+localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.default_value = 0
 localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.type = 13
 localTable.RSPOFFENSIVEORDEFENSIVE_OFFENSIVEUID_FIELD.cpp_type = 3
 
@@ -252,6 +261,7 @@ localTable.RSPDUELEND_WINUID_FIELD.number = 1
 localTable.RSPDUELEND_WINUID_FIELD.index = 0
 localTable.RSPDUELEND_WINUID_FIELD.label = 1
 localTable.RSPDUELEND_WINUID_FIELD.has_default_value = false
+localTable.RSPDUELEND_WINUID_FIELD.default_value = 0
 localTable.RSPDUELEND_WINUID_FIELD.type = 13
 localTable.RSPDUELEND_WINUID_FIELD.cpp_type = 3
 
@@ -275,6 +285,7 @@ localTable.GAMEMSGHINT_TYPE_FIELD.number = 1
 localTable.GAMEMSGHINT_TYPE_FIELD.index = 0
 localTable.GAMEMSGHINT_TYPE_FIELD.label = 1
 localTable.GAMEMSGHINT_TYPE_FIELD.has_default_value = false
+localTable.GAMEMSGHINT_TYPE_FIELD.default_value = 0
 localTable.GAMEMSGHINT_TYPE_FIELD.type = 13
 localTable.GAMEMSGHINT_TYPE_FIELD.cpp_type = 3
 
@@ -284,6 +295,7 @@ localTable.GAMEMSGHINT_PLAYER_FIELD.number = 2
 localTable.GAMEMSGHINT_PLAYER_FIELD.index = 1
 localTable.GAMEMSGHINT_PLAYER_FIELD.label = 1
 localTable.GAMEMSGHINT_PLAYER_FIELD.has_default_value = false
+localTable.GAMEMSGHINT_PLAYER_FIELD.default_value = 0
 localTable.GAMEMSGHINT_PLAYER_FIELD.type = 13
 localTable.GAMEMSGHINT_PLAYER_FIELD.cpp_type = 3
 
@@ -300,6 +312,7 @@ localTable.GAMEMSGWIN_TYPE_FIELD.number = 1
 localTable.GAMEMSGWIN_TYPE_FIELD.index = 0
 localTable.GAMEMSGWIN_TYPE_FIELD.label = 1
 localTable.GAMEMSGWIN_TYPE_FIELD.has_default_value = false
+localTable.GAMEMSGWIN_TYPE_FIELD.default_value = 0
 localTable.GAMEMSGWIN_TYPE_FIELD.type = 13
 localTable.GAMEMSGWIN_TYPE_FIELD.cpp_type = 3
 
@@ -309,6 +322,7 @@ localTable.GAMEMSGWIN_PLAYER_FIELD.number = 2
 localTable.GAMEMSGWIN_PLAYER_FIELD.index = 1
 localTable.GAMEMSGWIN_PLAYER_FIELD.label = 1
 localTable.GAMEMSGWIN_PLAYER_FIELD.has_default_value = false
+localTable.GAMEMSGWIN_PLAYER_FIELD.default_value = 0
 localTable.GAMEMSGWIN_PLAYER_FIELD.type = 13
 localTable.GAMEMSGWIN_PLAYER_FIELD.cpp_type = 3
 
@@ -355,7 +369,6 @@ GAMEMSGSELECTOPTION.fields = {}
 GAMEMSGSELECTOPTION.is_extendable = false
 GAMEMSGSELECTOPTION.extensions = {}
 
-DEFENSIVE = 2
 GameMsgHint = protobuf.Message(GAMEMSGHINT)
 GameMsgIdleCmd = protobuf.Message(GAMEMSGIDLECMD)
 GameMsgRetry = protobuf.Message(GAMEMSGRETRY)
@@ -364,7 +377,6 @@ GameMsgSelectEffectYN = protobuf.Message(GAMEMSGSELECTEFFECTYN)
 GameMsgSelectOption = protobuf.Message(GAMEMSGSELECTOPTION)
 GameMsgSelectYesNo = protobuf.Message(GAMEMSGSELECTYESNO)
 GameMsgWin = protobuf.Message(GAMEMSGWIN)
-OFFENSIVE = 1
 ReqChatText = protobuf.Message(REQCHATTEXT)
 ReqFingerGuessing = protobuf.Message(REQFINGERGUESSING)
 ReqLeaveGame = protobuf.Message(REQLEAVEGAME)

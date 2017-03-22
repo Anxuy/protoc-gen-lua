@@ -443,19 +443,19 @@ PUSHRIVALRELOGON = protobuf.Descriptor()
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD = protobuf.FieldDescriptor()
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD = protobuf.FieldDescriptor()
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD = protobuf.FieldDescriptor()
-PROTOVSINFO = protobuf.Descriptor()
-localTable.PROTOVSINFO_RESULT_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_ROOMID_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_TABLEID_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_RIVAL_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_SEC_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_MICS_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_UIDS_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_MAXLP_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_TIMELIMIT_FIELD = protobuf.FieldDescriptor()
-localTable.PROTOVSINFO_SHUFFLE_FIELD = protobuf.FieldDescriptor()
+RSPPROTOVSINFO = protobuf.Descriptor()
+localTable.RSPPROTOVSINFO_RESULT_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_ROOMID_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_TABLEID_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_RIVAL_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_SEC_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_MICS_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_UIDS_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_MAXLP_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD = protobuf.FieldDescriptor()
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD = protobuf.FieldDescriptor()
 PUSHAUTOMATCH = protobuf.Descriptor()
 localTable.PUSHAUTOMATCH_INFO_FIELD = protobuf.FieldDescriptor()
 PUSHSCORERACE = protobuf.Descriptor()
@@ -1342,6 +1342,232 @@ RSPTHEMEBOXINFO = protobuf.Descriptor()
 localTable.RSPTHEMEBOXINFO_RESULT_FIELD = protobuf.FieldDescriptor()
 localTable.RSPTHEMEBOXINFO_BOXES_FIELD = protobuf.FieldDescriptor()
 
+Invite = 1
+AutoMatch = 2
+VsDesk = 3
+Round90 = 4
+LP4000 = 5
+ScoreRace = 6
+Succeed = 100
+Error = 1
+NullUsr = 110
+NullPwd = 111
+NullPid = 112
+NullPType = 113
+NullVersion = 114
+NullSType = 115
+InvalidPara = 116
+UserNotExist = 117
+AuthFailed = 118
+Database = 119
+DupUsr = 120
+ExpiredVersion = 121
+InvalidVCode = 122
+AlreadyBind = 123
+InvalidVCodeType = 124
+NullUid = 125
+NullPhone = 126
+NullVCode = 127
+FullBind = 128
+BizLimitCtl = 129
+NovaInvalidPara = 250
+NovaUserNoExist = 251
+NovaAuthFailed = 252
+NovaDatabase = 253
+NotInRoom = 254
+NoRival = 255
+Unknown = 256
+Bind = 257
+PlayerInfo = 258
+ExchLimited = 259
+LevelLimited = 260
+UidNotMatch = 261
+InvalidState = 262
+NetError = 263
+LowPermission = 264
+MaxTeamPlayers = 265
+MaxTeamApplicants = 266
+MaxTeamViceCaptain = 267
+TeamExitLt7Day = 268
+TeamDismissLt7Day = 269
+NotInTeam = 270
+LowCaptainLevel = 271
+LowPower = 272
+LowPoints = 273
+LowContribute = 274
+LowPlayerCount = 275
+Expired = 276
+Timeout = 277
+MaxVsCnt = 278
+WrongTiming = 279
+NoMatch = 280
+AbnormalExit = 281
+InvalidRaise = 282
+TeamNoExist = 283
+TeamFull = 284
+DupMonthlyCard = 285
+LowCard = 286
+MaxCard = 287
+LowMoney = 288
+MaxDeckGrid = 289
+MaxDeck = 290
+LowLevel = 291
+DupName = 292
+InvalidInviteCode = 300
+InviteCountFull = 301
+LowCardFrag = 302
+AddMyselfAsFriend = 303
+FriendListFull = 304
+HasRestrictedCard = 305
+TeamAlreadyApplied = 306
+TimeTooShort = 307
+WordsToolLong = 308
+TeamAlreadyInOther = 309
+LowDeckCardCnt = 310
+HighDeckCardCnt = 311
+BindSelfInviteCode = 312
+BindExistInviteCode = 313
+LowTrunkey = 314
+AmPunishAbnormal = 350
+WrongOrderMoney = 351
+InPunishment = 352
+NoFriend = 353
+NotOldplayer = 354
+NewSignin = 355
+LowLevelOld = 356
+SignedToday = 357
+FinishSign = 358
+NoEnoughFight = 359
+OtherFriendListFull = 360
+NoOnline = 361
+LowGiftCard = 362
+YesFriend = 363
+YesApplicant = 364
+FinishActivity = 365
+InDuelking = 366
+EffectOff = 1000
+AccountPasswordError = 1001
+NickNameNull = 1002
+AttributeNull = 1003
+SensitiveWord = 1004
+BuySuccess = 1005
+GetAwardSuccess = 1006
+CreateTeamFailed = 1007
+TeamDetails = 1008
+ExchangeFailed = 1009
+TeamUngroup = 1010
+DonateFailed = 1011
+TeamUpFailed = 1012
+DonateSuccess = 1013
+TeamIdNull = 1014
+TeamUpSuccess = 1015
+MatchAgain = 1016
+BreakupFailed = 1017
+SelectedVecNull = 1018
+Acc_Psw_Format_Error = 2000
+NickName_Format_Error = 2001
+TeamName_Format_Error = 2002
+Invitation_Format_Error = 2003
+Cant_Raise = 2004
+ScoreRace_OpenTime = 2005
+Perfect_Name_Format_Error = 2006
+Perfect_Phone_Format_Error = 2007
+Perfect_Home_Format_Error = 2008
+Perfect_QQ_Format_Error = 2009
+Perfect_Address_Format_Error = 2010
+FriendClose = 2011
+SpecialCardClose = 2012
+NPCClose = 2013
+FunnyClose = 2014
+NORESPONSE = 1111111
+Init = 0
+Done = 1
+Bonus = 2
+R_Card = 1
+R_Money = 2
+R_Fragment = 3
+Official = 0
+Qihoo = 1
+Baidu = 2
+Uc = 3
+Mi = 4
+Wdj = 5
+Ali = 6
+Weixin = 7
+RoyalRoad = 1
+Legend = 2
+Collector = 3
+Team = 4
+Request = 0
+Response = 1
+Push = 2
+Ack = 3
+Internal = 4
+External = 5
+S_Normal = 0
+S_MonthlyCard = 1
+S_OfficialGift = 2
+Earth = 1
+Water = 2
+Fire = 3
+Wind = 4
+Light = 5
+Dark = 6
+God = 7
+P_Card = 0
+P_CardMonster = 1
+P_CardMagic = 2
+P_CardTrap = 3
+P_CardStyled = 4
+P_CardAll = 5
+P_CardEffectMonster = 6
+P_CardEarth = 7
+P_CardDark = 8
+P_CardWaterFire = 9
+P_CardWindLight = 10
+P_CardNew = 11
+P_Money = 12
+P_Fragment = 13
+P_CustAvatar = 14
+P_CustCardCover = 15
+P_Trunkey = 16
+P_GiftCard = 17
+P_RealCard = 18
+W_Share = 1
+W_MonthlyCard = 2
+W_Activity = 3
+W_Compensation = 4
+W_ScoreRace = 5
+J_None = 0
+J_Captain = 1
+J_ViceCaptain = 2
+J_Major = 3
+Player = 4
+TS_Normal = 0
+TS_Dismiss = 1
+TS_DismissCancel = 2
+TS_Dismissed = 3
+TL_None = 1
+TL_Bronze = 2
+TL_Silver = 3
+TL_Gold = 4
+TL_Legend = 5
+RT_None = 0
+RT_B7B10 = 1
+RT_S2S6 = 2
+RT_S6Plus = 3
+KeyMonster = 1
+KeyMagic = 2
+KeyTrap = 3
+E_Normal = 0
+E_GiveUp = 1
+E_Force = 2
+E_Offline = 3
+VC_General = 1
+VC_Register = 2
+VC_ResetPwd = 3
+VC_AlterInfo = 4
+
 localTable.ROOMID_INVITE_ENUM.name = "Invite"
 localTable.ROOMID_INVITE_ENUM.index = 0
 localTable.ROOMID_INVITE_ENUM.number = 1
@@ -2101,6 +2327,7 @@ localTable.REQLOGON_UID_FIELD.number = 1
 localTable.REQLOGON_UID_FIELD.index = 0
 localTable.REQLOGON_UID_FIELD.label = 1
 localTable.REQLOGON_UID_FIELD.has_default_value = false
+localTable.REQLOGON_UID_FIELD.default_value = 0
 localTable.REQLOGON_UID_FIELD.type = 13
 localTable.REQLOGON_UID_FIELD.cpp_type = 3
 
@@ -2110,6 +2337,7 @@ localTable.REQLOGON_TOKEN_FIELD.number = 2
 localTable.REQLOGON_TOKEN_FIELD.index = 1
 localTable.REQLOGON_TOKEN_FIELD.label = 1
 localTable.REQLOGON_TOKEN_FIELD.has_default_value = false
+localTable.REQLOGON_TOKEN_FIELD.default_value = ""
 localTable.REQLOGON_TOKEN_FIELD.type = 9
 localTable.REQLOGON_TOKEN_FIELD.cpp_type = 9
 
@@ -2146,6 +2374,7 @@ localTable.RSPLOGON_LASTERROR_FIELD.number = 3
 localTable.RSPLOGON_LASTERROR_FIELD.index = 2
 localTable.RSPLOGON_LASTERROR_FIELD.label = 1
 localTable.RSPLOGON_LASTERROR_FIELD.has_default_value = false
+localTable.RSPLOGON_LASTERROR_FIELD.default_value = ""
 localTable.RSPLOGON_LASTERROR_FIELD.type = 9
 localTable.RSPLOGON_LASTERROR_FIELD.cpp_type = 9
 
@@ -2162,6 +2391,7 @@ localTable.REQLOGOUT_UID_FIELD.number = 1
 localTable.REQLOGOUT_UID_FIELD.index = 0
 localTable.REQLOGOUT_UID_FIELD.label = 1
 localTable.REQLOGOUT_UID_FIELD.has_default_value = false
+localTable.REQLOGOUT_UID_FIELD.default_value = 0
 localTable.REQLOGOUT_UID_FIELD.type = 13
 localTable.REQLOGOUT_UID_FIELD.cpp_type = 3
 
@@ -2195,6 +2425,7 @@ localTable.REQHELLO_UID_FIELD.number = 1
 localTable.REQHELLO_UID_FIELD.index = 0
 localTable.REQHELLO_UID_FIELD.label = 1
 localTable.REQHELLO_UID_FIELD.has_default_value = false
+localTable.REQHELLO_UID_FIELD.default_value = 0
 localTable.REQHELLO_UID_FIELD.type = 13
 localTable.REQHELLO_UID_FIELD.cpp_type = 3
 
@@ -2228,6 +2459,7 @@ localTable.REQFILLPLAYERINFO_UID_FIELD.number = 1
 localTable.REQFILLPLAYERINFO_UID_FIELD.index = 0
 localTable.REQFILLPLAYERINFO_UID_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_UID_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_UID_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_UID_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_UID_FIELD.cpp_type = 3
 
@@ -2237,6 +2469,7 @@ localTable.REQFILLPLAYERINFO_ATTR_FIELD.number = 2
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.index = 1
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_ATTR_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.cpp_type = 3
 
@@ -2246,6 +2479,7 @@ localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.number = 3
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.index = 2
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.default_value = ""
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.type = 12
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.cpp_type = 9
 
@@ -2255,6 +2489,7 @@ localTable.REQFILLPLAYERINFO_AVATARID_FIELD.number = 4
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.index = 3
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_AVATARID_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -2264,6 +2499,7 @@ localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.number = 5
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.index = 4
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.default_value = ""
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.type = 9
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.cpp_type = 9
 
@@ -2297,6 +2533,7 @@ localTable.REQGETPLAYERINFO_UID_FIELD.number = 1
 localTable.REQGETPLAYERINFO_UID_FIELD.index = 0
 localTable.REQGETPLAYERINFO_UID_FIELD.label = 1
 localTable.REQGETPLAYERINFO_UID_FIELD.has_default_value = false
+localTable.REQGETPLAYERINFO_UID_FIELD.default_value = 0
 localTable.REQGETPLAYERINFO_UID_FIELD.type = 13
 localTable.REQGETPLAYERINFO_UID_FIELD.cpp_type = 3
 
@@ -2313,6 +2550,7 @@ localTable.PROTOTRUNKEY_TYPE_FIELD.number = 1
 localTable.PROTOTRUNKEY_TYPE_FIELD.index = 0
 localTable.PROTOTRUNKEY_TYPE_FIELD.label = 1
 localTable.PROTOTRUNKEY_TYPE_FIELD.has_default_value = false
+localTable.PROTOTRUNKEY_TYPE_FIELD.default_value = 0
 localTable.PROTOTRUNKEY_TYPE_FIELD.type = 13
 localTable.PROTOTRUNKEY_TYPE_FIELD.cpp_type = 3
 
@@ -2322,6 +2560,7 @@ localTable.PROTOTRUNKEY_VALUE_FIELD.number = 2
 localTable.PROTOTRUNKEY_VALUE_FIELD.index = 1
 localTable.PROTOTRUNKEY_VALUE_FIELD.label = 1
 localTable.PROTOTRUNKEY_VALUE_FIELD.has_default_value = false
+localTable.PROTOTRUNKEY_VALUE_FIELD.default_value = 0
 localTable.PROTOTRUNKEY_VALUE_FIELD.type = 13
 localTable.PROTOTRUNKEY_VALUE_FIELD.cpp_type = 3
 
@@ -2338,6 +2577,7 @@ localTable.PROTOPLAYERINFO_UID_FIELD.number = 1
 localTable.PROTOPLAYERINFO_UID_FIELD.index = 0
 localTable.PROTOPLAYERINFO_UID_FIELD.label = 1
 localTable.PROTOPLAYERINFO_UID_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_UID_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_UID_FIELD.type = 13
 localTable.PROTOPLAYERINFO_UID_FIELD.cpp_type = 3
 
@@ -2347,6 +2587,7 @@ localTable.PROTOPLAYERINFO_NICKNAME_FIELD.number = 2
 localTable.PROTOPLAYERINFO_NICKNAME_FIELD.index = 1
 localTable.PROTOPLAYERINFO_NICKNAME_FIELD.label = 1
 localTable.PROTOPLAYERINFO_NICKNAME_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_NICKNAME_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_NICKNAME_FIELD.type = 12
 localTable.PROTOPLAYERINFO_NICKNAME_FIELD.cpp_type = 9
 
@@ -2356,6 +2597,7 @@ localTable.PROTOPLAYERINFO_ATTR_FIELD.number = 3
 localTable.PROTOPLAYERINFO_ATTR_FIELD.index = 2
 localTable.PROTOPLAYERINFO_ATTR_FIELD.label = 1
 localTable.PROTOPLAYERINFO_ATTR_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_ATTR_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_ATTR_FIELD.type = 13
 localTable.PROTOPLAYERINFO_ATTR_FIELD.cpp_type = 3
 
@@ -2365,6 +2607,7 @@ localTable.PROTOPLAYERINFO_AVATARID_FIELD.number = 4
 localTable.PROTOPLAYERINFO_AVATARID_FIELD.index = 3
 localTable.PROTOPLAYERINFO_AVATARID_FIELD.label = 1
 localTable.PROTOPLAYERINFO_AVATARID_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_AVATARID_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_AVATARID_FIELD.type = 13
 localTable.PROTOPLAYERINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -2374,6 +2617,7 @@ localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.number = 5
 localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.index = 4
 localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.label = 1
 localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.type = 13
 localTable.PROTOPLAYERINFO_CARDBACKID_FIELD.cpp_type = 3
 
@@ -2383,6 +2627,7 @@ localTable.PROTOPLAYERINFO_LEVEL_FIELD.number = 6
 localTable.PROTOPLAYERINFO_LEVEL_FIELD.index = 5
 localTable.PROTOPLAYERINFO_LEVEL_FIELD.label = 1
 localTable.PROTOPLAYERINFO_LEVEL_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_LEVEL_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_LEVEL_FIELD.type = 13
 localTable.PROTOPLAYERINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -2392,6 +2637,7 @@ localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.number = 7
 localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.index = 6
 localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.label = 1
 localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.type = 13
 localTable.PROTOPLAYERINFO_NPCLEVEL_FIELD.cpp_type = 3
 
@@ -2401,6 +2647,7 @@ localTable.PROTOPLAYERINFO_MONEY_FIELD.number = 8
 localTable.PROTOPLAYERINFO_MONEY_FIELD.index = 7
 localTable.PROTOPLAYERINFO_MONEY_FIELD.label = 1
 localTable.PROTOPLAYERINFO_MONEY_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_MONEY_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_MONEY_FIELD.type = 13
 localTable.PROTOPLAYERINFO_MONEY_FIELD.cpp_type = 3
 
@@ -2410,6 +2657,7 @@ localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.number = 9
 localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.index = 8
 localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.label = 1
 localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.type = 13
 localTable.PROTOPLAYERINFO_CARDFRAGMENT_FIELD.cpp_type = 3
 
@@ -2419,6 +2667,7 @@ localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.number = 10
 localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.index = 9
 localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.label = 1
 localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.type = 13
 localTable.PROTOPLAYERINFO_DECKINDEX_FIELD.cpp_type = 3
 
@@ -2428,6 +2677,7 @@ localTable.PROTOPLAYERINFO_DECKCNT_FIELD.number = 11
 localTable.PROTOPLAYERINFO_DECKCNT_FIELD.index = 10
 localTable.PROTOPLAYERINFO_DECKCNT_FIELD.label = 1
 localTable.PROTOPLAYERINFO_DECKCNT_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_DECKCNT_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_DECKCNT_FIELD.type = 13
 localTable.PROTOPLAYERINFO_DECKCNT_FIELD.cpp_type = 3
 
@@ -2437,6 +2687,7 @@ localTable.PROTOPLAYERINFO_POWER_FIELD.number = 12
 localTable.PROTOPLAYERINFO_POWER_FIELD.index = 11
 localTable.PROTOPLAYERINFO_POWER_FIELD.label = 1
 localTable.PROTOPLAYERINFO_POWER_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_POWER_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_POWER_FIELD.type = 13
 localTable.PROTOPLAYERINFO_POWER_FIELD.cpp_type = 3
 
@@ -2446,6 +2697,7 @@ localTable.PROTOPLAYERINFO_POINTS_FIELD.number = 13
 localTable.PROTOPLAYERINFO_POINTS_FIELD.index = 12
 localTable.PROTOPLAYERINFO_POINTS_FIELD.label = 1
 localTable.PROTOPLAYERINFO_POINTS_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_POINTS_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_POINTS_FIELD.type = 13
 localTable.PROTOPLAYERINFO_POINTS_FIELD.cpp_type = 3
 
@@ -2455,6 +2707,7 @@ localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.number = 14
 localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.index = 13
 localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.label = 1
 localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.type = 13
 localTable.PROTOPLAYERINFO_NEXTPOWER_FIELD.cpp_type = 3
 
@@ -2464,6 +2717,7 @@ localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.number = 15
 localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.index = 14
 localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.label = 1
 localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.type = 13
 localTable.PROTOPLAYERINFO_NEXTPOINTS_FIELD.cpp_type = 3
 
@@ -2473,6 +2727,7 @@ localTable.PROTOPLAYERINFO_TEAMID_FIELD.number = 16
 localTable.PROTOPLAYERINFO_TEAMID_FIELD.index = 15
 localTable.PROTOPLAYERINFO_TEAMID_FIELD.label = 1
 localTable.PROTOPLAYERINFO_TEAMID_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_TEAMID_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_TEAMID_FIELD.type = 13
 localTable.PROTOPLAYERINFO_TEAMID_FIELD.cpp_type = 3
 
@@ -2482,6 +2737,7 @@ localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.number = 17
 localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.index = 16
 localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.label = 1
 localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.type = 12
 localTable.PROTOPLAYERINFO_TEAMNAME_FIELD.cpp_type = 9
 
@@ -2491,6 +2747,7 @@ localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.number = 18
 localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.index = 17
 localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.type = 13
 localTable.PROTOPLAYERINFO_TEAMROLE_FIELD.cpp_type = 3
 
@@ -2500,6 +2757,7 @@ localTable.PROTOPLAYERINFO_INVITECODE_FIELD.number = 19
 localTable.PROTOPLAYERINFO_INVITECODE_FIELD.index = 18
 localTable.PROTOPLAYERINFO_INVITECODE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_INVITECODE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_INVITECODE_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_INVITECODE_FIELD.type = 9
 localTable.PROTOPLAYERINFO_INVITECODE_FIELD.cpp_type = 9
 
@@ -2509,6 +2767,7 @@ localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.number = 20
 localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.index = 19
 localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.label = 1
 localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.type = 13
 localTable.PROTOPLAYERINFO_INVITELEFTCNT_FIELD.cpp_type = 3
 
@@ -2518,6 +2777,7 @@ localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.number = 21
 localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.index = 20
 localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.type = 9
 localTable.PROTOPLAYERINFO_BINDINGCODE_FIELD.cpp_type = 9
 
@@ -2527,6 +2787,7 @@ localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.number = 22
 localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.index = 21
 localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.label = 1
 localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.default_value = 0.0
 localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.type = 1
 localTable.PROTOPLAYERINFO_CARDRATIO_FIELD.cpp_type = 5
 
@@ -2536,6 +2797,7 @@ localTable.PROTOPLAYERINFO_SCORE_FIELD.number = 23
 localTable.PROTOPLAYERINFO_SCORE_FIELD.index = 22
 localTable.PROTOPLAYERINFO_SCORE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_SCORE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_SCORE_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_SCORE_FIELD.type = 13
 localTable.PROTOPLAYERINFO_SCORE_FIELD.cpp_type = 3
 
@@ -2556,6 +2818,7 @@ localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.number = 25
 localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.index = 24
 localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.label = 1
 localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.type = 13
 localTable.PROTOPLAYERINFO_SCORETEAM_FIELD.cpp_type = 3
 
@@ -2565,6 +2828,7 @@ localTable.PROTOPLAYERINFO_REALNAME_FIELD.number = 26
 localTable.PROTOPLAYERINFO_REALNAME_FIELD.index = 25
 localTable.PROTOPLAYERINFO_REALNAME_FIELD.label = 1
 localTable.PROTOPLAYERINFO_REALNAME_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_REALNAME_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_REALNAME_FIELD.type = 12
 localTable.PROTOPLAYERINFO_REALNAME_FIELD.cpp_type = 9
 
@@ -2574,6 +2838,7 @@ localTable.PROTOPLAYERINFO_MOBILE_FIELD.number = 27
 localTable.PROTOPLAYERINFO_MOBILE_FIELD.index = 26
 localTable.PROTOPLAYERINFO_MOBILE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_MOBILE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_MOBILE_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_MOBILE_FIELD.type = 9
 localTable.PROTOPLAYERINFO_MOBILE_FIELD.cpp_type = 9
 
@@ -2583,6 +2848,7 @@ localTable.PROTOPLAYERINFO_PHONE_FIELD.number = 28
 localTable.PROTOPLAYERINFO_PHONE_FIELD.index = 27
 localTable.PROTOPLAYERINFO_PHONE_FIELD.label = 1
 localTable.PROTOPLAYERINFO_PHONE_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_PHONE_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_PHONE_FIELD.type = 9
 localTable.PROTOPLAYERINFO_PHONE_FIELD.cpp_type = 9
 
@@ -2592,6 +2858,7 @@ localTable.PROTOPLAYERINFO_QQ_FIELD.number = 29
 localTable.PROTOPLAYERINFO_QQ_FIELD.index = 28
 localTable.PROTOPLAYERINFO_QQ_FIELD.label = 1
 localTable.PROTOPLAYERINFO_QQ_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_QQ_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_QQ_FIELD.type = 9
 localTable.PROTOPLAYERINFO_QQ_FIELD.cpp_type = 9
 
@@ -2601,6 +2868,7 @@ localTable.PROTOPLAYERINFO_ADDRESS_FIELD.number = 30
 localTable.PROTOPLAYERINFO_ADDRESS_FIELD.index = 29
 localTable.PROTOPLAYERINFO_ADDRESS_FIELD.label = 1
 localTable.PROTOPLAYERINFO_ADDRESS_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_ADDRESS_FIELD.default_value = ""
 localTable.PROTOPLAYERINFO_ADDRESS_FIELD.type = 12
 localTable.PROTOPLAYERINFO_ADDRESS_FIELD.cpp_type = 9
 
@@ -2621,6 +2889,7 @@ localTable.PROTOPLAYERINFO_VIP_FIELD.number = 32
 localTable.PROTOPLAYERINFO_VIP_FIELD.index = 31
 localTable.PROTOPLAYERINFO_VIP_FIELD.label = 1
 localTable.PROTOPLAYERINFO_VIP_FIELD.has_default_value = false
+localTable.PROTOPLAYERINFO_VIP_FIELD.default_value = 0
 localTable.PROTOPLAYERINFO_VIP_FIELD.type = 13
 localTable.PROTOPLAYERINFO_VIP_FIELD.cpp_type = 3
 
@@ -2647,6 +2916,7 @@ localTable.RSPGETPLAYERINFO_INFO_FIELD.number = 2
 localTable.RSPGETPLAYERINFO_INFO_FIELD.index = 1
 localTable.RSPGETPLAYERINFO_INFO_FIELD.label = 1
 localTable.RSPGETPLAYERINFO_INFO_FIELD.has_default_value = false
+localTable.RSPGETPLAYERINFO_INFO_FIELD.default_value = nil
 localTable.RSPGETPLAYERINFO_INFO_FIELD.message_type = PROTOPLAYERINFO
 localTable.RSPGETPLAYERINFO_INFO_FIELD.type = 11
 localTable.RSPGETPLAYERINFO_INFO_FIELD.cpp_type = 10
@@ -2664,6 +2934,7 @@ localTable.REQGETROOMLIST_UID_FIELD.number = 1
 localTable.REQGETROOMLIST_UID_FIELD.index = 0
 localTable.REQGETROOMLIST_UID_FIELD.label = 1
 localTable.REQGETROOMLIST_UID_FIELD.has_default_value = false
+localTable.REQGETROOMLIST_UID_FIELD.default_value = 0
 localTable.REQGETROOMLIST_UID_FIELD.type = 13
 localTable.REQGETROOMLIST_UID_FIELD.cpp_type = 3
 
@@ -2680,6 +2951,7 @@ localTable.ROOMINFO_ROOMID_FIELD.number = 1
 localTable.ROOMINFO_ROOMID_FIELD.index = 0
 localTable.ROOMINFO_ROOMID_FIELD.label = 1
 localTable.ROOMINFO_ROOMID_FIELD.has_default_value = false
+localTable.ROOMINFO_ROOMID_FIELD.default_value = 0
 localTable.ROOMINFO_ROOMID_FIELD.type = 13
 localTable.ROOMINFO_ROOMID_FIELD.cpp_type = 3
 
@@ -2689,6 +2961,7 @@ localTable.ROOMINFO_NAME_FIELD.number = 2
 localTable.ROOMINFO_NAME_FIELD.index = 1
 localTable.ROOMINFO_NAME_FIELD.label = 1
 localTable.ROOMINFO_NAME_FIELD.has_default_value = false
+localTable.ROOMINFO_NAME_FIELD.default_value = ""
 localTable.ROOMINFO_NAME_FIELD.type = 9
 localTable.ROOMINFO_NAME_FIELD.cpp_type = 9
 
@@ -2698,6 +2971,7 @@ localTable.ROOMINFO_MAXCNT_FIELD.number = 3
 localTable.ROOMINFO_MAXCNT_FIELD.index = 2
 localTable.ROOMINFO_MAXCNT_FIELD.label = 1
 localTable.ROOMINFO_MAXCNT_FIELD.has_default_value = false
+localTable.ROOMINFO_MAXCNT_FIELD.default_value = 0
 localTable.ROOMINFO_MAXCNT_FIELD.type = 13
 localTable.ROOMINFO_MAXCNT_FIELD.cpp_type = 3
 
@@ -2742,6 +3016,7 @@ localTable.REQENTERROOM_UID_FIELD.number = 1
 localTable.REQENTERROOM_UID_FIELD.index = 0
 localTable.REQENTERROOM_UID_FIELD.label = 1
 localTable.REQENTERROOM_UID_FIELD.has_default_value = false
+localTable.REQENTERROOM_UID_FIELD.default_value = 0
 localTable.REQENTERROOM_UID_FIELD.type = 13
 localTable.REQENTERROOM_UID_FIELD.cpp_type = 3
 
@@ -2751,6 +3026,7 @@ localTable.REQENTERROOM_ROOMID_FIELD.number = 2
 localTable.REQENTERROOM_ROOMID_FIELD.index = 1
 localTable.REQENTERROOM_ROOMID_FIELD.label = 1
 localTable.REQENTERROOM_ROOMID_FIELD.has_default_value = false
+localTable.REQENTERROOM_ROOMID_FIELD.default_value = 0
 localTable.REQENTERROOM_ROOMID_FIELD.type = 13
 localTable.REQENTERROOM_ROOMID_FIELD.cpp_type = 3
 
@@ -2784,6 +3060,7 @@ localTable.REQLEAVEROOM_UID_FIELD.number = 1
 localTable.REQLEAVEROOM_UID_FIELD.index = 0
 localTable.REQLEAVEROOM_UID_FIELD.label = 1
 localTable.REQLEAVEROOM_UID_FIELD.has_default_value = false
+localTable.REQLEAVEROOM_UID_FIELD.default_value = 0
 localTable.REQLEAVEROOM_UID_FIELD.type = 13
 localTable.REQLEAVEROOM_UID_FIELD.cpp_type = 3
 
@@ -2793,6 +3070,7 @@ localTable.REQLEAVEROOM_ROOMID_FIELD.number = 2
 localTable.REQLEAVEROOM_ROOMID_FIELD.index = 1
 localTable.REQLEAVEROOM_ROOMID_FIELD.label = 1
 localTable.REQLEAVEROOM_ROOMID_FIELD.has_default_value = false
+localTable.REQLEAVEROOM_ROOMID_FIELD.default_value = 0
 localTable.REQLEAVEROOM_ROOMID_FIELD.type = 13
 localTable.REQLEAVEROOM_ROOMID_FIELD.cpp_type = 3
 
@@ -2826,6 +3104,7 @@ localTable.REQGAMEREADY_UID_FIELD.number = 1
 localTable.REQGAMEREADY_UID_FIELD.index = 0
 localTable.REQGAMEREADY_UID_FIELD.label = 1
 localTable.REQGAMEREADY_UID_FIELD.has_default_value = false
+localTable.REQGAMEREADY_UID_FIELD.default_value = 0
 localTable.REQGAMEREADY_UID_FIELD.type = 13
 localTable.REQGAMEREADY_UID_FIELD.cpp_type = 3
 
@@ -2859,6 +3138,7 @@ localTable.REQGETPREVSINFO_UID_FIELD.number = 1
 localTable.REQGETPREVSINFO_UID_FIELD.index = 0
 localTable.REQGETPREVSINFO_UID_FIELD.label = 1
 localTable.REQGETPREVSINFO_UID_FIELD.has_default_value = false
+localTable.REQGETPREVSINFO_UID_FIELD.default_value = 0
 localTable.REQGETPREVSINFO_UID_FIELD.type = 13
 localTable.REQGETPREVSINFO_UID_FIELD.cpp_type = 3
 
@@ -2875,6 +3155,7 @@ localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.number = 1
 localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.index = 0
 localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.label = 1
 localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.has_default_value = false
+localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.default_value = 0
 localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.type = 13
 localTable.PROTOPREVSINFO_LEFTAMCNT_FIELD.cpp_type = 3
 
@@ -2884,6 +3165,7 @@ localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.number = 2
 localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.index = 1
 localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.label = 1
 localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.has_default_value = false
+localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.default_value = 0
 localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.type = 13
 localTable.PROTOPREVSINFO_LEFTAMRAISECNT_FIELD.cpp_type = 3
 
@@ -2893,6 +3175,7 @@ localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.number = 3
 localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.index = 2
 localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.label = 1
 localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.has_default_value = false
+localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.default_value = false
 localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.type = 8
 localTable.PROTOPREVSINFO_SCORERACEOPEN_FIELD.cpp_type = 7
 
@@ -2909,6 +3192,7 @@ localTable.PROTOAMRAISERULE_ID_FIELD.number = 1
 localTable.PROTOAMRAISERULE_ID_FIELD.index = 0
 localTable.PROTOAMRAISERULE_ID_FIELD.label = 1
 localTable.PROTOAMRAISERULE_ID_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_ID_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_ID_FIELD.type = 13
 localTable.PROTOAMRAISERULE_ID_FIELD.cpp_type = 3
 
@@ -2918,6 +3202,7 @@ localTable.PROTOAMRAISERULE_LVB_FIELD.number = 2
 localTable.PROTOAMRAISERULE_LVB_FIELD.index = 1
 localTable.PROTOAMRAISERULE_LVB_FIELD.label = 1
 localTable.PROTOAMRAISERULE_LVB_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_LVB_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_LVB_FIELD.type = 13
 localTable.PROTOAMRAISERULE_LVB_FIELD.cpp_type = 3
 
@@ -2927,6 +3212,7 @@ localTable.PROTOAMRAISERULE_LVE_FIELD.number = 3
 localTable.PROTOAMRAISERULE_LVE_FIELD.index = 2
 localTable.PROTOAMRAISERULE_LVE_FIELD.label = 1
 localTable.PROTOAMRAISERULE_LVE_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_LVE_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_LVE_FIELD.type = 13
 localTable.PROTOAMRAISERULE_LVE_FIELD.cpp_type = 3
 
@@ -2936,6 +3222,7 @@ localTable.PROTOAMRAISERULE_LVMB_FIELD.number = 4
 localTable.PROTOAMRAISERULE_LVMB_FIELD.index = 3
 localTable.PROTOAMRAISERULE_LVMB_FIELD.label = 1
 localTable.PROTOAMRAISERULE_LVMB_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_LVMB_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_LVMB_FIELD.type = 13
 localTable.PROTOAMRAISERULE_LVMB_FIELD.cpp_type = 3
 
@@ -2945,6 +3232,7 @@ localTable.PROTOAMRAISERULE_LVME_FIELD.number = 5
 localTable.PROTOAMRAISERULE_LVME_FIELD.index = 4
 localTable.PROTOAMRAISERULE_LVME_FIELD.label = 1
 localTable.PROTOAMRAISERULE_LVME_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_LVME_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_LVME_FIELD.type = 13
 localTable.PROTOAMRAISERULE_LVME_FIELD.cpp_type = 3
 
@@ -2954,6 +3242,7 @@ localTable.PROTOAMRAISERULE_POINTS_FIELD.number = 6
 localTable.PROTOAMRAISERULE_POINTS_FIELD.index = 5
 localTable.PROTOAMRAISERULE_POINTS_FIELD.label = 1
 localTable.PROTOAMRAISERULE_POINTS_FIELD.has_default_value = false
+localTable.PROTOAMRAISERULE_POINTS_FIELD.default_value = 0
 localTable.PROTOAMRAISERULE_POINTS_FIELD.type = 13
 localTable.PROTOAMRAISERULE_POINTS_FIELD.cpp_type = 3
 
@@ -2980,6 +3269,7 @@ localTable.RSPGETPREVSINFO_INFO_FIELD.number = 2
 localTable.RSPGETPREVSINFO_INFO_FIELD.index = 1
 localTable.RSPGETPREVSINFO_INFO_FIELD.label = 1
 localTable.RSPGETPREVSINFO_INFO_FIELD.has_default_value = false
+localTable.RSPGETPREVSINFO_INFO_FIELD.default_value = nil
 localTable.RSPGETPREVSINFO_INFO_FIELD.message_type = PROTOPREVSINFO
 localTable.RSPGETPREVSINFO_INFO_FIELD.type = 11
 localTable.RSPGETPREVSINFO_INFO_FIELD.cpp_type = 10
@@ -3008,6 +3298,7 @@ localTable.REQAUTOMATCH_UID_FIELD.number = 1
 localTable.REQAUTOMATCH_UID_FIELD.index = 0
 localTable.REQAUTOMATCH_UID_FIELD.label = 1
 localTable.REQAUTOMATCH_UID_FIELD.has_default_value = false
+localTable.REQAUTOMATCH_UID_FIELD.default_value = 0
 localTable.REQAUTOMATCH_UID_FIELD.type = 13
 localTable.REQAUTOMATCH_UID_FIELD.cpp_type = 3
 
@@ -3017,6 +3308,7 @@ localTable.REQAUTOMATCH_RAISE_FIELD.number = 2
 localTable.REQAUTOMATCH_RAISE_FIELD.index = 1
 localTable.REQAUTOMATCH_RAISE_FIELD.label = 1
 localTable.REQAUTOMATCH_RAISE_FIELD.has_default_value = false
+localTable.REQAUTOMATCH_RAISE_FIELD.default_value = 0
 localTable.REQAUTOMATCH_RAISE_FIELD.type = 13
 localTable.REQAUTOMATCH_RAISE_FIELD.cpp_type = 3
 
@@ -3043,6 +3335,7 @@ localTable.RSPAUTOMATCH_INFO_FIELD.number = 2
 localTable.RSPAUTOMATCH_INFO_FIELD.index = 1
 localTable.RSPAUTOMATCH_INFO_FIELD.label = 1
 localTable.RSPAUTOMATCH_INFO_FIELD.has_default_value = false
+localTable.RSPAUTOMATCH_INFO_FIELD.default_value = nil
 localTable.RSPAUTOMATCH_INFO_FIELD.message_type = PROTOPREVSINFO
 localTable.RSPAUTOMATCH_INFO_FIELD.type = 11
 localTable.RSPAUTOMATCH_INFO_FIELD.cpp_type = 10
@@ -3053,6 +3346,7 @@ localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.number = 3
 localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.index = 2
 localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.label = 1
 localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.has_default_value = false
+localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.default_value = 0
 localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.type = 13
 localTable.RSPAUTOMATCH_LEFTAMPUNISHMINS_FIELD.cpp_type = 3
 
@@ -3069,6 +3363,7 @@ localTable.REQGETSCORERACEINFO_UID_FIELD.number = 1
 localTable.REQGETSCORERACEINFO_UID_FIELD.index = 0
 localTable.REQGETSCORERACEINFO_UID_FIELD.label = 1
 localTable.REQGETSCORERACEINFO_UID_FIELD.has_default_value = false
+localTable.REQGETSCORERACEINFO_UID_FIELD.default_value = 0
 localTable.REQGETSCORERACEINFO_UID_FIELD.type = 13
 localTable.REQGETSCORERACEINFO_UID_FIELD.cpp_type = 3
 
@@ -3085,6 +3380,7 @@ localTable.PROTOSCORERACEINFO_SCORE_FIELD.number = 1
 localTable.PROTOSCORERACEINFO_SCORE_FIELD.index = 0
 localTable.PROTOSCORERACEINFO_SCORE_FIELD.label = 1
 localTable.PROTOSCORERACEINFO_SCORE_FIELD.has_default_value = false
+localTable.PROTOSCORERACEINFO_SCORE_FIELD.default_value = 0
 localTable.PROTOSCORERACEINFO_SCORE_FIELD.type = 13
 localTable.PROTOSCORERACEINFO_SCORE_FIELD.cpp_type = 3
 
@@ -3094,6 +3390,7 @@ localTable.PROTOSCORERACEINFO_RANK_FIELD.number = 2
 localTable.PROTOSCORERACEINFO_RANK_FIELD.index = 1
 localTable.PROTOSCORERACEINFO_RANK_FIELD.label = 1
 localTable.PROTOSCORERACEINFO_RANK_FIELD.has_default_value = false
+localTable.PROTOSCORERACEINFO_RANK_FIELD.default_value = 0
 localTable.PROTOSCORERACEINFO_RANK_FIELD.type = 13
 localTable.PROTOSCORERACEINFO_RANK_FIELD.cpp_type = 3
 
@@ -3103,6 +3400,7 @@ localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.number = 3
 localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.index = 2
 localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.label = 1
 localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.has_default_value = false
+localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.default_value = 0
 localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.type = 13
 localTable.PROTOSCORERACEINFO_LEFTVSCNT_FIELD.cpp_type = 3
 
@@ -3139,6 +3437,7 @@ localTable.PROTOSCORERACETEAM_NAME_FIELD.number = 1
 localTable.PROTOSCORERACETEAM_NAME_FIELD.index = 0
 localTable.PROTOSCORERACETEAM_NAME_FIELD.label = 1
 localTable.PROTOSCORERACETEAM_NAME_FIELD.has_default_value = false
+localTable.PROTOSCORERACETEAM_NAME_FIELD.default_value = ""
 localTable.PROTOSCORERACETEAM_NAME_FIELD.type = 12
 localTable.PROTOSCORERACETEAM_NAME_FIELD.cpp_type = 9
 
@@ -3148,6 +3447,7 @@ localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.number = 2
 localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.index = 1
 localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.label = 1
 localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.has_default_value = false
+localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.default_value = 0
 localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.type = 13
 localTable.PROTOSCORERACETEAM_RANKBEGIN_FIELD.cpp_type = 3
 
@@ -3157,6 +3457,7 @@ localTable.PROTOSCORERACETEAM_RANKEND_FIELD.number = 3
 localTable.PROTOSCORERACETEAM_RANKEND_FIELD.index = 2
 localTable.PROTOSCORERACETEAM_RANKEND_FIELD.label = 1
 localTable.PROTOSCORERACETEAM_RANKEND_FIELD.has_default_value = false
+localTable.PROTOSCORERACETEAM_RANKEND_FIELD.default_value = 0
 localTable.PROTOSCORERACETEAM_RANKEND_FIELD.type = 13
 localTable.PROTOSCORERACETEAM_RANKEND_FIELD.cpp_type = 3
 
@@ -3166,6 +3467,7 @@ localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.number = 4
 localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.index = 3
 localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.label = 1
 localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.has_default_value = false
+localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.default_value = 0
 localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.type = 13
 localTable.PROTOSCORERACETEAM_SCOREWIN_FIELD.cpp_type = 3
 
@@ -3175,6 +3477,7 @@ localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.number = 5
 localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.index = 4
 localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.label = 1
 localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.has_default_value = false
+localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.default_value = 0
 localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.type = 13
 localTable.PROTOSCORERACETEAM_SCORELOSE_FIELD.cpp_type = 3
 
@@ -3201,6 +3504,7 @@ localTable.RSPGETSCORERACEINFO_INFO_FIELD.number = 2
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.index = 1
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.label = 1
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.has_default_value = false
+localTable.RSPGETSCORERACEINFO_INFO_FIELD.default_value = nil
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.message_type = PROTOSCORERACEINFO
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.type = 11
 localTable.RSPGETSCORERACEINFO_INFO_FIELD.cpp_type = 10
@@ -3229,6 +3533,7 @@ localTable.REQSCORERACE_UID_FIELD.number = 1
 localTable.REQSCORERACE_UID_FIELD.index = 0
 localTable.REQSCORERACE_UID_FIELD.label = 1
 localTable.REQSCORERACE_UID_FIELD.has_default_value = false
+localTable.REQSCORERACE_UID_FIELD.default_value = 0
 localTable.REQSCORERACE_UID_FIELD.type = 13
 localTable.REQSCORERACE_UID_FIELD.cpp_type = 3
 
@@ -3275,6 +3580,7 @@ localTable.RSPSCORERACE_INFO_FIELD.number = 2
 localTable.RSPSCORERACE_INFO_FIELD.index = 1
 localTable.RSPSCORERACE_INFO_FIELD.label = 1
 localTable.RSPSCORERACE_INFO_FIELD.has_default_value = false
+localTable.RSPSCORERACE_INFO_FIELD.default_value = nil
 localTable.RSPSCORERACE_INFO_FIELD.message_type = PROTOSCORERACEINFO
 localTable.RSPSCORERACE_INFO_FIELD.type = 11
 localTable.RSPSCORERACE_INFO_FIELD.cpp_type = 10
@@ -3292,6 +3598,7 @@ localTable.PUSHTABLESITDOWN_ROOMID_FIELD.number = 1
 localTable.PUSHTABLESITDOWN_ROOMID_FIELD.index = 0
 localTable.PUSHTABLESITDOWN_ROOMID_FIELD.label = 1
 localTable.PUSHTABLESITDOWN_ROOMID_FIELD.has_default_value = false
+localTable.PUSHTABLESITDOWN_ROOMID_FIELD.default_value = 0
 localTable.PUSHTABLESITDOWN_ROOMID_FIELD.type = 13
 localTable.PUSHTABLESITDOWN_ROOMID_FIELD.cpp_type = 3
 
@@ -3301,6 +3608,7 @@ localTable.PUSHTABLESITDOWN_TABLEID_FIELD.number = 2
 localTable.PUSHTABLESITDOWN_TABLEID_FIELD.index = 1
 localTable.PUSHTABLESITDOWN_TABLEID_FIELD.label = 1
 localTable.PUSHTABLESITDOWN_TABLEID_FIELD.has_default_value = false
+localTable.PUSHTABLESITDOWN_TABLEID_FIELD.default_value = 0
 localTable.PUSHTABLESITDOWN_TABLEID_FIELD.type = 13
 localTable.PUSHTABLESITDOWN_TABLEID_FIELD.cpp_type = 3
 
@@ -3317,6 +3625,7 @@ localTable.PUSHTABLESTANDUP_ROOMID_FIELD.number = 1
 localTable.PUSHTABLESTANDUP_ROOMID_FIELD.index = 0
 localTable.PUSHTABLESTANDUP_ROOMID_FIELD.label = 1
 localTable.PUSHTABLESTANDUP_ROOMID_FIELD.has_default_value = false
+localTable.PUSHTABLESTANDUP_ROOMID_FIELD.default_value = 0
 localTable.PUSHTABLESTANDUP_ROOMID_FIELD.type = 13
 localTable.PUSHTABLESTANDUP_ROOMID_FIELD.cpp_type = 3
 
@@ -3326,6 +3635,7 @@ localTable.PUSHTABLESTANDUP_TABLEID_FIELD.number = 2
 localTable.PUSHTABLESTANDUP_TABLEID_FIELD.index = 1
 localTable.PUSHTABLESTANDUP_TABLEID_FIELD.label = 1
 localTable.PUSHTABLESTANDUP_TABLEID_FIELD.has_default_value = false
+localTable.PUSHTABLESTANDUP_TABLEID_FIELD.default_value = 0
 localTable.PUSHTABLESTANDUP_TABLEID_FIELD.type = 13
 localTable.PUSHTABLESTANDUP_TABLEID_FIELD.cpp_type = 3
 
@@ -3342,6 +3652,7 @@ localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.number = 1
 localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.index = 0
 localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.label = 1
 localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.type = 13
 localTable.PUSHTABLEOTHERSITDOWN_ROOMID_FIELD.cpp_type = 3
 
@@ -3351,6 +3662,7 @@ localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.number = 2
 localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.index = 1
 localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.label = 1
 localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.type = 13
 localTable.PUSHTABLEOTHERSITDOWN_TABLEID_FIELD.cpp_type = 3
 
@@ -3360,6 +3672,7 @@ localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.number = 3
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.index = 2
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.label = 1
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.default_value = nil
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.message_type = PROTOPLAYERINFO
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.type = 11
 localTable.PUSHTABLEOTHERSITDOWN_USERINFO_FIELD.cpp_type = 10
@@ -3387,6 +3700,7 @@ localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.number = 1
 localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.index = 0
 localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.label = 1
 localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.type = 13
 localTable.PUSHTABLEOTHERSTANDUP_ROOMID_FIELD.cpp_type = 3
 
@@ -3396,6 +3710,7 @@ localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.number = 2
 localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.index = 1
 localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.label = 1
 localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.type = 13
 localTable.PUSHTABLEOTHERSTANDUP_TABLEID_FIELD.cpp_type = 3
 
@@ -3412,6 +3727,7 @@ localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.number = 1
 localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.index = 0
 localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.label = 1
 localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.type = 13
 localTable.PUSHTABLEOTHERREADY_ROOMID_FIELD.cpp_type = 3
 
@@ -3421,6 +3737,7 @@ localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.number = 2
 localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.index = 1
 localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.label = 1
 localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.has_default_value = false
+localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.default_value = 0
 localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.type = 13
 localTable.PUSHTABLEOTHERREADY_TABLEID_FIELD.cpp_type = 3
 
@@ -3437,6 +3754,7 @@ localTable.PUSHGAMESTART_ROOMID_FIELD.number = 1
 localTable.PUSHGAMESTART_ROOMID_FIELD.index = 0
 localTable.PUSHGAMESTART_ROOMID_FIELD.label = 1
 localTable.PUSHGAMESTART_ROOMID_FIELD.has_default_value = false
+localTable.PUSHGAMESTART_ROOMID_FIELD.default_value = 0
 localTable.PUSHGAMESTART_ROOMID_FIELD.type = 13
 localTable.PUSHGAMESTART_ROOMID_FIELD.cpp_type = 3
 
@@ -3446,6 +3764,7 @@ localTable.PUSHGAMESTART_TABLEID_FIELD.number = 2
 localTable.PUSHGAMESTART_TABLEID_FIELD.index = 1
 localTable.PUSHGAMESTART_TABLEID_FIELD.label = 1
 localTable.PUSHGAMESTART_TABLEID_FIELD.has_default_value = false
+localTable.PUSHGAMESTART_TABLEID_FIELD.default_value = 0
 localTable.PUSHGAMESTART_TABLEID_FIELD.type = 13
 localTable.PUSHGAMESTART_TABLEID_FIELD.cpp_type = 3
 
@@ -3455,6 +3774,7 @@ localTable.PUSHGAMESTART_SEC_FIELD.number = 3
 localTable.PUSHGAMESTART_SEC_FIELD.index = 2
 localTable.PUSHGAMESTART_SEC_FIELD.label = 1
 localTable.PUSHGAMESTART_SEC_FIELD.has_default_value = false
+localTable.PUSHGAMESTART_SEC_FIELD.default_value = 0
 localTable.PUSHGAMESTART_SEC_FIELD.type = 13
 localTable.PUSHGAMESTART_SEC_FIELD.cpp_type = 3
 
@@ -3464,6 +3784,7 @@ localTable.PUSHGAMESTART_MICS_FIELD.number = 4
 localTable.PUSHGAMESTART_MICS_FIELD.index = 3
 localTable.PUSHGAMESTART_MICS_FIELD.label = 1
 localTable.PUSHGAMESTART_MICS_FIELD.has_default_value = false
+localTable.PUSHGAMESTART_MICS_FIELD.default_value = 0
 localTable.PUSHGAMESTART_MICS_FIELD.type = 13
 localTable.PUSHGAMESTART_MICS_FIELD.cpp_type = 3
 
@@ -3550,6 +3871,7 @@ localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.number = 2
 localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.index = 1
 localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.label = 1
 localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.has_default_value = false
+localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.default_value = 0
 localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.type = 13
 localTable.PUSHGAMESHOULDOVER_ENDSTATE_FIELD.cpp_type = 3
 
@@ -3566,6 +3888,7 @@ localTable.PUSHGAMEOVER_ROOMID_FIELD.number = 1
 localTable.PUSHGAMEOVER_ROOMID_FIELD.index = 0
 localTable.PUSHGAMEOVER_ROOMID_FIELD.label = 1
 localTable.PUSHGAMEOVER_ROOMID_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_ROOMID_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_ROOMID_FIELD.type = 13
 localTable.PUSHGAMEOVER_ROOMID_FIELD.cpp_type = 3
 
@@ -3575,6 +3898,7 @@ localTable.PUSHGAMEOVER_RESULT_FIELD.number = 2
 localTable.PUSHGAMEOVER_RESULT_FIELD.index = 1
 localTable.PUSHGAMEOVER_RESULT_FIELD.label = 1
 localTable.PUSHGAMEOVER_RESULT_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_RESULT_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_RESULT_FIELD.type = 13
 localTable.PUSHGAMEOVER_RESULT_FIELD.cpp_type = 3
 
@@ -3594,6 +3918,7 @@ localTable.PUSHGAMEOVER_VSCNT_FIELD.number = 4
 localTable.PUSHGAMEOVER_VSCNT_FIELD.index = 3
 localTable.PUSHGAMEOVER_VSCNT_FIELD.label = 1
 localTable.PUSHGAMEOVER_VSCNT_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_VSCNT_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_VSCNT_FIELD.type = 13
 localTable.PUSHGAMEOVER_VSCNT_FIELD.cpp_type = 3
 
@@ -3613,6 +3938,7 @@ localTable.PUSHGAMEOVER_MONEY_FIELD.number = 6
 localTable.PUSHGAMEOVER_MONEY_FIELD.index = 5
 localTable.PUSHGAMEOVER_MONEY_FIELD.label = 1
 localTable.PUSHGAMEOVER_MONEY_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_MONEY_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_MONEY_FIELD.type = 13
 localTable.PUSHGAMEOVER_MONEY_FIELD.cpp_type = 3
 
@@ -3622,6 +3948,7 @@ localTable.PUSHGAMEOVER_LEVEL_FIELD.number = 7
 localTable.PUSHGAMEOVER_LEVEL_FIELD.index = 6
 localTable.PUSHGAMEOVER_LEVEL_FIELD.label = 1
 localTable.PUSHGAMEOVER_LEVEL_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_LEVEL_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_LEVEL_FIELD.type = 13
 localTable.PUSHGAMEOVER_LEVEL_FIELD.cpp_type = 3
 
@@ -3631,6 +3958,7 @@ localTable.PUSHGAMEOVER_NXTPOWER_FIELD.number = 8
 localTable.PUSHGAMEOVER_NXTPOWER_FIELD.index = 7
 localTable.PUSHGAMEOVER_NXTPOWER_FIELD.label = 1
 localTable.PUSHGAMEOVER_NXTPOWER_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_NXTPOWER_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_NXTPOWER_FIELD.type = 13
 localTable.PUSHGAMEOVER_NXTPOWER_FIELD.cpp_type = 3
 
@@ -3640,6 +3968,7 @@ localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.number = 9
 localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.index = 8
 localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.label = 1
 localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.type = 13
 localTable.PUSHGAMEOVER_NXTPOINTS_FIELD.cpp_type = 3
 
@@ -3649,6 +3978,7 @@ localTable.PUSHGAMEOVER_ENDSTATE_FIELD.number = 10
 localTable.PUSHGAMEOVER_ENDSTATE_FIELD.index = 9
 localTable.PUSHGAMEOVER_ENDSTATE_FIELD.label = 1
 localTable.PUSHGAMEOVER_ENDSTATE_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_ENDSTATE_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_ENDSTATE_FIELD.type = 13
 localTable.PUSHGAMEOVER_ENDSTATE_FIELD.cpp_type = 3
 
@@ -3658,6 +3988,7 @@ localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.number = 11
 localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.index = 10
 localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.label = 1
 localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.type = 13
 localTable.PUSHGAMEOVER_TOPUPPUNISHDAYS_FIELD.cpp_type = 3
 
@@ -3667,6 +3998,7 @@ localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.number = 12
 localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.index = 11
 localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.label = 1
 localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.type = 13
 localTable.PUSHGAMEOVER_YGOPLAYER_FIELD.cpp_type = 3
 
@@ -3676,6 +4008,7 @@ localTable.PUSHGAMEOVER_VICTORY_FIELD.number = 13
 localTable.PUSHGAMEOVER_VICTORY_FIELD.index = 12
 localTable.PUSHGAMEOVER_VICTORY_FIELD.label = 1
 localTable.PUSHGAMEOVER_VICTORY_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_VICTORY_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_VICTORY_FIELD.type = 13
 localTable.PUSHGAMEOVER_VICTORY_FIELD.cpp_type = 3
 
@@ -3685,6 +4018,7 @@ localTable.PUSHGAMEOVER_POINTS_FIELD.number = 14
 localTable.PUSHGAMEOVER_POINTS_FIELD.index = 13
 localTable.PUSHGAMEOVER_POINTS_FIELD.label = 1
 localTable.PUSHGAMEOVER_POINTS_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_POINTS_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_POINTS_FIELD.type = 13
 localTable.PUSHGAMEOVER_POINTS_FIELD.cpp_type = 3
 
@@ -3705,6 +4039,7 @@ localTable.PUSHGAMEOVER_SCORE_FIELD.number = 16
 localTable.PUSHGAMEOVER_SCORE_FIELD.index = 15
 localTable.PUSHGAMEOVER_SCORE_FIELD.label = 1
 localTable.PUSHGAMEOVER_SCORE_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_SCORE_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_SCORE_FIELD.type = 13
 localTable.PUSHGAMEOVER_SCORE_FIELD.cpp_type = 3
 
@@ -3714,6 +4049,7 @@ localTable.PUSHGAMEOVER_RANK_FIELD.number = 17
 localTable.PUSHGAMEOVER_RANK_FIELD.index = 16
 localTable.PUSHGAMEOVER_RANK_FIELD.label = 1
 localTable.PUSHGAMEOVER_RANK_FIELD.has_default_value = false
+localTable.PUSHGAMEOVER_RANK_FIELD.default_value = 0
 localTable.PUSHGAMEOVER_RANK_FIELD.type = 13
 localTable.PUSHGAMEOVER_RANK_FIELD.cpp_type = 3
 
@@ -3730,6 +4066,7 @@ localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.number = 1
 localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.index = 0
 localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.label = 1
 localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.has_default_value = false
+localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.default_value = 0
 localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.type = 13
 localTable.PUSHRIVALOFFLINE_ROOMID_FIELD.cpp_type = 3
 
@@ -3739,6 +4076,7 @@ localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.number = 2
 localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.index = 1
 localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.label = 1
 localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.has_default_value = false
+localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.default_value = 0
 localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.type = 13
 localTable.PUSHRIVALOFFLINE_TABLEID_FIELD.cpp_type = 3
 
@@ -3748,6 +4086,7 @@ localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.number = 3
 localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.index = 2
 localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.label = 1
 localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.has_default_value = false
+localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.default_value = 0
 localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.type = 13
 localTable.PUSHRIVALOFFLINE_RIVALUID_FIELD.cpp_type = 3
 
@@ -3764,6 +4103,7 @@ localTable.PUSHRIVALRELOGON_ROOMID_FIELD.number = 1
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD.index = 0
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD.label = 1
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD.has_default_value = false
+localTable.PUSHRIVALRELOGON_ROOMID_FIELD.default_value = 0
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD.type = 13
 localTable.PUSHRIVALRELOGON_ROOMID_FIELD.cpp_type = 3
 
@@ -3773,6 +4113,7 @@ localTable.PUSHRIVALRELOGON_TABLEID_FIELD.number = 2
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD.index = 1
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD.label = 1
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD.has_default_value = false
+localTable.PUSHRIVALRELOGON_TABLEID_FIELD.default_value = 0
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD.type = 13
 localTable.PUSHRIVALRELOGON_TABLEID_FIELD.cpp_type = 3
 
@@ -3782,6 +4123,7 @@ localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.number = 3
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.index = 2
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.label = 1
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.has_default_value = false
+localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.default_value = 0
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.type = 13
 localTable.PUSHRIVALRELOGON_RIVALUID_FIELD.cpp_type = 3
 
@@ -3792,136 +4134,142 @@ PUSHRIVALRELOGON.enum_types = {}
 PUSHRIVALRELOGON.fields = {localTable.PUSHRIVALRELOGON_ROOMID_FIELD, localTable.PUSHRIVALRELOGON_TABLEID_FIELD, localTable.PUSHRIVALRELOGON_RIVALUID_FIELD}
 PUSHRIVALRELOGON.is_extendable = false
 PUSHRIVALRELOGON.extensions = {}
-localTable.PROTOVSINFO_RESULT_FIELD.name = "result"
-localTable.PROTOVSINFO_RESULT_FIELD.full_name = ".ProtoVsInfo.result"
-localTable.PROTOVSINFO_RESULT_FIELD.number = 1
-localTable.PROTOVSINFO_RESULT_FIELD.index = 0
-localTable.PROTOVSINFO_RESULT_FIELD.label = 1
-localTable.PROTOVSINFO_RESULT_FIELD.has_default_value = true
-localTable.PROTOVSINFO_RESULT_FIELD.default_value = 100
-localTable.PROTOVSINFO_RESULT_FIELD.type = 13
-localTable.PROTOVSINFO_RESULT_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_RESULT_FIELD.name = "result"
+localTable.RSPPROTOVSINFO_RESULT_FIELD.full_name = ".RspProtoVsInfo.result"
+localTable.RSPPROTOVSINFO_RESULT_FIELD.number = 1
+localTable.RSPPROTOVSINFO_RESULT_FIELD.index = 0
+localTable.RSPPROTOVSINFO_RESULT_FIELD.label = 1
+localTable.RSPPROTOVSINFO_RESULT_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_RESULT_FIELD.default_value = 100
+localTable.RSPPROTOVSINFO_RESULT_FIELD.type = 13
+localTable.RSPPROTOVSINFO_RESULT_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_ROOMID_FIELD.name = "roomId"
-localTable.PROTOVSINFO_ROOMID_FIELD.full_name = ".ProtoVsInfo.roomId"
-localTable.PROTOVSINFO_ROOMID_FIELD.number = 2
-localTable.PROTOVSINFO_ROOMID_FIELD.index = 1
-localTable.PROTOVSINFO_ROOMID_FIELD.label = 1
-localTable.PROTOVSINFO_ROOMID_FIELD.has_default_value = false
-localTable.PROTOVSINFO_ROOMID_FIELD.type = 13
-localTable.PROTOVSINFO_ROOMID_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.name = "roomId"
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.full_name = ".RspProtoVsInfo.roomId"
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.number = 2
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.index = 1
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.label = 1
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.default_value = 0
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.type = 13
+localTable.RSPPROTOVSINFO_ROOMID_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_TABLEID_FIELD.name = "tableId"
-localTable.PROTOVSINFO_TABLEID_FIELD.full_name = ".ProtoVsInfo.tableId"
-localTable.PROTOVSINFO_TABLEID_FIELD.number = 3
-localTable.PROTOVSINFO_TABLEID_FIELD.index = 2
-localTable.PROTOVSINFO_TABLEID_FIELD.label = 1
-localTable.PROTOVSINFO_TABLEID_FIELD.has_default_value = false
-localTable.PROTOVSINFO_TABLEID_FIELD.type = 13
-localTable.PROTOVSINFO_TABLEID_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.name = "tableId"
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.full_name = ".RspProtoVsInfo.tableId"
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.number = 3
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.index = 2
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.label = 1
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.default_value = 0
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.type = 13
+localTable.RSPPROTOVSINFO_TABLEID_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_RIVAL_FIELD.name = "rival"
-localTable.PROTOVSINFO_RIVAL_FIELD.full_name = ".ProtoVsInfo.rival"
-localTable.PROTOVSINFO_RIVAL_FIELD.number = 4
-localTable.PROTOVSINFO_RIVAL_FIELD.index = 3
-localTable.PROTOVSINFO_RIVAL_FIELD.label = 1
-localTable.PROTOVSINFO_RIVAL_FIELD.has_default_value = false
-localTable.PROTOVSINFO_RIVAL_FIELD.message_type = PROTOPLAYERINFO
-localTable.PROTOVSINFO_RIVAL_FIELD.type = 11
-localTable.PROTOVSINFO_RIVAL_FIELD.cpp_type = 10
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.name = "rival"
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.full_name = ".RspProtoVsInfo.rival"
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.number = 4
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.index = 3
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.label = 1
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.default_value = nil
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.message_type = PROTOPLAYERINFO
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.type = 11
+localTable.RSPPROTOVSINFO_RIVAL_FIELD.cpp_type = 10
 
-localTable.PROTOVSINFO_SEC_FIELD.name = "sec"
-localTable.PROTOVSINFO_SEC_FIELD.full_name = ".ProtoVsInfo.sec"
-localTable.PROTOVSINFO_SEC_FIELD.number = 5
-localTable.PROTOVSINFO_SEC_FIELD.index = 4
-localTable.PROTOVSINFO_SEC_FIELD.label = 1
-localTable.PROTOVSINFO_SEC_FIELD.has_default_value = false
-localTable.PROTOVSINFO_SEC_FIELD.type = 13
-localTable.PROTOVSINFO_SEC_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_SEC_FIELD.name = "sec"
+localTable.RSPPROTOVSINFO_SEC_FIELD.full_name = ".RspProtoVsInfo.sec"
+localTable.RSPPROTOVSINFO_SEC_FIELD.number = 5
+localTable.RSPPROTOVSINFO_SEC_FIELD.index = 4
+localTable.RSPPROTOVSINFO_SEC_FIELD.label = 1
+localTable.RSPPROTOVSINFO_SEC_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_SEC_FIELD.default_value = 0
+localTable.RSPPROTOVSINFO_SEC_FIELD.type = 13
+localTable.RSPPROTOVSINFO_SEC_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_MICS_FIELD.name = "mics"
-localTable.PROTOVSINFO_MICS_FIELD.full_name = ".ProtoVsInfo.mics"
-localTable.PROTOVSINFO_MICS_FIELD.number = 6
-localTable.PROTOVSINFO_MICS_FIELD.index = 5
-localTable.PROTOVSINFO_MICS_FIELD.label = 1
-localTable.PROTOVSINFO_MICS_FIELD.has_default_value = false
-localTable.PROTOVSINFO_MICS_FIELD.type = 13
-localTable.PROTOVSINFO_MICS_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_MICS_FIELD.name = "mics"
+localTable.RSPPROTOVSINFO_MICS_FIELD.full_name = ".RspProtoVsInfo.mics"
+localTable.RSPPROTOVSINFO_MICS_FIELD.number = 6
+localTable.RSPPROTOVSINFO_MICS_FIELD.index = 5
+localTable.RSPPROTOVSINFO_MICS_FIELD.label = 1
+localTable.RSPPROTOVSINFO_MICS_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_MICS_FIELD.default_value = 0
+localTable.RSPPROTOVSINFO_MICS_FIELD.type = 13
+localTable.RSPPROTOVSINFO_MICS_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_UIDS_FIELD.name = "uids"
-localTable.PROTOVSINFO_UIDS_FIELD.full_name = ".ProtoVsInfo.uids"
-localTable.PROTOVSINFO_UIDS_FIELD.number = 7
-localTable.PROTOVSINFO_UIDS_FIELD.index = 6
-localTable.PROTOVSINFO_UIDS_FIELD.label = 3
-localTable.PROTOVSINFO_UIDS_FIELD.has_default_value = false
-localTable.PROTOVSINFO_UIDS_FIELD.default_value = {}
-localTable.PROTOVSINFO_UIDS_FIELD.type = 13
-localTable.PROTOVSINFO_UIDS_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_UIDS_FIELD.name = "uids"
+localTable.RSPPROTOVSINFO_UIDS_FIELD.full_name = ".RspProtoVsInfo.uids"
+localTable.RSPPROTOVSINFO_UIDS_FIELD.number = 7
+localTable.RSPPROTOVSINFO_UIDS_FIELD.index = 6
+localTable.RSPPROTOVSINFO_UIDS_FIELD.label = 3
+localTable.RSPPROTOVSINFO_UIDS_FIELD.has_default_value = false
+localTable.RSPPROTOVSINFO_UIDS_FIELD.default_value = {}
+localTable.RSPPROTOVSINFO_UIDS_FIELD.type = 13
+localTable.RSPPROTOVSINFO_UIDS_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_MAXLP_FIELD.name = "maxLp"
-localTable.PROTOVSINFO_MAXLP_FIELD.full_name = ".ProtoVsInfo.maxLp"
-localTable.PROTOVSINFO_MAXLP_FIELD.number = 8
-localTable.PROTOVSINFO_MAXLP_FIELD.index = 7
-localTable.PROTOVSINFO_MAXLP_FIELD.label = 1
-localTable.PROTOVSINFO_MAXLP_FIELD.has_default_value = true
-localTable.PROTOVSINFO_MAXLP_FIELD.default_value = 8000
-localTable.PROTOVSINFO_MAXLP_FIELD.type = 13
-localTable.PROTOVSINFO_MAXLP_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.name = "maxLp"
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.full_name = ".RspProtoVsInfo.maxLp"
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.number = 8
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.index = 7
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.label = 1
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.default_value = 8000
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.type = 13
+localTable.RSPPROTOVSINFO_MAXLP_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.name = "startHandCount"
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.full_name = ".ProtoVsInfo.startHandCount"
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.number = 9
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.index = 8
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.label = 1
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.has_default_value = true
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.default_value = 5
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.type = 13
-localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.name = "startHandCount"
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.full_name = ".RspProtoVsInfo.startHandCount"
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.number = 9
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.index = 8
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.label = 1
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.default_value = 5
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.type = 13
+localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.name = "drawCount"
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.full_name = ".ProtoVsInfo.drawCount"
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.number = 10
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.index = 9
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.label = 1
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.has_default_value = true
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.default_value = 1
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.type = 13
-localTable.PROTOVSINFO_DRAWCOUNT_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.name = "drawCount"
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.full_name = ".RspProtoVsInfo.drawCount"
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.number = 10
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.index = 9
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.label = 1
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.default_value = 1
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.type = 13
+localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.name = "timeLimit"
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.full_name = ".ProtoVsInfo.timeLimit"
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.number = 11
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.index = 10
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.label = 1
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.has_default_value = true
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.default_value = 180
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.type = 13
-localTable.PROTOVSINFO_TIMELIMIT_FIELD.cpp_type = 3
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.name = "timeLimit"
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.full_name = ".RspProtoVsInfo.timeLimit"
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.number = 11
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.index = 10
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.label = 1
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.default_value = 180
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.type = 13
+localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD.cpp_type = 3
 
-localTable.PROTOVSINFO_SHUFFLE_FIELD.name = "shuffle"
-localTable.PROTOVSINFO_SHUFFLE_FIELD.full_name = ".ProtoVsInfo.shuffle"
-localTable.PROTOVSINFO_SHUFFLE_FIELD.number = 12
-localTable.PROTOVSINFO_SHUFFLE_FIELD.index = 11
-localTable.PROTOVSINFO_SHUFFLE_FIELD.label = 1
-localTable.PROTOVSINFO_SHUFFLE_FIELD.has_default_value = true
-localTable.PROTOVSINFO_SHUFFLE_FIELD.default_value = true
-localTable.PROTOVSINFO_SHUFFLE_FIELD.type = 8
-localTable.PROTOVSINFO_SHUFFLE_FIELD.cpp_type = 7
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.name = "shuffle"
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.full_name = ".RspProtoVsInfo.shuffle"
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.number = 12
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.index = 11
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.label = 1
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.has_default_value = true
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.default_value = true
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.type = 8
+localTable.RSPPROTOVSINFO_SHUFFLE_FIELD.cpp_type = 7
 
-PROTOVSINFO.name = "ProtoVsInfo"
-PROTOVSINFO.full_name = ".ProtoVsInfo"
-PROTOVSINFO.nested_types = {}
-PROTOVSINFO.enum_types = {}
-PROTOVSINFO.fields = {localTable.PROTOVSINFO_RESULT_FIELD, localTable.PROTOVSINFO_ROOMID_FIELD, localTable.PROTOVSINFO_TABLEID_FIELD, localTable.PROTOVSINFO_RIVAL_FIELD, localTable.PROTOVSINFO_SEC_FIELD, localTable.PROTOVSINFO_MICS_FIELD, localTable.PROTOVSINFO_UIDS_FIELD, localTable.PROTOVSINFO_MAXLP_FIELD, localTable.PROTOVSINFO_STARTHANDCOUNT_FIELD, localTable.PROTOVSINFO_DRAWCOUNT_FIELD, localTable.PROTOVSINFO_TIMELIMIT_FIELD, localTable.PROTOVSINFO_SHUFFLE_FIELD}
-PROTOVSINFO.is_extendable = false
-PROTOVSINFO.extensions = {}
+RSPPROTOVSINFO.name = "RspProtoVsInfo"
+RSPPROTOVSINFO.full_name = ".RspProtoVsInfo"
+RSPPROTOVSINFO.nested_types = {}
+RSPPROTOVSINFO.enum_types = {}
+RSPPROTOVSINFO.fields = {localTable.RSPPROTOVSINFO_RESULT_FIELD, localTable.RSPPROTOVSINFO_ROOMID_FIELD, localTable.RSPPROTOVSINFO_TABLEID_FIELD, localTable.RSPPROTOVSINFO_RIVAL_FIELD, localTable.RSPPROTOVSINFO_SEC_FIELD, localTable.RSPPROTOVSINFO_MICS_FIELD, localTable.RSPPROTOVSINFO_UIDS_FIELD, localTable.RSPPROTOVSINFO_MAXLP_FIELD, localTable.RSPPROTOVSINFO_STARTHANDCOUNT_FIELD, localTable.RSPPROTOVSINFO_DRAWCOUNT_FIELD, localTable.RSPPROTOVSINFO_TIMELIMIT_FIELD, localTable.RSPPROTOVSINFO_SHUFFLE_FIELD}
+RSPPROTOVSINFO.is_extendable = false
+RSPPROTOVSINFO.extensions = {}
 localTable.PUSHAUTOMATCH_INFO_FIELD.name = "info"
 localTable.PUSHAUTOMATCH_INFO_FIELD.full_name = ".PushAutoMatch.info"
 localTable.PUSHAUTOMATCH_INFO_FIELD.number = 1
 localTable.PUSHAUTOMATCH_INFO_FIELD.index = 0
 localTable.PUSHAUTOMATCH_INFO_FIELD.label = 1
 localTable.PUSHAUTOMATCH_INFO_FIELD.has_default_value = false
-localTable.PUSHAUTOMATCH_INFO_FIELD.message_type = PROTOVSINFO
+localTable.PUSHAUTOMATCH_INFO_FIELD.default_value = nil
+localTable.PUSHAUTOMATCH_INFO_FIELD.message_type = RSPPROTOVSINFO
 localTable.PUSHAUTOMATCH_INFO_FIELD.type = 11
 localTable.PUSHAUTOMATCH_INFO_FIELD.cpp_type = 10
 
@@ -3938,7 +4286,8 @@ localTable.PUSHSCORERACE_INFO_FIELD.number = 1
 localTable.PUSHSCORERACE_INFO_FIELD.index = 0
 localTable.PUSHSCORERACE_INFO_FIELD.label = 1
 localTable.PUSHSCORERACE_INFO_FIELD.has_default_value = false
-localTable.PUSHSCORERACE_INFO_FIELD.message_type = PROTOVSINFO
+localTable.PUSHSCORERACE_INFO_FIELD.default_value = nil
+localTable.PUSHSCORERACE_INFO_FIELD.message_type = RSPPROTOVSINFO
 localTable.PUSHSCORERACE_INFO_FIELD.type = 11
 localTable.PUSHSCORERACE_INFO_FIELD.cpp_type = 10
 
@@ -3948,6 +4297,7 @@ localTable.PUSHSCORERACE_TEAMSELF_FIELD.number = 2
 localTable.PUSHSCORERACE_TEAMSELF_FIELD.index = 1
 localTable.PUSHSCORERACE_TEAMSELF_FIELD.label = 1
 localTable.PUSHSCORERACE_TEAMSELF_FIELD.has_default_value = false
+localTable.PUSHSCORERACE_TEAMSELF_FIELD.default_value = 0
 localTable.PUSHSCORERACE_TEAMSELF_FIELD.type = 13
 localTable.PUSHSCORERACE_TEAMSELF_FIELD.cpp_type = 3
 
@@ -3957,6 +4307,7 @@ localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.number = 3
 localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.index = 2
 localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.label = 1
 localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.has_default_value = false
+localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.default_value = 0
 localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.type = 13
 localTable.PUSHSCORERACE_TEAMRIVAL_FIELD.cpp_type = 3
 
@@ -3973,7 +4324,8 @@ localTable.PUSHINVITEVS_INFO_FIELD.number = 1
 localTable.PUSHINVITEVS_INFO_FIELD.index = 0
 localTable.PUSHINVITEVS_INFO_FIELD.label = 1
 localTable.PUSHINVITEVS_INFO_FIELD.has_default_value = false
-localTable.PUSHINVITEVS_INFO_FIELD.message_type = PROTOVSINFO
+localTable.PUSHINVITEVS_INFO_FIELD.default_value = nil
+localTable.PUSHINVITEVS_INFO_FIELD.message_type = RSPPROTOVSINFO
 localTable.PUSHINVITEVS_INFO_FIELD.type = 11
 localTable.PUSHINVITEVS_INFO_FIELD.cpp_type = 10
 
@@ -3990,6 +4342,7 @@ localTable.REQCHANGETABLE_UID_FIELD.number = 1
 localTable.REQCHANGETABLE_UID_FIELD.index = 0
 localTable.REQCHANGETABLE_UID_FIELD.label = 1
 localTable.REQCHANGETABLE_UID_FIELD.has_default_value = false
+localTable.REQCHANGETABLE_UID_FIELD.default_value = 0
 localTable.REQCHANGETABLE_UID_FIELD.type = 13
 localTable.REQCHANGETABLE_UID_FIELD.cpp_type = 3
 
@@ -3999,6 +4352,7 @@ localTable.REQCHANGETABLE_ROOMID_FIELD.number = 2
 localTable.REQCHANGETABLE_ROOMID_FIELD.index = 1
 localTable.REQCHANGETABLE_ROOMID_FIELD.label = 1
 localTable.REQCHANGETABLE_ROOMID_FIELD.has_default_value = false
+localTable.REQCHANGETABLE_ROOMID_FIELD.default_value = 0
 localTable.REQCHANGETABLE_ROOMID_FIELD.type = 13
 localTable.REQCHANGETABLE_ROOMID_FIELD.cpp_type = 3
 
@@ -4032,6 +4386,7 @@ localTable.REQGAMEOVER_UID_FIELD.number = 1
 localTable.REQGAMEOVER_UID_FIELD.index = 0
 localTable.REQGAMEOVER_UID_FIELD.label = 1
 localTable.REQGAMEOVER_UID_FIELD.has_default_value = false
+localTable.REQGAMEOVER_UID_FIELD.default_value = 0
 localTable.REQGAMEOVER_UID_FIELD.type = 13
 localTable.REQGAMEOVER_UID_FIELD.cpp_type = 3
 
@@ -4041,6 +4396,7 @@ localTable.REQGAMEOVER_RIVALUID_FIELD.number = 2
 localTable.REQGAMEOVER_RIVALUID_FIELD.index = 1
 localTable.REQGAMEOVER_RIVALUID_FIELD.label = 1
 localTable.REQGAMEOVER_RIVALUID_FIELD.has_default_value = false
+localTable.REQGAMEOVER_RIVALUID_FIELD.default_value = 0
 localTable.REQGAMEOVER_RIVALUID_FIELD.type = 13
 localTable.REQGAMEOVER_RIVALUID_FIELD.cpp_type = 3
 
@@ -4050,6 +4406,7 @@ localTable.REQGAMEOVER_RESULT_FIELD.number = 3
 localTable.REQGAMEOVER_RESULT_FIELD.index = 2
 localTable.REQGAMEOVER_RESULT_FIELD.label = 1
 localTable.REQGAMEOVER_RESULT_FIELD.has_default_value = false
+localTable.REQGAMEOVER_RESULT_FIELD.default_value = 0
 localTable.REQGAMEOVER_RESULT_FIELD.type = 13
 localTable.REQGAMEOVER_RESULT_FIELD.cpp_type = 3
 
@@ -4059,6 +4416,7 @@ localTable.REQGAMEOVER_SEC_FIELD.number = 4
 localTable.REQGAMEOVER_SEC_FIELD.index = 3
 localTable.REQGAMEOVER_SEC_FIELD.label = 1
 localTable.REQGAMEOVER_SEC_FIELD.has_default_value = false
+localTable.REQGAMEOVER_SEC_FIELD.default_value = 0
 localTable.REQGAMEOVER_SEC_FIELD.type = 13
 localTable.REQGAMEOVER_SEC_FIELD.cpp_type = 3
 
@@ -4068,6 +4426,7 @@ localTable.REQGAMEOVER_MICS_FIELD.number = 5
 localTable.REQGAMEOVER_MICS_FIELD.index = 4
 localTable.REQGAMEOVER_MICS_FIELD.label = 1
 localTable.REQGAMEOVER_MICS_FIELD.has_default_value = false
+localTable.REQGAMEOVER_MICS_FIELD.default_value = 0
 localTable.REQGAMEOVER_MICS_FIELD.type = 13
 localTable.REQGAMEOVER_MICS_FIELD.cpp_type = 3
 
@@ -4077,6 +4436,7 @@ localTable.REQGAMEOVER_LPSELF_FIELD.number = 6
 localTable.REQGAMEOVER_LPSELF_FIELD.index = 5
 localTable.REQGAMEOVER_LPSELF_FIELD.label = 1
 localTable.REQGAMEOVER_LPSELF_FIELD.has_default_value = false
+localTable.REQGAMEOVER_LPSELF_FIELD.default_value = 0
 localTable.REQGAMEOVER_LPSELF_FIELD.type = 13
 localTable.REQGAMEOVER_LPSELF_FIELD.cpp_type = 3
 
@@ -4086,6 +4446,7 @@ localTable.REQGAMEOVER_LPLEFTSELF_FIELD.number = 7
 localTable.REQGAMEOVER_LPLEFTSELF_FIELD.index = 6
 localTable.REQGAMEOVER_LPLEFTSELF_FIELD.label = 1
 localTable.REQGAMEOVER_LPLEFTSELF_FIELD.has_default_value = false
+localTable.REQGAMEOVER_LPLEFTSELF_FIELD.default_value = 0
 localTable.REQGAMEOVER_LPLEFTSELF_FIELD.type = 13
 localTable.REQGAMEOVER_LPLEFTSELF_FIELD.cpp_type = 3
 
@@ -4095,6 +4456,7 @@ localTable.REQGAMEOVER_LPRIVAL_FIELD.number = 8
 localTable.REQGAMEOVER_LPRIVAL_FIELD.index = 7
 localTable.REQGAMEOVER_LPRIVAL_FIELD.label = 1
 localTable.REQGAMEOVER_LPRIVAL_FIELD.has_default_value = false
+localTable.REQGAMEOVER_LPRIVAL_FIELD.default_value = 0
 localTable.REQGAMEOVER_LPRIVAL_FIELD.type = 13
 localTable.REQGAMEOVER_LPRIVAL_FIELD.cpp_type = 3
 
@@ -4104,6 +4466,7 @@ localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.number = 9
 localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.index = 8
 localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.label = 1
 localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.has_default_value = false
+localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.default_value = 0
 localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.type = 13
 localTable.REQGAMEOVER_LPLEFTRIVAL_FIELD.cpp_type = 3
 
@@ -4113,6 +4476,7 @@ localTable.REQGAMEOVER_ROUNDCNT_FIELD.number = 10
 localTable.REQGAMEOVER_ROUNDCNT_FIELD.index = 9
 localTable.REQGAMEOVER_ROUNDCNT_FIELD.label = 1
 localTable.REQGAMEOVER_ROUNDCNT_FIELD.has_default_value = false
+localTable.REQGAMEOVER_ROUNDCNT_FIELD.default_value = 0
 localTable.REQGAMEOVER_ROUNDCNT_FIELD.type = 13
 localTable.REQGAMEOVER_ROUNDCNT_FIELD.cpp_type = 3
 
@@ -4122,6 +4486,7 @@ localTable.REQGAMEOVER_ENDSTATE_FIELD.number = 11
 localTable.REQGAMEOVER_ENDSTATE_FIELD.index = 10
 localTable.REQGAMEOVER_ENDSTATE_FIELD.label = 1
 localTable.REQGAMEOVER_ENDSTATE_FIELD.has_default_value = false
+localTable.REQGAMEOVER_ENDSTATE_FIELD.default_value = 0
 localTable.REQGAMEOVER_ENDSTATE_FIELD.type = 13
 localTable.REQGAMEOVER_ENDSTATE_FIELD.cpp_type = 3
 
@@ -4131,6 +4496,7 @@ localTable.REQGAMEOVER_YGOPLAYER_FIELD.number = 12
 localTable.REQGAMEOVER_YGOPLAYER_FIELD.index = 11
 localTable.REQGAMEOVER_YGOPLAYER_FIELD.label = 1
 localTable.REQGAMEOVER_YGOPLAYER_FIELD.has_default_value = false
+localTable.REQGAMEOVER_YGOPLAYER_FIELD.default_value = 0
 localTable.REQGAMEOVER_YGOPLAYER_FIELD.type = 13
 localTable.REQGAMEOVER_YGOPLAYER_FIELD.cpp_type = 3
 
@@ -4140,6 +4506,7 @@ localTable.REQGAMEOVER_VICTORY_FIELD.number = 13
 localTable.REQGAMEOVER_VICTORY_FIELD.index = 12
 localTable.REQGAMEOVER_VICTORY_FIELD.label = 1
 localTable.REQGAMEOVER_VICTORY_FIELD.has_default_value = false
+localTable.REQGAMEOVER_VICTORY_FIELD.default_value = 0
 localTable.REQGAMEOVER_VICTORY_FIELD.type = 13
 localTable.REQGAMEOVER_VICTORY_FIELD.cpp_type = 3
 
@@ -4173,6 +4540,7 @@ localTable.REQGETMALLMANIFEST_UID_FIELD.number = 1
 localTable.REQGETMALLMANIFEST_UID_FIELD.index = 0
 localTable.REQGETMALLMANIFEST_UID_FIELD.label = 1
 localTable.REQGETMALLMANIFEST_UID_FIELD.has_default_value = false
+localTable.REQGETMALLMANIFEST_UID_FIELD.default_value = 0
 localTable.REQGETMALLMANIFEST_UID_FIELD.type = 13
 localTable.REQGETMALLMANIFEST_UID_FIELD.cpp_type = 3
 
@@ -4189,6 +4557,7 @@ localTable.MALLPRICEITEM_CNT_FIELD.number = 1
 localTable.MALLPRICEITEM_CNT_FIELD.index = 0
 localTable.MALLPRICEITEM_CNT_FIELD.label = 1
 localTable.MALLPRICEITEM_CNT_FIELD.has_default_value = false
+localTable.MALLPRICEITEM_CNT_FIELD.default_value = 0
 localTable.MALLPRICEITEM_CNT_FIELD.type = 13
 localTable.MALLPRICEITEM_CNT_FIELD.cpp_type = 3
 
@@ -4198,6 +4567,7 @@ localTable.MALLPRICEITEM_PRICE_FIELD.number = 2
 localTable.MALLPRICEITEM_PRICE_FIELD.index = 1
 localTable.MALLPRICEITEM_PRICE_FIELD.label = 1
 localTable.MALLPRICEITEM_PRICE_FIELD.has_default_value = false
+localTable.MALLPRICEITEM_PRICE_FIELD.default_value = 0
 localTable.MALLPRICEITEM_PRICE_FIELD.type = 13
 localTable.MALLPRICEITEM_PRICE_FIELD.cpp_type = 3
 
@@ -4214,6 +4584,7 @@ localTable.MALLITEM_ID_FIELD.number = 1
 localTable.MALLITEM_ID_FIELD.index = 0
 localTable.MALLITEM_ID_FIELD.label = 1
 localTable.MALLITEM_ID_FIELD.has_default_value = false
+localTable.MALLITEM_ID_FIELD.default_value = 0
 localTable.MALLITEM_ID_FIELD.type = 13
 localTable.MALLITEM_ID_FIELD.cpp_type = 3
 
@@ -4223,6 +4594,7 @@ localTable.MALLITEM_NAME_FIELD.number = 2
 localTable.MALLITEM_NAME_FIELD.index = 1
 localTable.MALLITEM_NAME_FIELD.label = 1
 localTable.MALLITEM_NAME_FIELD.has_default_value = false
+localTable.MALLITEM_NAME_FIELD.default_value = ""
 localTable.MALLITEM_NAME_FIELD.type = 12
 localTable.MALLITEM_NAME_FIELD.cpp_type = 9
 
@@ -4232,6 +4604,7 @@ localTable.MALLITEM_TYPE_FIELD.number = 3
 localTable.MALLITEM_TYPE_FIELD.index = 2
 localTable.MALLITEM_TYPE_FIELD.label = 1
 localTable.MALLITEM_TYPE_FIELD.has_default_value = false
+localTable.MALLITEM_TYPE_FIELD.default_value = 0
 localTable.MALLITEM_TYPE_FIELD.type = 13
 localTable.MALLITEM_TYPE_FIELD.cpp_type = 3
 
@@ -4241,6 +4614,7 @@ localTable.MALLITEM_CNT_FIELD.number = 4
 localTable.MALLITEM_CNT_FIELD.index = 3
 localTable.MALLITEM_CNT_FIELD.label = 1
 localTable.MALLITEM_CNT_FIELD.has_default_value = false
+localTable.MALLITEM_CNT_FIELD.default_value = 0
 localTable.MALLITEM_CNT_FIELD.type = 13
 localTable.MALLITEM_CNT_FIELD.cpp_type = 3
 
@@ -4250,6 +4624,7 @@ localTable.MALLITEM_MONEY_FIELD.number = 5
 localTable.MALLITEM_MONEY_FIELD.index = 4
 localTable.MALLITEM_MONEY_FIELD.label = 1
 localTable.MALLITEM_MONEY_FIELD.has_default_value = false
+localTable.MALLITEM_MONEY_FIELD.default_value = 0
 localTable.MALLITEM_MONEY_FIELD.type = 13
 localTable.MALLITEM_MONEY_FIELD.cpp_type = 3
 
@@ -4259,6 +4634,7 @@ localTable.MALLITEM_CF_FIELD.number = 6
 localTable.MALLITEM_CF_FIELD.index = 5
 localTable.MALLITEM_CF_FIELD.label = 1
 localTable.MALLITEM_CF_FIELD.has_default_value = false
+localTable.MALLITEM_CF_FIELD.default_value = 0
 localTable.MALLITEM_CF_FIELD.type = 13
 localTable.MALLITEM_CF_FIELD.cpp_type = 3
 
@@ -4268,6 +4644,7 @@ localTable.MALLITEM_YAOSHI_FIELD.number = 7
 localTable.MALLITEM_YAOSHI_FIELD.index = 6
 localTable.MALLITEM_YAOSHI_FIELD.label = 1
 localTable.MALLITEM_YAOSHI_FIELD.has_default_value = false
+localTable.MALLITEM_YAOSHI_FIELD.default_value = 0
 localTable.MALLITEM_YAOSHI_FIELD.type = 13
 localTable.MALLITEM_YAOSHI_FIELD.cpp_type = 3
 
@@ -4277,6 +4654,7 @@ localTable.MALLITEM_ATTR_FIELD.number = 8
 localTable.MALLITEM_ATTR_FIELD.index = 7
 localTable.MALLITEM_ATTR_FIELD.label = 1
 localTable.MALLITEM_ATTR_FIELD.has_default_value = false
+localTable.MALLITEM_ATTR_FIELD.default_value = ""
 localTable.MALLITEM_ATTR_FIELD.type = 12
 localTable.MALLITEM_ATTR_FIELD.cpp_type = 9
 
@@ -4286,6 +4664,7 @@ localTable.MALLITEM_DETAIL_FIELD.number = 9
 localTable.MALLITEM_DETAIL_FIELD.index = 8
 localTable.MALLITEM_DETAIL_FIELD.label = 1
 localTable.MALLITEM_DETAIL_FIELD.has_default_value = false
+localTable.MALLITEM_DETAIL_FIELD.default_value = ""
 localTable.MALLITEM_DETAIL_FIELD.type = 12
 localTable.MALLITEM_DETAIL_FIELD.cpp_type = 9
 
@@ -4341,6 +4720,7 @@ localTable.PROPITEM_TYPE_FIELD.number = 1
 localTable.PROPITEM_TYPE_FIELD.index = 0
 localTable.PROPITEM_TYPE_FIELD.label = 1
 localTable.PROPITEM_TYPE_FIELD.has_default_value = false
+localTable.PROPITEM_TYPE_FIELD.default_value = 0
 localTable.PROPITEM_TYPE_FIELD.type = 13
 localTable.PROPITEM_TYPE_FIELD.cpp_type = 3
 
@@ -4350,6 +4730,7 @@ localTable.PROPITEM_VAL_FIELD.number = 2
 localTable.PROPITEM_VAL_FIELD.index = 1
 localTable.PROPITEM_VAL_FIELD.label = 1
 localTable.PROPITEM_VAL_FIELD.has_default_value = false
+localTable.PROPITEM_VAL_FIELD.default_value = 0
 localTable.PROPITEM_VAL_FIELD.type = 13
 localTable.PROPITEM_VAL_FIELD.cpp_type = 3
 
@@ -4369,6 +4750,7 @@ localTable.PROPITEM_DELTA_FIELD.number = 4
 localTable.PROPITEM_DELTA_FIELD.index = 3
 localTable.PROPITEM_DELTA_FIELD.label = 1
 localTable.PROPITEM_DELTA_FIELD.has_default_value = false
+localTable.PROPITEM_DELTA_FIELD.default_value = 0
 localTable.PROPITEM_DELTA_FIELD.type = 13
 localTable.PROPITEM_DELTA_FIELD.cpp_type = 3
 
@@ -4385,6 +4767,7 @@ localTable.REQMALLBUY_UID_FIELD.number = 1
 localTable.REQMALLBUY_UID_FIELD.index = 0
 localTable.REQMALLBUY_UID_FIELD.label = 1
 localTable.REQMALLBUY_UID_FIELD.has_default_value = false
+localTable.REQMALLBUY_UID_FIELD.default_value = 0
 localTable.REQMALLBUY_UID_FIELD.type = 13
 localTable.REQMALLBUY_UID_FIELD.cpp_type = 3
 
@@ -4394,6 +4777,7 @@ localTable.REQMALLBUY_ID_FIELD.number = 2
 localTable.REQMALLBUY_ID_FIELD.index = 1
 localTable.REQMALLBUY_ID_FIELD.label = 1
 localTable.REQMALLBUY_ID_FIELD.has_default_value = false
+localTable.REQMALLBUY_ID_FIELD.default_value = 0
 localTable.REQMALLBUY_ID_FIELD.type = 13
 localTable.REQMALLBUY_ID_FIELD.cpp_type = 3
 
@@ -4403,6 +4787,7 @@ localTable.REQMALLBUY_TYPE_FIELD.number = 3
 localTable.REQMALLBUY_TYPE_FIELD.index = 2
 localTable.REQMALLBUY_TYPE_FIELD.label = 1
 localTable.REQMALLBUY_TYPE_FIELD.has_default_value = false
+localTable.REQMALLBUY_TYPE_FIELD.default_value = 0
 localTable.REQMALLBUY_TYPE_FIELD.type = 13
 localTable.REQMALLBUY_TYPE_FIELD.cpp_type = 3
 
@@ -4440,6 +4825,7 @@ localTable.RSPMALLBUY_CARDRATIO_FIELD.number = 3
 localTable.RSPMALLBUY_CARDRATIO_FIELD.index = 2
 localTable.RSPMALLBUY_CARDRATIO_FIELD.label = 1
 localTable.RSPMALLBUY_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPMALLBUY_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPMALLBUY_CARDRATIO_FIELD.type = 1
 localTable.RSPMALLBUY_CARDRATIO_FIELD.cpp_type = 5
 
@@ -4449,6 +4835,7 @@ localTable.RSPMALLBUY_MONEY_FIELD.number = 4
 localTable.RSPMALLBUY_MONEY_FIELD.index = 3
 localTable.RSPMALLBUY_MONEY_FIELD.label = 1
 localTable.RSPMALLBUY_MONEY_FIELD.has_default_value = false
+localTable.RSPMALLBUY_MONEY_FIELD.default_value = 0
 localTable.RSPMALLBUY_MONEY_FIELD.type = 13
 localTable.RSPMALLBUY_MONEY_FIELD.cpp_type = 3
 
@@ -4458,6 +4845,7 @@ localTable.RSPMALLBUY_CFRG_FIELD.number = 5
 localTable.RSPMALLBUY_CFRG_FIELD.index = 4
 localTable.RSPMALLBUY_CFRG_FIELD.label = 1
 localTable.RSPMALLBUY_CFRG_FIELD.has_default_value = false
+localTable.RSPMALLBUY_CFRG_FIELD.default_value = 0
 localTable.RSPMALLBUY_CFRG_FIELD.type = 13
 localTable.RSPMALLBUY_CFRG_FIELD.cpp_type = 3
 
@@ -4474,6 +4862,7 @@ localTable.REQEXCHANGEMALLITEM_UID_FIELD.number = 1
 localTable.REQEXCHANGEMALLITEM_UID_FIELD.index = 0
 localTable.REQEXCHANGEMALLITEM_UID_FIELD.label = 1
 localTable.REQEXCHANGEMALLITEM_UID_FIELD.has_default_value = false
+localTable.REQEXCHANGEMALLITEM_UID_FIELD.default_value = 0
 localTable.REQEXCHANGEMALLITEM_UID_FIELD.type = 13
 localTable.REQEXCHANGEMALLITEM_UID_FIELD.cpp_type = 3
 
@@ -4483,6 +4872,7 @@ localTable.REQEXCHANGEMALLITEM_ID_FIELD.number = 2
 localTable.REQEXCHANGEMALLITEM_ID_FIELD.index = 1
 localTable.REQEXCHANGEMALLITEM_ID_FIELD.label = 1
 localTable.REQEXCHANGEMALLITEM_ID_FIELD.has_default_value = false
+localTable.REQEXCHANGEMALLITEM_ID_FIELD.default_value = 0
 localTable.REQEXCHANGEMALLITEM_ID_FIELD.type = 13
 localTable.REQEXCHANGEMALLITEM_ID_FIELD.cpp_type = 3
 
@@ -4499,6 +4889,7 @@ localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.number = 1
 localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.index = 0
 localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.label = 1
 localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.has_default_value = false
+localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.default_value = 0
 localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.type = 13
 localTable.REQGETFRAGMENTMANIFEST_UID_FIELD.cpp_type = 3
 
@@ -4515,6 +4906,7 @@ localTable.PKGCARD_ID_FIELD.number = 1
 localTable.PKGCARD_ID_FIELD.index = 0
 localTable.PKGCARD_ID_FIELD.label = 1
 localTable.PKGCARD_ID_FIELD.has_default_value = false
+localTable.PKGCARD_ID_FIELD.default_value = 0
 localTable.PKGCARD_ID_FIELD.type = 13
 localTable.PKGCARD_ID_FIELD.cpp_type = 3
 
@@ -4524,6 +4916,7 @@ localTable.PKGCARD_CLAIMED_FIELD.number = 2
 localTable.PKGCARD_CLAIMED_FIELD.index = 1
 localTable.PKGCARD_CLAIMED_FIELD.label = 1
 localTable.PKGCARD_CLAIMED_FIELD.has_default_value = false
+localTable.PKGCARD_CLAIMED_FIELD.default_value = 0
 localTable.PKGCARD_CLAIMED_FIELD.type = 13
 localTable.PKGCARD_CLAIMED_FIELD.cpp_type = 3
 
@@ -4540,6 +4933,7 @@ localTable.SINGLECARD_ID_FIELD.number = 1
 localTable.SINGLECARD_ID_FIELD.index = 0
 localTable.SINGLECARD_ID_FIELD.label = 1
 localTable.SINGLECARD_ID_FIELD.has_default_value = false
+localTable.SINGLECARD_ID_FIELD.default_value = 0
 localTable.SINGLECARD_ID_FIELD.type = 13
 localTable.SINGLECARD_ID_FIELD.cpp_type = 3
 
@@ -4549,6 +4943,7 @@ localTable.SINGLECARD_CLAIMED_FIELD.number = 2
 localTable.SINGLECARD_CLAIMED_FIELD.index = 1
 localTable.SINGLECARD_CLAIMED_FIELD.label = 1
 localTable.SINGLECARD_CLAIMED_FIELD.has_default_value = false
+localTable.SINGLECARD_CLAIMED_FIELD.default_value = 0
 localTable.SINGLECARD_CLAIMED_FIELD.type = 13
 localTable.SINGLECARD_CLAIMED_FIELD.cpp_type = 3
 
@@ -4558,6 +4953,7 @@ localTable.SINGLECARD_PRICE_FIELD.number = 3
 localTable.SINGLECARD_PRICE_FIELD.index = 2
 localTable.SINGLECARD_PRICE_FIELD.label = 1
 localTable.SINGLECARD_PRICE_FIELD.has_default_value = false
+localTable.SINGLECARD_PRICE_FIELD.default_value = 0
 localTable.SINGLECARD_PRICE_FIELD.type = 13
 localTable.SINGLECARD_PRICE_FIELD.cpp_type = 3
 
@@ -4567,6 +4963,7 @@ localTable.SINGLECARD_LIMIT_FIELD.number = 4
 localTable.SINGLECARD_LIMIT_FIELD.index = 3
 localTable.SINGLECARD_LIMIT_FIELD.label = 1
 localTable.SINGLECARD_LIMIT_FIELD.has_default_value = false
+localTable.SINGLECARD_LIMIT_FIELD.default_value = 0
 localTable.SINGLECARD_LIMIT_FIELD.type = 13
 localTable.SINGLECARD_LIMIT_FIELD.cpp_type = 3
 
@@ -4576,6 +4973,7 @@ localTable.SINGLECARD_LEVEL_FIELD.number = 5
 localTable.SINGLECARD_LEVEL_FIELD.index = 4
 localTable.SINGLECARD_LEVEL_FIELD.label = 1
 localTable.SINGLECARD_LEVEL_FIELD.has_default_value = false
+localTable.SINGLECARD_LEVEL_FIELD.default_value = 0
 localTable.SINGLECARD_LEVEL_FIELD.type = 13
 localTable.SINGLECARD_LEVEL_FIELD.cpp_type = 3
 
@@ -4602,6 +5000,7 @@ localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.number = 2
 localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.index = 1
 localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.label = 1
 localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.has_default_value = false
+localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.default_value = 0
 localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.type = 13
 localTable.RSPGETFRAGMENTMANIFEST_ID_FIELD.cpp_type = 3
 
@@ -4611,6 +5010,7 @@ localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.number = 3
 localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.index = 2
 localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.label = 1
 localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.has_default_value = false
+localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.default_value = 0
 localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.type = 13
 localTable.RSPGETFRAGMENTMANIFEST_DATE_FIELD.cpp_type = 3
 
@@ -4620,6 +5020,7 @@ localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.number = 4
 localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.index = 3
 localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.label = 1
 localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.has_default_value = false
+localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.default_value = 0
 localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.type = 13
 localTable.RSPGETFRAGMENTMANIFEST_PKGLIMIT_FIELD.cpp_type = 3
 
@@ -4629,6 +5030,7 @@ localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.number = 5
 localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.index = 4
 localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.label = 1
 localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.has_default_value = false
+localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.default_value = 0
 localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.type = 13
 localTable.RSPGETFRAGMENTMANIFEST_PKGLEVEL_FIELD.cpp_type = 3
 
@@ -4638,6 +5040,7 @@ localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.number = 6
 localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.index = 5
 localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.label = 1
 localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.has_default_value = false
+localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.default_value = 0
 localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.type = 13
 localTable.RSPGETFRAGMENTMANIFEST_PKGCOST_FIELD.cpp_type = 3
 
@@ -4676,6 +5079,7 @@ localTable.REQGETTOPUPLIST_UID_FIELD.number = 1
 localTable.REQGETTOPUPLIST_UID_FIELD.index = 0
 localTable.REQGETTOPUPLIST_UID_FIELD.label = 1
 localTable.REQGETTOPUPLIST_UID_FIELD.has_default_value = false
+localTable.REQGETTOPUPLIST_UID_FIELD.default_value = 0
 localTable.REQGETTOPUPLIST_UID_FIELD.type = 13
 localTable.REQGETTOPUPLIST_UID_FIELD.cpp_type = 3
 
@@ -4692,6 +5096,7 @@ localTable.TOPUPITEM_ID_FIELD.number = 1
 localTable.TOPUPITEM_ID_FIELD.index = 0
 localTable.TOPUPITEM_ID_FIELD.label = 1
 localTable.TOPUPITEM_ID_FIELD.has_default_value = false
+localTable.TOPUPITEM_ID_FIELD.default_value = 0
 localTable.TOPUPITEM_ID_FIELD.type = 13
 localTable.TOPUPITEM_ID_FIELD.cpp_type = 3
 
@@ -4701,6 +5106,7 @@ localTable.TOPUPITEM_RMB_FIELD.number = 2
 localTable.TOPUPITEM_RMB_FIELD.index = 1
 localTable.TOPUPITEM_RMB_FIELD.label = 1
 localTable.TOPUPITEM_RMB_FIELD.has_default_value = false
+localTable.TOPUPITEM_RMB_FIELD.default_value = 0
 localTable.TOPUPITEM_RMB_FIELD.type = 13
 localTable.TOPUPITEM_RMB_FIELD.cpp_type = 3
 
@@ -4710,6 +5116,7 @@ localTable.TOPUPITEM_MONEY_FIELD.number = 3
 localTable.TOPUPITEM_MONEY_FIELD.index = 2
 localTable.TOPUPITEM_MONEY_FIELD.label = 1
 localTable.TOPUPITEM_MONEY_FIELD.has_default_value = false
+localTable.TOPUPITEM_MONEY_FIELD.default_value = 0
 localTable.TOPUPITEM_MONEY_FIELD.type = 13
 localTable.TOPUPITEM_MONEY_FIELD.cpp_type = 3
 
@@ -4719,6 +5126,7 @@ localTable.TOPUPITEM_BONUS_FIELD.number = 4
 localTable.TOPUPITEM_BONUS_FIELD.index = 3
 localTable.TOPUPITEM_BONUS_FIELD.label = 1
 localTable.TOPUPITEM_BONUS_FIELD.has_default_value = false
+localTable.TOPUPITEM_BONUS_FIELD.default_value = 0
 localTable.TOPUPITEM_BONUS_FIELD.type = 13
 localTable.TOPUPITEM_BONUS_FIELD.cpp_type = 3
 
@@ -4728,6 +5136,7 @@ localTable.TOPUPITEM_CF_FIELD.number = 5
 localTable.TOPUPITEM_CF_FIELD.index = 4
 localTable.TOPUPITEM_CF_FIELD.label = 1
 localTable.TOPUPITEM_CF_FIELD.has_default_value = false
+localTable.TOPUPITEM_CF_FIELD.default_value = 0
 localTable.TOPUPITEM_CF_FIELD.type = 13
 localTable.TOPUPITEM_CF_FIELD.cpp_type = 3
 
@@ -4737,6 +5146,7 @@ localTable.TOPUPITEM_RENEW_FIELD.number = 6
 localTable.TOPUPITEM_RENEW_FIELD.index = 5
 localTable.TOPUPITEM_RENEW_FIELD.label = 1
 localTable.TOPUPITEM_RENEW_FIELD.has_default_value = false
+localTable.TOPUPITEM_RENEW_FIELD.default_value = 0
 localTable.TOPUPITEM_RENEW_FIELD.type = 13
 localTable.TOPUPITEM_RENEW_FIELD.cpp_type = 3
 
@@ -4746,6 +5156,7 @@ localTable.TOPUPITEM_SPECIAL_FIELD.number = 7
 localTable.TOPUPITEM_SPECIAL_FIELD.index = 6
 localTable.TOPUPITEM_SPECIAL_FIELD.label = 1
 localTable.TOPUPITEM_SPECIAL_FIELD.has_default_value = false
+localTable.TOPUPITEM_SPECIAL_FIELD.default_value = 0
 localTable.TOPUPITEM_SPECIAL_FIELD.type = 13
 localTable.TOPUPITEM_SPECIAL_FIELD.cpp_type = 3
 
@@ -4755,6 +5166,7 @@ localTable.TOPUPITEM_FDOUBLE_FIELD.number = 8
 localTable.TOPUPITEM_FDOUBLE_FIELD.index = 7
 localTable.TOPUPITEM_FDOUBLE_FIELD.label = 1
 localTable.TOPUPITEM_FDOUBLE_FIELD.has_default_value = false
+localTable.TOPUPITEM_FDOUBLE_FIELD.default_value = false
 localTable.TOPUPITEM_FDOUBLE_FIELD.type = 8
 localTable.TOPUPITEM_FDOUBLE_FIELD.cpp_type = 7
 
@@ -4764,6 +5176,7 @@ localTable.TOPUPITEM_BOUGHT_FIELD.number = 9
 localTable.TOPUPITEM_BOUGHT_FIELD.index = 8
 localTable.TOPUPITEM_BOUGHT_FIELD.label = 1
 localTable.TOPUPITEM_BOUGHT_FIELD.has_default_value = false
+localTable.TOPUPITEM_BOUGHT_FIELD.default_value = false
 localTable.TOPUPITEM_BOUGHT_FIELD.type = 8
 localTable.TOPUPITEM_BOUGHT_FIELD.cpp_type = 7
 
@@ -4773,6 +5186,7 @@ localTable.TOPUPITEM_NAME_FIELD.number = 10
 localTable.TOPUPITEM_NAME_FIELD.index = 9
 localTable.TOPUPITEM_NAME_FIELD.label = 1
 localTable.TOPUPITEM_NAME_FIELD.has_default_value = false
+localTable.TOPUPITEM_NAME_FIELD.default_value = ""
 localTable.TOPUPITEM_NAME_FIELD.type = 12
 localTable.TOPUPITEM_NAME_FIELD.cpp_type = 9
 
@@ -4782,6 +5196,7 @@ localTable.TOPUPITEM_INFO_FIELD.number = 11
 localTable.TOPUPITEM_INFO_FIELD.index = 10
 localTable.TOPUPITEM_INFO_FIELD.label = 1
 localTable.TOPUPITEM_INFO_FIELD.has_default_value = false
+localTable.TOPUPITEM_INFO_FIELD.default_value = ""
 localTable.TOPUPITEM_INFO_FIELD.type = 12
 localTable.TOPUPITEM_INFO_FIELD.cpp_type = 9
 
@@ -4791,6 +5206,7 @@ localTable.TOPUPITEM_PLATFORMS_FIELD.number = 12
 localTable.TOPUPITEM_PLATFORMS_FIELD.index = 11
 localTable.TOPUPITEM_PLATFORMS_FIELD.label = 1
 localTable.TOPUPITEM_PLATFORMS_FIELD.has_default_value = false
+localTable.TOPUPITEM_PLATFORMS_FIELD.default_value = ""
 localTable.TOPUPITEM_PLATFORMS_FIELD.type = 12
 localTable.TOPUPITEM_PLATFORMS_FIELD.cpp_type = 9
 
@@ -4835,6 +5251,7 @@ localTable.ORDERINFO_PLATFORM_FIELD.number = 1
 localTable.ORDERINFO_PLATFORM_FIELD.index = 0
 localTable.ORDERINFO_PLATFORM_FIELD.label = 1
 localTable.ORDERINFO_PLATFORM_FIELD.has_default_value = false
+localTable.ORDERINFO_PLATFORM_FIELD.default_value = 0
 localTable.ORDERINFO_PLATFORM_FIELD.type = 13
 localTable.ORDERINFO_PLATFORM_FIELD.cpp_type = 3
 
@@ -4844,6 +5261,7 @@ localTable.ORDERINFO_DOUBLEFIRST_FIELD.number = 2
 localTable.ORDERINFO_DOUBLEFIRST_FIELD.index = 1
 localTable.ORDERINFO_DOUBLEFIRST_FIELD.label = 1
 localTable.ORDERINFO_DOUBLEFIRST_FIELD.has_default_value = false
+localTable.ORDERINFO_DOUBLEFIRST_FIELD.default_value = 0
 localTable.ORDERINFO_DOUBLEFIRST_FIELD.type = 13
 localTable.ORDERINFO_DOUBLEFIRST_FIELD.cpp_type = 3
 
@@ -4853,6 +5271,7 @@ localTable.ORDERINFO_UID_FIELD.number = 3
 localTable.ORDERINFO_UID_FIELD.index = 2
 localTable.ORDERINFO_UID_FIELD.label = 1
 localTable.ORDERINFO_UID_FIELD.has_default_value = false
+localTable.ORDERINFO_UID_FIELD.default_value = 0
 localTable.ORDERINFO_UID_FIELD.type = 13
 localTable.ORDERINFO_UID_FIELD.cpp_type = 3
 
@@ -4862,6 +5281,7 @@ localTable.ORDERINFO_CENTS_FIELD.number = 4
 localTable.ORDERINFO_CENTS_FIELD.index = 3
 localTable.ORDERINFO_CENTS_FIELD.label = 1
 localTable.ORDERINFO_CENTS_FIELD.has_default_value = false
+localTable.ORDERINFO_CENTS_FIELD.default_value = 0
 localTable.ORDERINFO_CENTS_FIELD.type = 13
 localTable.ORDERINFO_CENTS_FIELD.cpp_type = 3
 
@@ -4871,6 +5291,7 @@ localTable.ORDERINFO_GAMEMONEY_FIELD.number = 5
 localTable.ORDERINFO_GAMEMONEY_FIELD.index = 4
 localTable.ORDERINFO_GAMEMONEY_FIELD.label = 1
 localTable.ORDERINFO_GAMEMONEY_FIELD.has_default_value = false
+localTable.ORDERINFO_GAMEMONEY_FIELD.default_value = 0
 localTable.ORDERINFO_GAMEMONEY_FIELD.type = 13
 localTable.ORDERINFO_GAMEMONEY_FIELD.cpp_type = 3
 
@@ -4880,6 +5301,7 @@ localTable.ORDERINFO_PRODUCTID_FIELD.number = 6
 localTable.ORDERINFO_PRODUCTID_FIELD.index = 5
 localTable.ORDERINFO_PRODUCTID_FIELD.label = 1
 localTable.ORDERINFO_PRODUCTID_FIELD.has_default_value = false
+localTable.ORDERINFO_PRODUCTID_FIELD.default_value = 0
 localTable.ORDERINFO_PRODUCTID_FIELD.type = 13
 localTable.ORDERINFO_PRODUCTID_FIELD.cpp_type = 3
 
@@ -4889,6 +5311,7 @@ localTable.ORDERINFO_CARDFRAGMENT_FIELD.number = 7
 localTable.ORDERINFO_CARDFRAGMENT_FIELD.index = 6
 localTable.ORDERINFO_CARDFRAGMENT_FIELD.label = 1
 localTable.ORDERINFO_CARDFRAGMENT_FIELD.has_default_value = false
+localTable.ORDERINFO_CARDFRAGMENT_FIELD.default_value = 0
 localTable.ORDERINFO_CARDFRAGMENT_FIELD.type = 13
 localTable.ORDERINFO_CARDFRAGMENT_FIELD.cpp_type = 3
 
@@ -4898,6 +5321,7 @@ localTable.ORDERINFO_ORDERID_FIELD.number = 8
 localTable.ORDERINFO_ORDERID_FIELD.index = 7
 localTable.ORDERINFO_ORDERID_FIELD.label = 1
 localTable.ORDERINFO_ORDERID_FIELD.has_default_value = false
+localTable.ORDERINFO_ORDERID_FIELD.default_value = ""
 localTable.ORDERINFO_ORDERID_FIELD.type = 9
 localTable.ORDERINFO_ORDERID_FIELD.cpp_type = 9
 
@@ -4907,6 +5331,7 @@ localTable.ORDERINFO_CPORDERID_FIELD.number = 9
 localTable.ORDERINFO_CPORDERID_FIELD.index = 8
 localTable.ORDERINFO_CPORDERID_FIELD.label = 1
 localTable.ORDERINFO_CPORDERID_FIELD.has_default_value = false
+localTable.ORDERINFO_CPORDERID_FIELD.default_value = ""
 localTable.ORDERINFO_CPORDERID_FIELD.type = 9
 localTable.ORDERINFO_CPORDERID_FIELD.cpp_type = 9
 
@@ -4916,6 +5341,7 @@ localTable.ORDERINFO_NAME_FIELD.number = 10
 localTable.ORDERINFO_NAME_FIELD.index = 9
 localTable.ORDERINFO_NAME_FIELD.label = 1
 localTable.ORDERINFO_NAME_FIELD.has_default_value = false
+localTable.ORDERINFO_NAME_FIELD.default_value = ""
 localTable.ORDERINFO_NAME_FIELD.type = 12
 localTable.ORDERINFO_NAME_FIELD.cpp_type = 9
 
@@ -4925,6 +5351,7 @@ localTable.ORDERINFO_INFO_FIELD.number = 11
 localTable.ORDERINFO_INFO_FIELD.index = 10
 localTable.ORDERINFO_INFO_FIELD.label = 1
 localTable.ORDERINFO_INFO_FIELD.has_default_value = false
+localTable.ORDERINFO_INFO_FIELD.default_value = ""
 localTable.ORDERINFO_INFO_FIELD.type = 12
 localTable.ORDERINFO_INFO_FIELD.cpp_type = 9
 
@@ -4941,6 +5368,7 @@ localTable.REQTOPUP_UID_FIELD.number = 1
 localTable.REQTOPUP_UID_FIELD.index = 0
 localTable.REQTOPUP_UID_FIELD.label = 1
 localTable.REQTOPUP_UID_FIELD.has_default_value = false
+localTable.REQTOPUP_UID_FIELD.default_value = 0
 localTable.REQTOPUP_UID_FIELD.type = 13
 localTable.REQTOPUP_UID_FIELD.cpp_type = 3
 
@@ -4950,6 +5378,7 @@ localTable.REQTOPUP_ORDER_FIELD.number = 2
 localTable.REQTOPUP_ORDER_FIELD.index = 1
 localTable.REQTOPUP_ORDER_FIELD.label = 2
 localTable.REQTOPUP_ORDER_FIELD.has_default_value = false
+localTable.REQTOPUP_ORDER_FIELD.default_value = nil
 localTable.REQTOPUP_ORDER_FIELD.message_type = ORDERINFO
 localTable.REQTOPUP_ORDER_FIELD.type = 11
 localTable.REQTOPUP_ORDER_FIELD.cpp_type = 10
@@ -4984,6 +5413,7 @@ localTable.REQGETENDPLAYLIST_UID_FIELD.number = 1
 localTable.REQGETENDPLAYLIST_UID_FIELD.index = 0
 localTable.REQGETENDPLAYLIST_UID_FIELD.label = 1
 localTable.REQGETENDPLAYLIST_UID_FIELD.has_default_value = false
+localTable.REQGETENDPLAYLIST_UID_FIELD.default_value = 0
 localTable.REQGETENDPLAYLIST_UID_FIELD.type = 13
 localTable.REQGETENDPLAYLIST_UID_FIELD.cpp_type = 3
 
@@ -5000,6 +5430,7 @@ localTable.ENDPLAYITEM_ID_FIELD.number = 1
 localTable.ENDPLAYITEM_ID_FIELD.index = 0
 localTable.ENDPLAYITEM_ID_FIELD.label = 1
 localTable.ENDPLAYITEM_ID_FIELD.has_default_value = false
+localTable.ENDPLAYITEM_ID_FIELD.default_value = 0
 localTable.ENDPLAYITEM_ID_FIELD.type = 13
 localTable.ENDPLAYITEM_ID_FIELD.cpp_type = 3
 
@@ -5009,6 +5440,7 @@ localTable.ENDPLAYITEM_STATUS_FIELD.number = 2
 localTable.ENDPLAYITEM_STATUS_FIELD.index = 1
 localTable.ENDPLAYITEM_STATUS_FIELD.label = 1
 localTable.ENDPLAYITEM_STATUS_FIELD.has_default_value = false
+localTable.ENDPLAYITEM_STATUS_FIELD.default_value = 0
 localTable.ENDPLAYITEM_STATUS_FIELD.type = 13
 localTable.ENDPLAYITEM_STATUS_FIELD.cpp_type = 3
 
@@ -5018,6 +5450,7 @@ localTable.ENDPLAYITEM_LEVEL_FIELD.number = 3
 localTable.ENDPLAYITEM_LEVEL_FIELD.index = 2
 localTable.ENDPLAYITEM_LEVEL_FIELD.label = 1
 localTable.ENDPLAYITEM_LEVEL_FIELD.has_default_value = false
+localTable.ENDPLAYITEM_LEVEL_FIELD.default_value = 0
 localTable.ENDPLAYITEM_LEVEL_FIELD.type = 13
 localTable.ENDPLAYITEM_LEVEL_FIELD.cpp_type = 3
 
@@ -5027,6 +5460,7 @@ localTable.ENDPLAYITEM_BONUS_FIELD.number = 4
 localTable.ENDPLAYITEM_BONUS_FIELD.index = 3
 localTable.ENDPLAYITEM_BONUS_FIELD.label = 1
 localTable.ENDPLAYITEM_BONUS_FIELD.has_default_value = false
+localTable.ENDPLAYITEM_BONUS_FIELD.default_value = ""
 localTable.ENDPLAYITEM_BONUS_FIELD.type = 9
 localTable.ENDPLAYITEM_BONUS_FIELD.cpp_type = 9
 
@@ -5071,6 +5505,7 @@ localTable.REQGETENDPLAYBONUS_UID_FIELD.number = 1
 localTable.REQGETENDPLAYBONUS_UID_FIELD.index = 0
 localTable.REQGETENDPLAYBONUS_UID_FIELD.label = 1
 localTable.REQGETENDPLAYBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETENDPLAYBONUS_UID_FIELD.default_value = 0
 localTable.REQGETENDPLAYBONUS_UID_FIELD.type = 13
 localTable.REQGETENDPLAYBONUS_UID_FIELD.cpp_type = 3
 
@@ -5080,6 +5515,7 @@ localTable.REQGETENDPLAYBONUS_ID_FIELD.number = 2
 localTable.REQGETENDPLAYBONUS_ID_FIELD.index = 1
 localTable.REQGETENDPLAYBONUS_ID_FIELD.label = 1
 localTable.REQGETENDPLAYBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETENDPLAYBONUS_ID_FIELD.default_value = 0
 localTable.REQGETENDPLAYBONUS_ID_FIELD.type = 13
 localTable.REQGETENDPLAYBONUS_ID_FIELD.cpp_type = 3
 
@@ -5106,6 +5542,7 @@ localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETENDPLAYBONUS_BONUS_FIELD.cpp_type = 10
@@ -5116,6 +5553,7 @@ localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETENDPLAYBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -5132,6 +5570,7 @@ localTable.REQUPDATEENDPLAY_UID_FIELD.number = 1
 localTable.REQUPDATEENDPLAY_UID_FIELD.index = 0
 localTable.REQUPDATEENDPLAY_UID_FIELD.label = 1
 localTable.REQUPDATEENDPLAY_UID_FIELD.has_default_value = false
+localTable.REQUPDATEENDPLAY_UID_FIELD.default_value = 0
 localTable.REQUPDATEENDPLAY_UID_FIELD.type = 13
 localTable.REQUPDATEENDPLAY_UID_FIELD.cpp_type = 3
 
@@ -5141,6 +5580,7 @@ localTable.REQUPDATEENDPLAY_ID_FIELD.number = 2
 localTable.REQUPDATEENDPLAY_ID_FIELD.index = 1
 localTable.REQUPDATEENDPLAY_ID_FIELD.label = 1
 localTable.REQUPDATEENDPLAY_ID_FIELD.has_default_value = false
+localTable.REQUPDATEENDPLAY_ID_FIELD.default_value = 0
 localTable.REQUPDATEENDPLAY_ID_FIELD.type = 13
 localTable.REQUPDATEENDPLAY_ID_FIELD.cpp_type = 3
 
@@ -5174,6 +5614,7 @@ localTable.GAMEACHIEVEITEM_ID_FIELD.number = 1
 localTable.GAMEACHIEVEITEM_ID_FIELD.index = 0
 localTable.GAMEACHIEVEITEM_ID_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_ID_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_ID_FIELD.default_value = 0
 localTable.GAMEACHIEVEITEM_ID_FIELD.type = 13
 localTable.GAMEACHIEVEITEM_ID_FIELD.cpp_type = 3
 
@@ -5183,6 +5624,7 @@ localTable.GAMEACHIEVEITEM_STATUS_FIELD.number = 2
 localTable.GAMEACHIEVEITEM_STATUS_FIELD.index = 1
 localTable.GAMEACHIEVEITEM_STATUS_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_STATUS_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_STATUS_FIELD.default_value = 0
 localTable.GAMEACHIEVEITEM_STATUS_FIELD.type = 13
 localTable.GAMEACHIEVEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -5192,6 +5634,7 @@ localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.number = 3
 localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.index = 2
 localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.default_value = 0
 localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.type = 13
 localTable.GAMEACHIEVEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -5201,6 +5644,7 @@ localTable.GAMEACHIEVEITEM_TOTAL_FIELD.number = 4
 localTable.GAMEACHIEVEITEM_TOTAL_FIELD.index = 3
 localTable.GAMEACHIEVEITEM_TOTAL_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_TOTAL_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_TOTAL_FIELD.default_value = 0
 localTable.GAMEACHIEVEITEM_TOTAL_FIELD.type = 13
 localTable.GAMEACHIEVEITEM_TOTAL_FIELD.cpp_type = 3
 
@@ -5210,6 +5654,7 @@ localTable.GAMEACHIEVEITEM_ICON_FIELD.number = 5
 localTable.GAMEACHIEVEITEM_ICON_FIELD.index = 4
 localTable.GAMEACHIEVEITEM_ICON_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_ICON_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_ICON_FIELD.default_value = 0
 localTable.GAMEACHIEVEITEM_ICON_FIELD.type = 13
 localTable.GAMEACHIEVEITEM_ICON_FIELD.cpp_type = 3
 
@@ -5219,6 +5664,7 @@ localTable.GAMEACHIEVEITEM_NAME_FIELD.number = 6
 localTable.GAMEACHIEVEITEM_NAME_FIELD.index = 5
 localTable.GAMEACHIEVEITEM_NAME_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_NAME_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_NAME_FIELD.default_value = ""
 localTable.GAMEACHIEVEITEM_NAME_FIELD.type = 9
 localTable.GAMEACHIEVEITEM_NAME_FIELD.cpp_type = 9
 
@@ -5228,6 +5674,7 @@ localTable.GAMEACHIEVEITEM_INFO_FIELD.number = 7
 localTable.GAMEACHIEVEITEM_INFO_FIELD.index = 6
 localTable.GAMEACHIEVEITEM_INFO_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_INFO_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_INFO_FIELD.default_value = ""
 localTable.GAMEACHIEVEITEM_INFO_FIELD.type = 9
 localTable.GAMEACHIEVEITEM_INFO_FIELD.cpp_type = 9
 
@@ -5237,6 +5684,7 @@ localTable.GAMEACHIEVEITEM_BONUS_FIELD.number = 8
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.index = 7
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.label = 1
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.has_default_value = false
+localTable.GAMEACHIEVEITEM_BONUS_FIELD.default_value = nil
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.message_type = PROPITEM
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.type = 11
 localTable.GAMEACHIEVEITEM_BONUS_FIELD.cpp_type = 10
@@ -5254,6 +5702,7 @@ localTable.REQGETGAMEACHIEVELIST_UID_FIELD.number = 1
 localTable.REQGETGAMEACHIEVELIST_UID_FIELD.index = 0
 localTable.REQGETGAMEACHIEVELIST_UID_FIELD.label = 1
 localTable.REQGETGAMEACHIEVELIST_UID_FIELD.has_default_value = false
+localTable.REQGETGAMEACHIEVELIST_UID_FIELD.default_value = 0
 localTable.REQGETGAMEACHIEVELIST_UID_FIELD.type = 13
 localTable.REQGETGAMEACHIEVELIST_UID_FIELD.cpp_type = 3
 
@@ -5298,6 +5747,7 @@ localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.number = 1
 localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.index = 0
 localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.label = 1
 localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.default_value = 0
 localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.type = 13
 localTable.REQGETGAMEACHIEVEBONUS_UID_FIELD.cpp_type = 3
 
@@ -5307,6 +5757,7 @@ localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.number = 2
 localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.index = 1
 localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.label = 1
 localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.default_value = 0
 localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.type = 13
 localTable.REQGETGAMEACHIEVEBONUS_ID_FIELD.cpp_type = 3
 
@@ -5333,6 +5784,7 @@ localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETGAMEACHIEVEBONUS_BONUS_FIELD.cpp_type = 10
@@ -5343,6 +5795,7 @@ localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETGAMEACHIEVEBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -5359,6 +5812,7 @@ localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.number = 1
 localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.index = 0
 localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.label = 1
 localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.has_default_value = false
+localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.default_value = 0
 localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.type = 13
 localTable.GAMEACHIEVEUPDATEITEM_ID_FIELD.cpp_type = 3
 
@@ -5368,6 +5822,7 @@ localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.number = 2
 localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.index = 1
 localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.label = 1
 localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.default_value = 0
 localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.type = 13
 localTable.GAMEACHIEVEUPDATEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -5377,6 +5832,7 @@ localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.number = 3
 localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.index = 2
 localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.label = 1
 localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.has_default_value = false
+localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.default_value = 0
 localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.type = 13
 localTable.GAMEACHIEVEUPDATEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -5393,6 +5849,7 @@ localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.number = 1
 localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.index = 0
 localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.label = 1
 localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.type = 13
 localTable.PUSHGAMEACHIEVENOTIFY_UID_FIELD.cpp_type = 3
 
@@ -5420,6 +5877,7 @@ localTable.REQGETWELFARELIST_UID_FIELD.number = 1
 localTable.REQGETWELFARELIST_UID_FIELD.index = 0
 localTable.REQGETWELFARELIST_UID_FIELD.label = 1
 localTable.REQGETWELFARELIST_UID_FIELD.has_default_value = false
+localTable.REQGETWELFARELIST_UID_FIELD.default_value = 0
 localTable.REQGETWELFARELIST_UID_FIELD.type = 13
 localTable.REQGETWELFARELIST_UID_FIELD.cpp_type = 3
 
@@ -5436,6 +5894,7 @@ localTable.WELFAREITEM_ID_FIELD.number = 1
 localTable.WELFAREITEM_ID_FIELD.index = 0
 localTable.WELFAREITEM_ID_FIELD.label = 1
 localTable.WELFAREITEM_ID_FIELD.has_default_value = false
+localTable.WELFAREITEM_ID_FIELD.default_value = 0
 localTable.WELFAREITEM_ID_FIELD.type = 13
 localTable.WELFAREITEM_ID_FIELD.cpp_type = 3
 
@@ -5445,6 +5904,7 @@ localTable.WELFAREITEM_TYPE_FIELD.number = 2
 localTable.WELFAREITEM_TYPE_FIELD.index = 1
 localTable.WELFAREITEM_TYPE_FIELD.label = 1
 localTable.WELFAREITEM_TYPE_FIELD.has_default_value = false
+localTable.WELFAREITEM_TYPE_FIELD.default_value = 0
 localTable.WELFAREITEM_TYPE_FIELD.type = 13
 localTable.WELFAREITEM_TYPE_FIELD.cpp_type = 3
 
@@ -5454,6 +5914,7 @@ localTable.WELFAREITEM_ICON_FIELD.number = 3
 localTable.WELFAREITEM_ICON_FIELD.index = 2
 localTable.WELFAREITEM_ICON_FIELD.label = 1
 localTable.WELFAREITEM_ICON_FIELD.has_default_value = false
+localTable.WELFAREITEM_ICON_FIELD.default_value = 0
 localTable.WELFAREITEM_ICON_FIELD.type = 13
 localTable.WELFAREITEM_ICON_FIELD.cpp_type = 3
 
@@ -5463,6 +5924,7 @@ localTable.WELFAREITEM_STATUS_FIELD.number = 4
 localTable.WELFAREITEM_STATUS_FIELD.index = 3
 localTable.WELFAREITEM_STATUS_FIELD.label = 1
 localTable.WELFAREITEM_STATUS_FIELD.has_default_value = false
+localTable.WELFAREITEM_STATUS_FIELD.default_value = 0
 localTable.WELFAREITEM_STATUS_FIELD.type = 13
 localTable.WELFAREITEM_STATUS_FIELD.cpp_type = 3
 
@@ -5472,6 +5934,7 @@ localTable.WELFAREITEM_NAME_FIELD.number = 5
 localTable.WELFAREITEM_NAME_FIELD.index = 4
 localTable.WELFAREITEM_NAME_FIELD.label = 1
 localTable.WELFAREITEM_NAME_FIELD.has_default_value = false
+localTable.WELFAREITEM_NAME_FIELD.default_value = ""
 localTable.WELFAREITEM_NAME_FIELD.type = 12
 localTable.WELFAREITEM_NAME_FIELD.cpp_type = 9
 
@@ -5481,6 +5944,7 @@ localTable.WELFAREITEM_DETAILS_FIELD.number = 6
 localTable.WELFAREITEM_DETAILS_FIELD.index = 5
 localTable.WELFAREITEM_DETAILS_FIELD.label = 1
 localTable.WELFAREITEM_DETAILS_FIELD.has_default_value = false
+localTable.WELFAREITEM_DETAILS_FIELD.default_value = ""
 localTable.WELFAREITEM_DETAILS_FIELD.type = 12
 localTable.WELFAREITEM_DETAILS_FIELD.cpp_type = 9
 
@@ -5490,6 +5954,7 @@ localTable.WELFAREITEM_EXTRA1_FIELD.number = 7
 localTable.WELFAREITEM_EXTRA1_FIELD.index = 6
 localTable.WELFAREITEM_EXTRA1_FIELD.label = 1
 localTable.WELFAREITEM_EXTRA1_FIELD.has_default_value = false
+localTable.WELFAREITEM_EXTRA1_FIELD.default_value = 0
 localTable.WELFAREITEM_EXTRA1_FIELD.type = 13
 localTable.WELFAREITEM_EXTRA1_FIELD.cpp_type = 3
 
@@ -5499,6 +5964,7 @@ localTable.WELFAREITEM_EXTRA2_FIELD.number = 8
 localTable.WELFAREITEM_EXTRA2_FIELD.index = 7
 localTable.WELFAREITEM_EXTRA2_FIELD.label = 1
 localTable.WELFAREITEM_EXTRA2_FIELD.has_default_value = false
+localTable.WELFAREITEM_EXTRA2_FIELD.default_value = 0
 localTable.WELFAREITEM_EXTRA2_FIELD.type = 13
 localTable.WELFAREITEM_EXTRA2_FIELD.cpp_type = 3
 
@@ -5554,6 +6020,7 @@ localTable.REQGETWELFAREBONUS_UID_FIELD.number = 1
 localTable.REQGETWELFAREBONUS_UID_FIELD.index = 0
 localTable.REQGETWELFAREBONUS_UID_FIELD.label = 1
 localTable.REQGETWELFAREBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETWELFAREBONUS_UID_FIELD.default_value = 0
 localTable.REQGETWELFAREBONUS_UID_FIELD.type = 13
 localTable.REQGETWELFAREBONUS_UID_FIELD.cpp_type = 3
 
@@ -5563,6 +6030,7 @@ localTable.REQGETWELFAREBONUS_ID_FIELD.number = 2
 localTable.REQGETWELFAREBONUS_ID_FIELD.index = 1
 localTable.REQGETWELFAREBONUS_ID_FIELD.label = 1
 localTable.REQGETWELFAREBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETWELFAREBONUS_ID_FIELD.default_value = 0
 localTable.REQGETWELFAREBONUS_ID_FIELD.type = 13
 localTable.REQGETWELFAREBONUS_ID_FIELD.cpp_type = 3
 
@@ -5600,6 +6068,7 @@ localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETWELFAREBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -5609,6 +6078,7 @@ localTable.RSPGETWELFAREBONUS_ID_FIELD.number = 4
 localTable.RSPGETWELFAREBONUS_ID_FIELD.index = 3
 localTable.RSPGETWELFAREBONUS_ID_FIELD.label = 1
 localTable.RSPGETWELFAREBONUS_ID_FIELD.has_default_value = false
+localTable.RSPGETWELFAREBONUS_ID_FIELD.default_value = 0
 localTable.RSPGETWELFAREBONUS_ID_FIELD.type = 13
 localTable.RSPGETWELFAREBONUS_ID_FIELD.cpp_type = 3
 
@@ -5625,6 +6095,7 @@ localTable.WELFAREUPDATEITEM_ID_FIELD.number = 1
 localTable.WELFAREUPDATEITEM_ID_FIELD.index = 0
 localTable.WELFAREUPDATEITEM_ID_FIELD.label = 1
 localTable.WELFAREUPDATEITEM_ID_FIELD.has_default_value = false
+localTable.WELFAREUPDATEITEM_ID_FIELD.default_value = 0
 localTable.WELFAREUPDATEITEM_ID_FIELD.type = 13
 localTable.WELFAREUPDATEITEM_ID_FIELD.cpp_type = 3
 
@@ -5634,6 +6105,7 @@ localTable.WELFAREUPDATEITEM_STATUS_FIELD.number = 2
 localTable.WELFAREUPDATEITEM_STATUS_FIELD.index = 1
 localTable.WELFAREUPDATEITEM_STATUS_FIELD.label = 1
 localTable.WELFAREUPDATEITEM_STATUS_FIELD.has_default_value = false
+localTable.WELFAREUPDATEITEM_STATUS_FIELD.default_value = 0
 localTable.WELFAREUPDATEITEM_STATUS_FIELD.type = 13
 localTable.WELFAREUPDATEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -5650,6 +6122,7 @@ localTable.PUSHWELFARENOTIFY_UID_FIELD.number = 1
 localTable.PUSHWELFARENOTIFY_UID_FIELD.index = 0
 localTable.PUSHWELFARENOTIFY_UID_FIELD.label = 1
 localTable.PUSHWELFARENOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHWELFARENOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHWELFARENOTIFY_UID_FIELD.type = 13
 localTable.PUSHWELFARENOTIFY_UID_FIELD.cpp_type = 3
 
@@ -5677,6 +6150,7 @@ localTable.REQGETCARDDECK_UID_FIELD.number = 1
 localTable.REQGETCARDDECK_UID_FIELD.index = 0
 localTable.REQGETCARDDECK_UID_FIELD.label = 1
 localTable.REQGETCARDDECK_UID_FIELD.has_default_value = false
+localTable.REQGETCARDDECK_UID_FIELD.default_value = 0
 localTable.REQGETCARDDECK_UID_FIELD.type = 13
 localTable.REQGETCARDDECK_UID_FIELD.cpp_type = 3
 
@@ -5686,6 +6160,7 @@ localTable.REQGETCARDDECK_DECKID_FIELD.number = 2
 localTable.REQGETCARDDECK_DECKID_FIELD.index = 1
 localTable.REQGETCARDDECK_DECKID_FIELD.label = 1
 localTable.REQGETCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.REQGETCARDDECK_DECKID_FIELD.default_value = 0
 localTable.REQGETCARDDECK_DECKID_FIELD.type = 13
 localTable.REQGETCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -5702,6 +6177,7 @@ localTable.PROTOCARD_ID_FIELD.number = 1
 localTable.PROTOCARD_ID_FIELD.index = 0
 localTable.PROTOCARD_ID_FIELD.label = 1
 localTable.PROTOCARD_ID_FIELD.has_default_value = false
+localTable.PROTOCARD_ID_FIELD.default_value = 0
 localTable.PROTOCARD_ID_FIELD.type = 13
 localTable.PROTOCARD_ID_FIELD.cpp_type = 3
 
@@ -5711,6 +6187,7 @@ localTable.PROTOCARD_CNT_FIELD.number = 2
 localTable.PROTOCARD_CNT_FIELD.index = 1
 localTable.PROTOCARD_CNT_FIELD.label = 1
 localTable.PROTOCARD_CNT_FIELD.has_default_value = false
+localTable.PROTOCARD_CNT_FIELD.default_value = 0
 localTable.PROTOCARD_CNT_FIELD.type = 13
 localTable.PROTOCARD_CNT_FIELD.cpp_type = 3
 
@@ -5737,6 +6214,7 @@ localTable.RSPGETCARDDECK_DECKID_FIELD.number = 2
 localTable.RSPGETCARDDECK_DECKID_FIELD.index = 1
 localTable.RSPGETCARDDECK_DECKID_FIELD.label = 1
 localTable.RSPGETCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.RSPGETCARDDECK_DECKID_FIELD.default_value = 0
 localTable.RSPGETCARDDECK_DECKID_FIELD.type = 13
 localTable.RSPGETCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -5746,6 +6224,7 @@ localTable.RSPGETCARDDECK_CAPACITY_FIELD.number = 3
 localTable.RSPGETCARDDECK_CAPACITY_FIELD.index = 2
 localTable.RSPGETCARDDECK_CAPACITY_FIELD.label = 1
 localTable.RSPGETCARDDECK_CAPACITY_FIELD.has_default_value = false
+localTable.RSPGETCARDDECK_CAPACITY_FIELD.default_value = 0
 localTable.RSPGETCARDDECK_CAPACITY_FIELD.type = 13
 localTable.RSPGETCARDDECK_CAPACITY_FIELD.cpp_type = 3
 
@@ -5755,6 +6234,7 @@ localTable.RSPGETCARDDECK_CNT_FIELD.number = 4
 localTable.RSPGETCARDDECK_CNT_FIELD.index = 3
 localTable.RSPGETCARDDECK_CNT_FIELD.label = 1
 localTable.RSPGETCARDDECK_CNT_FIELD.has_default_value = false
+localTable.RSPGETCARDDECK_CNT_FIELD.default_value = 0
 localTable.RSPGETCARDDECK_CNT_FIELD.type = 13
 localTable.RSPGETCARDDECK_CNT_FIELD.cpp_type = 3
 
@@ -5764,6 +6244,7 @@ localTable.RSPGETCARDDECK_FCNT_FIELD.number = 5
 localTable.RSPGETCARDDECK_FCNT_FIELD.index = 4
 localTable.RSPGETCARDDECK_FCNT_FIELD.label = 1
 localTable.RSPGETCARDDECK_FCNT_FIELD.has_default_value = false
+localTable.RSPGETCARDDECK_FCNT_FIELD.default_value = 0
 localTable.RSPGETCARDDECK_FCNT_FIELD.type = 13
 localTable.RSPGETCARDDECK_FCNT_FIELD.cpp_type = 3
 
@@ -5802,6 +6283,7 @@ localTable.REQGETCARDLIB_UID_FIELD.number = 1
 localTable.REQGETCARDLIB_UID_FIELD.index = 0
 localTable.REQGETCARDLIB_UID_FIELD.label = 1
 localTable.REQGETCARDLIB_UID_FIELD.has_default_value = false
+localTable.REQGETCARDLIB_UID_FIELD.default_value = 0
 localTable.REQGETCARDLIB_UID_FIELD.type = 13
 localTable.REQGETCARDLIB_UID_FIELD.cpp_type = 3
 
@@ -5846,6 +6328,7 @@ localTable.REQSETDEFAULTCARDDECK_UID_FIELD.number = 1
 localTable.REQSETDEFAULTCARDDECK_UID_FIELD.index = 0
 localTable.REQSETDEFAULTCARDDECK_UID_FIELD.label = 1
 localTable.REQSETDEFAULTCARDDECK_UID_FIELD.has_default_value = false
+localTable.REQSETDEFAULTCARDDECK_UID_FIELD.default_value = 0
 localTable.REQSETDEFAULTCARDDECK_UID_FIELD.type = 13
 localTable.REQSETDEFAULTCARDDECK_UID_FIELD.cpp_type = 3
 
@@ -5855,6 +6338,7 @@ localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.number = 2
 localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.index = 1
 localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.label = 1
 localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.default_value = 0
 localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.type = 13
 localTable.REQSETDEFAULTCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -5881,6 +6365,7 @@ localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.number = 2
 localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.index = 1
 localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.label = 1
 localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.default_value = 0
 localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.type = 13
 localTable.RSPSETDEFAULTCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -5897,6 +6382,7 @@ localTable.REQMODIFYCARDDECK_UID_FIELD.number = 1
 localTable.REQMODIFYCARDDECK_UID_FIELD.index = 0
 localTable.REQMODIFYCARDDECK_UID_FIELD.label = 1
 localTable.REQMODIFYCARDDECK_UID_FIELD.has_default_value = false
+localTable.REQMODIFYCARDDECK_UID_FIELD.default_value = 0
 localTable.REQMODIFYCARDDECK_UID_FIELD.type = 13
 localTable.REQMODIFYCARDDECK_UID_FIELD.cpp_type = 3
 
@@ -5906,6 +6392,7 @@ localTable.REQMODIFYCARDDECK_DECKID_FIELD.number = 2
 localTable.REQMODIFYCARDDECK_DECKID_FIELD.index = 1
 localTable.REQMODIFYCARDDECK_DECKID_FIELD.label = 1
 localTable.REQMODIFYCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.REQMODIFYCARDDECK_DECKID_FIELD.default_value = 0
 localTable.REQMODIFYCARDDECK_DECKID_FIELD.type = 13
 localTable.REQMODIFYCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -5971,6 +6458,7 @@ localTable.REQBUYCARDDECK_UID_FIELD.number = 1
 localTable.REQBUYCARDDECK_UID_FIELD.index = 0
 localTable.REQBUYCARDDECK_UID_FIELD.label = 1
 localTable.REQBUYCARDDECK_UID_FIELD.has_default_value = false
+localTable.REQBUYCARDDECK_UID_FIELD.default_value = 0
 localTable.REQBUYCARDDECK_UID_FIELD.type = 13
 localTable.REQBUYCARDDECK_UID_FIELD.cpp_type = 3
 
@@ -5997,6 +6485,7 @@ localTable.RSPBUYCARDDECK_DECKID_FIELD.number = 2
 localTable.RSPBUYCARDDECK_DECKID_FIELD.index = 1
 localTable.RSPBUYCARDDECK_DECKID_FIELD.label = 1
 localTable.RSPBUYCARDDECK_DECKID_FIELD.has_default_value = false
+localTable.RSPBUYCARDDECK_DECKID_FIELD.default_value = 0
 localTable.RSPBUYCARDDECK_DECKID_FIELD.type = 13
 localTable.RSPBUYCARDDECK_DECKID_FIELD.cpp_type = 3
 
@@ -6006,6 +6495,7 @@ localTable.RSPBUYCARDDECK_MONEY_FIELD.number = 3
 localTable.RSPBUYCARDDECK_MONEY_FIELD.index = 2
 localTable.RSPBUYCARDDECK_MONEY_FIELD.label = 1
 localTable.RSPBUYCARDDECK_MONEY_FIELD.has_default_value = false
+localTable.RSPBUYCARDDECK_MONEY_FIELD.default_value = 0
 localTable.RSPBUYCARDDECK_MONEY_FIELD.type = 13
 localTable.RSPBUYCARDDECK_MONEY_FIELD.cpp_type = 3
 
@@ -6022,6 +6512,7 @@ localTable.REQBUYCARDDECKGRID_UID_FIELD.number = 1
 localTable.REQBUYCARDDECKGRID_UID_FIELD.index = 0
 localTable.REQBUYCARDDECKGRID_UID_FIELD.label = 1
 localTable.REQBUYCARDDECKGRID_UID_FIELD.has_default_value = false
+localTable.REQBUYCARDDECKGRID_UID_FIELD.default_value = 0
 localTable.REQBUYCARDDECKGRID_UID_FIELD.type = 13
 localTable.REQBUYCARDDECKGRID_UID_FIELD.cpp_type = 3
 
@@ -6031,6 +6522,7 @@ localTable.REQBUYCARDDECKGRID_DECKID_FIELD.number = 2
 localTable.REQBUYCARDDECKGRID_DECKID_FIELD.index = 1
 localTable.REQBUYCARDDECKGRID_DECKID_FIELD.label = 1
 localTable.REQBUYCARDDECKGRID_DECKID_FIELD.has_default_value = false
+localTable.REQBUYCARDDECKGRID_DECKID_FIELD.default_value = 0
 localTable.REQBUYCARDDECKGRID_DECKID_FIELD.type = 13
 localTable.REQBUYCARDDECKGRID_DECKID_FIELD.cpp_type = 3
 
@@ -6057,6 +6549,7 @@ localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.number = 2
 localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.index = 1
 localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.label = 1
 localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.has_default_value = false
+localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.default_value = 0
 localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.type = 13
 localTable.RSPBUYCARDDECKGRID_DECKID_FIELD.cpp_type = 3
 
@@ -6066,6 +6559,7 @@ localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.number = 3
 localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.index = 2
 localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.label = 1
 localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.has_default_value = false
+localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.default_value = 0
 localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.type = 13
 localTable.RSPBUYCARDDECKGRID_CAPACITY_FIELD.cpp_type = 3
 
@@ -6075,6 +6569,7 @@ localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.number = 4
 localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.index = 3
 localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.label = 1
 localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.has_default_value = false
+localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.default_value = 0
 localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.type = 13
 localTable.RSPBUYCARDDECKGRID_MONEY_FIELD.cpp_type = 3
 
@@ -6091,6 +6586,7 @@ localTable.REQSELLCARD_UID_FIELD.number = 1
 localTable.REQSELLCARD_UID_FIELD.index = 0
 localTable.REQSELLCARD_UID_FIELD.label = 1
 localTable.REQSELLCARD_UID_FIELD.has_default_value = false
+localTable.REQSELLCARD_UID_FIELD.default_value = 0
 localTable.REQSELLCARD_UID_FIELD.type = 13
 localTable.REQSELLCARD_UID_FIELD.cpp_type = 3
 
@@ -6128,6 +6624,7 @@ localTable.RSPSELLCARD_MONEY_FIELD.number = 2
 localTable.RSPSELLCARD_MONEY_FIELD.index = 1
 localTable.RSPSELLCARD_MONEY_FIELD.label = 1
 localTable.RSPSELLCARD_MONEY_FIELD.has_default_value = false
+localTable.RSPSELLCARD_MONEY_FIELD.default_value = 0
 localTable.RSPSELLCARD_MONEY_FIELD.type = 13
 localTable.RSPSELLCARD_MONEY_FIELD.cpp_type = 3
 
@@ -6137,6 +6634,7 @@ localTable.RSPSELLCARD_CARDRATIO_FIELD.number = 3
 localTable.RSPSELLCARD_CARDRATIO_FIELD.index = 2
 localTable.RSPSELLCARD_CARDRATIO_FIELD.label = 1
 localTable.RSPSELLCARD_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPSELLCARD_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPSELLCARD_CARDRATIO_FIELD.type = 1
 localTable.RSPSELLCARD_CARDRATIO_FIELD.cpp_type = 5
 
@@ -6146,6 +6644,7 @@ localTable.RSPSELLCARD_POWER_FIELD.number = 4
 localTable.RSPSELLCARD_POWER_FIELD.index = 3
 localTable.RSPSELLCARD_POWER_FIELD.label = 1
 localTable.RSPSELLCARD_POWER_FIELD.has_default_value = false
+localTable.RSPSELLCARD_POWER_FIELD.default_value = 0
 localTable.RSPSELLCARD_POWER_FIELD.type = 13
 localTable.RSPSELLCARD_POWER_FIELD.cpp_type = 3
 
@@ -6162,6 +6661,7 @@ localTable.REQGETMISSIONLIST_UID_FIELD.number = 1
 localTable.REQGETMISSIONLIST_UID_FIELD.index = 0
 localTable.REQGETMISSIONLIST_UID_FIELD.label = 1
 localTable.REQGETMISSIONLIST_UID_FIELD.has_default_value = false
+localTable.REQGETMISSIONLIST_UID_FIELD.default_value = 0
 localTable.REQGETMISSIONLIST_UID_FIELD.type = 13
 localTable.REQGETMISSIONLIST_UID_FIELD.cpp_type = 3
 
@@ -6178,6 +6678,7 @@ localTable.MISSIONITEM_ID_FIELD.number = 1
 localTable.MISSIONITEM_ID_FIELD.index = 0
 localTable.MISSIONITEM_ID_FIELD.label = 1
 localTable.MISSIONITEM_ID_FIELD.has_default_value = false
+localTable.MISSIONITEM_ID_FIELD.default_value = 0
 localTable.MISSIONITEM_ID_FIELD.type = 13
 localTable.MISSIONITEM_ID_FIELD.cpp_type = 3
 
@@ -6187,6 +6688,7 @@ localTable.MISSIONITEM_STATUS_FIELD.number = 2
 localTable.MISSIONITEM_STATUS_FIELD.index = 1
 localTable.MISSIONITEM_STATUS_FIELD.label = 1
 localTable.MISSIONITEM_STATUS_FIELD.has_default_value = false
+localTable.MISSIONITEM_STATUS_FIELD.default_value = 0
 localTable.MISSIONITEM_STATUS_FIELD.type = 13
 localTable.MISSIONITEM_STATUS_FIELD.cpp_type = 3
 
@@ -6196,6 +6698,7 @@ localTable.MISSIONITEM_LEVEL_FIELD.number = 3
 localTable.MISSIONITEM_LEVEL_FIELD.index = 2
 localTable.MISSIONITEM_LEVEL_FIELD.label = 1
 localTable.MISSIONITEM_LEVEL_FIELD.has_default_value = false
+localTable.MISSIONITEM_LEVEL_FIELD.default_value = 0
 localTable.MISSIONITEM_LEVEL_FIELD.type = 13
 localTable.MISSIONITEM_LEVEL_FIELD.cpp_type = 3
 
@@ -6205,6 +6708,7 @@ localTable.MISSIONITEM_BONUS_FIELD.number = 4
 localTable.MISSIONITEM_BONUS_FIELD.index = 3
 localTable.MISSIONITEM_BONUS_FIELD.label = 1
 localTable.MISSIONITEM_BONUS_FIELD.has_default_value = false
+localTable.MISSIONITEM_BONUS_FIELD.default_value = ""
 localTable.MISSIONITEM_BONUS_FIELD.type = 9
 localTable.MISSIONITEM_BONUS_FIELD.cpp_type = 9
 
@@ -6214,6 +6718,7 @@ localTable.MISSIONITEM_TITLE_FIELD.number = 5
 localTable.MISSIONITEM_TITLE_FIELD.index = 4
 localTable.MISSIONITEM_TITLE_FIELD.label = 1
 localTable.MISSIONITEM_TITLE_FIELD.has_default_value = false
+localTable.MISSIONITEM_TITLE_FIELD.default_value = ""
 localTable.MISSIONITEM_TITLE_FIELD.type = 9
 localTable.MISSIONITEM_TITLE_FIELD.cpp_type = 9
 
@@ -6258,6 +6763,7 @@ localTable.REQGETMISSIONBONUS_UID_FIELD.number = 1
 localTable.REQGETMISSIONBONUS_UID_FIELD.index = 0
 localTable.REQGETMISSIONBONUS_UID_FIELD.label = 1
 localTable.REQGETMISSIONBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETMISSIONBONUS_UID_FIELD.default_value = 0
 localTable.REQGETMISSIONBONUS_UID_FIELD.type = 13
 localTable.REQGETMISSIONBONUS_UID_FIELD.cpp_type = 3
 
@@ -6267,6 +6773,7 @@ localTable.REQGETMISSIONBONUS_ID_FIELD.number = 2
 localTable.REQGETMISSIONBONUS_ID_FIELD.index = 1
 localTable.REQGETMISSIONBONUS_ID_FIELD.label = 1
 localTable.REQGETMISSIONBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETMISSIONBONUS_ID_FIELD.default_value = 0
 localTable.REQGETMISSIONBONUS_ID_FIELD.type = 13
 localTable.REQGETMISSIONBONUS_ID_FIELD.cpp_type = 3
 
@@ -6293,6 +6800,7 @@ localTable.RSPGETMISSIONBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETMISSIONBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETMISSIONBONUS_BONUS_FIELD.cpp_type = 10
@@ -6303,6 +6811,7 @@ localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETMISSIONBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -6319,6 +6828,7 @@ localTable.REQUPDATEMISSION_UID_FIELD.number = 1
 localTable.REQUPDATEMISSION_UID_FIELD.index = 0
 localTable.REQUPDATEMISSION_UID_FIELD.label = 1
 localTable.REQUPDATEMISSION_UID_FIELD.has_default_value = false
+localTable.REQUPDATEMISSION_UID_FIELD.default_value = 0
 localTable.REQUPDATEMISSION_UID_FIELD.type = 13
 localTable.REQUPDATEMISSION_UID_FIELD.cpp_type = 3
 
@@ -6328,6 +6838,7 @@ localTable.REQUPDATEMISSION_ID_FIELD.number = 2
 localTable.REQUPDATEMISSION_ID_FIELD.index = 1
 localTable.REQUPDATEMISSION_ID_FIELD.label = 1
 localTable.REQUPDATEMISSION_ID_FIELD.has_default_value = false
+localTable.REQUPDATEMISSION_ID_FIELD.default_value = 0
 localTable.REQUPDATEMISSION_ID_FIELD.type = 13
 localTable.REQUPDATEMISSION_ID_FIELD.cpp_type = 3
 
@@ -6361,6 +6872,7 @@ localTable.REQGETRANKLIST_UID_FIELD.number = 1
 localTable.REQGETRANKLIST_UID_FIELD.index = 0
 localTable.REQGETRANKLIST_UID_FIELD.label = 1
 localTable.REQGETRANKLIST_UID_FIELD.has_default_value = false
+localTable.REQGETRANKLIST_UID_FIELD.default_value = 0
 localTable.REQGETRANKLIST_UID_FIELD.type = 13
 localTable.REQGETRANKLIST_UID_FIELD.cpp_type = 3
 
@@ -6370,6 +6882,7 @@ localTable.REQGETRANKLIST_TAG_FIELD.number = 2
 localTable.REQGETRANKLIST_TAG_FIELD.index = 1
 localTable.REQGETRANKLIST_TAG_FIELD.label = 1
 localTable.REQGETRANKLIST_TAG_FIELD.has_default_value = false
+localTable.REQGETRANKLIST_TAG_FIELD.default_value = 0
 localTable.REQGETRANKLIST_TAG_FIELD.type = 13
 localTable.REQGETRANKLIST_TAG_FIELD.cpp_type = 3
 
@@ -6386,6 +6899,7 @@ localTable.RANKINFOITEM_UID_FIELD.number = 1
 localTable.RANKINFOITEM_UID_FIELD.index = 0
 localTable.RANKINFOITEM_UID_FIELD.label = 1
 localTable.RANKINFOITEM_UID_FIELD.has_default_value = false
+localTable.RANKINFOITEM_UID_FIELD.default_value = 0
 localTable.RANKINFOITEM_UID_FIELD.type = 13
 localTable.RANKINFOITEM_UID_FIELD.cpp_type = 3
 
@@ -6395,6 +6909,7 @@ localTable.RANKINFOITEM_NICK_FIELD.number = 2
 localTable.RANKINFOITEM_NICK_FIELD.index = 1
 localTable.RANKINFOITEM_NICK_FIELD.label = 1
 localTable.RANKINFOITEM_NICK_FIELD.has_default_value = false
+localTable.RANKINFOITEM_NICK_FIELD.default_value = ""
 localTable.RANKINFOITEM_NICK_FIELD.type = 9
 localTable.RANKINFOITEM_NICK_FIELD.cpp_type = 9
 
@@ -6404,6 +6919,7 @@ localTable.RANKINFOITEM_ICONID_FIELD.number = 3
 localTable.RANKINFOITEM_ICONID_FIELD.index = 2
 localTable.RANKINFOITEM_ICONID_FIELD.label = 1
 localTable.RANKINFOITEM_ICONID_FIELD.has_default_value = false
+localTable.RANKINFOITEM_ICONID_FIELD.default_value = 0
 localTable.RANKINFOITEM_ICONID_FIELD.type = 13
 localTable.RANKINFOITEM_ICONID_FIELD.cpp_type = 3
 
@@ -6413,6 +6929,7 @@ localTable.RANKINFOITEM_RANK_FIELD.number = 4
 localTable.RANKINFOITEM_RANK_FIELD.index = 3
 localTable.RANKINFOITEM_RANK_FIELD.label = 1
 localTable.RANKINFOITEM_RANK_FIELD.has_default_value = false
+localTable.RANKINFOITEM_RANK_FIELD.default_value = 0
 localTable.RANKINFOITEM_RANK_FIELD.type = 13
 localTable.RANKINFOITEM_RANK_FIELD.cpp_type = 3
 
@@ -6422,6 +6939,7 @@ localTable.RANKINFOITEM_LEVEL_FIELD.number = 5
 localTable.RANKINFOITEM_LEVEL_FIELD.index = 4
 localTable.RANKINFOITEM_LEVEL_FIELD.label = 1
 localTable.RANKINFOITEM_LEVEL_FIELD.has_default_value = false
+localTable.RANKINFOITEM_LEVEL_FIELD.default_value = 0
 localTable.RANKINFOITEM_LEVEL_FIELD.type = 13
 localTable.RANKINFOITEM_LEVEL_FIELD.cpp_type = 3
 
@@ -6431,6 +6949,7 @@ localTable.RANKINFOITEM_POWER_FIELD.number = 6
 localTable.RANKINFOITEM_POWER_FIELD.index = 5
 localTable.RANKINFOITEM_POWER_FIELD.label = 1
 localTable.RANKINFOITEM_POWER_FIELD.has_default_value = false
+localTable.RANKINFOITEM_POWER_FIELD.default_value = 0
 localTable.RANKINFOITEM_POWER_FIELD.type = 13
 localTable.RANKINFOITEM_POWER_FIELD.cpp_type = 3
 
@@ -6440,6 +6959,7 @@ localTable.RANKINFOITEM_POINT_FIELD.number = 7
 localTable.RANKINFOITEM_POINT_FIELD.index = 6
 localTable.RANKINFOITEM_POINT_FIELD.label = 1
 localTable.RANKINFOITEM_POINT_FIELD.has_default_value = false
+localTable.RANKINFOITEM_POINT_FIELD.default_value = 0
 localTable.RANKINFOITEM_POINT_FIELD.type = 13
 localTable.RANKINFOITEM_POINT_FIELD.cpp_type = 3
 
@@ -6449,6 +6969,7 @@ localTable.RANKINFOITEM_RATIO_FIELD.number = 8
 localTable.RANKINFOITEM_RATIO_FIELD.index = 7
 localTable.RANKINFOITEM_RATIO_FIELD.label = 1
 localTable.RANKINFOITEM_RATIO_FIELD.has_default_value = false
+localTable.RANKINFOITEM_RATIO_FIELD.default_value = 0.0
 localTable.RANKINFOITEM_RATIO_FIELD.type = 1
 localTable.RANKINFOITEM_RATIO_FIELD.cpp_type = 5
 
@@ -6458,6 +6979,7 @@ localTable.RANKINFOITEM_TEAM_FIELD.number = 9
 localTable.RANKINFOITEM_TEAM_FIELD.index = 8
 localTable.RANKINFOITEM_TEAM_FIELD.label = 1
 localTable.RANKINFOITEM_TEAM_FIELD.has_default_value = false
+localTable.RANKINFOITEM_TEAM_FIELD.default_value = ""
 localTable.RANKINFOITEM_TEAM_FIELD.type = 9
 localTable.RANKINFOITEM_TEAM_FIELD.cpp_type = 9
 
@@ -6467,6 +6989,7 @@ localTable.RANKINFOITEM_SCORE_FIELD.number = 10
 localTable.RANKINFOITEM_SCORE_FIELD.index = 9
 localTable.RANKINFOITEM_SCORE_FIELD.label = 1
 localTable.RANKINFOITEM_SCORE_FIELD.has_default_value = false
+localTable.RANKINFOITEM_SCORE_FIELD.default_value = 0
 localTable.RANKINFOITEM_SCORE_FIELD.type = 13
 localTable.RANKINFOITEM_SCORE_FIELD.cpp_type = 3
 
@@ -6493,6 +7016,7 @@ localTable.RSPGETRANKLIST_TAG_FIELD.number = 2
 localTable.RSPGETRANKLIST_TAG_FIELD.index = 1
 localTable.RSPGETRANKLIST_TAG_FIELD.label = 1
 localTable.RSPGETRANKLIST_TAG_FIELD.has_default_value = false
+localTable.RSPGETRANKLIST_TAG_FIELD.default_value = 0
 localTable.RSPGETRANKLIST_TAG_FIELD.type = 13
 localTable.RSPGETRANKLIST_TAG_FIELD.cpp_type = 3
 
@@ -6502,6 +7026,7 @@ localTable.RSPGETRANKLIST_PLATFORM_FIELD.number = 3
 localTable.RSPGETRANKLIST_PLATFORM_FIELD.index = 2
 localTable.RSPGETRANKLIST_PLATFORM_FIELD.label = 1
 localTable.RSPGETRANKLIST_PLATFORM_FIELD.has_default_value = false
+localTable.RSPGETRANKLIST_PLATFORM_FIELD.default_value = 0
 localTable.RSPGETRANKLIST_PLATFORM_FIELD.type = 13
 localTable.RSPGETRANKLIST_PLATFORM_FIELD.cpp_type = 3
 
@@ -6529,6 +7054,7 @@ localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.number = 1
 localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.index = 0
 localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.label = 1
 localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.has_default_value = false
+localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.default_value = 0
 localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.type = 13
 localTable.REQGETFRAGMENTEXCHLIST_UID_FIELD.cpp_type = 3
 
@@ -6545,6 +7071,7 @@ localTable.FRAGMENTEXCHITEM_ID_FIELD.number = 1
 localTable.FRAGMENTEXCHITEM_ID_FIELD.index = 0
 localTable.FRAGMENTEXCHITEM_ID_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_ID_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_ID_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_ID_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_ID_FIELD.cpp_type = 3
 
@@ -6554,6 +7081,7 @@ localTable.FRAGMENTEXCHITEM_NAME_FIELD.number = 2
 localTable.FRAGMENTEXCHITEM_NAME_FIELD.index = 1
 localTable.FRAGMENTEXCHITEM_NAME_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_NAME_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_NAME_FIELD.default_value = ""
 localTable.FRAGMENTEXCHITEM_NAME_FIELD.type = 9
 localTable.FRAGMENTEXCHITEM_NAME_FIELD.cpp_type = 9
 
@@ -6563,6 +7091,7 @@ localTable.FRAGMENTEXCHITEM_TYPE_FIELD.number = 3
 localTable.FRAGMENTEXCHITEM_TYPE_FIELD.index = 2
 localTable.FRAGMENTEXCHITEM_TYPE_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_TYPE_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_TYPE_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_TYPE_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_TYPE_FIELD.cpp_type = 3
 
@@ -6582,6 +7111,7 @@ localTable.FRAGMENTEXCHITEM_PRICE_FIELD.number = 5
 localTable.FRAGMENTEXCHITEM_PRICE_FIELD.index = 4
 localTable.FRAGMENTEXCHITEM_PRICE_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_PRICE_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_PRICE_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_PRICE_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_PRICE_FIELD.cpp_type = 3
 
@@ -6591,6 +7121,7 @@ localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.number = 6
 localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.index = 5
 localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_LIMIT_FIELD.cpp_type = 3
 
@@ -6600,6 +7131,7 @@ localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.number = 7
 localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.index = 6
 localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_LEVEL_FIELD.cpp_type = 3
 
@@ -6609,6 +7141,7 @@ localTable.FRAGMENTEXCHITEM_MEMO_FIELD.number = 8
 localTable.FRAGMENTEXCHITEM_MEMO_FIELD.index = 7
 localTable.FRAGMENTEXCHITEM_MEMO_FIELD.label = 1
 localTable.FRAGMENTEXCHITEM_MEMO_FIELD.has_default_value = false
+localTable.FRAGMENTEXCHITEM_MEMO_FIELD.default_value = 0
 localTable.FRAGMENTEXCHITEM_MEMO_FIELD.type = 13
 localTable.FRAGMENTEXCHITEM_MEMO_FIELD.cpp_type = 3
 
@@ -6653,6 +7186,7 @@ localTable.REQFRAGMENTEXCH_UID_FIELD.number = 1
 localTable.REQFRAGMENTEXCH_UID_FIELD.index = 0
 localTable.REQFRAGMENTEXCH_UID_FIELD.label = 1
 localTable.REQFRAGMENTEXCH_UID_FIELD.has_default_value = false
+localTable.REQFRAGMENTEXCH_UID_FIELD.default_value = 0
 localTable.REQFRAGMENTEXCH_UID_FIELD.type = 13
 localTable.REQFRAGMENTEXCH_UID_FIELD.cpp_type = 3
 
@@ -6662,6 +7196,7 @@ localTable.REQFRAGMENTEXCH_ID_FIELD.number = 2
 localTable.REQFRAGMENTEXCH_ID_FIELD.index = 1
 localTable.REQFRAGMENTEXCH_ID_FIELD.label = 1
 localTable.REQFRAGMENTEXCH_ID_FIELD.has_default_value = false
+localTable.REQFRAGMENTEXCH_ID_FIELD.default_value = 0
 localTable.REQFRAGMENTEXCH_ID_FIELD.type = 13
 localTable.REQFRAGMENTEXCH_ID_FIELD.cpp_type = 3
 
@@ -6688,6 +7223,7 @@ localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.number = 2
 localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.index = 1
 localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.label = 1
 localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.type = 1
 localTable.RSPFRAGMENTEXCH_CARDRATIO_FIELD.cpp_type = 5
 
@@ -6707,6 +7243,7 @@ localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.number = 4
 localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.index = 3
 localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.label = 1
 localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.has_default_value = false
+localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.default_value = 0
 localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.type = 13
 localTable.RSPFRAGMENTEXCH_FRAGMENT_FIELD.cpp_type = 3
 
@@ -6723,6 +7260,7 @@ localTable.REQDISASSEMBLECARD_UID_FIELD.number = 1
 localTable.REQDISASSEMBLECARD_UID_FIELD.index = 0
 localTable.REQDISASSEMBLECARD_UID_FIELD.label = 1
 localTable.REQDISASSEMBLECARD_UID_FIELD.has_default_value = false
+localTable.REQDISASSEMBLECARD_UID_FIELD.default_value = 0
 localTable.REQDISASSEMBLECARD_UID_FIELD.type = 13
 localTable.REQDISASSEMBLECARD_UID_FIELD.cpp_type = 3
 
@@ -6759,6 +7297,7 @@ localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.number = 2
 localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.index = 1
 localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.label = 1
 localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.type = 1
 localTable.RSPDISASSEMBLECARD_CARDRATIO_FIELD.cpp_type = 5
 
@@ -6768,6 +7307,7 @@ localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.number = 3
 localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.index = 2
 localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.label = 1
 localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.has_default_value = false
+localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.default_value = 0
 localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.type = 13
 localTable.RSPDISASSEMBLECARD_FRAGMENT_FIELD.cpp_type = 3
 
@@ -6777,6 +7317,7 @@ localTable.RSPDISASSEMBLECARD_POWER_FIELD.number = 4
 localTable.RSPDISASSEMBLECARD_POWER_FIELD.index = 3
 localTable.RSPDISASSEMBLECARD_POWER_FIELD.label = 1
 localTable.RSPDISASSEMBLECARD_POWER_FIELD.has_default_value = false
+localTable.RSPDISASSEMBLECARD_POWER_FIELD.default_value = 0
 localTable.RSPDISASSEMBLECARD_POWER_FIELD.type = 13
 localTable.RSPDISASSEMBLECARD_POWER_FIELD.cpp_type = 3
 
@@ -6793,6 +7334,7 @@ localTable.REQTEAMCREATE_UID_FIELD.number = 1
 localTable.REQTEAMCREATE_UID_FIELD.index = 0
 localTable.REQTEAMCREATE_UID_FIELD.label = 1
 localTable.REQTEAMCREATE_UID_FIELD.has_default_value = false
+localTable.REQTEAMCREATE_UID_FIELD.default_value = 0
 localTable.REQTEAMCREATE_UID_FIELD.type = 13
 localTable.REQTEAMCREATE_UID_FIELD.cpp_type = 3
 
@@ -6802,6 +7344,7 @@ localTable.REQTEAMCREATE_AVATARID_FIELD.number = 2
 localTable.REQTEAMCREATE_AVATARID_FIELD.index = 1
 localTable.REQTEAMCREATE_AVATARID_FIELD.label = 1
 localTable.REQTEAMCREATE_AVATARID_FIELD.has_default_value = false
+localTable.REQTEAMCREATE_AVATARID_FIELD.default_value = 0
 localTable.REQTEAMCREATE_AVATARID_FIELD.type = 13
 localTable.REQTEAMCREATE_AVATARID_FIELD.cpp_type = 3
 
@@ -6811,6 +7354,7 @@ localTable.REQTEAMCREATE_NAME_FIELD.number = 3
 localTable.REQTEAMCREATE_NAME_FIELD.index = 2
 localTable.REQTEAMCREATE_NAME_FIELD.label = 1
 localTable.REQTEAMCREATE_NAME_FIELD.has_default_value = false
+localTable.REQTEAMCREATE_NAME_FIELD.default_value = ""
 localTable.REQTEAMCREATE_NAME_FIELD.type = 9
 localTable.REQTEAMCREATE_NAME_FIELD.cpp_type = 9
 
@@ -6837,6 +7381,7 @@ localTable.RSPTEAMCREATE_TEAMID_FIELD.number = 2
 localTable.RSPTEAMCREATE_TEAMID_FIELD.index = 1
 localTable.RSPTEAMCREATE_TEAMID_FIELD.label = 1
 localTable.RSPTEAMCREATE_TEAMID_FIELD.has_default_value = false
+localTable.RSPTEAMCREATE_TEAMID_FIELD.default_value = 0
 localTable.RSPTEAMCREATE_TEAMID_FIELD.type = 13
 localTable.RSPTEAMCREATE_TEAMID_FIELD.cpp_type = 3
 
@@ -6846,6 +7391,7 @@ localTable.RSPTEAMCREATE_MONEY_FIELD.number = 3
 localTable.RSPTEAMCREATE_MONEY_FIELD.index = 2
 localTable.RSPTEAMCREATE_MONEY_FIELD.label = 1
 localTable.RSPTEAMCREATE_MONEY_FIELD.has_default_value = false
+localTable.RSPTEAMCREATE_MONEY_FIELD.default_value = 0
 localTable.RSPTEAMCREATE_MONEY_FIELD.type = 13
 localTable.RSPTEAMCREATE_MONEY_FIELD.cpp_type = 3
 
@@ -6862,6 +7408,7 @@ localTable.REQGETTEAMINFO_UID_FIELD.number = 1
 localTable.REQGETTEAMINFO_UID_FIELD.index = 0
 localTable.REQGETTEAMINFO_UID_FIELD.label = 1
 localTable.REQGETTEAMINFO_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMINFO_UID_FIELD.default_value = 0
 localTable.REQGETTEAMINFO_UID_FIELD.type = 13
 localTable.REQGETTEAMINFO_UID_FIELD.cpp_type = 3
 
@@ -6878,6 +7425,7 @@ localTable.PROTOTEAMMEMBERINFO_UID_FIELD.number = 1
 localTable.PROTOTEAMMEMBERINFO_UID_FIELD.index = 0
 localTable.PROTOTEAMMEMBERINFO_UID_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_UID_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_UID_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_UID_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_UID_FIELD.cpp_type = 3
 
@@ -6887,6 +7435,7 @@ localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.number = 2
 localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.index = 1
 localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.default_value = ""
 localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.type = 9
 localTable.PROTOTEAMMEMBERINFO_NICK_FIELD.cpp_type = 9
 
@@ -6896,6 +7445,7 @@ localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.number = 3
 localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.index = 2
 localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -6905,6 +7455,7 @@ localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.number = 4
 localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.index = 3
 localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -6914,6 +7465,7 @@ localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.number = 5
 localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.index = 4
 localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_ROLE_FIELD.cpp_type = 3
 
@@ -6923,6 +7475,7 @@ localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.number = 6
 localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.index = 5
 localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.default_value = false
 localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.type = 8
 localTable.PROTOTEAMMEMBERINFO_ONLINE_FIELD.cpp_type = 7
 
@@ -6932,6 +7485,7 @@ localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.number = 7
 localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.index = 6
 localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_POWER_FIELD.cpp_type = 3
 
@@ -6941,6 +7495,7 @@ localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.number = 8
 localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.index = 7
 localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_POINTS_FIELD.cpp_type = 3
 
@@ -6950,6 +7505,7 @@ localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.number = 9
 localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.index = 8
 localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_CONTRIHIST_FIELD.cpp_type = 3
 
@@ -6959,6 +7515,7 @@ localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.number = 10
 localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.index = 9
 localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_CONTRIPREV_FIELD.cpp_type = 3
 
@@ -6968,6 +7525,7 @@ localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.number = 12
 localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.index = 10
 localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_PLATFORM_FIELD.cpp_type = 3
 
@@ -6977,6 +7535,7 @@ localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.number = 13
 localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.index = 11
 localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_TSJOIN_FIELD.cpp_type = 3
 
@@ -6986,6 +7545,7 @@ localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.number = 14
 localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.index = 12
 localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.label = 1
 localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.has_default_value = false
+localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.default_value = 0
 localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.type = 13
 localTable.PROTOTEAMMEMBERINFO_TSLASTONLINE_FIELD.cpp_type = 3
 
@@ -7002,6 +7562,7 @@ localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.number = 1
 localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.index = 0
 localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -7011,6 +7572,7 @@ localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.number = 2
 localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.index = 1
 localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_POWER_FIELD.cpp_type = 3
 
@@ -7020,6 +7582,7 @@ localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.number = 3
 localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.index = 2
 localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_POINTS_FIELD.cpp_type = 3
 
@@ -7029,6 +7592,7 @@ localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.number = 4
 localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.index = 3
 localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_CONTRIBUTE_FIELD.cpp_type = 3
 
@@ -7038,6 +7602,7 @@ localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.number = 5
 localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.index = 4
 localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_MEMBERCNT_FIELD.cpp_type = 3
 
@@ -7047,6 +7612,7 @@ localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.number = 6
 localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.index = 5
 localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.label = 1
 localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.has_default_value = false
+localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.default_value = 0
 localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.type = 13
 localTable.PROTOTEAMUPGRADEINFO_CAPTAINLEVEL_FIELD.cpp_type = 3
 
@@ -7073,6 +7639,7 @@ localTable.RSPGETTEAMINFO_TEAMID_FIELD.number = 2
 localTable.RSPGETTEAMINFO_TEAMID_FIELD.index = 1
 localTable.RSPGETTEAMINFO_TEAMID_FIELD.label = 1
 localTable.RSPGETTEAMINFO_TEAMID_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_TEAMID_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_TEAMID_FIELD.type = 13
 localTable.RSPGETTEAMINFO_TEAMID_FIELD.cpp_type = 3
 
@@ -7082,6 +7649,7 @@ localTable.RSPGETTEAMINFO_NAME_FIELD.number = 3
 localTable.RSPGETTEAMINFO_NAME_FIELD.index = 2
 localTable.RSPGETTEAMINFO_NAME_FIELD.label = 1
 localTable.RSPGETTEAMINFO_NAME_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_NAME_FIELD.default_value = ""
 localTable.RSPGETTEAMINFO_NAME_FIELD.type = 9
 localTable.RSPGETTEAMINFO_NAME_FIELD.cpp_type = 9
 
@@ -7091,6 +7659,7 @@ localTable.RSPGETTEAMINFO_AVATARID_FIELD.number = 4
 localTable.RSPGETTEAMINFO_AVATARID_FIELD.index = 3
 localTable.RSPGETTEAMINFO_AVATARID_FIELD.label = 1
 localTable.RSPGETTEAMINFO_AVATARID_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_AVATARID_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_AVATARID_FIELD.type = 13
 localTable.RSPGETTEAMINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -7100,6 +7669,7 @@ localTable.RSPGETTEAMINFO_LEVEL_FIELD.number = 5
 localTable.RSPGETTEAMINFO_LEVEL_FIELD.index = 4
 localTable.RSPGETTEAMINFO_LEVEL_FIELD.label = 1
 localTable.RSPGETTEAMINFO_LEVEL_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_LEVEL_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_LEVEL_FIELD.type = 13
 localTable.RSPGETTEAMINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -7109,6 +7679,7 @@ localTable.RSPGETTEAMINFO_POWER_FIELD.number = 6
 localTable.RSPGETTEAMINFO_POWER_FIELD.index = 5
 localTable.RSPGETTEAMINFO_POWER_FIELD.label = 1
 localTable.RSPGETTEAMINFO_POWER_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_POWER_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_POWER_FIELD.type = 13
 localTable.RSPGETTEAMINFO_POWER_FIELD.cpp_type = 3
 
@@ -7118,6 +7689,7 @@ localTable.RSPGETTEAMINFO_POINTS_FIELD.number = 7
 localTable.RSPGETTEAMINFO_POINTS_FIELD.index = 6
 localTable.RSPGETTEAMINFO_POINTS_FIELD.label = 1
 localTable.RSPGETTEAMINFO_POINTS_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_POINTS_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_POINTS_FIELD.type = 13
 localTable.RSPGETTEAMINFO_POINTS_FIELD.cpp_type = 3
 
@@ -7127,6 +7699,7 @@ localTable.RSPGETTEAMINFO_DECLAR_FIELD.number = 8
 localTable.RSPGETTEAMINFO_DECLAR_FIELD.index = 7
 localTable.RSPGETTEAMINFO_DECLAR_FIELD.label = 1
 localTable.RSPGETTEAMINFO_DECLAR_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_DECLAR_FIELD.default_value = ""
 localTable.RSPGETTEAMINFO_DECLAR_FIELD.type = 9
 localTable.RSPGETTEAMINFO_DECLAR_FIELD.cpp_type = 9
 
@@ -7136,6 +7709,7 @@ localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.number = 9
 localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.index = 8
 localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.label = 1
 localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.type = 13
 localTable.RSPGETTEAMINFO_CONTRIBUTE_FIELD.cpp_type = 3
 
@@ -7145,6 +7719,7 @@ localTable.RSPGETTEAMINFO_RANK_FIELD.number = 10
 localTable.RSPGETTEAMINFO_RANK_FIELD.index = 9
 localTable.RSPGETTEAMINFO_RANK_FIELD.label = 1
 localTable.RSPGETTEAMINFO_RANK_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_RANK_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_RANK_FIELD.type = 13
 localTable.RSPGETTEAMINFO_RANK_FIELD.cpp_type = 3
 
@@ -7154,6 +7729,7 @@ localTable.RSPGETTEAMINFO_STATE_FIELD.number = 11
 localTable.RSPGETTEAMINFO_STATE_FIELD.index = 10
 localTable.RSPGETTEAMINFO_STATE_FIELD.label = 1
 localTable.RSPGETTEAMINFO_STATE_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_STATE_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_STATE_FIELD.type = 13
 localTable.RSPGETTEAMINFO_STATE_FIELD.cpp_type = 3
 
@@ -7163,6 +7739,7 @@ localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.number = 12
 localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.index = 11
 localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.label = 1
 localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.default_value = 0
 localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.type = 13
 localTable.RSPGETTEAMINFO_DISMISSLEFTDAYS_FIELD.cpp_type = 3
 
@@ -7172,6 +7749,7 @@ localTable.RSPGETTEAMINFO_UPGRADE_FIELD.number = 13
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.index = 12
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.label = 1
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.has_default_value = false
+localTable.RSPGETTEAMINFO_UPGRADE_FIELD.default_value = nil
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.message_type = PROTOTEAMUPGRADEINFO
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.type = 11
 localTable.RSPGETTEAMINFO_UPGRADE_FIELD.cpp_type = 10
@@ -7200,6 +7778,7 @@ localTable.REQGETTEAMLIST_UID_FIELD.number = 1
 localTable.REQGETTEAMLIST_UID_FIELD.index = 0
 localTable.REQGETTEAMLIST_UID_FIELD.label = 1
 localTable.REQGETTEAMLIST_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMLIST_UID_FIELD.default_value = 0
 localTable.REQGETTEAMLIST_UID_FIELD.type = 13
 localTable.REQGETTEAMLIST_UID_FIELD.cpp_type = 3
 
@@ -7209,6 +7788,7 @@ localTable.REQGETTEAMLIST_INDEX_FIELD.number = 2
 localTable.REQGETTEAMLIST_INDEX_FIELD.index = 1
 localTable.REQGETTEAMLIST_INDEX_FIELD.label = 1
 localTable.REQGETTEAMLIST_INDEX_FIELD.has_default_value = false
+localTable.REQGETTEAMLIST_INDEX_FIELD.default_value = 0
 localTable.REQGETTEAMLIST_INDEX_FIELD.type = 13
 localTable.REQGETTEAMLIST_INDEX_FIELD.cpp_type = 3
 
@@ -7218,6 +7798,7 @@ localTable.REQGETTEAMLIST_COUNT_FIELD.number = 3
 localTable.REQGETTEAMLIST_COUNT_FIELD.index = 2
 localTable.REQGETTEAMLIST_COUNT_FIELD.label = 1
 localTable.REQGETTEAMLIST_COUNT_FIELD.has_default_value = false
+localTable.REQGETTEAMLIST_COUNT_FIELD.default_value = 0
 localTable.REQGETTEAMLIST_COUNT_FIELD.type = 13
 localTable.REQGETTEAMLIST_COUNT_FIELD.cpp_type = 3
 
@@ -7234,6 +7815,7 @@ localTable.PROTOTEAMINFO_TEAMID_FIELD.number = 1
 localTable.PROTOTEAMINFO_TEAMID_FIELD.index = 0
 localTable.PROTOTEAMINFO_TEAMID_FIELD.label = 1
 localTable.PROTOTEAMINFO_TEAMID_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_TEAMID_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_TEAMID_FIELD.type = 13
 localTable.PROTOTEAMINFO_TEAMID_FIELD.cpp_type = 3
 
@@ -7243,6 +7825,7 @@ localTable.PROTOTEAMINFO_NAME_FIELD.number = 2
 localTable.PROTOTEAMINFO_NAME_FIELD.index = 1
 localTable.PROTOTEAMINFO_NAME_FIELD.label = 1
 localTable.PROTOTEAMINFO_NAME_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_NAME_FIELD.default_value = ""
 localTable.PROTOTEAMINFO_NAME_FIELD.type = 9
 localTable.PROTOTEAMINFO_NAME_FIELD.cpp_type = 9
 
@@ -7252,6 +7835,7 @@ localTable.PROTOTEAMINFO_AVATARID_FIELD.number = 3
 localTable.PROTOTEAMINFO_AVATARID_FIELD.index = 2
 localTable.PROTOTEAMINFO_AVATARID_FIELD.label = 1
 localTable.PROTOTEAMINFO_AVATARID_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_AVATARID_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_AVATARID_FIELD.type = 13
 localTable.PROTOTEAMINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -7261,6 +7845,7 @@ localTable.PROTOTEAMINFO_LEVEL_FIELD.number = 4
 localTable.PROTOTEAMINFO_LEVEL_FIELD.index = 3
 localTable.PROTOTEAMINFO_LEVEL_FIELD.label = 1
 localTable.PROTOTEAMINFO_LEVEL_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_LEVEL_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_LEVEL_FIELD.type = 13
 localTable.PROTOTEAMINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -7270,6 +7855,7 @@ localTable.PROTOTEAMINFO_POWER_FIELD.number = 5
 localTable.PROTOTEAMINFO_POWER_FIELD.index = 4
 localTable.PROTOTEAMINFO_POWER_FIELD.label = 1
 localTable.PROTOTEAMINFO_POWER_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_POWER_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_POWER_FIELD.type = 13
 localTable.PROTOTEAMINFO_POWER_FIELD.cpp_type = 3
 
@@ -7279,6 +7865,7 @@ localTable.PROTOTEAMINFO_POINTS_FIELD.number = 6
 localTable.PROTOTEAMINFO_POINTS_FIELD.index = 5
 localTable.PROTOTEAMINFO_POINTS_FIELD.label = 1
 localTable.PROTOTEAMINFO_POINTS_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_POINTS_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_POINTS_FIELD.type = 13
 localTable.PROTOTEAMINFO_POINTS_FIELD.cpp_type = 3
 
@@ -7288,6 +7875,7 @@ localTable.PROTOTEAMINFO_DECLAR_FIELD.number = 7
 localTable.PROTOTEAMINFO_DECLAR_FIELD.index = 6
 localTable.PROTOTEAMINFO_DECLAR_FIELD.label = 1
 localTable.PROTOTEAMINFO_DECLAR_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_DECLAR_FIELD.default_value = ""
 localTable.PROTOTEAMINFO_DECLAR_FIELD.type = 9
 localTable.PROTOTEAMINFO_DECLAR_FIELD.cpp_type = 9
 
@@ -7297,6 +7885,7 @@ localTable.PROTOTEAMINFO_CNT_FIELD.number = 8
 localTable.PROTOTEAMINFO_CNT_FIELD.index = 7
 localTable.PROTOTEAMINFO_CNT_FIELD.label = 1
 localTable.PROTOTEAMINFO_CNT_FIELD.has_default_value = false
+localTable.PROTOTEAMINFO_CNT_FIELD.default_value = 0
 localTable.PROTOTEAMINFO_CNT_FIELD.type = 13
 localTable.PROTOTEAMINFO_CNT_FIELD.cpp_type = 3
 
@@ -7341,6 +7930,7 @@ localTable.REQGETTEAMAPPLYLIST_UID_FIELD.number = 1
 localTable.REQGETTEAMAPPLYLIST_UID_FIELD.index = 0
 localTable.REQGETTEAMAPPLYLIST_UID_FIELD.label = 1
 localTable.REQGETTEAMAPPLYLIST_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMAPPLYLIST_UID_FIELD.default_value = 0
 localTable.REQGETTEAMAPPLYLIST_UID_FIELD.type = 13
 localTable.REQGETTEAMAPPLYLIST_UID_FIELD.cpp_type = 3
 
@@ -7357,6 +7947,7 @@ localTable.PROTOTEAMAPPLICANT_UID_FIELD.number = 1
 localTable.PROTOTEAMAPPLICANT_UID_FIELD.index = 0
 localTable.PROTOTEAMAPPLICANT_UID_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_UID_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_UID_FIELD.default_value = 0
 localTable.PROTOTEAMAPPLICANT_UID_FIELD.type = 13
 localTable.PROTOTEAMAPPLICANT_UID_FIELD.cpp_type = 3
 
@@ -7366,6 +7957,7 @@ localTable.PROTOTEAMAPPLICANT_NICK_FIELD.number = 2
 localTable.PROTOTEAMAPPLICANT_NICK_FIELD.index = 1
 localTable.PROTOTEAMAPPLICANT_NICK_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_NICK_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_NICK_FIELD.default_value = ""
 localTable.PROTOTEAMAPPLICANT_NICK_FIELD.type = 12
 localTable.PROTOTEAMAPPLICANT_NICK_FIELD.cpp_type = 9
 
@@ -7375,6 +7967,7 @@ localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.number = 3
 localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.index = 2
 localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.default_value = 0
 localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.type = 13
 localTable.PROTOTEAMAPPLICANT_AVATARID_FIELD.cpp_type = 3
 
@@ -7384,6 +7977,7 @@ localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.number = 4
 localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.index = 3
 localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.default_value = 0
 localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.type = 13
 localTable.PROTOTEAMAPPLICANT_LEVEL_FIELD.cpp_type = 3
 
@@ -7393,6 +7987,7 @@ localTable.PROTOTEAMAPPLICANT_POWER_FIELD.number = 5
 localTable.PROTOTEAMAPPLICANT_POWER_FIELD.index = 4
 localTable.PROTOTEAMAPPLICANT_POWER_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_POWER_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_POWER_FIELD.default_value = 0
 localTable.PROTOTEAMAPPLICANT_POWER_FIELD.type = 13
 localTable.PROTOTEAMAPPLICANT_POWER_FIELD.cpp_type = 3
 
@@ -7402,6 +7997,7 @@ localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.number = 6
 localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.index = 5
 localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.label = 1
 localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.has_default_value = false
+localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.default_value = 0
 localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.type = 13
 localTable.PROTOTEAMAPPLICANT_POINTS_FIELD.cpp_type = 3
 
@@ -7446,6 +8042,7 @@ localTable.REQSETTEAMDECLAR_UID_FIELD.number = 1
 localTable.REQSETTEAMDECLAR_UID_FIELD.index = 0
 localTable.REQSETTEAMDECLAR_UID_FIELD.label = 1
 localTable.REQSETTEAMDECLAR_UID_FIELD.has_default_value = false
+localTable.REQSETTEAMDECLAR_UID_FIELD.default_value = 0
 localTable.REQSETTEAMDECLAR_UID_FIELD.type = 13
 localTable.REQSETTEAMDECLAR_UID_FIELD.cpp_type = 3
 
@@ -7455,6 +8052,7 @@ localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.number = 2
 localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.index = 1
 localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.label = 1
 localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.has_default_value = false
+localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.default_value = ""
 localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.type = 12
 localTable.REQSETTEAMDECLAR_DECLARATION_FIELD.cpp_type = 9
 
@@ -7488,6 +8086,7 @@ localTable.REQGETTEAMNEWS_UID_FIELD.number = 1
 localTable.REQGETTEAMNEWS_UID_FIELD.index = 0
 localTable.REQGETTEAMNEWS_UID_FIELD.label = 1
 localTable.REQGETTEAMNEWS_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMNEWS_UID_FIELD.default_value = 0
 localTable.REQGETTEAMNEWS_UID_FIELD.type = 13
 localTable.REQGETTEAMNEWS_UID_FIELD.cpp_type = 3
 
@@ -7504,6 +8103,7 @@ localTable.PROTOTEAMNEWSITEM_TS_FIELD.number = 1
 localTable.PROTOTEAMNEWSITEM_TS_FIELD.index = 0
 localTable.PROTOTEAMNEWSITEM_TS_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_TS_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_TS_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_TS_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_TS_FIELD.cpp_type = 3
 
@@ -7513,6 +8113,7 @@ localTable.PROTOTEAMNEWSITEM_EVT_FIELD.number = 2
 localTable.PROTOTEAMNEWSITEM_EVT_FIELD.index = 1
 localTable.PROTOTEAMNEWSITEM_EVT_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_EVT_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_EVT_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_EVT_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_EVT_FIELD.cpp_type = 3
 
@@ -7522,6 +8123,7 @@ localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.number = 3
 localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.index = 2
 localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_SRCUID_FIELD.cpp_type = 3
 
@@ -7531,6 +8133,7 @@ localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.number = 4
 localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.index = 3
 localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_SRCROLE_FIELD.cpp_type = 3
 
@@ -7540,6 +8143,7 @@ localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.number = 5
 localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.index = 4
 localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.default_value = ""
 localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.type = 9
 localTable.PROTOTEAMNEWSITEM_SRCNICK_FIELD.cpp_type = 9
 
@@ -7549,6 +8153,7 @@ localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.number = 6
 localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.index = 5
 localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_DSTUID_FIELD.cpp_type = 3
 
@@ -7558,6 +8163,7 @@ localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.number = 7
 localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.index = 6
 localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_DSTROLE_FIELD.cpp_type = 3
 
@@ -7567,6 +8173,7 @@ localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.number = 8
 localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.index = 7
 localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.default_value = ""
 localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.type = 9
 localTable.PROTOTEAMNEWSITEM_DSTNICK_FIELD.cpp_type = 9
 
@@ -7576,6 +8183,7 @@ localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.number = 9
 localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.index = 8
 localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.default_value = 0
 localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.type = 13
 localTable.PROTOTEAMNEWSITEM_DONATE_FIELD.cpp_type = 3
 
@@ -7585,6 +8193,7 @@ localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.number = 10
 localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.index = 9
 localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.label = 1
 localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.has_default_value = false
+localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.default_value = ""
 localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.type = 9
 localTable.PROTOTEAMNEWSITEM_CONTRIBUTE_FIELD.cpp_type = 9
 
@@ -7629,6 +8238,7 @@ localTable.REQGETTEAMQUESTLIST_UID_FIELD.number = 1
 localTable.REQGETTEAMQUESTLIST_UID_FIELD.index = 0
 localTable.REQGETTEAMQUESTLIST_UID_FIELD.label = 1
 localTable.REQGETTEAMQUESTLIST_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMQUESTLIST_UID_FIELD.default_value = 0
 localTable.REQGETTEAMQUESTLIST_UID_FIELD.type = 13
 localTable.REQGETTEAMQUESTLIST_UID_FIELD.cpp_type = 3
 
@@ -7645,6 +8255,7 @@ localTable.PROTOTEAMQUESTITEM_ID_FIELD.number = 1
 localTable.PROTOTEAMQUESTITEM_ID_FIELD.index = 0
 localTable.PROTOTEAMQUESTITEM_ID_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_ID_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_ID_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_ID_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_ID_FIELD.cpp_type = 3
 
@@ -7654,6 +8265,7 @@ localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.number = 2
 localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.index = 1
 localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_STATUS_FIELD.cpp_type = 3
 
@@ -7663,6 +8275,7 @@ localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.number = 3
 localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.index = 2
 localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -7672,6 +8285,7 @@ localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.number = 4
 localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.index = 3
 localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_TOTAL_FIELD.cpp_type = 3
 
@@ -7681,6 +8295,7 @@ localTable.PROTOTEAMQUESTITEM_ICON_FIELD.number = 5
 localTable.PROTOTEAMQUESTITEM_ICON_FIELD.index = 4
 localTable.PROTOTEAMQUESTITEM_ICON_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_ICON_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_ICON_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_ICON_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_ICON_FIELD.cpp_type = 3
 
@@ -7690,6 +8305,7 @@ localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.number = 6
 localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.index = 5
 localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.default_value = 0
 localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.type = 13
 localTable.PROTOTEAMQUESTITEM_PTYPE_FIELD.cpp_type = 3
 
@@ -7699,6 +8315,7 @@ localTable.PROTOTEAMQUESTITEM_INFO_FIELD.number = 7
 localTable.PROTOTEAMQUESTITEM_INFO_FIELD.index = 6
 localTable.PROTOTEAMQUESTITEM_INFO_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_INFO_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_INFO_FIELD.default_value = ""
 localTable.PROTOTEAMQUESTITEM_INFO_FIELD.type = 12
 localTable.PROTOTEAMQUESTITEM_INFO_FIELD.cpp_type = 9
 
@@ -7708,6 +8325,7 @@ localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.number = 8
 localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.index = 7
 localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.label = 1
 localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.has_default_value = false
+localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.default_value = ""
 localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.type = 12
 localTable.PROTOTEAMQUESTITEM_BONUS_FIELD.cpp_type = 9
 
@@ -7752,6 +8370,7 @@ localTable.REQGETTEAMQUESTBONUS_UID_FIELD.number = 1
 localTable.REQGETTEAMQUESTBONUS_UID_FIELD.index = 0
 localTable.REQGETTEAMQUESTBONUS_UID_FIELD.label = 1
 localTable.REQGETTEAMQUESTBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETTEAMQUESTBONUS_UID_FIELD.default_value = 0
 localTable.REQGETTEAMQUESTBONUS_UID_FIELD.type = 13
 localTable.REQGETTEAMQUESTBONUS_UID_FIELD.cpp_type = 3
 
@@ -7761,6 +8380,7 @@ localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.number = 2
 localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.index = 1
 localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.label = 1
 localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.has_default_value = false
+localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.default_value = 0
 localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.type = 13
 localTable.REQGETTEAMQUESTBONUS_QUESTID_FIELD.cpp_type = 3
 
@@ -7787,6 +8407,7 @@ localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETTEAMQUESTBONUS_BONUS_FIELD.cpp_type = 10
@@ -7804,6 +8425,7 @@ localTable.REQTEAMAPPLYJOIN_UID_FIELD.number = 1
 localTable.REQTEAMAPPLYJOIN_UID_FIELD.index = 0
 localTable.REQTEAMAPPLYJOIN_UID_FIELD.label = 1
 localTable.REQTEAMAPPLYJOIN_UID_FIELD.has_default_value = false
+localTable.REQTEAMAPPLYJOIN_UID_FIELD.default_value = 0
 localTable.REQTEAMAPPLYJOIN_UID_FIELD.type = 13
 localTable.REQTEAMAPPLYJOIN_UID_FIELD.cpp_type = 3
 
@@ -7813,6 +8435,7 @@ localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.number = 2
 localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.index = 1
 localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.label = 1
 localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.has_default_value = false
+localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.default_value = 0
 localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.type = 13
 localTable.REQTEAMAPPLYJOIN_TEAMID_FIELD.cpp_type = 3
 
@@ -7839,6 +8462,7 @@ localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.number = 2
 localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.index = 1
 localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.label = 1
 localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.has_default_value = false
+localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.default_value = 0
 localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.type = 13
 localTable.RSPTEAMAPPLYJOIN_LEFTDAYS_FIELD.cpp_type = 3
 
@@ -7855,6 +8479,7 @@ localTable.REQTEAMAGREEJOIN_UID_FIELD.number = 1
 localTable.REQTEAMAGREEJOIN_UID_FIELD.index = 0
 localTable.REQTEAMAGREEJOIN_UID_FIELD.label = 1
 localTable.REQTEAMAGREEJOIN_UID_FIELD.has_default_value = false
+localTable.REQTEAMAGREEJOIN_UID_FIELD.default_value = 0
 localTable.REQTEAMAGREEJOIN_UID_FIELD.type = 13
 localTable.REQTEAMAGREEJOIN_UID_FIELD.cpp_type = 3
 
@@ -7864,6 +8489,7 @@ localTable.REQTEAMAGREEJOIN_AGREE_FIELD.number = 2
 localTable.REQTEAMAGREEJOIN_AGREE_FIELD.index = 1
 localTable.REQTEAMAGREEJOIN_AGREE_FIELD.label = 1
 localTable.REQTEAMAGREEJOIN_AGREE_FIELD.has_default_value = false
+localTable.REQTEAMAGREEJOIN_AGREE_FIELD.default_value = false
 localTable.REQTEAMAGREEJOIN_AGREE_FIELD.type = 8
 localTable.REQTEAMAGREEJOIN_AGREE_FIELD.cpp_type = 7
 
@@ -7907,6 +8533,7 @@ localTable.REQTEAMAPPOINT_UID_FIELD.number = 1
 localTable.REQTEAMAPPOINT_UID_FIELD.index = 0
 localTable.REQTEAMAPPOINT_UID_FIELD.label = 1
 localTable.REQTEAMAPPOINT_UID_FIELD.has_default_value = false
+localTable.REQTEAMAPPOINT_UID_FIELD.default_value = 0
 localTable.REQTEAMAPPOINT_UID_FIELD.type = 13
 localTable.REQTEAMAPPOINT_UID_FIELD.cpp_type = 3
 
@@ -7916,6 +8543,7 @@ localTable.REQTEAMAPPOINT_DSTUID_FIELD.number = 2
 localTable.REQTEAMAPPOINT_DSTUID_FIELD.index = 1
 localTable.REQTEAMAPPOINT_DSTUID_FIELD.label = 1
 localTable.REQTEAMAPPOINT_DSTUID_FIELD.has_default_value = false
+localTable.REQTEAMAPPOINT_DSTUID_FIELD.default_value = 0
 localTable.REQTEAMAPPOINT_DSTUID_FIELD.type = 13
 localTable.REQTEAMAPPOINT_DSTUID_FIELD.cpp_type = 3
 
@@ -7925,6 +8553,7 @@ localTable.REQTEAMAPPOINT_ROLE_FIELD.number = 3
 localTable.REQTEAMAPPOINT_ROLE_FIELD.index = 2
 localTable.REQTEAMAPPOINT_ROLE_FIELD.label = 1
 localTable.REQTEAMAPPOINT_ROLE_FIELD.has_default_value = false
+localTable.REQTEAMAPPOINT_ROLE_FIELD.default_value = 0
 localTable.REQTEAMAPPOINT_ROLE_FIELD.type = 13
 localTable.REQTEAMAPPOINT_ROLE_FIELD.cpp_type = 3
 
@@ -7958,6 +8587,7 @@ localTable.REQTEAMDONATE_UID_FIELD.number = 1
 localTable.REQTEAMDONATE_UID_FIELD.index = 0
 localTable.REQTEAMDONATE_UID_FIELD.label = 1
 localTable.REQTEAMDONATE_UID_FIELD.has_default_value = false
+localTable.REQTEAMDONATE_UID_FIELD.default_value = 0
 localTable.REQTEAMDONATE_UID_FIELD.type = 13
 localTable.REQTEAMDONATE_UID_FIELD.cpp_type = 3
 
@@ -7967,6 +8597,7 @@ localTable.REQTEAMDONATE_MONEY_FIELD.number = 2
 localTable.REQTEAMDONATE_MONEY_FIELD.index = 1
 localTable.REQTEAMDONATE_MONEY_FIELD.label = 1
 localTable.REQTEAMDONATE_MONEY_FIELD.has_default_value = false
+localTable.REQTEAMDONATE_MONEY_FIELD.default_value = 0
 localTable.REQTEAMDONATE_MONEY_FIELD.type = 13
 localTable.REQTEAMDONATE_MONEY_FIELD.cpp_type = 3
 
@@ -7993,6 +8624,7 @@ localTable.RSPTEAMDONATE_MONEY_FIELD.number = 2
 localTable.RSPTEAMDONATE_MONEY_FIELD.index = 1
 localTable.RSPTEAMDONATE_MONEY_FIELD.label = 1
 localTable.RSPTEAMDONATE_MONEY_FIELD.has_default_value = false
+localTable.RSPTEAMDONATE_MONEY_FIELD.default_value = 0
 localTable.RSPTEAMDONATE_MONEY_FIELD.type = 13
 localTable.RSPTEAMDONATE_MONEY_FIELD.cpp_type = 3
 
@@ -8002,6 +8634,7 @@ localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.number = 3
 localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.index = 2
 localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.label = 1
 localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.has_default_value = false
+localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.default_value = 0
 localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.type = 13
 localTable.RSPTEAMDONATE_CONTRIBUTE_FIELD.cpp_type = 3
 
@@ -8011,6 +8644,7 @@ localTable.RSPTEAMDONATE_CONTRICURR_FIELD.number = 4
 localTable.RSPTEAMDONATE_CONTRICURR_FIELD.index = 3
 localTable.RSPTEAMDONATE_CONTRICURR_FIELD.label = 1
 localTable.RSPTEAMDONATE_CONTRICURR_FIELD.has_default_value = false
+localTable.RSPTEAMDONATE_CONTRICURR_FIELD.default_value = 0
 localTable.RSPTEAMDONATE_CONTRICURR_FIELD.type = 13
 localTable.RSPTEAMDONATE_CONTRICURR_FIELD.cpp_type = 3
 
@@ -8020,6 +8654,7 @@ localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.number = 5
 localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.index = 4
 localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.label = 1
 localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.has_default_value = false
+localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.default_value = 0
 localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.type = 13
 localTable.RSPTEAMDONATE_CONTRIHIST_FIELD.cpp_type = 3
 
@@ -8036,6 +8671,7 @@ localTable.REQTEAMEXIT_UID_FIELD.number = 1
 localTable.REQTEAMEXIT_UID_FIELD.index = 0
 localTable.REQTEAMEXIT_UID_FIELD.label = 1
 localTable.REQTEAMEXIT_UID_FIELD.has_default_value = false
+localTable.REQTEAMEXIT_UID_FIELD.default_value = 0
 localTable.REQTEAMEXIT_UID_FIELD.type = 13
 localTable.REQTEAMEXIT_UID_FIELD.cpp_type = 3
 
@@ -8069,6 +8705,7 @@ localTable.REQTEAMKICKOUT_UID_FIELD.number = 1
 localTable.REQTEAMKICKOUT_UID_FIELD.index = 0
 localTable.REQTEAMKICKOUT_UID_FIELD.label = 1
 localTable.REQTEAMKICKOUT_UID_FIELD.has_default_value = false
+localTable.REQTEAMKICKOUT_UID_FIELD.default_value = 0
 localTable.REQTEAMKICKOUT_UID_FIELD.type = 13
 localTable.REQTEAMKICKOUT_UID_FIELD.cpp_type = 3
 
@@ -8078,6 +8715,7 @@ localTable.REQTEAMKICKOUT_KOUID_FIELD.number = 2
 localTable.REQTEAMKICKOUT_KOUID_FIELD.index = 1
 localTable.REQTEAMKICKOUT_KOUID_FIELD.label = 1
 localTable.REQTEAMKICKOUT_KOUID_FIELD.has_default_value = false
+localTable.REQTEAMKICKOUT_KOUID_FIELD.default_value = 0
 localTable.REQTEAMKICKOUT_KOUID_FIELD.type = 13
 localTable.REQTEAMKICKOUT_KOUID_FIELD.cpp_type = 3
 
@@ -8111,6 +8749,7 @@ localTable.REQTEAMUPGRADE_UID_FIELD.number = 1
 localTable.REQTEAMUPGRADE_UID_FIELD.index = 0
 localTable.REQTEAMUPGRADE_UID_FIELD.label = 1
 localTable.REQTEAMUPGRADE_UID_FIELD.has_default_value = false
+localTable.REQTEAMUPGRADE_UID_FIELD.default_value = 0
 localTable.REQTEAMUPGRADE_UID_FIELD.type = 13
 localTable.REQTEAMUPGRADE_UID_FIELD.cpp_type = 3
 
@@ -8137,6 +8776,7 @@ localTable.RSPTEAMUPGRADE_LEVEL_FIELD.number = 2
 localTable.RSPTEAMUPGRADE_LEVEL_FIELD.index = 1
 localTable.RSPTEAMUPGRADE_LEVEL_FIELD.label = 1
 localTable.RSPTEAMUPGRADE_LEVEL_FIELD.has_default_value = false
+localTable.RSPTEAMUPGRADE_LEVEL_FIELD.default_value = 0
 localTable.RSPTEAMUPGRADE_LEVEL_FIELD.type = 13
 localTable.RSPTEAMUPGRADE_LEVEL_FIELD.cpp_type = 3
 
@@ -8153,6 +8793,7 @@ localTable.REQTEAMDISMISS_UID_FIELD.number = 1
 localTable.REQTEAMDISMISS_UID_FIELD.index = 0
 localTable.REQTEAMDISMISS_UID_FIELD.label = 1
 localTable.REQTEAMDISMISS_UID_FIELD.has_default_value = false
+localTable.REQTEAMDISMISS_UID_FIELD.default_value = 0
 localTable.REQTEAMDISMISS_UID_FIELD.type = 13
 localTable.REQTEAMDISMISS_UID_FIELD.cpp_type = 3
 
@@ -8179,6 +8820,7 @@ localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.number = 2
 localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.index = 1
 localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.label = 1
 localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.has_default_value = false
+localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.default_value = 0
 localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.type = 13
 localTable.RSPTEAMDISMISS_LEFTDAYS_FIELD.cpp_type = 3
 
@@ -8195,6 +8837,7 @@ localTable.REQTEAMDISMISSCANCEL_UID_FIELD.number = 1
 localTable.REQTEAMDISMISSCANCEL_UID_FIELD.index = 0
 localTable.REQTEAMDISMISSCANCEL_UID_FIELD.label = 1
 localTable.REQTEAMDISMISSCANCEL_UID_FIELD.has_default_value = false
+localTable.REQTEAMDISMISSCANCEL_UID_FIELD.default_value = 0
 localTable.REQTEAMDISMISSCANCEL_UID_FIELD.type = 13
 localTable.REQTEAMDISMISSCANCEL_UID_FIELD.cpp_type = 3
 
@@ -8221,6 +8864,7 @@ localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.number = 2
 localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.index = 1
 localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.label = 1
 localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.has_default_value = false
+localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.default_value = 0
 localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.type = 13
 localTable.RSPTEAMDISMISSCANCEL_LEFTDAYS_FIELD.cpp_type = 3
 
@@ -8237,6 +8881,7 @@ localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.number = 1
 localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.index = 0
 localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.label = 1
 localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.has_default_value = false
+localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.default_value = 0
 localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.type = 13
 localTable.PUSHTEAMAPPLYJOIN_TEAMID_FIELD.cpp_type = 3
 
@@ -8246,6 +8891,7 @@ localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.number = 2
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.index = 1
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.label = 1
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.has_default_value = false
+localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.default_value = nil
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.message_type = PROTOTEAMAPPLICANT
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.type = 11
 localTable.PUSHTEAMAPPLYJOIN_APPLICANT_FIELD.cpp_type = 10
@@ -8263,6 +8909,7 @@ localTable.PUSHTEAMJOIN_TEAMID_FIELD.number = 1
 localTable.PUSHTEAMJOIN_TEAMID_FIELD.index = 0
 localTable.PUSHTEAMJOIN_TEAMID_FIELD.label = 1
 localTable.PUSHTEAMJOIN_TEAMID_FIELD.has_default_value = false
+localTable.PUSHTEAMJOIN_TEAMID_FIELD.default_value = 0
 localTable.PUSHTEAMJOIN_TEAMID_FIELD.type = 13
 localTable.PUSHTEAMJOIN_TEAMID_FIELD.cpp_type = 3
 
@@ -8272,6 +8919,7 @@ localTable.PUSHTEAMJOIN_PLAYER_FIELD.number = 2
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.index = 1
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.label = 1
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.has_default_value = false
+localTable.PUSHTEAMJOIN_PLAYER_FIELD.default_value = nil
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.message_type = PROTOTEAMMEMBERINFO
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.type = 11
 localTable.PUSHTEAMJOIN_PLAYER_FIELD.cpp_type = 10
@@ -8289,6 +8937,7 @@ localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.number = 1
 localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.index = 0
 localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.label = 1
 localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.has_default_value = false
+localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.default_value = 0
 localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.type = 13
 localTable.PUSHTEAMKICKOUT_DSTUID_FIELD.cpp_type = 3
 
@@ -8305,6 +8954,7 @@ localTable.PUSHTEAMEXIT_DSTUID_FIELD.number = 1
 localTable.PUSHTEAMEXIT_DSTUID_FIELD.index = 0
 localTable.PUSHTEAMEXIT_DSTUID_FIELD.label = 1
 localTable.PUSHTEAMEXIT_DSTUID_FIELD.has_default_value = false
+localTable.PUSHTEAMEXIT_DSTUID_FIELD.default_value = 0
 localTable.PUSHTEAMEXIT_DSTUID_FIELD.type = 13
 localTable.PUSHTEAMEXIT_DSTUID_FIELD.cpp_type = 3
 
@@ -8321,6 +8971,7 @@ localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.number = 1
 localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.index = 0
 localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.label = 1
 localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.has_default_value = false
+localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.default_value = 0
 localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.type = 13
 localTable.PUSHTEAMAPPOINT_DSTUID_FIELD.cpp_type = 3
 
@@ -8330,6 +8981,7 @@ localTable.PUSHTEAMAPPOINT_ROLE_FIELD.number = 2
 localTable.PUSHTEAMAPPOINT_ROLE_FIELD.index = 1
 localTable.PUSHTEAMAPPOINT_ROLE_FIELD.label = 1
 localTable.PUSHTEAMAPPOINT_ROLE_FIELD.has_default_value = false
+localTable.PUSHTEAMAPPOINT_ROLE_FIELD.default_value = 0
 localTable.PUSHTEAMAPPOINT_ROLE_FIELD.type = 13
 localTable.PUSHTEAMAPPOINT_ROLE_FIELD.cpp_type = 3
 
@@ -8346,6 +8998,7 @@ localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.number = 1
 localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.index = 0
 localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.label = 1
 localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.has_default_value = false
+localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.default_value = 0
 localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.type = 13
 localTable.PUSHTEAMUPGRADE_LEVEL_FIELD.cpp_type = 3
 
@@ -8362,6 +9015,7 @@ localTable.PUSHTEAMDISMISS_STATUS_FIELD.number = 1
 localTable.PUSHTEAMDISMISS_STATUS_FIELD.index = 0
 localTable.PUSHTEAMDISMISS_STATUS_FIELD.label = 1
 localTable.PUSHTEAMDISMISS_STATUS_FIELD.has_default_value = false
+localTable.PUSHTEAMDISMISS_STATUS_FIELD.default_value = 0
 localTable.PUSHTEAMDISMISS_STATUS_FIELD.type = 13
 localTable.PUSHTEAMDISMISS_STATUS_FIELD.cpp_type = 3
 
@@ -8378,6 +9032,7 @@ localTable.REQRELOGON_UID_FIELD.number = 1
 localTable.REQRELOGON_UID_FIELD.index = 0
 localTable.REQRELOGON_UID_FIELD.label = 1
 localTable.REQRELOGON_UID_FIELD.has_default_value = false
+localTable.REQRELOGON_UID_FIELD.default_value = 0
 localTable.REQRELOGON_UID_FIELD.type = 13
 localTable.REQRELOGON_UID_FIELD.cpp_type = 3
 
@@ -8411,6 +9066,7 @@ localTable.REQGETINVITECODE_UID_FIELD.number = 1
 localTable.REQGETINVITECODE_UID_FIELD.index = 0
 localTable.REQGETINVITECODE_UID_FIELD.label = 1
 localTable.REQGETINVITECODE_UID_FIELD.has_default_value = false
+localTable.REQGETINVITECODE_UID_FIELD.default_value = 0
 localTable.REQGETINVITECODE_UID_FIELD.type = 13
 localTable.REQGETINVITECODE_UID_FIELD.cpp_type = 3
 
@@ -8437,6 +9093,7 @@ localTable.RSPGETINVITECODE_INVITECODE_FIELD.number = 2
 localTable.RSPGETINVITECODE_INVITECODE_FIELD.index = 1
 localTable.RSPGETINVITECODE_INVITECODE_FIELD.label = 1
 localTable.RSPGETINVITECODE_INVITECODE_FIELD.has_default_value = false
+localTable.RSPGETINVITECODE_INVITECODE_FIELD.default_value = ""
 localTable.RSPGETINVITECODE_INVITECODE_FIELD.type = 9
 localTable.RSPGETINVITECODE_INVITECODE_FIELD.cpp_type = 9
 
@@ -8446,6 +9103,7 @@ localTable.RSPGETINVITECODE_LEFTCNT_FIELD.number = 3
 localTable.RSPGETINVITECODE_LEFTCNT_FIELD.index = 2
 localTable.RSPGETINVITECODE_LEFTCNT_FIELD.label = 1
 localTable.RSPGETINVITECODE_LEFTCNT_FIELD.has_default_value = false
+localTable.RSPGETINVITECODE_LEFTCNT_FIELD.default_value = 0
 localTable.RSPGETINVITECODE_LEFTCNT_FIELD.type = 13
 localTable.RSPGETINVITECODE_LEFTCNT_FIELD.cpp_type = 3
 
@@ -8462,6 +9120,7 @@ localTable.REQBINDINVITECODE_UID_FIELD.number = 1
 localTable.REQBINDINVITECODE_UID_FIELD.index = 0
 localTable.REQBINDINVITECODE_UID_FIELD.label = 1
 localTable.REQBINDINVITECODE_UID_FIELD.has_default_value = false
+localTable.REQBINDINVITECODE_UID_FIELD.default_value = 0
 localTable.REQBINDINVITECODE_UID_FIELD.type = 13
 localTable.REQBINDINVITECODE_UID_FIELD.cpp_type = 3
 
@@ -8471,6 +9130,7 @@ localTable.REQBINDINVITECODE_INVITECODE_FIELD.number = 2
 localTable.REQBINDINVITECODE_INVITECODE_FIELD.index = 1
 localTable.REQBINDINVITECODE_INVITECODE_FIELD.label = 1
 localTable.REQBINDINVITECODE_INVITECODE_FIELD.has_default_value = false
+localTable.REQBINDINVITECODE_INVITECODE_FIELD.default_value = ""
 localTable.REQBINDINVITECODE_INVITECODE_FIELD.type = 9
 localTable.REQBINDINVITECODE_INVITECODE_FIELD.cpp_type = 9
 
@@ -8497,6 +9157,7 @@ localTable.RSPBINDINVITECODE_BONUS_FIELD.number = 2
 localTable.RSPBINDINVITECODE_BONUS_FIELD.index = 1
 localTable.RSPBINDINVITECODE_BONUS_FIELD.label = 1
 localTable.RSPBINDINVITECODE_BONUS_FIELD.has_default_value = false
+localTable.RSPBINDINVITECODE_BONUS_FIELD.default_value = nil
 localTable.RSPBINDINVITECODE_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPBINDINVITECODE_BONUS_FIELD.type = 11
 localTable.RSPBINDINVITECODE_BONUS_FIELD.cpp_type = 10
@@ -8514,6 +9175,7 @@ localTable.REQGETNPCLIST_UID_FIELD.number = 1
 localTable.REQGETNPCLIST_UID_FIELD.index = 0
 localTable.REQGETNPCLIST_UID_FIELD.label = 1
 localTable.REQGETNPCLIST_UID_FIELD.has_default_value = false
+localTable.REQGETNPCLIST_UID_FIELD.default_value = 0
 localTable.REQGETNPCLIST_UID_FIELD.type = 13
 localTable.REQGETNPCLIST_UID_FIELD.cpp_type = 3
 
@@ -8530,6 +9192,7 @@ localTable.PROTONPCITEM_ID_FIELD.number = 1
 localTable.PROTONPCITEM_ID_FIELD.index = 0
 localTable.PROTONPCITEM_ID_FIELD.label = 1
 localTable.PROTONPCITEM_ID_FIELD.has_default_value = false
+localTable.PROTONPCITEM_ID_FIELD.default_value = 0
 localTable.PROTONPCITEM_ID_FIELD.type = 13
 localTable.PROTONPCITEM_ID_FIELD.cpp_type = 3
 
@@ -8539,6 +9202,7 @@ localTable.PROTONPCITEM_NAME_FIELD.number = 2
 localTable.PROTONPCITEM_NAME_FIELD.index = 1
 localTable.PROTONPCITEM_NAME_FIELD.label = 1
 localTable.PROTONPCITEM_NAME_FIELD.has_default_value = false
+localTable.PROTONPCITEM_NAME_FIELD.default_value = ""
 localTable.PROTONPCITEM_NAME_FIELD.type = 9
 localTable.PROTONPCITEM_NAME_FIELD.cpp_type = 9
 
@@ -8548,6 +9212,7 @@ localTable.PROTONPCITEM_MONEYWIN_FIELD.number = 3
 localTable.PROTONPCITEM_MONEYWIN_FIELD.index = 2
 localTable.PROTONPCITEM_MONEYWIN_FIELD.label = 1
 localTable.PROTONPCITEM_MONEYWIN_FIELD.has_default_value = false
+localTable.PROTONPCITEM_MONEYWIN_FIELD.default_value = 0
 localTable.PROTONPCITEM_MONEYWIN_FIELD.type = 13
 localTable.PROTONPCITEM_MONEYWIN_FIELD.cpp_type = 3
 
@@ -8557,6 +9222,7 @@ localTable.PROTONPCITEM_MONEYLOS_FIELD.number = 4
 localTable.PROTONPCITEM_MONEYLOS_FIELD.index = 3
 localTable.PROTONPCITEM_MONEYLOS_FIELD.label = 1
 localTable.PROTONPCITEM_MONEYLOS_FIELD.has_default_value = false
+localTable.PROTONPCITEM_MONEYLOS_FIELD.default_value = 0
 localTable.PROTONPCITEM_MONEYLOS_FIELD.type = 13
 localTable.PROTONPCITEM_MONEYLOS_FIELD.cpp_type = 3
 
@@ -8566,6 +9232,7 @@ localTable.PROTONPCITEM_FRAGWIN_FIELD.number = 5
 localTable.PROTONPCITEM_FRAGWIN_FIELD.index = 4
 localTable.PROTONPCITEM_FRAGWIN_FIELD.label = 1
 localTable.PROTONPCITEM_FRAGWIN_FIELD.has_default_value = false
+localTable.PROTONPCITEM_FRAGWIN_FIELD.default_value = 0
 localTable.PROTONPCITEM_FRAGWIN_FIELD.type = 13
 localTable.PROTONPCITEM_FRAGWIN_FIELD.cpp_type = 3
 
@@ -8575,6 +9242,7 @@ localTable.PROTONPCITEM_FRAGLOS_FIELD.number = 6
 localTable.PROTONPCITEM_FRAGLOS_FIELD.index = 5
 localTable.PROTONPCITEM_FRAGLOS_FIELD.label = 1
 localTable.PROTONPCITEM_FRAGLOS_FIELD.has_default_value = false
+localTable.PROTONPCITEM_FRAGLOS_FIELD.default_value = 0
 localTable.PROTONPCITEM_FRAGLOS_FIELD.type = 13
 localTable.PROTONPCITEM_FRAGLOS_FIELD.cpp_type = 3
 
@@ -8584,6 +9252,7 @@ localTable.PROTONPCITEM_POINTWIN_FIELD.number = 7
 localTable.PROTONPCITEM_POINTWIN_FIELD.index = 6
 localTable.PROTONPCITEM_POINTWIN_FIELD.label = 1
 localTable.PROTONPCITEM_POINTWIN_FIELD.has_default_value = false
+localTable.PROTONPCITEM_POINTWIN_FIELD.default_value = 0
 localTable.PROTONPCITEM_POINTWIN_FIELD.type = 13
 localTable.PROTONPCITEM_POINTWIN_FIELD.cpp_type = 3
 
@@ -8593,6 +9262,7 @@ localTable.PROTONPCITEM_POINTLOS_FIELD.number = 8
 localTable.PROTONPCITEM_POINTLOS_FIELD.index = 7
 localTable.PROTONPCITEM_POINTLOS_FIELD.label = 1
 localTable.PROTONPCITEM_POINTLOS_FIELD.has_default_value = false
+localTable.PROTONPCITEM_POINTLOS_FIELD.default_value = 0
 localTable.PROTONPCITEM_POINTLOS_FIELD.type = 13
 localTable.PROTONPCITEM_POINTLOS_FIELD.cpp_type = 3
 
@@ -8612,6 +9282,7 @@ localTable.PROTONPCITEM_DESC_FIELD.number = 10
 localTable.PROTONPCITEM_DESC_FIELD.index = 9
 localTable.PROTONPCITEM_DESC_FIELD.label = 1
 localTable.PROTONPCITEM_DESC_FIELD.has_default_value = false
+localTable.PROTONPCITEM_DESC_FIELD.default_value = ""
 localTable.PROTONPCITEM_DESC_FIELD.type = 9
 localTable.PROTONPCITEM_DESC_FIELD.cpp_type = 9
 
@@ -8656,6 +9327,7 @@ localTable.REQGETNPCBONUS_UID_FIELD.number = 1
 localTable.REQGETNPCBONUS_UID_FIELD.index = 0
 localTable.REQGETNPCBONUS_UID_FIELD.label = 1
 localTable.REQGETNPCBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETNPCBONUS_UID_FIELD.default_value = 0
 localTable.REQGETNPCBONUS_UID_FIELD.type = 13
 localTable.REQGETNPCBONUS_UID_FIELD.cpp_type = 3
 
@@ -8665,6 +9337,7 @@ localTable.REQGETNPCBONUS_LEVEL_FIELD.number = 2
 localTable.REQGETNPCBONUS_LEVEL_FIELD.index = 1
 localTable.REQGETNPCBONUS_LEVEL_FIELD.label = 1
 localTable.REQGETNPCBONUS_LEVEL_FIELD.has_default_value = false
+localTable.REQGETNPCBONUS_LEVEL_FIELD.default_value = 0
 localTable.REQGETNPCBONUS_LEVEL_FIELD.type = 13
 localTable.REQGETNPCBONUS_LEVEL_FIELD.cpp_type = 3
 
@@ -8674,6 +9347,7 @@ localTable.REQGETNPCBONUS_RESULT_FIELD.number = 3
 localTable.REQGETNPCBONUS_RESULT_FIELD.index = 2
 localTable.REQGETNPCBONUS_RESULT_FIELD.label = 1
 localTable.REQGETNPCBONUS_RESULT_FIELD.has_default_value = false
+localTable.REQGETNPCBONUS_RESULT_FIELD.default_value = 0
 localTable.REQGETNPCBONUS_RESULT_FIELD.type = 13
 localTable.REQGETNPCBONUS_RESULT_FIELD.cpp_type = 3
 
@@ -8700,6 +9374,7 @@ localTable.RSPGETNPCBONUS_LEVEL_FIELD.number = 2
 localTable.RSPGETNPCBONUS_LEVEL_FIELD.index = 1
 localTable.RSPGETNPCBONUS_LEVEL_FIELD.label = 1
 localTable.RSPGETNPCBONUS_LEVEL_FIELD.has_default_value = false
+localTable.RSPGETNPCBONUS_LEVEL_FIELD.default_value = 0
 localTable.RSPGETNPCBONUS_LEVEL_FIELD.type = 13
 localTable.RSPGETNPCBONUS_LEVEL_FIELD.cpp_type = 3
 
@@ -8709,6 +9384,7 @@ localTable.RSPGETNPCBONUS_MONEY_FIELD.number = 3
 localTable.RSPGETNPCBONUS_MONEY_FIELD.index = 2
 localTable.RSPGETNPCBONUS_MONEY_FIELD.label = 1
 localTable.RSPGETNPCBONUS_MONEY_FIELD.has_default_value = false
+localTable.RSPGETNPCBONUS_MONEY_FIELD.default_value = 0
 localTable.RSPGETNPCBONUS_MONEY_FIELD.type = 13
 localTable.RSPGETNPCBONUS_MONEY_FIELD.cpp_type = 3
 
@@ -8718,6 +9394,7 @@ localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.number = 4
 localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.index = 3
 localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.label = 1
 localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.has_default_value = false
+localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.default_value = 0
 localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.type = 13
 localTable.RSPGETNPCBONUS_FRAGMENT_FIELD.cpp_type = 3
 
@@ -8727,6 +9404,7 @@ localTable.RSPGETNPCBONUS_POINT_FIELD.number = 5
 localTable.RSPGETNPCBONUS_POINT_FIELD.index = 4
 localTable.RSPGETNPCBONUS_POINT_FIELD.label = 1
 localTable.RSPGETNPCBONUS_POINT_FIELD.has_default_value = false
+localTable.RSPGETNPCBONUS_POINT_FIELD.default_value = 0
 localTable.RSPGETNPCBONUS_POINT_FIELD.type = 13
 localTable.RSPGETNPCBONUS_POINT_FIELD.cpp_type = 3
 
@@ -8753,6 +9431,7 @@ localTable.ONLINEACHIEVEITEM_ID_FIELD.number = 1
 localTable.ONLINEACHIEVEITEM_ID_FIELD.index = 0
 localTable.ONLINEACHIEVEITEM_ID_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_ID_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_ID_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_ID_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_ID_FIELD.cpp_type = 3
 
@@ -8762,6 +9441,7 @@ localTable.ONLINEACHIEVEITEM_STATUS_FIELD.number = 2
 localTable.ONLINEACHIEVEITEM_STATUS_FIELD.index = 1
 localTable.ONLINEACHIEVEITEM_STATUS_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_STATUS_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_STATUS_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_STATUS_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -8771,6 +9451,7 @@ localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.number = 3
 localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.index = 2
 localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -8780,6 +9461,7 @@ localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.number = 4
 localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.index = 3
 localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_TOTAL_FIELD.cpp_type = 3
 
@@ -8789,6 +9471,7 @@ localTable.ONLINEACHIEVEITEM_ICON_FIELD.number = 5
 localTable.ONLINEACHIEVEITEM_ICON_FIELD.index = 4
 localTable.ONLINEACHIEVEITEM_ICON_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_ICON_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_ICON_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_ICON_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_ICON_FIELD.cpp_type = 3
 
@@ -8798,6 +9481,7 @@ localTable.ONLINEACHIEVEITEM_TYPE_FIELD.number = 6
 localTable.ONLINEACHIEVEITEM_TYPE_FIELD.index = 5
 localTable.ONLINEACHIEVEITEM_TYPE_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_TYPE_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_TYPE_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_TYPE_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_TYPE_FIELD.cpp_type = 3
 
@@ -8807,6 +9491,7 @@ localTable.ONLINEACHIEVEITEM_INFO_FIELD.number = 7
 localTable.ONLINEACHIEVEITEM_INFO_FIELD.index = 6
 localTable.ONLINEACHIEVEITEM_INFO_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_INFO_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_INFO_FIELD.default_value = ""
 localTable.ONLINEACHIEVEITEM_INFO_FIELD.type = 9
 localTable.ONLINEACHIEVEITEM_INFO_FIELD.cpp_type = 9
 
@@ -8816,6 +9501,7 @@ localTable.ONLINEACHIEVEITEM_BONUS_FIELD.number = 8
 localTable.ONLINEACHIEVEITEM_BONUS_FIELD.index = 7
 localTable.ONLINEACHIEVEITEM_BONUS_FIELD.label = 1
 localTable.ONLINEACHIEVEITEM_BONUS_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEITEM_BONUS_FIELD.default_value = 0
 localTable.ONLINEACHIEVEITEM_BONUS_FIELD.type = 13
 localTable.ONLINEACHIEVEITEM_BONUS_FIELD.cpp_type = 3
 
@@ -8832,6 +9518,7 @@ localTable.REQGETONLINEACHIEVELIST_UID_FIELD.number = 1
 localTable.REQGETONLINEACHIEVELIST_UID_FIELD.index = 0
 localTable.REQGETONLINEACHIEVELIST_UID_FIELD.label = 1
 localTable.REQGETONLINEACHIEVELIST_UID_FIELD.has_default_value = false
+localTable.REQGETONLINEACHIEVELIST_UID_FIELD.default_value = 0
 localTable.REQGETONLINEACHIEVELIST_UID_FIELD.type = 13
 localTable.REQGETONLINEACHIEVELIST_UID_FIELD.cpp_type = 3
 
@@ -8876,6 +9563,7 @@ localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.number = 1
 localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.index = 0
 localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.label = 1
 localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.default_value = 0
 localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.type = 13
 localTable.REQGETONLINEACHIEVEBONUS_UID_FIELD.cpp_type = 3
 
@@ -8885,6 +9573,7 @@ localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.number = 2
 localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.index = 1
 localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.label = 1
 localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.default_value = 0
 localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.type = 13
 localTable.REQGETONLINEACHIEVEBONUS_ID_FIELD.cpp_type = 3
 
@@ -8911,6 +9600,7 @@ localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETONLINEACHIEVEBONUS_BONUS_FIELD.cpp_type = 10
@@ -8921,6 +9611,7 @@ localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETONLINEACHIEVEBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -8937,6 +9628,7 @@ localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.number = 1
 localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.index = 0
 localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.label = 1
 localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.default_value = 0
 localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.type = 13
 localTable.ONLINEACHIEVEUPDATEITEM_ID_FIELD.cpp_type = 3
 
@@ -8946,6 +9638,7 @@ localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.number = 2
 localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.index = 1
 localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.label = 1
 localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.default_value = 0
 localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.type = 13
 localTable.ONLINEACHIEVEUPDATEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -8955,6 +9648,7 @@ localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.number = 3
 localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.index = 2
 localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.label = 1
 localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.has_default_value = false
+localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.default_value = 0
 localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.type = 13
 localTable.ONLINEACHIEVEUPDATEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -8971,6 +9665,7 @@ localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.number = 1
 localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.index = 0
 localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.label = 1
 localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.type = 13
 localTable.PUSHONLINEACHIEVENOTIFY_UID_FIELD.cpp_type = 3
 
@@ -8998,6 +9693,7 @@ localTable.SIGNINACHIEVEITEM_ID_FIELD.number = 1
 localTable.SIGNINACHIEVEITEM_ID_FIELD.index = 0
 localTable.SIGNINACHIEVEITEM_ID_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_ID_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_ID_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_ID_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_ID_FIELD.cpp_type = 3
 
@@ -9007,6 +9703,7 @@ localTable.SIGNINACHIEVEITEM_STATUS_FIELD.number = 2
 localTable.SIGNINACHIEVEITEM_STATUS_FIELD.index = 1
 localTable.SIGNINACHIEVEITEM_STATUS_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_STATUS_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_STATUS_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_STATUS_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -9016,6 +9713,7 @@ localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.number = 3
 localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.index = 2
 localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -9025,6 +9723,7 @@ localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.number = 4
 localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.index = 3
 localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_TOTAL_FIELD.cpp_type = 3
 
@@ -9034,6 +9733,7 @@ localTable.SIGNINACHIEVEITEM_ICON_FIELD.number = 5
 localTable.SIGNINACHIEVEITEM_ICON_FIELD.index = 4
 localTable.SIGNINACHIEVEITEM_ICON_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_ICON_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_ICON_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_ICON_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_ICON_FIELD.cpp_type = 3
 
@@ -9043,6 +9743,7 @@ localTable.SIGNINACHIEVEITEM_TYPE_FIELD.number = 6
 localTable.SIGNINACHIEVEITEM_TYPE_FIELD.index = 5
 localTable.SIGNINACHIEVEITEM_TYPE_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_TYPE_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_TYPE_FIELD.default_value = 0
 localTable.SIGNINACHIEVEITEM_TYPE_FIELD.type = 13
 localTable.SIGNINACHIEVEITEM_TYPE_FIELD.cpp_type = 3
 
@@ -9052,6 +9753,7 @@ localTable.SIGNINACHIEVEITEM_INFO_FIELD.number = 7
 localTable.SIGNINACHIEVEITEM_INFO_FIELD.index = 6
 localTable.SIGNINACHIEVEITEM_INFO_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_INFO_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_INFO_FIELD.default_value = ""
 localTable.SIGNINACHIEVEITEM_INFO_FIELD.type = 9
 localTable.SIGNINACHIEVEITEM_INFO_FIELD.cpp_type = 9
 
@@ -9061,6 +9763,7 @@ localTable.SIGNINACHIEVEITEM_BONUS_FIELD.number = 8
 localTable.SIGNINACHIEVEITEM_BONUS_FIELD.index = 7
 localTable.SIGNINACHIEVEITEM_BONUS_FIELD.label = 1
 localTable.SIGNINACHIEVEITEM_BONUS_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEITEM_BONUS_FIELD.default_value = ""
 localTable.SIGNINACHIEVEITEM_BONUS_FIELD.type = 9
 localTable.SIGNINACHIEVEITEM_BONUS_FIELD.cpp_type = 9
 
@@ -9077,6 +9780,7 @@ localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.number = 1
 localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.index = 0
 localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.label = 1
 localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.has_default_value = false
+localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.default_value = 0
 localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.type = 13
 localTable.REQGETSIGNINACHIEVELIST_UID_FIELD.cpp_type = 3
 
@@ -9121,6 +9825,7 @@ localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.number = 1
 localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.index = 0
 localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.label = 1
 localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.has_default_value = false
+localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.default_value = 0
 localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.type = 13
 localTable.REQGETSIGNINACHIEVEBONUS_UID_FIELD.cpp_type = 3
 
@@ -9130,6 +9835,7 @@ localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.number = 2
 localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.index = 1
 localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.label = 1
 localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.has_default_value = false
+localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.default_value = 0
 localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.type = 13
 localTable.REQGETSIGNINACHIEVEBONUS_ID_FIELD.cpp_type = 3
 
@@ -9156,6 +9862,7 @@ localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.number = 2
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.index = 1
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.label = 1
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.has_default_value = false
+localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.default_value = nil
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.message_type = PROPITEM
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.type = 11
 localTable.RSPGETSIGNINACHIEVEBONUS_BONUS_FIELD.cpp_type = 10
@@ -9166,6 +9873,7 @@ localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.number = 3
 localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.index = 2
 localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.label = 1
 localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.has_default_value = false
+localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.default_value = 0.0
 localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.type = 1
 localTable.RSPGETSIGNINACHIEVEBONUS_CARDRATIO_FIELD.cpp_type = 5
 
@@ -9182,6 +9890,7 @@ localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.number = 1
 localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.index = 0
 localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.label = 1
 localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.default_value = 0
 localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.type = 13
 localTable.SIGNINACHIEVEUPDATEITEM_ID_FIELD.cpp_type = 3
 
@@ -9191,6 +9900,7 @@ localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.number = 2
 localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.index = 1
 localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.label = 1
 localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.default_value = 0
 localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.type = 13
 localTable.SIGNINACHIEVEUPDATEITEM_PROGRESS_FIELD.cpp_type = 3
 
@@ -9200,6 +9910,7 @@ localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.number = 3
 localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.index = 2
 localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.label = 1
 localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.has_default_value = false
+localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.default_value = 0
 localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.type = 13
 localTable.SIGNINACHIEVEUPDATEITEM_STATUS_FIELD.cpp_type = 3
 
@@ -9216,6 +9927,7 @@ localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.number = 1
 localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.index = 0
 localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.label = 1
 localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.type = 13
 localTable.PUSHSIGNINACHIEVENOTIFY_UID_FIELD.cpp_type = 3
 
@@ -9243,6 +9955,7 @@ localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.number = 1
 localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.index = 0
 localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.label = 1
 localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.type = 13
 localTable.PUSHTRUNKEYQUESTNOTIFY_UID_FIELD.cpp_type = 3
 
@@ -9270,6 +9983,7 @@ localTable.REQWELFAREUPDATE_UID_FIELD.number = 1
 localTable.REQWELFAREUPDATE_UID_FIELD.index = 0
 localTable.REQWELFAREUPDATE_UID_FIELD.label = 1
 localTable.REQWELFAREUPDATE_UID_FIELD.has_default_value = false
+localTable.REQWELFAREUPDATE_UID_FIELD.default_value = 0
 localTable.REQWELFAREUPDATE_UID_FIELD.type = 13
 localTable.REQWELFAREUPDATE_UID_FIELD.cpp_type = 3
 
@@ -9279,6 +9993,7 @@ localTable.REQWELFAREUPDATE_TYPE_FIELD.number = 2
 localTable.REQWELFAREUPDATE_TYPE_FIELD.index = 1
 localTable.REQWELFAREUPDATE_TYPE_FIELD.label = 1
 localTable.REQWELFAREUPDATE_TYPE_FIELD.has_default_value = false
+localTable.REQWELFAREUPDATE_TYPE_FIELD.default_value = 0
 localTable.REQWELFAREUPDATE_TYPE_FIELD.type = 13
 localTable.REQWELFAREUPDATE_TYPE_FIELD.cpp_type = 3
 
@@ -9312,6 +10027,7 @@ localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.number = 1
 localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.index = 0
 localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.label = 1
 localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.has_default_value = false
+localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.default_value = 0
 localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.type = 13
 localTable.REQGETRESTRICTEDCARDSRULE_UID_FIELD.cpp_type = 3
 
@@ -9338,6 +10054,7 @@ localTable.SRCARDITEM_LIM_FIELD.number = 2
 localTable.SRCARDITEM_LIM_FIELD.index = 1
 localTable.SRCARDITEM_LIM_FIELD.label = 1
 localTable.SRCARDITEM_LIM_FIELD.has_default_value = false
+localTable.SRCARDITEM_LIM_FIELD.default_value = 0
 localTable.SRCARDITEM_LIM_FIELD.type = 13
 localTable.SRCARDITEM_LIM_FIELD.cpp_type = 3
 
@@ -9382,6 +10099,7 @@ localTable.RCARDITEM_CID_FIELD.number = 1
 localTable.RCARDITEM_CID_FIELD.index = 0
 localTable.RCARDITEM_CID_FIELD.label = 1
 localTable.RCARDITEM_CID_FIELD.has_default_value = false
+localTable.RCARDITEM_CID_FIELD.default_value = 0
 localTable.RCARDITEM_CID_FIELD.type = 13
 localTable.RCARDITEM_CID_FIELD.cpp_type = 3
 
@@ -9391,6 +10109,7 @@ localTable.RCARDITEM_CNT_FIELD.number = 2
 localTable.RCARDITEM_CNT_FIELD.index = 1
 localTable.RCARDITEM_CNT_FIELD.label = 1
 localTable.RCARDITEM_CNT_FIELD.has_default_value = false
+localTable.RCARDITEM_CNT_FIELD.default_value = 0
 localTable.RCARDITEM_CNT_FIELD.type = 13
 localTable.RCARDITEM_CNT_FIELD.cpp_type = 3
 
@@ -9400,6 +10119,7 @@ localTable.RCARDITEM_LIM_FIELD.number = 3
 localTable.RCARDITEM_LIM_FIELD.index = 2
 localTable.RCARDITEM_LIM_FIELD.label = 1
 localTable.RCARDITEM_LIM_FIELD.has_default_value = false
+localTable.RCARDITEM_LIM_FIELD.default_value = 0
 localTable.RCARDITEM_LIM_FIELD.type = 13
 localTable.RCARDITEM_LIM_FIELD.cpp_type = 3
 
@@ -9416,6 +10136,7 @@ localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.number = 1
 localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.index = 0
 localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.label = 1
 localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.type = 13
 localTable.PUSHRESTRICTEDCARDNOTIFY_UID_FIELD.cpp_type = 3
 
@@ -9443,6 +10164,7 @@ localTable.COMMONINFO_ROOKIELEVEL_FIELD.number = 1
 localTable.COMMONINFO_ROOKIELEVEL_FIELD.index = 0
 localTable.COMMONINFO_ROOKIELEVEL_FIELD.label = 1
 localTable.COMMONINFO_ROOKIELEVEL_FIELD.has_default_value = false
+localTable.COMMONINFO_ROOKIELEVEL_FIELD.default_value = 0
 localTable.COMMONINFO_ROOKIELEVEL_FIELD.type = 13
 localTable.COMMONINFO_ROOKIELEVEL_FIELD.cpp_type = 3
 
@@ -9452,6 +10174,7 @@ localTable.COMMONINFO_WCLEVEL_FIELD.number = 2
 localTable.COMMONINFO_WCLEVEL_FIELD.index = 1
 localTable.COMMONINFO_WCLEVEL_FIELD.label = 1
 localTable.COMMONINFO_WCLEVEL_FIELD.has_default_value = false
+localTable.COMMONINFO_WCLEVEL_FIELD.default_value = 0
 localTable.COMMONINFO_WCLEVEL_FIELD.type = 13
 localTable.COMMONINFO_WCLEVEL_FIELD.cpp_type = 3
 
@@ -9461,6 +10184,7 @@ localTable.COMMONINFO_WCCOST_FIELD.number = 3
 localTable.COMMONINFO_WCCOST_FIELD.index = 2
 localTable.COMMONINFO_WCCOST_FIELD.label = 1
 localTable.COMMONINFO_WCCOST_FIELD.has_default_value = false
+localTable.COMMONINFO_WCCOST_FIELD.default_value = 0
 localTable.COMMONINFO_WCCOST_FIELD.type = 13
 localTable.COMMONINFO_WCCOST_FIELD.cpp_type = 3
 
@@ -9470,6 +10194,7 @@ localTable.COMMONINFO_WCWORDSMAX_FIELD.number = 4
 localTable.COMMONINFO_WCWORDSMAX_FIELD.index = 3
 localTable.COMMONINFO_WCWORDSMAX_FIELD.label = 1
 localTable.COMMONINFO_WCWORDSMAX_FIELD.has_default_value = false
+localTable.COMMONINFO_WCWORDSMAX_FIELD.default_value = 0
 localTable.COMMONINFO_WCWORDSMAX_FIELD.type = 13
 localTable.COMMONINFO_WCWORDSMAX_FIELD.cpp_type = 3
 
@@ -9479,6 +10204,7 @@ localTable.COMMONINFO_WCINTERVAL_FIELD.number = 5
 localTable.COMMONINFO_WCINTERVAL_FIELD.index = 4
 localTable.COMMONINFO_WCINTERVAL_FIELD.label = 1
 localTable.COMMONINFO_WCINTERVAL_FIELD.has_default_value = false
+localTable.COMMONINFO_WCINTERVAL_FIELD.default_value = 0
 localTable.COMMONINFO_WCINTERVAL_FIELD.type = 13
 localTable.COMMONINFO_WCINTERVAL_FIELD.cpp_type = 3
 
@@ -9488,6 +10214,7 @@ localTable.COMMONINFO_CFDISALEVEL_FIELD.number = 6
 localTable.COMMONINFO_CFDISALEVEL_FIELD.index = 5
 localTable.COMMONINFO_CFDISALEVEL_FIELD.label = 1
 localTable.COMMONINFO_CFDISALEVEL_FIELD.has_default_value = false
+localTable.COMMONINFO_CFDISALEVEL_FIELD.default_value = 0
 localTable.COMMONINFO_CFDISALEVEL_FIELD.type = 13
 localTable.COMMONINFO_CFDISALEVEL_FIELD.cpp_type = 3
 
@@ -9497,6 +10224,7 @@ localTable.COMMONINFO_CFMONSTER_FIELD.number = 7
 localTable.COMMONINFO_CFMONSTER_FIELD.index = 6
 localTable.COMMONINFO_CFMONSTER_FIELD.label = 1
 localTable.COMMONINFO_CFMONSTER_FIELD.has_default_value = false
+localTable.COMMONINFO_CFMONSTER_FIELD.default_value = 0
 localTable.COMMONINFO_CFMONSTER_FIELD.type = 13
 localTable.COMMONINFO_CFMONSTER_FIELD.cpp_type = 3
 
@@ -9506,6 +10234,7 @@ localTable.COMMONINFO_CFMAGICTRAP_FIELD.number = 8
 localTable.COMMONINFO_CFMAGICTRAP_FIELD.index = 7
 localTable.COMMONINFO_CFMAGICTRAP_FIELD.label = 1
 localTable.COMMONINFO_CFMAGICTRAP_FIELD.has_default_value = false
+localTable.COMMONINFO_CFMAGICTRAP_FIELD.default_value = 0
 localTable.COMMONINFO_CFMAGICTRAP_FIELD.type = 13
 localTable.COMMONINFO_CFMAGICTRAP_FIELD.cpp_type = 3
 
@@ -9515,6 +10244,7 @@ localTable.COMMONINFO_CFOTHER_FIELD.number = 9
 localTable.COMMONINFO_CFOTHER_FIELD.index = 8
 localTable.COMMONINFO_CFOTHER_FIELD.label = 1
 localTable.COMMONINFO_CFOTHER_FIELD.has_default_value = false
+localTable.COMMONINFO_CFOTHER_FIELD.default_value = 0
 localTable.COMMONINFO_CFOTHER_FIELD.type = 13
 localTable.COMMONINFO_CFOTHER_FIELD.cpp_type = 3
 
@@ -9524,6 +10254,7 @@ localTable.COMMONINFO_M2FRATE_FIELD.number = 10
 localTable.COMMONINFO_M2FRATE_FIELD.index = 9
 localTable.COMMONINFO_M2FRATE_FIELD.label = 1
 localTable.COMMONINFO_M2FRATE_FIELD.has_default_value = false
+localTable.COMMONINFO_M2FRATE_FIELD.default_value = 0
 localTable.COMMONINFO_M2FRATE_FIELD.type = 13
 localTable.COMMONINFO_M2FRATE_FIELD.cpp_type = 3
 
@@ -9533,6 +10264,7 @@ localTable.COMMONINFO_SVRVERSION_FIELD.number = 11
 localTable.COMMONINFO_SVRVERSION_FIELD.index = 10
 localTable.COMMONINFO_SVRVERSION_FIELD.label = 1
 localTable.COMMONINFO_SVRVERSION_FIELD.has_default_value = false
+localTable.COMMONINFO_SVRVERSION_FIELD.default_value = 0
 localTable.COMMONINFO_SVRVERSION_FIELD.type = 13
 localTable.COMMONINFO_SVRVERSION_FIELD.cpp_type = 3
 
@@ -9542,6 +10274,7 @@ localTable.COMMONINFO_OFFICIALQQ_FIELD.number = 12
 localTable.COMMONINFO_OFFICIALQQ_FIELD.index = 11
 localTable.COMMONINFO_OFFICIALQQ_FIELD.label = 1
 localTable.COMMONINFO_OFFICIALQQ_FIELD.has_default_value = false
+localTable.COMMONINFO_OFFICIALQQ_FIELD.default_value = ""
 localTable.COMMONINFO_OFFICIALQQ_FIELD.type = 9
 localTable.COMMONINFO_OFFICIALQQ_FIELD.cpp_type = 9
 
@@ -9551,6 +10284,7 @@ localTable.COMMONINFO_WEBSITE_FIELD.number = 13
 localTable.COMMONINFO_WEBSITE_FIELD.index = 12
 localTable.COMMONINFO_WEBSITE_FIELD.label = 1
 localTable.COMMONINFO_WEBSITE_FIELD.has_default_value = false
+localTable.COMMONINFO_WEBSITE_FIELD.default_value = ""
 localTable.COMMONINFO_WEBSITE_FIELD.type = 9
 localTable.COMMONINFO_WEBSITE_FIELD.cpp_type = 9
 
@@ -9560,6 +10294,7 @@ localTable.COMMONINFO_INVITEDESC_FIELD.number = 14
 localTable.COMMONINFO_INVITEDESC_FIELD.index = 13
 localTable.COMMONINFO_INVITEDESC_FIELD.label = 1
 localTable.COMMONINFO_INVITEDESC_FIELD.has_default_value = false
+localTable.COMMONINFO_INVITEDESC_FIELD.default_value = ""
 localTable.COMMONINFO_INVITEDESC_FIELD.type = 9
 localTable.COMMONINFO_INVITEDESC_FIELD.cpp_type = 9
 
@@ -9569,6 +10304,7 @@ localTable.COMMONINFO_SHARECONTENT_FIELD.number = 15
 localTable.COMMONINFO_SHARECONTENT_FIELD.index = 14
 localTable.COMMONINFO_SHARECONTENT_FIELD.label = 1
 localTable.COMMONINFO_SHARECONTENT_FIELD.has_default_value = false
+localTable.COMMONINFO_SHARECONTENT_FIELD.default_value = ""
 localTable.COMMONINFO_SHARECONTENT_FIELD.type = 9
 localTable.COMMONINFO_SHARECONTENT_FIELD.cpp_type = 9
 
@@ -9578,6 +10314,7 @@ localTable.COMMONINFO_SHAREENABLE_FIELD.number = 16
 localTable.COMMONINFO_SHAREENABLE_FIELD.index = 15
 localTable.COMMONINFO_SHAREENABLE_FIELD.label = 1
 localTable.COMMONINFO_SHAREENABLE_FIELD.has_default_value = false
+localTable.COMMONINFO_SHAREENABLE_FIELD.default_value = false
 localTable.COMMONINFO_SHAREENABLE_FIELD.type = 8
 localTable.COMMONINFO_SHAREENABLE_FIELD.cpp_type = 7
 
@@ -9587,6 +10324,7 @@ localTable.COMMONINFO_WCNODE_FIELD.number = 17
 localTable.COMMONINFO_WCNODE_FIELD.index = 16
 localTable.COMMONINFO_WCNODE_FIELD.label = 1
 localTable.COMMONINFO_WCNODE_FIELD.has_default_value = false
+localTable.COMMONINFO_WCNODE_FIELD.default_value = ""
 localTable.COMMONINFO_WCNODE_FIELD.type = 9
 localTable.COMMONINFO_WCNODE_FIELD.cpp_type = 9
 
@@ -9596,6 +10334,7 @@ localTable.COMMONINFO_SENSIWORDS_FIELD.number = 18
 localTable.COMMONINFO_SENSIWORDS_FIELD.index = 17
 localTable.COMMONINFO_SENSIWORDS_FIELD.label = 1
 localTable.COMMONINFO_SENSIWORDS_FIELD.has_default_value = false
+localTable.COMMONINFO_SENSIWORDS_FIELD.default_value = ""
 localTable.COMMONINFO_SENSIWORDS_FIELD.type = 9
 localTable.COMMONINFO_SENSIWORDS_FIELD.cpp_type = 9
 
@@ -9605,6 +10344,7 @@ localTable.COMMONINFO_TEAMCREATECOST_FIELD.number = 19
 localTable.COMMONINFO_TEAMCREATECOST_FIELD.index = 18
 localTable.COMMONINFO_TEAMCREATECOST_FIELD.label = 1
 localTable.COMMONINFO_TEAMCREATECOST_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMCREATECOST_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMCREATECOST_FIELD.type = 13
 localTable.COMMONINFO_TEAMCREATECOST_FIELD.cpp_type = 3
 
@@ -9614,6 +10354,7 @@ localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.number = 20
 localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.index = 19
 localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.label = 1
 localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.type = 13
 localTable.COMMONINFO_TEAMCREATELEVEL_FIELD.cpp_type = 3
 
@@ -9623,6 +10364,7 @@ localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.number = 21
 localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.index = 20
 localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.label = 1
 localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.type = 13
 localTable.COMMONINFO_TEAMDONATELEVEL_FIELD.cpp_type = 3
 
@@ -9632,6 +10374,7 @@ localTable.COMMONINFO_TEAMDONATERATE_FIELD.number = 22
 localTable.COMMONINFO_TEAMDONATERATE_FIELD.index = 21
 localTable.COMMONINFO_TEAMDONATERATE_FIELD.label = 1
 localTable.COMMONINFO_TEAMDONATERATE_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMDONATERATE_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMDONATERATE_FIELD.type = 13
 localTable.COMMONINFO_TEAMDONATERATE_FIELD.cpp_type = 3
 
@@ -9641,6 +10384,7 @@ localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.number = 23
 localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.index = 22
 localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.label = 1
 localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.type = 13
 localTable.COMMONINFO_TEAMREJOINDELAY_FIELD.cpp_type = 3
 
@@ -9650,6 +10394,7 @@ localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.number = 24
 localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.index = 23
 localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.label = 1
 localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.type = 13
 localTable.COMMONINFO_TEAMDISMISSDELAY_FIELD.cpp_type = 3
 
@@ -9659,6 +10404,7 @@ localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.number = 25
 localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.index = 24
 localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.label = 1
 localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.type = 13
 localTable.COMMONINFO_TEAMMAXVICECAPTAIN_FIELD.cpp_type = 3
 
@@ -9668,6 +10414,7 @@ localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.number = 26
 localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.index = 25
 localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.label = 1
 localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.has_default_value = false
+localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.default_value = 0
 localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.type = 13
 localTable.COMMONINFO_TEAMCONTRIBUTENOTE_FIELD.cpp_type = 3
 
@@ -9677,6 +10424,7 @@ localTable.COMMONINFO_PRICEBUYDECK_FIELD.number = 27
 localTable.COMMONINFO_PRICEBUYDECK_FIELD.index = 26
 localTable.COMMONINFO_PRICEBUYDECK_FIELD.label = 1
 localTable.COMMONINFO_PRICEBUYDECK_FIELD.has_default_value = false
+localTable.COMMONINFO_PRICEBUYDECK_FIELD.default_value = 0
 localTable.COMMONINFO_PRICEBUYDECK_FIELD.type = 13
 localTable.COMMONINFO_PRICEBUYDECK_FIELD.cpp_type = 3
 
@@ -9686,6 +10434,7 @@ localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.number = 28
 localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.index = 27
 localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.label = 1
 localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.has_default_value = false
+localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.default_value = 0
 localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.type = 13
 localTable.COMMONINFO_PRICEBUYDECKGRID_FIELD.cpp_type = 3
 
@@ -9695,6 +10444,7 @@ localTable.COMMONINFO_SCORERACEBEGIN_FIELD.number = 29
 localTable.COMMONINFO_SCORERACEBEGIN_FIELD.index = 28
 localTable.COMMONINFO_SCORERACEBEGIN_FIELD.label = 1
 localTable.COMMONINFO_SCORERACEBEGIN_FIELD.has_default_value = false
+localTable.COMMONINFO_SCORERACEBEGIN_FIELD.default_value = 0
 localTable.COMMONINFO_SCORERACEBEGIN_FIELD.type = 13
 localTable.COMMONINFO_SCORERACEBEGIN_FIELD.cpp_type = 3
 
@@ -9704,6 +10454,7 @@ localTable.COMMONINFO_SCORERACEEND_FIELD.number = 30
 localTable.COMMONINFO_SCORERACEEND_FIELD.index = 29
 localTable.COMMONINFO_SCORERACEEND_FIELD.label = 1
 localTable.COMMONINFO_SCORERACEEND_FIELD.has_default_value = false
+localTable.COMMONINFO_SCORERACEEND_FIELD.default_value = 0
 localTable.COMMONINFO_SCORERACEEND_FIELD.type = 13
 localTable.COMMONINFO_SCORERACEEND_FIELD.cpp_type = 3
 
@@ -9713,6 +10464,7 @@ localTable.COMMONINFO_SCORERACERAISECOST_FIELD.number = 31
 localTable.COMMONINFO_SCORERACERAISECOST_FIELD.index = 30
 localTable.COMMONINFO_SCORERACERAISECOST_FIELD.label = 1
 localTable.COMMONINFO_SCORERACERAISECOST_FIELD.has_default_value = false
+localTable.COMMONINFO_SCORERACERAISECOST_FIELD.default_value = 0
 localTable.COMMONINFO_SCORERACERAISECOST_FIELD.type = 13
 localTable.COMMONINFO_SCORERACERAISECOST_FIELD.cpp_type = 3
 
@@ -9733,6 +10485,7 @@ localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.number = 33
 localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.index = 32
 localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.label = 1
 localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.has_default_value = false
+localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.default_value = ""
 localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.type = 9
 localTable.COMMONINFO_TOPUPDISCOUNTSKIP_FIELD.cpp_type = 9
 
@@ -9742,6 +10495,7 @@ localTable.COMMONINFO_VIPDISCOUNT_FIELD.number = 34
 localTable.COMMONINFO_VIPDISCOUNT_FIELD.index = 33
 localTable.COMMONINFO_VIPDISCOUNT_FIELD.label = 1
 localTable.COMMONINFO_VIPDISCOUNT_FIELD.has_default_value = false
+localTable.COMMONINFO_VIPDISCOUNT_FIELD.default_value = 0
 localTable.COMMONINFO_VIPDISCOUNT_FIELD.type = 13
 localTable.COMMONINFO_VIPDISCOUNT_FIELD.cpp_type = 3
 
@@ -9758,6 +10512,7 @@ localTable.PLATFORMINFO_PLATFORM_FIELD.number = 1
 localTable.PLATFORMINFO_PLATFORM_FIELD.index = 0
 localTable.PLATFORMINFO_PLATFORM_FIELD.label = 1
 localTable.PLATFORMINFO_PLATFORM_FIELD.has_default_value = false
+localTable.PLATFORMINFO_PLATFORM_FIELD.default_value = 0
 localTable.PLATFORMINFO_PLATFORM_FIELD.type = 13
 localTable.PLATFORMINFO_PLATFORM_FIELD.cpp_type = 3
 
@@ -9784,6 +10539,7 @@ localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.number = 1
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.index = 0
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.label = 1
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.has_default_value = false
+localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.default_value = nil
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.message_type = COMMONINFO
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.type = 11
 localTable.PUSHCLIENTCFGNOTIFY_SINFO_FIELD.cpp_type = 10
@@ -9794,6 +10550,7 @@ localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.number = 2
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.index = 1
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.label = 1
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.has_default_value = false
+localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.default_value = nil
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.message_type = PLATFORMINFO
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.type = 11
 localTable.PUSHCLIENTCFGNOTIFY_PINFO_FIELD.cpp_type = 10
@@ -9811,6 +10568,7 @@ localTable.ACTIVITYUNIT_ID_FIELD.number = 1
 localTable.ACTIVITYUNIT_ID_FIELD.index = 0
 localTable.ACTIVITYUNIT_ID_FIELD.label = 1
 localTable.ACTIVITYUNIT_ID_FIELD.has_default_value = false
+localTable.ACTIVITYUNIT_ID_FIELD.default_value = 0
 localTable.ACTIVITYUNIT_ID_FIELD.type = 13
 localTable.ACTIVITYUNIT_ID_FIELD.cpp_type = 3
 
@@ -9820,6 +10578,7 @@ localTable.ACTIVITYUNIT_BEGIN_FIELD.number = 2
 localTable.ACTIVITYUNIT_BEGIN_FIELD.index = 1
 localTable.ACTIVITYUNIT_BEGIN_FIELD.label = 1
 localTable.ACTIVITYUNIT_BEGIN_FIELD.has_default_value = false
+localTable.ACTIVITYUNIT_BEGIN_FIELD.default_value = 0
 localTable.ACTIVITYUNIT_BEGIN_FIELD.type = 13
 localTable.ACTIVITYUNIT_BEGIN_FIELD.cpp_type = 3
 
@@ -9829,6 +10588,7 @@ localTable.ACTIVITYUNIT_END_FIELD.number = 3
 localTable.ACTIVITYUNIT_END_FIELD.index = 2
 localTable.ACTIVITYUNIT_END_FIELD.label = 1
 localTable.ACTIVITYUNIT_END_FIELD.has_default_value = false
+localTable.ACTIVITYUNIT_END_FIELD.default_value = 0
 localTable.ACTIVITYUNIT_END_FIELD.type = 13
 localTable.ACTIVITYUNIT_END_FIELD.cpp_type = 3
 
@@ -9838,6 +10598,7 @@ localTable.ACTIVITYUNIT_ISVALID_FIELD.number = 4
 localTable.ACTIVITYUNIT_ISVALID_FIELD.index = 3
 localTable.ACTIVITYUNIT_ISVALID_FIELD.label = 1
 localTable.ACTIVITYUNIT_ISVALID_FIELD.has_default_value = false
+localTable.ACTIVITYUNIT_ISVALID_FIELD.default_value = false
 localTable.ACTIVITYUNIT_ISVALID_FIELD.type = 8
 localTable.ACTIVITYUNIT_ISVALID_FIELD.cpp_type = 7
 
@@ -9858,6 +10619,7 @@ localTable.ACTIVITYUNIT_RULES_FIELD.number = 6
 localTable.ACTIVITYUNIT_RULES_FIELD.index = 5
 localTable.ACTIVITYUNIT_RULES_FIELD.label = 1
 localTable.ACTIVITYUNIT_RULES_FIELD.has_default_value = false
+localTable.ACTIVITYUNIT_RULES_FIELD.default_value = ""
 localTable.ACTIVITYUNIT_RULES_FIELD.type = 9
 localTable.ACTIVITYUNIT_RULES_FIELD.cpp_type = 9
 
@@ -9874,6 +10636,7 @@ localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.number = 1
 localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.index = 0
 localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.label = 1
 localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.has_default_value = false
+localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.default_value = 0
 localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.type = 13
 localTable.PUSHPLAYERCFGNOTIFY_ONLINE_FIELD.cpp_type = 3
 
@@ -9883,6 +10646,7 @@ localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.number = 2
 localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.index = 1
 localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.label = 1
 localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.has_default_value = false
+localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.default_value = 0
 localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.type = 13
 localTable.PUSHPLAYERCFGNOTIFY_SIGNIN_FIELD.cpp_type = 3
 
@@ -9910,6 +10674,7 @@ localTable.REQGETNEWCARDS_UID_FIELD.number = 1
 localTable.REQGETNEWCARDS_UID_FIELD.index = 0
 localTable.REQGETNEWCARDS_UID_FIELD.label = 1
 localTable.REQGETNEWCARDS_UID_FIELD.has_default_value = false
+localTable.REQGETNEWCARDS_UID_FIELD.default_value = 0
 localTable.REQGETNEWCARDS_UID_FIELD.type = 13
 localTable.REQGETNEWCARDS_UID_FIELD.cpp_type = 3
 
@@ -9954,6 +10719,7 @@ localTable.REQWORLDCHAT_UID_FIELD.number = 1
 localTable.REQWORLDCHAT_UID_FIELD.index = 0
 localTable.REQWORLDCHAT_UID_FIELD.label = 1
 localTable.REQWORLDCHAT_UID_FIELD.has_default_value = false
+localTable.REQWORLDCHAT_UID_FIELD.default_value = 0
 localTable.REQWORLDCHAT_UID_FIELD.type = 13
 localTable.REQWORLDCHAT_UID_FIELD.cpp_type = 3
 
@@ -9963,6 +10729,7 @@ localTable.REQWORLDCHAT_TIME_FIELD.number = 2
 localTable.REQWORLDCHAT_TIME_FIELD.index = 1
 localTable.REQWORLDCHAT_TIME_FIELD.label = 1
 localTable.REQWORLDCHAT_TIME_FIELD.has_default_value = false
+localTable.REQWORLDCHAT_TIME_FIELD.default_value = 0
 localTable.REQWORLDCHAT_TIME_FIELD.type = 13
 localTable.REQWORLDCHAT_TIME_FIELD.cpp_type = 3
 
@@ -9972,6 +10739,7 @@ localTable.REQWORLDCHAT_MSG_FIELD.number = 3
 localTable.REQWORLDCHAT_MSG_FIELD.index = 2
 localTable.REQWORLDCHAT_MSG_FIELD.label = 1
 localTable.REQWORLDCHAT_MSG_FIELD.has_default_value = false
+localTable.REQWORLDCHAT_MSG_FIELD.default_value = ""
 localTable.REQWORLDCHAT_MSG_FIELD.type = 12
 localTable.REQWORLDCHAT_MSG_FIELD.cpp_type = 9
 
@@ -9998,6 +10766,7 @@ localTable.RSPWORLDCHAT_MONEY_FIELD.number = 2
 localTable.RSPWORLDCHAT_MONEY_FIELD.index = 1
 localTable.RSPWORLDCHAT_MONEY_FIELD.label = 1
 localTable.RSPWORLDCHAT_MONEY_FIELD.has_default_value = false
+localTable.RSPWORLDCHAT_MONEY_FIELD.default_value = 0
 localTable.RSPWORLDCHAT_MONEY_FIELD.type = 13
 localTable.RSPWORLDCHAT_MONEY_FIELD.cpp_type = 3
 
@@ -10014,6 +10783,7 @@ localTable.PUSHWORLDCHAT_UID_FIELD.number = 1
 localTable.PUSHWORLDCHAT_UID_FIELD.index = 0
 localTable.PUSHWORLDCHAT_UID_FIELD.label = 1
 localTable.PUSHWORLDCHAT_UID_FIELD.has_default_value = false
+localTable.PUSHWORLDCHAT_UID_FIELD.default_value = 0
 localTable.PUSHWORLDCHAT_UID_FIELD.type = 13
 localTable.PUSHWORLDCHAT_UID_FIELD.cpp_type = 3
 
@@ -10023,6 +10793,7 @@ localTable.PUSHWORLDCHAT_NICK_FIELD.number = 2
 localTable.PUSHWORLDCHAT_NICK_FIELD.index = 1
 localTable.PUSHWORLDCHAT_NICK_FIELD.label = 1
 localTable.PUSHWORLDCHAT_NICK_FIELD.has_default_value = false
+localTable.PUSHWORLDCHAT_NICK_FIELD.default_value = ""
 localTable.PUSHWORLDCHAT_NICK_FIELD.type = 9
 localTable.PUSHWORLDCHAT_NICK_FIELD.cpp_type = 9
 
@@ -10032,6 +10803,7 @@ localTable.PUSHWORLDCHAT_AVATARID_FIELD.number = 3
 localTable.PUSHWORLDCHAT_AVATARID_FIELD.index = 2
 localTable.PUSHWORLDCHAT_AVATARID_FIELD.label = 1
 localTable.PUSHWORLDCHAT_AVATARID_FIELD.has_default_value = false
+localTable.PUSHWORLDCHAT_AVATARID_FIELD.default_value = 0
 localTable.PUSHWORLDCHAT_AVATARID_FIELD.type = 13
 localTable.PUSHWORLDCHAT_AVATARID_FIELD.cpp_type = 3
 
@@ -10041,6 +10813,7 @@ localTable.PUSHWORLDCHAT_TIME_FIELD.number = 4
 localTable.PUSHWORLDCHAT_TIME_FIELD.index = 3
 localTable.PUSHWORLDCHAT_TIME_FIELD.label = 1
 localTable.PUSHWORLDCHAT_TIME_FIELD.has_default_value = false
+localTable.PUSHWORLDCHAT_TIME_FIELD.default_value = 0
 localTable.PUSHWORLDCHAT_TIME_FIELD.type = 13
 localTable.PUSHWORLDCHAT_TIME_FIELD.cpp_type = 3
 
@@ -10050,6 +10823,7 @@ localTable.PUSHWORLDCHAT_MSG_FIELD.number = 5
 localTable.PUSHWORLDCHAT_MSG_FIELD.index = 4
 localTable.PUSHWORLDCHAT_MSG_FIELD.label = 1
 localTable.PUSHWORLDCHAT_MSG_FIELD.has_default_value = false
+localTable.PUSHWORLDCHAT_MSG_FIELD.default_value = ""
 localTable.PUSHWORLDCHAT_MSG_FIELD.type = 12
 localTable.PUSHWORLDCHAT_MSG_FIELD.cpp_type = 9
 
@@ -10066,6 +10840,7 @@ localTable.REQGETBROWSECARDS_UID_FIELD.number = 1
 localTable.REQGETBROWSECARDS_UID_FIELD.index = 0
 localTable.REQGETBROWSECARDS_UID_FIELD.label = 1
 localTable.REQGETBROWSECARDS_UID_FIELD.has_default_value = false
+localTable.REQGETBROWSECARDS_UID_FIELD.default_value = 0
 localTable.REQGETBROWSECARDS_UID_FIELD.type = 13
 localTable.REQGETBROWSECARDS_UID_FIELD.cpp_type = 3
 
@@ -10110,6 +10885,7 @@ localTable.REQTABLECHAT_UID_FIELD.number = 1
 localTable.REQTABLECHAT_UID_FIELD.index = 0
 localTable.REQTABLECHAT_UID_FIELD.label = 1
 localTable.REQTABLECHAT_UID_FIELD.has_default_value = false
+localTable.REQTABLECHAT_UID_FIELD.default_value = 0
 localTable.REQTABLECHAT_UID_FIELD.type = 13
 localTable.REQTABLECHAT_UID_FIELD.cpp_type = 3
 
@@ -10119,6 +10895,7 @@ localTable.REQTABLECHAT_MSG_FIELD.number = 2
 localTable.REQTABLECHAT_MSG_FIELD.index = 1
 localTable.REQTABLECHAT_MSG_FIELD.label = 1
 localTable.REQTABLECHAT_MSG_FIELD.has_default_value = false
+localTable.REQTABLECHAT_MSG_FIELD.default_value = ""
 localTable.REQTABLECHAT_MSG_FIELD.type = 12
 localTable.REQTABLECHAT_MSG_FIELD.cpp_type = 9
 
@@ -10152,6 +10929,7 @@ localTable.PUSHTABLECHAT_UID_FIELD.number = 1
 localTable.PUSHTABLECHAT_UID_FIELD.index = 0
 localTable.PUSHTABLECHAT_UID_FIELD.label = 1
 localTable.PUSHTABLECHAT_UID_FIELD.has_default_value = false
+localTable.PUSHTABLECHAT_UID_FIELD.default_value = 0
 localTable.PUSHTABLECHAT_UID_FIELD.type = 13
 localTable.PUSHTABLECHAT_UID_FIELD.cpp_type = 3
 
@@ -10161,6 +10939,7 @@ localTable.PUSHTABLECHAT_RIVALUID_FIELD.number = 2
 localTable.PUSHTABLECHAT_RIVALUID_FIELD.index = 1
 localTable.PUSHTABLECHAT_RIVALUID_FIELD.label = 1
 localTable.PUSHTABLECHAT_RIVALUID_FIELD.has_default_value = false
+localTable.PUSHTABLECHAT_RIVALUID_FIELD.default_value = 0
 localTable.PUSHTABLECHAT_RIVALUID_FIELD.type = 13
 localTable.PUSHTABLECHAT_RIVALUID_FIELD.cpp_type = 3
 
@@ -10170,6 +10949,7 @@ localTable.PUSHTABLECHAT_TIME_FIELD.number = 3
 localTable.PUSHTABLECHAT_TIME_FIELD.index = 2
 localTable.PUSHTABLECHAT_TIME_FIELD.label = 1
 localTable.PUSHTABLECHAT_TIME_FIELD.has_default_value = false
+localTable.PUSHTABLECHAT_TIME_FIELD.default_value = 0
 localTable.PUSHTABLECHAT_TIME_FIELD.type = 13
 localTable.PUSHTABLECHAT_TIME_FIELD.cpp_type = 3
 
@@ -10179,6 +10959,7 @@ localTable.PUSHTABLECHAT_MSG_FIELD.number = 4
 localTable.PUSHTABLECHAT_MSG_FIELD.index = 3
 localTable.PUSHTABLECHAT_MSG_FIELD.label = 1
 localTable.PUSHTABLECHAT_MSG_FIELD.has_default_value = false
+localTable.PUSHTABLECHAT_MSG_FIELD.default_value = ""
 localTable.PUSHTABLECHAT_MSG_FIELD.type = 12
 localTable.PUSHTABLECHAT_MSG_FIELD.cpp_type = 9
 
@@ -10195,6 +10976,7 @@ localTable.PUSHTOPUP_MONEY_FIELD.number = 1
 localTable.PUSHTOPUP_MONEY_FIELD.index = 0
 localTable.PUSHTOPUP_MONEY_FIELD.label = 1
 localTable.PUSHTOPUP_MONEY_FIELD.has_default_value = false
+localTable.PUSHTOPUP_MONEY_FIELD.default_value = 0
 localTable.PUSHTOPUP_MONEY_FIELD.type = 13
 localTable.PUSHTOPUP_MONEY_FIELD.cpp_type = 3
 
@@ -10204,6 +10986,7 @@ localTable.PUSHTOPUP_CF_FIELD.number = 2
 localTable.PUSHTOPUP_CF_FIELD.index = 1
 localTable.PUSHTOPUP_CF_FIELD.label = 1
 localTable.PUSHTOPUP_CF_FIELD.has_default_value = false
+localTable.PUSHTOPUP_CF_FIELD.default_value = 0
 localTable.PUSHTOPUP_CF_FIELD.type = 13
 localTable.PUSHTOPUP_CF_FIELD.cpp_type = 3
 
@@ -10213,6 +10996,7 @@ localTable.PUSHTOPUP_CHGMONEY_FIELD.number = 3
 localTable.PUSHTOPUP_CHGMONEY_FIELD.index = 2
 localTable.PUSHTOPUP_CHGMONEY_FIELD.label = 1
 localTable.PUSHTOPUP_CHGMONEY_FIELD.has_default_value = false
+localTable.PUSHTOPUP_CHGMONEY_FIELD.default_value = 0
 localTable.PUSHTOPUP_CHGMONEY_FIELD.type = 13
 localTable.PUSHTOPUP_CHGMONEY_FIELD.cpp_type = 3
 
@@ -10222,6 +11006,7 @@ localTable.PUSHTOPUP_CHGCF_FIELD.number = 4
 localTable.PUSHTOPUP_CHGCF_FIELD.index = 3
 localTable.PUSHTOPUP_CHGCF_FIELD.label = 1
 localTable.PUSHTOPUP_CHGCF_FIELD.has_default_value = false
+localTable.PUSHTOPUP_CHGCF_FIELD.default_value = 0
 localTable.PUSHTOPUP_CHGCF_FIELD.type = 13
 localTable.PUSHTOPUP_CHGCF_FIELD.cpp_type = 3
 
@@ -10231,6 +11016,7 @@ localTable.PUSHTOPUP_PRODUCTID_FIELD.number = 5
 localTable.PUSHTOPUP_PRODUCTID_FIELD.index = 4
 localTable.PUSHTOPUP_PRODUCTID_FIELD.label = 1
 localTable.PUSHTOPUP_PRODUCTID_FIELD.has_default_value = false
+localTable.PUSHTOPUP_PRODUCTID_FIELD.default_value = 0
 localTable.PUSHTOPUP_PRODUCTID_FIELD.type = 13
 localTable.PUSHTOPUP_PRODUCTID_FIELD.cpp_type = 3
 
@@ -10240,6 +11026,7 @@ localTable.PUSHTOPUP_CPORDERID_FIELD.number = 6
 localTable.PUSHTOPUP_CPORDERID_FIELD.index = 5
 localTable.PUSHTOPUP_CPORDERID_FIELD.label = 1
 localTable.PUSHTOPUP_CPORDERID_FIELD.has_default_value = false
+localTable.PUSHTOPUP_CPORDERID_FIELD.default_value = ""
 localTable.PUSHTOPUP_CPORDERID_FIELD.type = 9
 localTable.PUSHTOPUP_CPORDERID_FIELD.cpp_type = 9
 
@@ -10256,6 +11043,7 @@ localTable.REQSETSOCIALINFO_UID_FIELD.number = 1
 localTable.REQSETSOCIALINFO_UID_FIELD.index = 0
 localTable.REQSETSOCIALINFO_UID_FIELD.label = 1
 localTable.REQSETSOCIALINFO_UID_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_UID_FIELD.default_value = 0
 localTable.REQSETSOCIALINFO_UID_FIELD.type = 13
 localTable.REQSETSOCIALINFO_UID_FIELD.cpp_type = 3
 
@@ -10265,6 +11053,7 @@ localTable.REQSETSOCIALINFO_NAME_FIELD.number = 2
 localTable.REQSETSOCIALINFO_NAME_FIELD.index = 1
 localTable.REQSETSOCIALINFO_NAME_FIELD.label = 1
 localTable.REQSETSOCIALINFO_NAME_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_NAME_FIELD.default_value = ""
 localTable.REQSETSOCIALINFO_NAME_FIELD.type = 12
 localTable.REQSETSOCIALINFO_NAME_FIELD.cpp_type = 9
 
@@ -10274,6 +11063,7 @@ localTable.REQSETSOCIALINFO_MOBILE_FIELD.number = 3
 localTable.REQSETSOCIALINFO_MOBILE_FIELD.index = 2
 localTable.REQSETSOCIALINFO_MOBILE_FIELD.label = 1
 localTable.REQSETSOCIALINFO_MOBILE_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_MOBILE_FIELD.default_value = ""
 localTable.REQSETSOCIALINFO_MOBILE_FIELD.type = 9
 localTable.REQSETSOCIALINFO_MOBILE_FIELD.cpp_type = 9
 
@@ -10283,6 +11073,7 @@ localTable.REQSETSOCIALINFO_PHONE_FIELD.number = 4
 localTable.REQSETSOCIALINFO_PHONE_FIELD.index = 3
 localTable.REQSETSOCIALINFO_PHONE_FIELD.label = 1
 localTable.REQSETSOCIALINFO_PHONE_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_PHONE_FIELD.default_value = ""
 localTable.REQSETSOCIALINFO_PHONE_FIELD.type = 9
 localTable.REQSETSOCIALINFO_PHONE_FIELD.cpp_type = 9
 
@@ -10292,6 +11083,7 @@ localTable.REQSETSOCIALINFO_QQ_FIELD.number = 5
 localTable.REQSETSOCIALINFO_QQ_FIELD.index = 4
 localTable.REQSETSOCIALINFO_QQ_FIELD.label = 1
 localTable.REQSETSOCIALINFO_QQ_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_QQ_FIELD.default_value = ""
 localTable.REQSETSOCIALINFO_QQ_FIELD.type = 9
 localTable.REQSETSOCIALINFO_QQ_FIELD.cpp_type = 9
 
@@ -10301,6 +11093,7 @@ localTable.REQSETSOCIALINFO_ADDRESS_FIELD.number = 6
 localTable.REQSETSOCIALINFO_ADDRESS_FIELD.index = 5
 localTable.REQSETSOCIALINFO_ADDRESS_FIELD.label = 1
 localTable.REQSETSOCIALINFO_ADDRESS_FIELD.has_default_value = false
+localTable.REQSETSOCIALINFO_ADDRESS_FIELD.default_value = ""
 localTable.REQSETSOCIALINFO_ADDRESS_FIELD.type = 9
 localTable.REQSETSOCIALINFO_ADDRESS_FIELD.cpp_type = 9
 
@@ -10334,6 +11127,7 @@ localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.number = 1
 localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.index = 0
 localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.label = 1
 localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.has_default_value = false
+localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.default_value = ""
 localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.type = 9
 localTable.PUSHREPEATLOGONNOTIFY_INFO_FIELD.cpp_type = 9
 
@@ -10350,6 +11144,7 @@ localTable.REQOLDPLAYERINFO_UID_FIELD.number = 1
 localTable.REQOLDPLAYERINFO_UID_FIELD.index = 0
 localTable.REQOLDPLAYERINFO_UID_FIELD.label = 1
 localTable.REQOLDPLAYERINFO_UID_FIELD.has_default_value = false
+localTable.REQOLDPLAYERINFO_UID_FIELD.default_value = 0
 localTable.REQOLDPLAYERINFO_UID_FIELD.type = 13
 localTable.REQOLDPLAYERINFO_UID_FIELD.cpp_type = 3
 
@@ -10376,6 +11171,7 @@ localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.number = 2
 localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.index = 1
 localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.label = 1
 localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.has_default_value = false
+localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.default_value = 0
 localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.type = 13
 localTable.RSPOLDPLAYERINFO_DAYSSIGNED_FIELD.cpp_type = 3
 
@@ -10392,6 +11188,7 @@ localTable.REQOLDPLAYERSIGN_UID_FIELD.number = 1
 localTable.REQOLDPLAYERSIGN_UID_FIELD.index = 0
 localTable.REQOLDPLAYERSIGN_UID_FIELD.label = 1
 localTable.REQOLDPLAYERSIGN_UID_FIELD.has_default_value = false
+localTable.REQOLDPLAYERSIGN_UID_FIELD.default_value = 0
 localTable.REQOLDPLAYERSIGN_UID_FIELD.type = 13
 localTable.REQOLDPLAYERSIGN_UID_FIELD.cpp_type = 3
 
@@ -10425,6 +11222,7 @@ localTable.REQHOLIDAYINFO_UID_FIELD.number = 1
 localTable.REQHOLIDAYINFO_UID_FIELD.index = 0
 localTable.REQHOLIDAYINFO_UID_FIELD.label = 1
 localTable.REQHOLIDAYINFO_UID_FIELD.has_default_value = false
+localTable.REQHOLIDAYINFO_UID_FIELD.default_value = 0
 localTable.REQHOLIDAYINFO_UID_FIELD.type = 13
 localTable.REQHOLIDAYINFO_UID_FIELD.cpp_type = 3
 
@@ -10451,6 +11249,7 @@ localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.number = 2
 localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.index = 1
 localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.label = 1
 localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.has_default_value = false
+localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.default_value = 0
 localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.type = 13
 localTable.RSPHOLIDAYINFO_DAYSSIGNED_FIELD.cpp_type = 3
 
@@ -10467,6 +11266,7 @@ localTable.REQHOLIDAYSIGN_UID_FIELD.number = 1
 localTable.REQHOLIDAYSIGN_UID_FIELD.index = 0
 localTable.REQHOLIDAYSIGN_UID_FIELD.label = 1
 localTable.REQHOLIDAYSIGN_UID_FIELD.has_default_value = false
+localTable.REQHOLIDAYSIGN_UID_FIELD.default_value = 0
 localTable.REQHOLIDAYSIGN_UID_FIELD.type = 13
 localTable.REQHOLIDAYSIGN_UID_FIELD.cpp_type = 3
 
@@ -10500,6 +11300,7 @@ localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.number = 1
 localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.index = 0
 localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.label = 1
 localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.has_default_value = false
+localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.default_value = 0
 localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.type = 13
 localTable.REQGIFTCARDEXCHANGELIST_UID_FIELD.cpp_type = 3
 
@@ -10516,6 +11317,7 @@ localTable.GIFTCARDITEM_TYPE_FIELD.number = 1
 localTable.GIFTCARDITEM_TYPE_FIELD.index = 0
 localTable.GIFTCARDITEM_TYPE_FIELD.label = 1
 localTable.GIFTCARDITEM_TYPE_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_TYPE_FIELD.default_value = 0
 localTable.GIFTCARDITEM_TYPE_FIELD.type = 13
 localTable.GIFTCARDITEM_TYPE_FIELD.cpp_type = 3
 
@@ -10525,6 +11327,7 @@ localTable.GIFTCARDITEM_NEED_FIELD.number = 2
 localTable.GIFTCARDITEM_NEED_FIELD.index = 1
 localTable.GIFTCARDITEM_NEED_FIELD.label = 1
 localTable.GIFTCARDITEM_NEED_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_NEED_FIELD.default_value = 0
 localTable.GIFTCARDITEM_NEED_FIELD.type = 13
 localTable.GIFTCARDITEM_NEED_FIELD.cpp_type = 3
 
@@ -10534,6 +11337,7 @@ localTable.GIFTCARDITEM_LIM_FIELD.number = 3
 localTable.GIFTCARDITEM_LIM_FIELD.index = 2
 localTable.GIFTCARDITEM_LIM_FIELD.label = 1
 localTable.GIFTCARDITEM_LIM_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_LIM_FIELD.default_value = 0
 localTable.GIFTCARDITEM_LIM_FIELD.type = 13
 localTable.GIFTCARDITEM_LIM_FIELD.cpp_type = 3
 
@@ -10543,6 +11347,7 @@ localTable.GIFTCARDITEM_CNT_FIELD.number = 4
 localTable.GIFTCARDITEM_CNT_FIELD.index = 3
 localTable.GIFTCARDITEM_CNT_FIELD.label = 1
 localTable.GIFTCARDITEM_CNT_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_CNT_FIELD.default_value = 0
 localTable.GIFTCARDITEM_CNT_FIELD.type = 13
 localTable.GIFTCARDITEM_CNT_FIELD.cpp_type = 3
 
@@ -10552,6 +11357,7 @@ localTable.GIFTCARDITEM_EXCHITEM_FIELD.number = 5
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.index = 4
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.label = 1
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_EXCHITEM_FIELD.default_value = nil
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.message_type = PROPITEM
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.type = 11
 localTable.GIFTCARDITEM_EXCHITEM_FIELD.cpp_type = 10
@@ -10562,6 +11368,7 @@ localTable.GIFTCARDITEM_BOUGHT_FIELD.number = 6
 localTable.GIFTCARDITEM_BOUGHT_FIELD.index = 5
 localTable.GIFTCARDITEM_BOUGHT_FIELD.label = 1
 localTable.GIFTCARDITEM_BOUGHT_FIELD.has_default_value = false
+localTable.GIFTCARDITEM_BOUGHT_FIELD.default_value = 0
 localTable.GIFTCARDITEM_BOUGHT_FIELD.type = 13
 localTable.GIFTCARDITEM_BOUGHT_FIELD.cpp_type = 3
 
@@ -10606,6 +11413,7 @@ localTable.REQGIFTCARDEXCHANGE_UID_FIELD.number = 1
 localTable.REQGIFTCARDEXCHANGE_UID_FIELD.index = 0
 localTable.REQGIFTCARDEXCHANGE_UID_FIELD.label = 1
 localTable.REQGIFTCARDEXCHANGE_UID_FIELD.has_default_value = false
+localTable.REQGIFTCARDEXCHANGE_UID_FIELD.default_value = 0
 localTable.REQGIFTCARDEXCHANGE_UID_FIELD.type = 13
 localTable.REQGIFTCARDEXCHANGE_UID_FIELD.cpp_type = 3
 
@@ -10615,6 +11423,7 @@ localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.number = 2
 localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.index = 1
 localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.label = 1
 localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.has_default_value = false
+localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.default_value = 0
 localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.type = 13
 localTable.REQGIFTCARDEXCHANGE_TYPE_FIELD.cpp_type = 3
 
@@ -10624,6 +11433,7 @@ localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.number = 3
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.index = 2
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.label = 1
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.has_default_value = false
+localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.default_value = nil
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.message_type = PROPITEM
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.type = 11
 localTable.REQGIFTCARDEXCHANGE_EXCHITEM_FIELD.cpp_type = 10
@@ -10651,6 +11461,7 @@ localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.number = 2
 localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.index = 1
 localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.label = 1
 localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.has_default_value = false
+localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.default_value = 0
 localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.type = 13
 localTable.RSPGIFTCARDEXCHANGE_TYPE_FIELD.cpp_type = 3
 
@@ -10660,6 +11471,7 @@ localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.number = 3
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.index = 2
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.label = 1
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.has_default_value = false
+localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.default_value = nil
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.message_type = PROPITEM
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.type = 11
 localTable.RSPGIFTCARDEXCHANGE_ITEM_FIELD.cpp_type = 10
@@ -10677,6 +11489,7 @@ localTable.REQGETFRIENDLIST_UID_FIELD.number = 1
 localTable.REQGETFRIENDLIST_UID_FIELD.index = 0
 localTable.REQGETFRIENDLIST_UID_FIELD.label = 1
 localTable.REQGETFRIENDLIST_UID_FIELD.has_default_value = false
+localTable.REQGETFRIENDLIST_UID_FIELD.default_value = 0
 localTable.REQGETFRIENDLIST_UID_FIELD.type = 13
 localTable.REQGETFRIENDLIST_UID_FIELD.cpp_type = 3
 
@@ -10693,6 +11506,7 @@ localTable.FRIENDINFO_UID_FIELD.number = 1
 localTable.FRIENDINFO_UID_FIELD.index = 0
 localTable.FRIENDINFO_UID_FIELD.label = 1
 localTable.FRIENDINFO_UID_FIELD.has_default_value = false
+localTable.FRIENDINFO_UID_FIELD.default_value = 0
 localTable.FRIENDINFO_UID_FIELD.type = 13
 localTable.FRIENDINFO_UID_FIELD.cpp_type = 3
 
@@ -10702,6 +11516,7 @@ localTable.FRIENDINFO_NICK_FIELD.number = 2
 localTable.FRIENDINFO_NICK_FIELD.index = 1
 localTable.FRIENDINFO_NICK_FIELD.label = 1
 localTable.FRIENDINFO_NICK_FIELD.has_default_value = false
+localTable.FRIENDINFO_NICK_FIELD.default_value = ""
 localTable.FRIENDINFO_NICK_FIELD.type = 9
 localTable.FRIENDINFO_NICK_FIELD.cpp_type = 9
 
@@ -10711,6 +11526,7 @@ localTable.FRIENDINFO_LEVEL_FIELD.number = 3
 localTable.FRIENDINFO_LEVEL_FIELD.index = 2
 localTable.FRIENDINFO_LEVEL_FIELD.label = 1
 localTable.FRIENDINFO_LEVEL_FIELD.has_default_value = false
+localTable.FRIENDINFO_LEVEL_FIELD.default_value = 0
 localTable.FRIENDINFO_LEVEL_FIELD.type = 13
 localTable.FRIENDINFO_LEVEL_FIELD.cpp_type = 3
 
@@ -10720,6 +11536,7 @@ localTable.FRIENDINFO_ONLINE_FIELD.number = 4
 localTable.FRIENDINFO_ONLINE_FIELD.index = 3
 localTable.FRIENDINFO_ONLINE_FIELD.label = 1
 localTable.FRIENDINFO_ONLINE_FIELD.has_default_value = false
+localTable.FRIENDINFO_ONLINE_FIELD.default_value = 0
 localTable.FRIENDINFO_ONLINE_FIELD.type = 13
 localTable.FRIENDINFO_ONLINE_FIELD.cpp_type = 3
 
@@ -10729,6 +11546,7 @@ localTable.FRIENDINFO_ICON_FIELD.number = 5
 localTable.FRIENDINFO_ICON_FIELD.index = 4
 localTable.FRIENDINFO_ICON_FIELD.label = 1
 localTable.FRIENDINFO_ICON_FIELD.has_default_value = false
+localTable.FRIENDINFO_ICON_FIELD.default_value = 0
 localTable.FRIENDINFO_ICON_FIELD.type = 13
 localTable.FRIENDINFO_ICON_FIELD.cpp_type = 3
 
@@ -10738,6 +11556,7 @@ localTable.FRIENDINFO_POWER_FIELD.number = 6
 localTable.FRIENDINFO_POWER_FIELD.index = 5
 localTable.FRIENDINFO_POWER_FIELD.label = 1
 localTable.FRIENDINFO_POWER_FIELD.has_default_value = false
+localTable.FRIENDINFO_POWER_FIELD.default_value = 0
 localTable.FRIENDINFO_POWER_FIELD.type = 13
 localTable.FRIENDINFO_POWER_FIELD.cpp_type = 3
 
@@ -10747,6 +11566,7 @@ localTable.FRIENDINFO_POINT_FIELD.number = 7
 localTable.FRIENDINFO_POINT_FIELD.index = 6
 localTable.FRIENDINFO_POINT_FIELD.label = 1
 localTable.FRIENDINFO_POINT_FIELD.has_default_value = false
+localTable.FRIENDINFO_POINT_FIELD.default_value = 0
 localTable.FRIENDINFO_POINT_FIELD.type = 13
 localTable.FRIENDINFO_POINT_FIELD.cpp_type = 3
 
@@ -10756,6 +11576,7 @@ localTable.FRIENDINFO_TEAMROLE_FIELD.number = 8
 localTable.FRIENDINFO_TEAMROLE_FIELD.index = 7
 localTable.FRIENDINFO_TEAMROLE_FIELD.label = 1
 localTable.FRIENDINFO_TEAMROLE_FIELD.has_default_value = false
+localTable.FRIENDINFO_TEAMROLE_FIELD.default_value = 0
 localTable.FRIENDINFO_TEAMROLE_FIELD.type = 13
 localTable.FRIENDINFO_TEAMROLE_FIELD.cpp_type = 3
 
@@ -10765,6 +11586,7 @@ localTable.FRIENDINFO_TEAMID_FIELD.number = 9
 localTable.FRIENDINFO_TEAMID_FIELD.index = 8
 localTable.FRIENDINFO_TEAMID_FIELD.label = 1
 localTable.FRIENDINFO_TEAMID_FIELD.has_default_value = false
+localTable.FRIENDINFO_TEAMID_FIELD.default_value = 0
 localTable.FRIENDINFO_TEAMID_FIELD.type = 13
 localTable.FRIENDINFO_TEAMID_FIELD.cpp_type = 3
 
@@ -10774,6 +11596,7 @@ localTable.FRIENDINFO_TEAMNAME_FIELD.number = 10
 localTable.FRIENDINFO_TEAMNAME_FIELD.index = 9
 localTable.FRIENDINFO_TEAMNAME_FIELD.label = 1
 localTable.FRIENDINFO_TEAMNAME_FIELD.has_default_value = false
+localTable.FRIENDINFO_TEAMNAME_FIELD.default_value = ""
 localTable.FRIENDINFO_TEAMNAME_FIELD.type = 9
 localTable.FRIENDINFO_TEAMNAME_FIELD.cpp_type = 9
 
@@ -10783,6 +11606,7 @@ localTable.FRIENDINFO_MATEFLG_FIELD.number = 11
 localTable.FRIENDINFO_MATEFLG_FIELD.index = 10
 localTable.FRIENDINFO_MATEFLG_FIELD.label = 1
 localTable.FRIENDINFO_MATEFLG_FIELD.has_default_value = false
+localTable.FRIENDINFO_MATEFLG_FIELD.default_value = 0
 localTable.FRIENDINFO_MATEFLG_FIELD.type = 13
 localTable.FRIENDINFO_MATEFLG_FIELD.cpp_type = 3
 
@@ -10792,6 +11616,7 @@ localTable.FRIENDINFO_PLATFORM_FIELD.number = 12
 localTable.FRIENDINFO_PLATFORM_FIELD.index = 11
 localTable.FRIENDINFO_PLATFORM_FIELD.label = 1
 localTable.FRIENDINFO_PLATFORM_FIELD.has_default_value = false
+localTable.FRIENDINFO_PLATFORM_FIELD.default_value = 0
 localTable.FRIENDINFO_PLATFORM_FIELD.type = 13
 localTable.FRIENDINFO_PLATFORM_FIELD.cpp_type = 3
 
@@ -10836,6 +11661,7 @@ localTable.REQMODIFYFRIENDLIST_UID_FIELD.number = 1
 localTable.REQMODIFYFRIENDLIST_UID_FIELD.index = 0
 localTable.REQMODIFYFRIENDLIST_UID_FIELD.label = 1
 localTable.REQMODIFYFRIENDLIST_UID_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDLIST_UID_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDLIST_UID_FIELD.type = 13
 localTable.REQMODIFYFRIENDLIST_UID_FIELD.cpp_type = 3
 
@@ -10845,6 +11671,7 @@ localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.number = 2
 localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.index = 1
 localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.label = 1
 localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.type = 13
 localTable.REQMODIFYFRIENDLIST_FRIENDUID_FIELD.cpp_type = 3
 
@@ -10854,6 +11681,7 @@ localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.number = 3
 localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.index = 2
 localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.label = 1
 localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.type = 13
 localTable.REQMODIFYFRIENDLIST_ACTION_FIELD.cpp_type = 3
 
@@ -10880,6 +11708,7 @@ localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.number = 2
 localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.index = 1
 localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.label = 1
 localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.has_default_value = false
+localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.default_value = 0
 localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.type = 13
 localTable.RSPMODIFYFRIENDLIST_FRIENDUID_FIELD.cpp_type = 3
 
@@ -10889,6 +11718,7 @@ localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.number = 3
 localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.index = 2
 localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.label = 1
 localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.has_default_value = false
+localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.default_value = 0
 localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.type = 13
 localTable.RSPMODIFYFRIENDLIST_ACTION_FIELD.cpp_type = 3
 
@@ -10905,6 +11735,7 @@ localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.number = 1
 localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.index = 0
 localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.label = 1
 localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.has_default_value = false
+localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.default_value = 0
 localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.type = 13
 localTable.PUSHFRIENDMODIFYNOTIFY_ACTION_FIELD.cpp_type = 3
 
@@ -10914,6 +11745,7 @@ localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.number = 2
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.index = 1
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.label = 1
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.has_default_value = false
+localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.default_value = nil
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.message_type = FRIENDINFO
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.type = 11
 localTable.PUSHFRIENDMODIFYNOTIFY_FINFO_FIELD.cpp_type = 10
@@ -10931,6 +11763,7 @@ localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.number = 1
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.index = 0
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.label = 1
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.has_default_value = false
+localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.default_value = 0
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.type = 13
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACTION_FIELD.cpp_type = 3
 
@@ -10940,6 +11773,7 @@ localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.number = 2
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.index = 1
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.label = 1
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.has_default_value = false
+localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.default_value = 0
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.type = 13
 localTable.PUSHFRIENDMODIFYNOTIFYACK_ACCEPT_FIELD.cpp_type = 3
 
@@ -10949,6 +11783,7 @@ localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.number = 3
 localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.index = 2
 localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.label = 1
 localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.has_default_value = false
+localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.default_value = 0
 localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.type = 13
 localTable.PUSHFRIENDMODIFYNOTIFYACK_FRIENDUID_FIELD.cpp_type = 3
 
@@ -10965,6 +11800,7 @@ localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.number = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.index = 0
 localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.label = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.type = 13
 localTable.REQMODIFYFRIENDAPPLYLIST_UID_FIELD.cpp_type = 3
 
@@ -10974,6 +11810,7 @@ localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.number = 2
 localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.index = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.label = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.type = 13
 localTable.REQMODIFYFRIENDAPPLYLIST_FRIENDUID_FIELD.cpp_type = 3
 
@@ -10983,6 +11820,7 @@ localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.number = 3
 localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.index = 2
 localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.label = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.type = 13
 localTable.REQMODIFYFRIENDAPPLYLIST_ACTION_FIELD.cpp_type = 3
 
@@ -10992,6 +11830,7 @@ localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.number = 4
 localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.index = 3
 localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.label = 1
 localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.has_default_value = false
+localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.default_value = 0
 localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.type = 13
 localTable.REQMODIFYFRIENDAPPLYLIST_ACCEPT_FIELD.cpp_type = 3
 
@@ -11025,6 +11864,7 @@ localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.number = 1
 localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.index = 0
 localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.label = 1
 localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.has_default_value = false
+localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.default_value = 0
 localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.type = 13
 localTable.REQGETFRIENDAPPLYLIST_UID_FIELD.cpp_type = 3
 
@@ -11069,6 +11909,7 @@ localTable.PUSHINVITEDUEL_UID_FIELD.number = 1
 localTable.PUSHINVITEDUEL_UID_FIELD.index = 0
 localTable.PUSHINVITEDUEL_UID_FIELD.label = 1
 localTable.PUSHINVITEDUEL_UID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUEL_UID_FIELD.default_value = 0
 localTable.PUSHINVITEDUEL_UID_FIELD.type = 13
 localTable.PUSHINVITEDUEL_UID_FIELD.cpp_type = 3
 
@@ -11078,6 +11919,7 @@ localTable.PUSHINVITEDUEL_NICK_FIELD.number = 2
 localTable.PUSHINVITEDUEL_NICK_FIELD.index = 1
 localTable.PUSHINVITEDUEL_NICK_FIELD.label = 1
 localTable.PUSHINVITEDUEL_NICK_FIELD.has_default_value = false
+localTable.PUSHINVITEDUEL_NICK_FIELD.default_value = ""
 localTable.PUSHINVITEDUEL_NICK_FIELD.type = 12
 localTable.PUSHINVITEDUEL_NICK_FIELD.cpp_type = 9
 
@@ -11087,6 +11929,7 @@ localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.number = 3
 localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.index = 2
 localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.label = 1
 localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.default_value = 0
 localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.type = 13
 localTable.PUSHINVITEDUEL_FRIENDUID_FIELD.cpp_type = 3
 
@@ -11096,6 +11939,7 @@ localTable.PUSHINVITEDUEL_INVITETIME_FIELD.number = 4
 localTable.PUSHINVITEDUEL_INVITETIME_FIELD.index = 3
 localTable.PUSHINVITEDUEL_INVITETIME_FIELD.label = 1
 localTable.PUSHINVITEDUEL_INVITETIME_FIELD.has_default_value = false
+localTable.PUSHINVITEDUEL_INVITETIME_FIELD.default_value = 0
 localTable.PUSHINVITEDUEL_INVITETIME_FIELD.type = 13
 localTable.PUSHINVITEDUEL_INVITETIME_FIELD.cpp_type = 3
 
@@ -11105,6 +11949,7 @@ localTable.PUSHINVITEDUEL_EVENTID_FIELD.number = 5
 localTable.PUSHINVITEDUEL_EVENTID_FIELD.index = 4
 localTable.PUSHINVITEDUEL_EVENTID_FIELD.label = 1
 localTable.PUSHINVITEDUEL_EVENTID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUEL_EVENTID_FIELD.default_value = 0
 localTable.PUSHINVITEDUEL_EVENTID_FIELD.type = 13
 localTable.PUSHINVITEDUEL_EVENTID_FIELD.cpp_type = 3
 
@@ -11121,6 +11966,7 @@ localTable.PUSHINVITEDUELACK_UID_FIELD.number = 1
 localTable.PUSHINVITEDUELACK_UID_FIELD.index = 0
 localTable.PUSHINVITEDUELACK_UID_FIELD.label = 1
 localTable.PUSHINVITEDUELACK_UID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUELACK_UID_FIELD.default_value = 0
 localTable.PUSHINVITEDUELACK_UID_FIELD.type = 13
 localTable.PUSHINVITEDUELACK_UID_FIELD.cpp_type = 3
 
@@ -11130,6 +11976,7 @@ localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.number = 2
 localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.index = 1
 localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.label = 1
 localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.has_default_value = false
+localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.default_value = 0
 localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.type = 13
 localTable.PUSHINVITEDUELACK_ACCEPT_FIELD.cpp_type = 3
 
@@ -11139,6 +11986,7 @@ localTable.PUSHINVITEDUELACK_EVENTID_FIELD.number = 3
 localTable.PUSHINVITEDUELACK_EVENTID_FIELD.index = 2
 localTable.PUSHINVITEDUELACK_EVENTID_FIELD.label = 1
 localTable.PUSHINVITEDUELACK_EVENTID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUELACK_EVENTID_FIELD.default_value = 0
 localTable.PUSHINVITEDUELACK_EVENTID_FIELD.type = 13
 localTable.PUSHINVITEDUELACK_EVENTID_FIELD.cpp_type = 3
 
@@ -11155,6 +12003,7 @@ localTable.REQINVITEDUEL_UID_FIELD.number = 1
 localTable.REQINVITEDUEL_UID_FIELD.index = 0
 localTable.REQINVITEDUEL_UID_FIELD.label = 1
 localTable.REQINVITEDUEL_UID_FIELD.has_default_value = false
+localTable.REQINVITEDUEL_UID_FIELD.default_value = 0
 localTable.REQINVITEDUEL_UID_FIELD.type = 13
 localTable.REQINVITEDUEL_UID_FIELD.cpp_type = 3
 
@@ -11164,6 +12013,7 @@ localTable.REQINVITEDUEL_FRIENDUID_FIELD.number = 2
 localTable.REQINVITEDUEL_FRIENDUID_FIELD.index = 1
 localTable.REQINVITEDUEL_FRIENDUID_FIELD.label = 1
 localTable.REQINVITEDUEL_FRIENDUID_FIELD.has_default_value = false
+localTable.REQINVITEDUEL_FRIENDUID_FIELD.default_value = 0
 localTable.REQINVITEDUEL_FRIENDUID_FIELD.type = 13
 localTable.REQINVITEDUEL_FRIENDUID_FIELD.cpp_type = 3
 
@@ -11173,6 +12023,7 @@ localTable.REQINVITEDUEL_EVENTID_FIELD.number = 3
 localTable.REQINVITEDUEL_EVENTID_FIELD.index = 2
 localTable.REQINVITEDUEL_EVENTID_FIELD.label = 1
 localTable.REQINVITEDUEL_EVENTID_FIELD.has_default_value = false
+localTable.REQINVITEDUEL_EVENTID_FIELD.default_value = 0
 localTable.REQINVITEDUEL_EVENTID_FIELD.type = 13
 localTable.REQINVITEDUEL_EVENTID_FIELD.cpp_type = 3
 
@@ -11206,6 +12057,7 @@ localTable.REQINVITEDUELACK_UID_FIELD.number = 1
 localTable.REQINVITEDUELACK_UID_FIELD.index = 0
 localTable.REQINVITEDUELACK_UID_FIELD.label = 1
 localTable.REQINVITEDUELACK_UID_FIELD.has_default_value = false
+localTable.REQINVITEDUELACK_UID_FIELD.default_value = 0
 localTable.REQINVITEDUELACK_UID_FIELD.type = 13
 localTable.REQINVITEDUELACK_UID_FIELD.cpp_type = 3
 
@@ -11215,6 +12067,7 @@ localTable.REQINVITEDUELACK_FRIENDUID_FIELD.number = 2
 localTable.REQINVITEDUELACK_FRIENDUID_FIELD.index = 1
 localTable.REQINVITEDUELACK_FRIENDUID_FIELD.label = 1
 localTable.REQINVITEDUELACK_FRIENDUID_FIELD.has_default_value = false
+localTable.REQINVITEDUELACK_FRIENDUID_FIELD.default_value = 0
 localTable.REQINVITEDUELACK_FRIENDUID_FIELD.type = 13
 localTable.REQINVITEDUELACK_FRIENDUID_FIELD.cpp_type = 3
 
@@ -11224,6 +12077,7 @@ localTable.REQINVITEDUELACK_INVITETIME_FIELD.number = 3
 localTable.REQINVITEDUELACK_INVITETIME_FIELD.index = 2
 localTable.REQINVITEDUELACK_INVITETIME_FIELD.label = 1
 localTable.REQINVITEDUELACK_INVITETIME_FIELD.has_default_value = false
+localTable.REQINVITEDUELACK_INVITETIME_FIELD.default_value = 0
 localTable.REQINVITEDUELACK_INVITETIME_FIELD.type = 13
 localTable.REQINVITEDUELACK_INVITETIME_FIELD.cpp_type = 3
 
@@ -11233,6 +12087,7 @@ localTable.REQINVITEDUELACK_EVENTID_FIELD.number = 4
 localTable.REQINVITEDUELACK_EVENTID_FIELD.index = 3
 localTable.REQINVITEDUELACK_EVENTID_FIELD.label = 1
 localTable.REQINVITEDUELACK_EVENTID_FIELD.has_default_value = false
+localTable.REQINVITEDUELACK_EVENTID_FIELD.default_value = 0
 localTable.REQINVITEDUELACK_EVENTID_FIELD.type = 13
 localTable.REQINVITEDUELACK_EVENTID_FIELD.cpp_type = 3
 
@@ -11242,6 +12097,7 @@ localTable.REQINVITEDUELACK_ACCEPT_FIELD.number = 5
 localTable.REQINVITEDUELACK_ACCEPT_FIELD.index = 4
 localTable.REQINVITEDUELACK_ACCEPT_FIELD.label = 1
 localTable.REQINVITEDUELACK_ACCEPT_FIELD.has_default_value = false
+localTable.REQINVITEDUELACK_ACCEPT_FIELD.default_value = 0
 localTable.REQINVITEDUELACK_ACCEPT_FIELD.type = 13
 localTable.REQINVITEDUELACK_ACCEPT_FIELD.cpp_type = 3
 
@@ -11275,6 +12131,7 @@ localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.number = 1
 localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.index = 0
 localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.label = 1
 localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.default_value = 0
 localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.type = 13
 localTable.PUSHINVITEDUELTIMEOUT_UID_FIELD.cpp_type = 3
 
@@ -11284,6 +12141,7 @@ localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.number = 2
 localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.index = 1
 localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.label = 1
 localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.has_default_value = false
+localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.default_value = 0
 localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.type = 13
 localTable.PUSHINVITEDUELTIMEOUT_FRIENDUID_FIELD.cpp_type = 3
 
@@ -11300,6 +12158,7 @@ localTable.REQGETVIPRULE_UID_FIELD.number = 1
 localTable.REQGETVIPRULE_UID_FIELD.index = 0
 localTable.REQGETVIPRULE_UID_FIELD.label = 1
 localTable.REQGETVIPRULE_UID_FIELD.has_default_value = false
+localTable.REQGETVIPRULE_UID_FIELD.default_value = 0
 localTable.REQGETVIPRULE_UID_FIELD.type = 13
 localTable.REQGETVIPRULE_UID_FIELD.cpp_type = 3
 
@@ -11316,6 +12175,7 @@ localTable.PROTOVIPRULE_ID_FIELD.number = 1
 localTable.PROTOVIPRULE_ID_FIELD.index = 0
 localTable.PROTOVIPRULE_ID_FIELD.label = 1
 localTable.PROTOVIPRULE_ID_FIELD.has_default_value = false
+localTable.PROTOVIPRULE_ID_FIELD.default_value = 0
 localTable.PROTOVIPRULE_ID_FIELD.type = 13
 localTable.PROTOVIPRULE_ID_FIELD.cpp_type = 3
 
@@ -11335,6 +12195,7 @@ localTable.PROTOVIPRULE_VIP_FIELD.number = 3
 localTable.PROTOVIPRULE_VIP_FIELD.index = 2
 localTable.PROTOVIPRULE_VIP_FIELD.label = 1
 localTable.PROTOVIPRULE_VIP_FIELD.has_default_value = false
+localTable.PROTOVIPRULE_VIP_FIELD.default_value = 0
 localTable.PROTOVIPRULE_VIP_FIELD.type = 13
 localTable.PROTOVIPRULE_VIP_FIELD.cpp_type = 3
 
@@ -11344,6 +12205,7 @@ localTable.PROTOVIPRULE_UPRMB_FIELD.number = 4
 localTable.PROTOVIPRULE_UPRMB_FIELD.index = 3
 localTable.PROTOVIPRULE_UPRMB_FIELD.label = 1
 localTable.PROTOVIPRULE_UPRMB_FIELD.has_default_value = false
+localTable.PROTOVIPRULE_UPRMB_FIELD.default_value = 0
 localTable.PROTOVIPRULE_UPRMB_FIELD.type = 13
 localTable.PROTOVIPRULE_UPRMB_FIELD.cpp_type = 3
 
@@ -11353,6 +12215,7 @@ localTable.PROTOVIPRULE_UPMONEY_FIELD.number = 5
 localTable.PROTOVIPRULE_UPMONEY_FIELD.index = 4
 localTable.PROTOVIPRULE_UPMONEY_FIELD.label = 1
 localTable.PROTOVIPRULE_UPMONEY_FIELD.has_default_value = false
+localTable.PROTOVIPRULE_UPMONEY_FIELD.default_value = 0
 localTable.PROTOVIPRULE_UPMONEY_FIELD.type = 13
 localTable.PROTOVIPRULE_UPMONEY_FIELD.cpp_type = 3
 
@@ -11407,6 +12270,7 @@ localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.number = 1
 localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.index = 0
 localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.label = 1
 localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.has_default_value = false
+localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.default_value = 0
 localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.type = 13
 localTable.PUSHVIPUPDATENOTIFY_UID_FIELD.cpp_type = 3
 
@@ -11416,6 +12280,7 @@ localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.number = 2
 localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.index = 1
 localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.label = 1
 localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.has_default_value = false
+localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.default_value = 0
 localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.type = 13
 localTable.PUSHVIPUPDATENOTIFY_VIP_FIELD.cpp_type = 3
 
@@ -11432,6 +12297,7 @@ localTable.REQRENAME_NEWNAME_FIELD.number = 1
 localTable.REQRENAME_NEWNAME_FIELD.index = 0
 localTable.REQRENAME_NEWNAME_FIELD.label = 2
 localTable.REQRENAME_NEWNAME_FIELD.has_default_value = false
+localTable.REQRENAME_NEWNAME_FIELD.default_value = ""
 localTable.REQRENAME_NEWNAME_FIELD.type = 9
 localTable.REQRENAME_NEWNAME_FIELD.cpp_type = 9
 
@@ -11458,6 +12324,7 @@ localTable.RSPRENAME_NEWNAME_FIELD.number = 2
 localTable.RSPRENAME_NEWNAME_FIELD.index = 1
 localTable.RSPRENAME_NEWNAME_FIELD.label = 1
 localTable.RSPRENAME_NEWNAME_FIELD.has_default_value = false
+localTable.RSPRENAME_NEWNAME_FIELD.default_value = ""
 localTable.RSPRENAME_NEWNAME_FIELD.type = 9
 localTable.RSPRENAME_NEWNAME_FIELD.cpp_type = 9
 
@@ -11474,6 +12341,7 @@ localTable.REQFRIENDCHAT_UIDTO_FIELD.number = 1
 localTable.REQFRIENDCHAT_UIDTO_FIELD.index = 0
 localTable.REQFRIENDCHAT_UIDTO_FIELD.label = 2
 localTable.REQFRIENDCHAT_UIDTO_FIELD.has_default_value = false
+localTable.REQFRIENDCHAT_UIDTO_FIELD.default_value = 0
 localTable.REQFRIENDCHAT_UIDTO_FIELD.type = 13
 localTable.REQFRIENDCHAT_UIDTO_FIELD.cpp_type = 3
 
@@ -11483,6 +12351,7 @@ localTable.REQFRIENDCHAT_CHAT_FIELD.number = 2
 localTable.REQFRIENDCHAT_CHAT_FIELD.index = 1
 localTable.REQFRIENDCHAT_CHAT_FIELD.label = 2
 localTable.REQFRIENDCHAT_CHAT_FIELD.has_default_value = false
+localTable.REQFRIENDCHAT_CHAT_FIELD.default_value = ""
 localTable.REQFRIENDCHAT_CHAT_FIELD.type = 9
 localTable.REQFRIENDCHAT_CHAT_FIELD.cpp_type = 9
 
@@ -11509,6 +12378,7 @@ localTable.RSPFRIENDCHAT_UIDFROM_FIELD.number = 2
 localTable.RSPFRIENDCHAT_UIDFROM_FIELD.index = 1
 localTable.RSPFRIENDCHAT_UIDFROM_FIELD.label = 2
 localTable.RSPFRIENDCHAT_UIDFROM_FIELD.has_default_value = false
+localTable.RSPFRIENDCHAT_UIDFROM_FIELD.default_value = 0
 localTable.RSPFRIENDCHAT_UIDFROM_FIELD.type = 13
 localTable.RSPFRIENDCHAT_UIDFROM_FIELD.cpp_type = 3
 
@@ -11518,6 +12388,7 @@ localTable.RSPFRIENDCHAT_UIDTO_FIELD.number = 3
 localTable.RSPFRIENDCHAT_UIDTO_FIELD.index = 2
 localTable.RSPFRIENDCHAT_UIDTO_FIELD.label = 2
 localTable.RSPFRIENDCHAT_UIDTO_FIELD.has_default_value = false
+localTable.RSPFRIENDCHAT_UIDTO_FIELD.default_value = 0
 localTable.RSPFRIENDCHAT_UIDTO_FIELD.type = 13
 localTable.RSPFRIENDCHAT_UIDTO_FIELD.cpp_type = 3
 
@@ -11527,6 +12398,7 @@ localTable.RSPFRIENDCHAT_CHAT_FIELD.number = 4
 localTable.RSPFRIENDCHAT_CHAT_FIELD.index = 3
 localTable.RSPFRIENDCHAT_CHAT_FIELD.label = 1
 localTable.RSPFRIENDCHAT_CHAT_FIELD.has_default_value = false
+localTable.RSPFRIENDCHAT_CHAT_FIELD.default_value = ""
 localTable.RSPFRIENDCHAT_CHAT_FIELD.type = 9
 localTable.RSPFRIENDCHAT_CHAT_FIELD.cpp_type = 9
 
@@ -11543,6 +12415,7 @@ localTable.THEMEBOX_ID_FIELD.number = 1
 localTable.THEMEBOX_ID_FIELD.index = 0
 localTable.THEMEBOX_ID_FIELD.label = 2
 localTable.THEMEBOX_ID_FIELD.has_default_value = false
+localTable.THEMEBOX_ID_FIELD.default_value = 0
 localTable.THEMEBOX_ID_FIELD.type = 13
 localTable.THEMEBOX_ID_FIELD.cpp_type = 3
 
@@ -11552,6 +12425,7 @@ localTable.THEMEBOX_NAME_FIELD.number = 2
 localTable.THEMEBOX_NAME_FIELD.index = 1
 localTable.THEMEBOX_NAME_FIELD.label = 2
 localTable.THEMEBOX_NAME_FIELD.has_default_value = false
+localTable.THEMEBOX_NAME_FIELD.default_value = ""
 localTable.THEMEBOX_NAME_FIELD.type = 9
 localTable.THEMEBOX_NAME_FIELD.cpp_type = 9
 
@@ -11561,6 +12435,7 @@ localTable.THEMEBOX_STAGE_FIELD.number = 3
 localTable.THEMEBOX_STAGE_FIELD.index = 2
 localTable.THEMEBOX_STAGE_FIELD.label = 2
 localTable.THEMEBOX_STAGE_FIELD.has_default_value = false
+localTable.THEMEBOX_STAGE_FIELD.default_value = 0
 localTable.THEMEBOX_STAGE_FIELD.type = 13
 localTable.THEMEBOX_STAGE_FIELD.cpp_type = 3
 
@@ -11570,6 +12445,7 @@ localTable.THEMEBOX_PRICE_FIELD.number = 4
 localTable.THEMEBOX_PRICE_FIELD.index = 3
 localTable.THEMEBOX_PRICE_FIELD.label = 2
 localTable.THEMEBOX_PRICE_FIELD.has_default_value = false
+localTable.THEMEBOX_PRICE_FIELD.default_value = 0
 localTable.THEMEBOX_PRICE_FIELD.type = 13
 localTable.THEMEBOX_PRICE_FIELD.cpp_type = 3
 
@@ -11579,6 +12455,7 @@ localTable.THEMEBOX_DISCOUNT_FIELD.number = 5
 localTable.THEMEBOX_DISCOUNT_FIELD.index = 4
 localTable.THEMEBOX_DISCOUNT_FIELD.label = 2
 localTable.THEMEBOX_DISCOUNT_FIELD.has_default_value = false
+localTable.THEMEBOX_DISCOUNT_FIELD.default_value = 0
 localTable.THEMEBOX_DISCOUNT_FIELD.type = 13
 localTable.THEMEBOX_DISCOUNT_FIELD.cpp_type = 3
 
@@ -11588,6 +12465,7 @@ localTable.THEMEBOX_ISAVAILABLE_FIELD.number = 6
 localTable.THEMEBOX_ISAVAILABLE_FIELD.index = 5
 localTable.THEMEBOX_ISAVAILABLE_FIELD.label = 1
 localTable.THEMEBOX_ISAVAILABLE_FIELD.has_default_value = false
+localTable.THEMEBOX_ISAVAILABLE_FIELD.default_value = false
 localTable.THEMEBOX_ISAVAILABLE_FIELD.type = 8
 localTable.THEMEBOX_ISAVAILABLE_FIELD.cpp_type = 7
 
@@ -11644,177 +12522,22 @@ RSPTHEMEBOXINFO.fields = {localTable.RSPTHEMEBOXINFO_RESULT_FIELD, localTable.RS
 RSPTHEMEBOXINFO.is_extendable = false
 RSPTHEMEBOXINFO.extensions = {}
 
-AbnormalExit = 281
-Acc_Psw_Format_Error = 2000
-AccountPasswordError = 1001
-Ack = 3
 ActivityUnit = protobuf.Message(ACTIVITYUNIT)
-AddMyselfAsFriend = 303
-Ali = 6
-AlreadyBind = 123
-AmPunishAbnormal = 350
-AttributeNull = 1003
-AuthFailed = 118
-AutoMatch = 2
-Baidu = 2
-Bind = 257
-BindExistInviteCode = 313
-BindSelfInviteCode = 312
-BizLimitCtl = 129
-Bonus = 2
-BreakupFailed = 1017
-BuySuccess = 1005
-Cant_Raise = 2004
-Collector = 3
 CommonInfo = protobuf.Message(COMMONINFO)
-CreateTeamFailed = 1007
-Dark = 6
-Database = 119
-DonateFailed = 1011
-DonateSuccess = 1013
-Done = 1
-DupMonthlyCard = 285
-DupName = 292
-DupUsr = 120
-E_Force = 2
-E_GiveUp = 1
-E_Normal = 0
-E_Offline = 3
-Earth = 1
-EffectOff = 1000
 EndplayItem = protobuf.Message(ENDPLAYITEM)
-Error = 1
-ExchLimited = 259
-ExchangeFailed = 1009
-Expired = 276
-ExpiredVersion = 121
-External = 5
-FinishActivity = 365
-FinishSign = 358
-Fire = 3
 FragmentExchItem = protobuf.Message(FRAGMENTEXCHITEM)
-FriendClose = 2011
 FriendInfo = protobuf.Message(FRIENDINFO)
-FriendListFull = 304
-FullBind = 128
-FunnyClose = 2014
 GameAchieveItem = protobuf.Message(GAMEACHIEVEITEM)
 GameAchieveUpdateItem = protobuf.Message(GAMEACHIEVEUPDATEITEM)
-GetAwardSuccess = 1006
 GiftCardItem = protobuf.Message(GIFTCARDITEM)
-God = 7
-HasRestrictedCard = 305
-HighDeckCardCnt = 311
-InDuelking = 366
-InPunishment = 352
-Init = 0
-Internal = 4
-InvalidInviteCode = 300
-InvalidPara = 116
-InvalidRaise = 282
-InvalidState = 262
-InvalidVCode = 122
-InvalidVCodeType = 124
-Invitation_Format_Error = 2003
-Invite = 1
-InviteCountFull = 301
-J_Captain = 1
-J_Major = 3
-J_None = 0
-J_ViceCaptain = 2
-KeyMagic = 2
-KeyMonster = 1
-KeyTrap = 3
-LP4000 = 5
-Legend = 2
-LevelLimited = 260
-Light = 5
-LowCaptainLevel = 271
-LowCard = 286
-LowCardFrag = 302
-LowContribute = 274
-LowDeckCardCnt = 310
-LowGiftCard = 362
-LowLevel = 291
-LowLevelOld = 356
-LowMoney = 288
-LowPermission = 264
-LowPlayerCount = 275
-LowPoints = 273
-LowPower = 272
-LowTrunkey = 314
 MallItem = protobuf.Message(MALLITEM)
 MallPriceItem = protobuf.Message(MALLPRICEITEM)
-MatchAgain = 1016
-MaxCard = 287
-MaxDeck = 290
-MaxDeckGrid = 289
-MaxTeamApplicants = 266
-MaxTeamPlayers = 265
-MaxTeamViceCaptain = 267
-MaxVsCnt = 278
-Mi = 4
 MissionItem = protobuf.Message(MISSIONITEM)
-NORESPONSE = 1111111
-NPCClose = 2013
-NetError = 263
-NewSignin = 355
-NickNameNull = 1002
-NickName_Format_Error = 2001
-NoEnoughFight = 359
-NoFriend = 353
-NoMatch = 280
-NoOnline = 361
-NoRival = 255
-NotInRoom = 254
-NotInTeam = 270
-NotOldplayer = 354
-NovaAuthFailed = 252
-NovaDatabase = 253
-NovaInvalidPara = 250
-NovaUserNoExist = 251
-NullPType = 113
-NullPhone = 126
-NullPid = 112
-NullPwd = 111
-NullSType = 115
-NullUid = 125
-NullUsr = 110
-NullVCode = 127
-NullVersion = 114
-Official = 0
 OnlineAchieveItem = protobuf.Message(ONLINEACHIEVEITEM)
 OnlineAchieveUpdateItem = protobuf.Message(ONLINEACHIEVEUPDATEITEM)
 OrderInfo = protobuf.Message(ORDERINFO)
-OtherFriendListFull = 360
-P_Card = 0
-P_CardAll = 5
-P_CardDark = 8
-P_CardEarth = 7
-P_CardEffectMonster = 6
-P_CardMagic = 2
-P_CardMonster = 1
-P_CardNew = 11
-P_CardStyled = 4
-P_CardTrap = 3
-P_CardWaterFire = 9
-P_CardWindLight = 10
-P_CustAvatar = 14
-P_CustCardCover = 15
-P_Fragment = 13
-P_GiftCard = 17
-P_Money = 12
-P_RealCard = 18
-P_Trunkey = 16
-Perfect_Address_Format_Error = 2010
-Perfect_Home_Format_Error = 2008
-Perfect_Name_Format_Error = 2006
-Perfect_Phone_Format_Error = 2007
-Perfect_QQ_Format_Error = 2009
 PkgCard = protobuf.Message(PKGCARD)
 PlatformInfo = protobuf.Message(PLATFORMINFO)
-Player = 4
-PlayerInfo = 258
 PropItem = protobuf.Message(PROPITEM)
 ProtoAmRaiseRule = protobuf.Message(PROTOAMRAISERULE)
 ProtoCard = protobuf.Message(PROTOCARD)
@@ -11831,8 +12554,6 @@ ProtoTeamQuestItem = protobuf.Message(PROTOTEAMQUESTITEM)
 ProtoTeamUpgradeInfo = protobuf.Message(PROTOTEAMUPGRADEINFO)
 ProtoTrunkey = protobuf.Message(PROTOTRUNKEY)
 ProtoVipRule = protobuf.Message(PROTOVIPRULE)
-ProtoVsInfo = protobuf.Message(PROTOVSINFO)
-Push = 2
 PushAutoMatch = protobuf.Message(PUSHAUTOMATCH)
 PushClientCfgNotify = protobuf.Message(PUSHCLIENTCFGNOTIFY)
 PushFriendModifyNotify = protobuf.Message(PUSHFRIENDMODIFYNOTIFY)
@@ -11871,15 +12592,7 @@ PushTrunkeyQuestNotify = protobuf.Message(PUSHTRUNKEYQUESTNOTIFY)
 PushVipUpdateNotify = protobuf.Message(PUSHVIPUPDATENOTIFY)
 PushWelfareNotify = protobuf.Message(PUSHWELFARENOTIFY)
 PushWorldChat = protobuf.Message(PUSHWORLDCHAT)
-Qihoo = 1
 RCardItem = protobuf.Message(RCARDITEM)
-RT_B7B10 = 1
-RT_None = 0
-RT_S2S6 = 2
-RT_S6Plus = 3
-R_Card = 1
-R_Fragment = 3
-R_Money = 2
 RankInfoItem = protobuf.Message(RANKINFOITEM)
 ReqAutoMatch = protobuf.Message(REQAUTOMATCH)
 ReqBind = protobuf.Message(REQBIND)
@@ -11973,11 +12686,7 @@ ReqUpdateEndplay = protobuf.Message(REQUPDATEENDPLAY)
 ReqUpdateMission = protobuf.Message(REQUPDATEMISSION)
 ReqWelfareUpdate = protobuf.Message(REQWELFAREUPDATE)
 ReqWorldChat = protobuf.Message(REQWORLDCHAT)
-Request = 0
-Response = 1
 RoomInfo = protobuf.Message(ROOMINFO)
-Round90 = 4
-RoyalRoad = 1
 RspAutoMatch = protobuf.Message(RSPAUTOMATCH)
 RspBind = protobuf.Message(RSPBIND)
 RspBindInviteCode = protobuf.Message(RSPBINDINVITECODE)
@@ -12045,6 +12754,7 @@ RspModifyFriendApplyList = protobuf.Message(RSPMODIFYFRIENDAPPLYLIST)
 RspModifyFriendList = protobuf.Message(RSPMODIFYFRIENDLIST)
 RspOldplayerInfo = protobuf.Message(RSPOLDPLAYERINFO)
 RspOldplayerSign = protobuf.Message(RSPOLDPLAYERSIGN)
+RspProtoVsInfo = protobuf.Message(RSPPROTOVSINFO)
 RspReLogon = protobuf.Message(RSPRELOGON)
 RspRename = protobuf.Message(RSPRENAME)
 RspScoreRace = protobuf.Message(RSPSCORERACE)
@@ -12070,68 +12780,11 @@ RspUpdateMission = protobuf.Message(RSPUPDATEMISSION)
 RspWelfareUpdate = protobuf.Message(RSPWELFAREUPDATE)
 RspWorldChat = protobuf.Message(RSPWORLDCHAT)
 SRCardItem = protobuf.Message(SRCARDITEM)
-S_MonthlyCard = 1
-S_Normal = 0
-S_OfficialGift = 2
-ScoreRace = 6
-ScoreRace_OpenTime = 2005
-SelectedVecNull = 1018
-SensitiveWord = 1004
-SignedToday = 357
 SigninAchieveItem = protobuf.Message(SIGNINACHIEVEITEM)
 SigninAchieveUpdateItem = protobuf.Message(SIGNINACHIEVEUPDATEITEM)
 SingleCard = protobuf.Message(SINGLECARD)
-SpecialCardClose = 2012
-Succeed = 100
-TL_Bronze = 2
-TL_Gold = 4
-TL_Legend = 5
-TL_None = 1
-TL_Silver = 3
-TS_Dismiss = 1
-TS_DismissCancel = 2
-TS_Dismissed = 3
-TS_Normal = 0
-Team = 4
-TeamAlreadyApplied = 306
-TeamAlreadyInOther = 309
-TeamDetails = 1008
-TeamDismissLt7Day = 269
-TeamExitLt7Day = 268
-TeamFull = 284
-TeamIdNull = 1014
-TeamName_Format_Error = 2002
-TeamNoExist = 283
-TeamUngroup = 1010
-TeamUpFailed = 1012
-TeamUpSuccess = 1015
 ThemeBox = protobuf.Message(THEMEBOX)
-TimeTooShort = 307
-Timeout = 277
 TopupItem = protobuf.Message(TOPUPITEM)
-Uc = 3
-UidNotMatch = 261
-Unknown = 256
-UserNotExist = 117
-VC_AlterInfo = 4
-VC_General = 1
-VC_Register = 2
-VC_ResetPwd = 3
-VsDesk = 3
-W_Activity = 3
-W_Compensation = 4
-W_MonthlyCard = 2
-W_ScoreRace = 5
-W_Share = 1
-Water = 2
-Wdj = 5
-Weixin = 7
 WelfareItem = protobuf.Message(WELFAREITEM)
 WelfareUpdateItem = protobuf.Message(WELFAREUPDATEITEM)
-Wind = 4
-WordsToolLong = 308
-WrongOrderMoney = 351
-WrongTiming = 279
-YesApplicant = 364
-YesFriend = 363
 

@@ -4,7 +4,6 @@ google/__init__.py
 google/protobuf/__init__.py
 google/protobuf/descriptor.py
 google/protobuf/descriptor_database.py
-google/protobuf/descriptor_pb2.py
 google/protobuf/descriptor_pool.py
 google/protobuf/message.py
 google/protobuf/message_factory.py
@@ -14,8 +13,6 @@ google/protobuf/service_reflection.py
 google/protobuf/symbol_database.py
 google/protobuf/text_encoding.py
 google/protobuf/text_format.py
-google/protobuf/compiler/__init__.py
-google/protobuf/compiler/plugin_pb2.py
 google/protobuf/internal/__init__.py
 google/protobuf/internal/api_implementation.py
 google/protobuf/internal/containers.py

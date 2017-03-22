@@ -9,12 +9,14 @@ localTable.CSHEAD_VER_FIELD = protobuf.FieldDescriptor()
 localTable.CSHEAD_SEQ_FIELD = protobuf.FieldDescriptor()
 localTable.CSHEAD_FLG_FIELD = protobuf.FieldDescriptor()
 
+
 localTable.CSHEAD_VER_FIELD.name = "ver"
 localTable.CSHEAD_VER_FIELD.full_name = ".CSHead.ver"
 localTable.CSHEAD_VER_FIELD.number = 1
 localTable.CSHEAD_VER_FIELD.index = 0
 localTable.CSHEAD_VER_FIELD.label = 1
 localTable.CSHEAD_VER_FIELD.has_default_value = false
+localTable.CSHEAD_VER_FIELD.default_value = 0
 localTable.CSHEAD_VER_FIELD.type = 5
 localTable.CSHEAD_VER_FIELD.cpp_type = 1
 
@@ -24,6 +26,7 @@ localTable.CSHEAD_SEQ_FIELD.number = 2
 localTable.CSHEAD_SEQ_FIELD.index = 1
 localTable.CSHEAD_SEQ_FIELD.label = 1
 localTable.CSHEAD_SEQ_FIELD.has_default_value = false
+localTable.CSHEAD_SEQ_FIELD.default_value = 0
 localTable.CSHEAD_SEQ_FIELD.type = 5
 localTable.CSHEAD_SEQ_FIELD.cpp_type = 1
 
@@ -33,6 +36,7 @@ localTable.CSHEAD_FLG_FIELD.number = 3
 localTable.CSHEAD_FLG_FIELD.index = 2
 localTable.CSHEAD_FLG_FIELD.label = 1
 localTable.CSHEAD_FLG_FIELD.has_default_value = false
+localTable.CSHEAD_FLG_FIELD.default_value = 0
 localTable.CSHEAD_FLG_FIELD.type = 5
 localTable.CSHEAD_FLG_FIELD.cpp_type = 1
 

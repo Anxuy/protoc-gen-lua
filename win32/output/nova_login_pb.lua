@@ -36,6 +36,11 @@ localTable.REQFILLPLAYERINFO_INVITECODE_FIELD = protobuf.FieldDescriptor()
 RSPFILLPLAYERINFO = protobuf.Descriptor()
 localTable.RSPFILLPLAYERINFO_RESULT_FIELD = protobuf.FieldDescriptor()
 
+VC_General = 1
+VC_Register = 2
+VC_ResetPwd = 3
+VC_AlterInfo = 4
+
 localTable.VCODETYPE_VC_GENERAL_ENUM.name = "VC_General"
 localTable.VCODETYPE_VC_GENERAL_ENUM.index = 0
 localTable.VCODETYPE_VC_GENERAL_ENUM.number = 1
@@ -81,6 +86,7 @@ localTable.REQLOGON_UID_FIELD.number = 1
 localTable.REQLOGON_UID_FIELD.index = 0
 localTable.REQLOGON_UID_FIELD.label = 1
 localTable.REQLOGON_UID_FIELD.has_default_value = false
+localTable.REQLOGON_UID_FIELD.default_value = 0
 localTable.REQLOGON_UID_FIELD.type = 13
 localTable.REQLOGON_UID_FIELD.cpp_type = 3
 
@@ -90,6 +96,7 @@ localTable.REQLOGON_TOKEN_FIELD.number = 2
 localTable.REQLOGON_TOKEN_FIELD.index = 1
 localTable.REQLOGON_TOKEN_FIELD.label = 1
 localTable.REQLOGON_TOKEN_FIELD.has_default_value = false
+localTable.REQLOGON_TOKEN_FIELD.default_value = ""
 localTable.REQLOGON_TOKEN_FIELD.type = 9
 localTable.REQLOGON_TOKEN_FIELD.cpp_type = 9
 
@@ -126,6 +133,7 @@ localTable.RSPLOGON_LASTERROR_FIELD.number = 3
 localTable.RSPLOGON_LASTERROR_FIELD.index = 2
 localTable.RSPLOGON_LASTERROR_FIELD.label = 1
 localTable.RSPLOGON_LASTERROR_FIELD.has_default_value = false
+localTable.RSPLOGON_LASTERROR_FIELD.default_value = ""
 localTable.RSPLOGON_LASTERROR_FIELD.type = 9
 localTable.RSPLOGON_LASTERROR_FIELD.cpp_type = 9
 
@@ -142,6 +150,7 @@ localTable.REQLOGOUT_UID_FIELD.number = 1
 localTable.REQLOGOUT_UID_FIELD.index = 0
 localTable.REQLOGOUT_UID_FIELD.label = 1
 localTable.REQLOGOUT_UID_FIELD.has_default_value = false
+localTable.REQLOGOUT_UID_FIELD.default_value = 0
 localTable.REQLOGOUT_UID_FIELD.type = 13
 localTable.REQLOGOUT_UID_FIELD.cpp_type = 3
 
@@ -175,6 +184,7 @@ localTable.REQHELLO_UID_FIELD.number = 1
 localTable.REQHELLO_UID_FIELD.index = 0
 localTable.REQHELLO_UID_FIELD.label = 1
 localTable.REQHELLO_UID_FIELD.has_default_value = false
+localTable.REQHELLO_UID_FIELD.default_value = 0
 localTable.REQHELLO_UID_FIELD.type = 13
 localTable.REQHELLO_UID_FIELD.cpp_type = 3
 
@@ -208,6 +218,7 @@ localTable.REQFILLPLAYERINFO_UID_FIELD.number = 1
 localTable.REQFILLPLAYERINFO_UID_FIELD.index = 0
 localTable.REQFILLPLAYERINFO_UID_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_UID_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_UID_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_UID_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_UID_FIELD.cpp_type = 3
 
@@ -217,6 +228,7 @@ localTable.REQFILLPLAYERINFO_ATTR_FIELD.number = 2
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.index = 1
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_ATTR_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_ATTR_FIELD.cpp_type = 3
 
@@ -226,6 +238,7 @@ localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.number = 3
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.index = 2
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.default_value = ""
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.type = 12
 localTable.REQFILLPLAYERINFO_NICKNAME_FIELD.cpp_type = 9
 
@@ -235,6 +248,7 @@ localTable.REQFILLPLAYERINFO_AVATARID_FIELD.number = 4
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.index = 3
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_AVATARID_FIELD.default_value = 0
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.type = 13
 localTable.REQFILLPLAYERINFO_AVATARID_FIELD.cpp_type = 3
 
@@ -244,6 +258,7 @@ localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.number = 5
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.index = 4
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.label = 1
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.has_default_value = false
+localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.default_value = ""
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.type = 9
 localTable.REQFILLPLAYERINFO_INVITECODE_FIELD.cpp_type = 9
 
@@ -282,8 +297,4 @@ RspFillPlayerInfo = protobuf.Message(RSPFILLPLAYERINFO)
 RspHello = protobuf.Message(RSPHELLO)
 RspLogon = protobuf.Message(RSPLOGON)
 RspLogout = protobuf.Message(RSPLOGOUT)
-VC_AlterInfo = 4
-VC_General = 1
-VC_Register = 2
-VC_ResetPwd = 3
 

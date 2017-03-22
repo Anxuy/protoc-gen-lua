@@ -14,12 +14,14 @@ localTable.MSGHEAD_SRCID_FIELD = protobuf.FieldDescriptor()
 localTable.MSGHEAD_DSTID_FIELD = protobuf.FieldDescriptor()
 localTable.MSGHEAD_TS_FIELD = protobuf.FieldDescriptor()
 
+
 localTable.MSGHEAD_ID_FIELD.name = "id"
 localTable.MSGHEAD_ID_FIELD.full_name = ".MsgHead.id"
 localTable.MSGHEAD_ID_FIELD.number = 1
 localTable.MSGHEAD_ID_FIELD.index = 0
 localTable.MSGHEAD_ID_FIELD.label = 1
 localTable.MSGHEAD_ID_FIELD.has_default_value = false
+localTable.MSGHEAD_ID_FIELD.default_value = 0
 localTable.MSGHEAD_ID_FIELD.type = 5
 localTable.MSGHEAD_ID_FIELD.cpp_type = 1
 
@@ -49,6 +51,7 @@ localTable.MSGHEAD_SRCET_FIELD.number = 4
 localTable.MSGHEAD_SRCET_FIELD.index = 3
 localTable.MSGHEAD_SRCET_FIELD.label = 1
 localTable.MSGHEAD_SRCET_FIELD.has_default_value = false
+localTable.MSGHEAD_SRCET_FIELD.default_value = 0
 localTable.MSGHEAD_SRCET_FIELD.type = 5
 localTable.MSGHEAD_SRCET_FIELD.cpp_type = 1
 
@@ -58,6 +61,7 @@ localTable.MSGHEAD_DSTET_FIELD.number = 5
 localTable.MSGHEAD_DSTET_FIELD.index = 4
 localTable.MSGHEAD_DSTET_FIELD.label = 1
 localTable.MSGHEAD_DSTET_FIELD.has_default_value = false
+localTable.MSGHEAD_DSTET_FIELD.default_value = 0
 localTable.MSGHEAD_DSTET_FIELD.type = 5
 localTable.MSGHEAD_DSTET_FIELD.cpp_type = 1
 
@@ -67,6 +71,7 @@ localTable.MSGHEAD_SRCID_FIELD.number = 6
 localTable.MSGHEAD_SRCID_FIELD.index = 5
 localTable.MSGHEAD_SRCID_FIELD.label = 1
 localTable.MSGHEAD_SRCID_FIELD.has_default_value = false
+localTable.MSGHEAD_SRCID_FIELD.default_value = 0
 localTable.MSGHEAD_SRCID_FIELD.type = 13
 localTable.MSGHEAD_SRCID_FIELD.cpp_type = 3
 
@@ -76,6 +81,7 @@ localTable.MSGHEAD_DSTID_FIELD.number = 7
 localTable.MSGHEAD_DSTID_FIELD.index = 6
 localTable.MSGHEAD_DSTID_FIELD.label = 1
 localTable.MSGHEAD_DSTID_FIELD.has_default_value = false
+localTable.MSGHEAD_DSTID_FIELD.default_value = 0
 localTable.MSGHEAD_DSTID_FIELD.type = 13
 localTable.MSGHEAD_DSTID_FIELD.cpp_type = 3
 
@@ -85,6 +91,7 @@ localTable.MSGHEAD_TS_FIELD.number = 8
 localTable.MSGHEAD_TS_FIELD.index = 7
 localTable.MSGHEAD_TS_FIELD.label = 1
 localTable.MSGHEAD_TS_FIELD.has_default_value = false
+localTable.MSGHEAD_TS_FIELD.default_value = 0.0
 localTable.MSGHEAD_TS_FIELD.type = 1
 localTable.MSGHEAD_TS_FIELD.cpp_type = 5
 

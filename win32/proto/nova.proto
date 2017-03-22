@@ -710,7 +710,7 @@ message PushRivalReLogon
     optional uint32 rivalUid = 3;                   // 对家uid
 }
 
-message ProtoVsInfo
+message RspProtoVsInfo
 {
     optional uint32 result = 1 [default=100];       // 匹配结果, 100 成功, 280 没匹配到
     optional uint32 roomId = 2;
@@ -730,13 +730,13 @@ message ProtoVsInfo
 // 推送自动匹配结果
 message PushAutoMatch
 {
-    optional ProtoVsInfo info = 1;          // 决斗信息
+    optional RspProtoVsInfo info = 1;          // 决斗信息
 }
 
 // 推送积分赛匹配结果
 message PushScoreRace
 {
-    optional ProtoVsInfo info = 1;          // 决斗信息
+    optional RspProtoVsInfo info = 1;          // 决斗信息
     optional uint32 teamSelf = 2;           // 自己的积分组
     optional uint32 teamRival = 3;          // 对家的积分组, 用来判断是不是越级匹配
 }
@@ -744,7 +744,7 @@ message PushScoreRace
 // 推送好友邀请决斗处理结果
 message PushInviteVs
 {
-    optional ProtoVsInfo info = 1;          // 决斗信息
+    optional RspProtoVsInfo info = 1;          // 决斗信息
 }
 
 ///////////////////////////////////////////////////////////////////////////////

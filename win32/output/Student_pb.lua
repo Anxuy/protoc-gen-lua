@@ -10,12 +10,14 @@ STUDENT = protobuf.Descriptor()
 localTable.STUDENT_COUNT_FIELD = protobuf.FieldDescriptor()
 localTable.STUDENT_INFOS_FIELD = protobuf.FieldDescriptor()
 
+
 localTable.INFO_NAME_FIELD.name = "name"
 localTable.INFO_NAME_FIELD.full_name = ".Info.name"
 localTable.INFO_NAME_FIELD.number = 1
 localTable.INFO_NAME_FIELD.index = 0
 localTable.INFO_NAME_FIELD.label = 2
 localTable.INFO_NAME_FIELD.has_default_value = false
+localTable.INFO_NAME_FIELD.default_value = ""
 localTable.INFO_NAME_FIELD.type = 9
 localTable.INFO_NAME_FIELD.cpp_type = 9
 
@@ -32,6 +34,7 @@ localTable.STUDENT_COUNT_FIELD.number = 1
 localTable.STUDENT_COUNT_FIELD.index = 0
 localTable.STUDENT_COUNT_FIELD.label = 2
 localTable.STUDENT_COUNT_FIELD.has_default_value = false
+localTable.STUDENT_COUNT_FIELD.default_value = 0
 localTable.STUDENT_COUNT_FIELD.type = 5
 localTable.STUDENT_COUNT_FIELD.cpp_type = 1
 

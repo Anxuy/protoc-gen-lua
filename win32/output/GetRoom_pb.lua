@@ -13,6 +13,7 @@ localTable.GETROOMRESPONSE_RESULT_FIELD = protobuf.FieldDescriptor()
 localTable.GETROOMRESPONSE_ROOM_FIELD = protobuf.FieldDescriptor()
 localTable.GETROOMRESPONSE_MESSAGE_FIELD = protobuf.FieldDescriptor()
 
+
 localTable.GETROOMREQUEST_ROOMID_FIELD.name = "roomId"
 localTable.GETROOMREQUEST_ROOMID_FIELD.full_name = ".com.gameroot.lg.message.GetRoomRequest.roomId"
 localTable.GETROOMREQUEST_ROOMID_FIELD.number = 1
@@ -36,6 +37,7 @@ localTable.GETROOMRESPONSE_RESULT_FIELD.number = 1
 localTable.GETROOMRESPONSE_RESULT_FIELD.index = 0
 localTable.GETROOMRESPONSE_RESULT_FIELD.label = 2
 localTable.GETROOMRESPONSE_RESULT_FIELD.has_default_value = false
+localTable.GETROOMRESPONSE_RESULT_FIELD.default_value = nil
 localTable.GETROOMRESPONSE_RESULT_FIELD.enum_type = RESULTINFO_PB.RESULT
 localTable.GETROOMRESPONSE_RESULT_FIELD.type = 14
 localTable.GETROOMRESPONSE_RESULT_FIELD.cpp_type = 8
