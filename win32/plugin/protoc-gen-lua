@@ -315,11 +315,11 @@ def code_gen_field(index, field_desc, env):
         context('.has_default_value = false\n')
         if field_desc.label == FDP.LABEL_REPEATED:
             default_value = "{}"
-        elif field_desc.HasField('type_name'):
-            default_value = "nil"
-        else:
-            default_value = DEFAULT_VALUE[field_desc.type]
-        context('.default_value = %s\n' % default_value)
+        # elif field_desc.HasField('type_name'):
+        #     default_value = "nil"
+        # else:
+        #     default_value = DEFAULT_VALUE[field_desc.type]
+            context('.default_value = %s\n' % default_value)
 
     if field_desc.HasField('type_name'):
         # case 1: type import from other file, should use ABC_PB.XXX_XXX

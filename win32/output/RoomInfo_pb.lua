@@ -41,7 +41,6 @@ localTable.ROOM_ID_FIELD.number = 1
 localTable.ROOM_ID_FIELD.index = 0
 localTable.ROOM_ID_FIELD.label = 2
 localTable.ROOM_ID_FIELD.has_default_value = false
-localTable.ROOM_ID_FIELD.default_value = ""
 localTable.ROOM_ID_FIELD.type = 9
 localTable.ROOM_ID_FIELD.cpp_type = 9
 
@@ -51,7 +50,6 @@ localTable.ROOM_NAME_FIELD.number = 2
 localTable.ROOM_NAME_FIELD.index = 1
 localTable.ROOM_NAME_FIELD.label = 1
 localTable.ROOM_NAME_FIELD.has_default_value = false
-localTable.ROOM_NAME_FIELD.default_value = ""
 localTable.ROOM_NAME_FIELD.type = 9
 localTable.ROOM_NAME_FIELD.cpp_type = 9
 
@@ -61,7 +59,6 @@ localTable.ROOM_TASKTYPE_FIELD.number = 3
 localTable.ROOM_TASKTYPE_FIELD.index = 2
 localTable.ROOM_TASKTYPE_FIELD.label = 1
 localTable.ROOM_TASKTYPE_FIELD.has_default_value = false
-localTable.ROOM_TASKTYPE_FIELD.default_value = nil
 localTable.ROOM_TASKTYPE_FIELD.enum_type = localTable.TASKTYPE
 localTable.ROOM_TASKTYPE_FIELD.type = 14
 localTable.ROOM_TASKTYPE_FIELD.cpp_type = 8
