@@ -194,6 +194,7 @@ localTable.RSPSTOCATTACKPB_SEQATTACKER_FIELD = protobuf.FieldDescriptor()
 localTable.RSPSTOCATTACKPB_IDDEFENDER_FIELD = protobuf.FieldDescriptor()
 localTable.RSPSTOCATTACKPB_LOCATIONDEFENDER_FIELD = protobuf.FieldDescriptor()
 localTable.RSPSTOCATTACKPB_SEQDEFENDER_FIELD = protobuf.FieldDescriptor()
+REQCTOSCANCELPB = protobuf.Descriptor()
 
 
 localTable.REQCTOSHANDRESULTPB_UID_FIELD.name = "uid"
@@ -1867,6 +1868,13 @@ RSPSTOCATTACKPB.enum_types = {}
 RSPSTOCATTACKPB.fields = {localTable.RSPSTOCATTACKPB_IDATTACKER_FIELD, localTable.RSPSTOCATTACKPB_LOCATIONATTACKER_FIELD, localTable.RSPSTOCATTACKPB_SEQATTACKER_FIELD, localTable.RSPSTOCATTACKPB_IDDEFENDER_FIELD, localTable.RSPSTOCATTACKPB_LOCATIONDEFENDER_FIELD, localTable.RSPSTOCATTACKPB_SEQDEFENDER_FIELD}
 RSPSTOCATTACKPB.is_extendable = false
 RSPSTOCATTACKPB.extensions = {}
+REQCTOSCANCELPB.name = "ReqCTOSCancelPB"
+REQCTOSCANCELPB.full_name = ".ReqCTOSCancelPB"
+REQCTOSCANCELPB.nested_types = {}
+REQCTOSCANCELPB.enum_types = {}
+REQCTOSCANCELPB.fields = {}
+REQCTOSCANCELPB.is_extendable = false
+REQCTOSCANCELPB.extensions = {}
 
 ClientCardInfo = protobuf.Message(CLIENTCARDINFO)
 ClientCardState = protobuf.Message(CLIENTCARDSTATE)
@@ -1874,6 +1882,7 @@ ReqCTOSAnnounceAttrPB = protobuf.Message(REQCTOSANNOUNCEATTRPB)
 ReqCTOSAnnounceNumberPB = protobuf.Message(REQCTOSANNOUNCENUMBERPB)
 ReqCTOSAnnounceRacePB = protobuf.Message(REQCTOSANNOUNCERACEPB)
 ReqCTOSAutoFight = protobuf.Message(REQCTOSAUTOFIGHT)
+ReqCTOSCancelPB = protobuf.Message(REQCTOSCANCELPB)
 ReqCTOSConfigPB = protobuf.Message(REQCTOSCONFIGPB)
 ReqCTOSHandResultPB = protobuf.Message(REQCTOSHANDRESULTPB)
 ReqCTOSOperationPB = protobuf.Message(REQCTOSOPERATIONPB)

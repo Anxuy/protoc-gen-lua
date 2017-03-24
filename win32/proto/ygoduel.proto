@@ -335,3 +335,7 @@ message RspSTOCAttackPB
     required uint32 locationDefender = 5;
     required uint32 seqDefender = 6;
 }
+
+message ReqCTOSCancelPB
+{
+}
