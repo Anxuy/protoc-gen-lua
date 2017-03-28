@@ -28,8 +28,8 @@ option optimize_for = LITE_RUNTIME;
 
 message ReqCTOSHandResultPB
 {
-    optional uint32 uid = 1;
-    optional uint32 guess = 2;
+    required uint32 uid = 1;
+    required uint32 guess = 2;
 }
 message RspSTOCHandResultPB
 {
@@ -224,6 +224,7 @@ message RspSTOCSwapPB
     required ClientCardState card1 = 1;
     optional ClientCardState card2 = 2;
 }
+
 message RspSTOCShuffleSetPB
 {
     repeated RspSTOCSwapPB shuffles = 1;
@@ -338,4 +339,21 @@ message RspSTOCAttackPB
 
 message ReqCTOSCancelPB
 {
+}
+
+//计时器使用者切换
+message RspSTOCTimeTurnPB
+{
+    required uint32 who = 1;
+    required bool opened = 2;
+    // 回合持有者的回合总时间
+    optional uint32 total = 3;
+    // 回合持有者的回合已用时间
+    optional uint32 elapsed = 4;
+}
+
+message RspSTOCSelectDisfieldPB
+{
+    required uint32 select_min = 1;
+    required uint32 selectable_field = 2;
 }
