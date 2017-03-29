@@ -28,7 +28,7 @@ option optimize_for = LITE_RUNTIME;
 
 message ReqCTOSHandResultPB
 {
-    required uint32 uid = 1;
+    optional uint32 uid = 1;
     required uint32 guess = 2;
 }
 message RspSTOCHandResultPB
@@ -350,10 +350,16 @@ message RspSTOCTimeTurnPB
     optional uint32 total = 3;
     // 回合持有者的回合已用时间
     optional uint32 elapsed = 4;
+    // 回合是否已结束
+    optional bool isFinished = 5;
 }
 
+message ReqCTOSSelectDisfieldPB
+{
+    repeated ClientCardState places = 1;
+}
 message RspSTOCSelectDisfieldPB
 {
     required uint32 select_min = 1;
-    required uint32 selectable_field = 2;
+    repeated ClientCardState places = 2;
 }
