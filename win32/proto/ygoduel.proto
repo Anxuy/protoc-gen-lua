@@ -354,12 +354,19 @@ message RspSTOCTimeTurnPB
     optional bool isFinished = 5;
 }
 
+// 客户端设置禁止位置
 message ReqCTOSSelectDisfieldPB
 {
     repeated ClientCardState places = 1;
 }
+// 通知客户端设置禁止位置
 message RspSTOCSelectDisfieldPB
 {
     required uint32 select_min = 1;
+    repeated ClientCardState places = 2;
+}
+// 通知客户端禁止位置发生改变
+message RspSTOCSFieldDisabledPB
+{
     repeated ClientCardState places = 2;
 }

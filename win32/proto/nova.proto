@@ -115,6 +115,16 @@ enum ResultType
     YesApplicant = 364;           // 已经申请好友了
     FinishActivity = 365;         // 签到活动已结束（签到活动: 老玩家回归、节日）
     InDuelking = 366;             // 玩家处于决斗中
+	NickNameIsExist = 367;		  // 昵称已存在
+    NullRule = 368;               // VIP 规则为空
+    InvalidFd = 369;              // 无效的Fd
+    InvalidBuyMaxVip = 370;       // 不能购买最大vip
+    MaxVip = 371;                 // 已经最大vip等级
+	
+	ApplTeamExitLt7Day = 372;     // 申请者退出战队不足７天
+	MaxInDeck = 373;              // 超出此卡最大可放入卡组数量
+
+	
     // 客户端内部错误码
     EffectOff = 1000;               // 功能暂未开启
     AccountPasswordError = 1001;    // 帐号密码错误
@@ -155,6 +165,8 @@ enum ResultType
     SpecialCardClose = 2012;
     NPCClose = 2013;
     FunnyClose = 2014;
+	
+	
 
     NORESPONSE = 1111111;           // 服务器消息无响应
 }
@@ -335,6 +347,15 @@ enum VCodeType
     VC_AlterInfo = 4;    // 变更信息, 目前就是解绑
 }
 
+// 礼品卡类型
+enum GiftCardType
+{
+	GC_Bronze = 10001;		// 青铜
+	GC_Silver = 10002;		// 白银
+	GC_Gold = 10003;		// 黄金
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //登陆前绑定
 message ReqBind
@@ -413,6 +434,7 @@ message ProtoTrunkey
 {
     optional uint32 type = 1;                 // 钥匙类型
     optional uint32 value = 2;                // 钥匙数量
+    optional float maxValPerDay = 3;          // 每日最多可获得此卡箱钥匙。
 }
 
 message ProtoPlayerInfo
@@ -449,6 +471,9 @@ message ProtoPlayerInfo
     optional bytes address = 30;                // 邮寄地址
     repeated ProtoCard specialCards = 31;       // 特效卡
     optional uint32 vip = 32;                   // vip等级
+    optional uint32 sceneId = 33;               // vs场景ID
+    optional uint32 sFragment = 34;             // 特殊卡牌碎片
+    repeated ProtoEffectCardInfo effectCards = 35; // 特效卡信息
 }
 
 message RspGetPlayerInfo
@@ -529,6 +554,9 @@ message ProtoPreVsInfo
     optional uint32 leftAmCnt = 1;                  // 自动匹配剩余决斗次数
     optional uint32 leftAmRaiseCnt = 2;             // 自动匹配剩余越级次数
     optional bool scoreRaceOpen = 3;                // 积分赛开启中
+    optional uint32 leftKeyMonster = 4;             // 今日还可获得怪兽全卡箱钥匙数
+    optional uint32 leftKeyMagic = 5;               // 今日还可获得魔法卡箱钥匙数
+    optional uint32 leftFragBonusCnt = 6;           // 今日可获得卡牌碎片的决斗次数剩余Z次。
 }
 
 // 自动匹配越级挑战规则
@@ -692,6 +720,7 @@ message PushGameOver
     repeated ProtoTrunkey keys = 15;                // 钥匙
     optional uint32 score = 16;                     // 积分
     optional uint32 rank = 17;                      // 积分排名
+    optional uint32 fragment = 18;                  // 最新碎片数量
 }
 
 // 对家掉线
@@ -725,12 +754,6 @@ message RspProtoVsInfo
     optional uint32 drawCount = 10[default=1];      // 每轮抓几张牌
     optional uint32 timeLimit = 11[default=180];    // 每轮可以有的出牌时长
     optional bool shuffle = 12[default=true];       // 开局前是否洗牌
-}
-
-// 推送自动匹配结果
-message PushAutoMatch
-{
-    optional RspProtoVsInfo info = 1;          // 决斗信息
 }
 
 // 推送积分赛匹配结果
@@ -826,6 +849,10 @@ message PropItem
     optional uint32 val = 2;        // 道具(卡钻,碎片)数量或值(个性化头像或个性化卡背id)
     repeated uint32 cards = 3;      // 卡牌id列表, 当道具类型为卡牌时下发
     optional uint32 delta = 4;      // 道具(卡钻,碎片)数量或值(个性化头像或个性化卡背id)的增量
+    optional uint32 eid = 5;                    // 特效卡ID
+    optional uint32 ctime = 6;                  // 特效卡创建时间
+    optional uint32 expire = 7;                 // 效果期限
+    optional string theme = 8;                  // 主题
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -907,6 +934,7 @@ message TopupItem
     optional bytes name = 10;               // 项目名称（特殊商品时使用）
     optional bytes info = 11;               // 附加信息（特殊商品时使用）
     optional bytes platforms = 12;          // 过滤平台，非空的时候用下划线分割，如：_1_2_
+    optional uint32 sf = 13;                // 赠送的特殊卡牌碎片
 }
 
 message RspGetTopupList
@@ -1053,6 +1081,7 @@ message WelfareItem
     optional uint32 extra1 = 7;     // 附加字段1:类型为积分赛时表示上月积分
     optional uint32 extra2 = 8;     // 附加字段2: 根据类型意义不同
     repeated PropItem bonus = 9;    // 奖励内容列表
+    repeated EffectCardExchItem effectCards = 10;
 }
 
 message RspGetWelfareList
@@ -1265,6 +1294,7 @@ message RankInfoItem
     optional double ratio = 8;
     optional string team = 9;
     optional uint32 score = 10;
+    optional uint32 vip = 11;
 }
 
 message RspGetRankList
@@ -1284,11 +1314,11 @@ message FragmentExchItem
 {
     optional uint32 id = 1;     // exchange id
     optional string name = 2;   // card name or cardgrp name
-    optional uint32 type = 3;   // card or cardgrp
+    optional uint32 type = 3;   // card or cardgrp (1&2 : normal / 3&4 : special)
     repeated uint32 cards = 4;  // card list
     optional uint32 price = 5;  // exchange price
     optional uint32 limit = 6;  // exchange limit cnt
-    optional uint32 level = 7;  // player level
+    optional uint32 level = 7;  // player's level or vip
     optional uint32 memo = 8;   // remark
 }
 
@@ -1296,12 +1326,14 @@ message RspGetFragmentExchList
 {
     optional uint32 result = 1 [default=100];
     repeated FragmentExchItem items = 2;
+    optional uint32 fragExchLastTime = 3;
 }
 
 message ReqFragmentExch
 {
     optional uint32 uid = 1;
     optional uint32 id = 2;
+    optional uint32 type = 3;   // 0 : normal  1 : special
 }
 
 message RspFragmentExch
@@ -1310,6 +1342,7 @@ message RspFragmentExch
     optional double cardRatio = 2;
     repeated uint32 cardList = 3;
     optional uint32 fragment = 4;
+    optional uint32 sfragment = 5;
 }
 
 message ReqDisassembleCard
@@ -1324,6 +1357,7 @@ message RspDisassembleCard
     optional double cardRatio = 2;          // 最新卡牌收集度
     optional uint32 fragment = 3;           // 最新卡牌碎片
     optional uint32 power = 4;              // 最新卡力
+    optional uint32 sfrag = 5;              // 最新特殊卡牌碎片
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1364,6 +1398,7 @@ message ProtoTeamMemberInfo
     optional uint32 platform = 12;          // 玩家所属平台
     optional uint32 tsJoin = 13;            // 加入战队时间 (unix 时间戳)
     optional uint32 tsLastOnline = 14;      // 最近在线时间 (unix 时间戳), 0 表示玩家当前在线
+    optional uint32 vip = 15;
 }
 
 message ProtoTeamUpgradeInfo
@@ -1436,6 +1471,7 @@ message ProtoTeamApplicant
     optional uint32 level = 4;          // 玩家等级
     optional uint32 power = 5;          // 玩家卡力
     optional uint32 points = 6;         // 玩家决斗点
+    optional uint32 vip = 7;
 }
 
 message RspGetTeamApplyList
@@ -1702,6 +1738,10 @@ message ReqReLogon
 message RspReLogon
 {
     optional uint32 result = 1 [default=100];
+    optional uint32 roomId = 2;
+    optional uint32 tableId = 3;
+    optional uint32 rivalUid = 4;
+    optional bool rivalOnline = 5;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1923,6 +1963,12 @@ message PushRestrictedCardNotify
     repeated RCardItem items = 2;
 }
 
+message EffectCardBindItem
+{
+    optional uint32 type = 1;
+    repeated uint32 bindCards = 2;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 message CommonInfo
 {
@@ -1960,6 +2006,20 @@ message CommonInfo
     repeated ProtoCard specialCards = 32;
     optional string topupDiscountSkip = 33;   // 充值打折需要跳过的商品id, 下划线分割, 比如: _10_110_111
     optional uint32 vipDiscount = 34;
+    optional uint32 reconFlag = 35;
+    optional uint32 reconRetryCnt = 36;
+    optional uint32 reconInterval = 37;
+    optional uint32 reconTimeout = 38;
+    repeated uint32 sfMonsterRule = 39;
+    repeated uint32 sfMagicRule = 40;
+    repeated uint32 sfTrapRule = 41;
+    optional uint32 reconRepeatCnt = 42;
+    optional uint32 effectCardExpiryDay = 43;
+    repeated EffectCardBindItem effectCards = 44;
+    optional uint32 vsSwitchTime = 45;
+    optional uint32 punishTime = 46;
+    optional uint32 punishCnt = 47;
+    optional uint32 vsBackgroundReconnet = 48;
 }
 
 message PlatformInfo
@@ -2021,6 +2081,7 @@ message PushWorldChat
     optional uint32 avatarId = 3;
     optional uint32 time = 4;
     optional bytes msg = 5;
+    optional uint32 vip = 6;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2066,6 +2127,8 @@ message PushTopup
     optional uint32 chgCf = 4;                  // 卡牌碎片变化值
     optional uint32 productId = 5;              // 商品id
     optional string cpOrderId = 6;              // 内部订单号
+    optional uint32 sf = 7;                     // 最新特殊卡牌碎片
+    optional uint32 chgSf = 8;                  // 特殊卡牌碎片变化值
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2193,6 +2256,7 @@ message FriendInfo
     optional string teamName = 10;
     optional uint32 mateFlg = 11;
     optional uint32 platform = 12;
+    optional uint32 vip = 13;
 }
 
 message RspGetFriendList
@@ -2318,8 +2382,7 @@ message ProtoVipRule
     repeated uint32 levels = 2;  //玩家等级
     optional uint32 vip = 3;     //vip等级
     optional uint32 upRmb = 4;  //升级所需rmb
-    optional uint32 upMoney = 5; //升级所得卡钻
-    repeated uint32 rights = 6;  //权限配置
+    repeated float rights = 5;  //权限配置
 }
 
 message RspGetVipRule
@@ -2338,6 +2401,7 @@ message ReqRename
 {
     required string newname = 1;
 }
+
 message RspRename
 {
     optional uint32 result = 1 [default=100];
@@ -2353,8 +2417,12 @@ message RspFriendChat
 {
     optional uint32 result = 1 [default=100];
     required uint32 uidFrom = 2;
-    required uint32 uidTo = 3;
-    optional string chat = 4;
+    required string nameFrom = 3;
+    required uint32 avataridFrom = 4;
+    optional uint32 vipFrom = 5;
+    required uint32 uidTo = 6;
+    optional string chat = 7;
+    optional uint32 time = 8;
 }
 
 message ThemeBox
@@ -2367,6 +2435,7 @@ message ThemeBox
     optional bool isavailable = 6;
     repeated uint32 cardids = 7;
 }
+
 message ReqThemeBoxInfo
 {
 }
@@ -2375,3 +2444,112 @@ message RspThemeBoxInfo
     optional uint32 result = 1 [default=100];
     repeated ThemeBox boxes = 2;
 }
+
+message ReqTopupTest
+{
+    optional uint32 uid = 1; // 玩家id
+    optional uint32 pId = 2; // 产品id
+    optional float  rmb = 3; // 购买的rmb
+    optional string ext = 4; // 扩展信息uid#platform
+}
+
+message RspTopupTest
+{
+    optional uint32 result = 1 [default=100];
+}
+
+message PushPowerChangedNotify
+{
+    optional uint32 uid = 1;
+    optional uint32 power = 2;
+}
+
+//////////////////////////////////////////////////
+//特效卡处理
+message ProtoEffectCardInfo
+{
+    optional uint32 eid = 1;                    // 特效卡ID
+    optional uint32 type = 2;                   // 特效卡类型
+    optional uint32 ctime = 3;                  // 特效卡创建时间
+    optional uint32 expire = 4;                 // 效果期限
+    optional uint32 state = 5 [default=1];      // 使用状态 0：无效 1：未使用 2：使用中
+    optional uint32 bcid = 6;                   // 绑定的卡牌ID
+    optional uint32 see = 7 [default=0];        // 未使用效果： 0 使用：1
+    optional string theme = 8;                  // 主题
+    optional uint32 utime = 9;
+}
+
+message EffectCardExchItem
+{
+    optional uint32 id = 1;
+    optional uint32 type = 2;   // 特效卡类型
+    optional uint32 expire = 3; // 效果期限3/7/30/90天/永久(0)
+    optional uint32 price = 4;  // 对应期限的价格
+    optional string theme = 5;  // 主题
+    optional uint32 bind = 6;   // 绑定卡牌
+}
+
+message ReqEffectCardExchList
+{
+    optional uint32 uid = 1;
+}
+
+message RspEffectCardExchList
+{
+    optional uint32 result = 1 [default=100];
+    repeated EffectCardExchItem items = 2; // 特效卡列表
+}
+
+message ReqEffectCardExch
+{
+    optional uint32 uid = 1;    // 玩家ID
+    optional uint32 id = 2;     // 商品id
+}
+message RspEffectCardExch
+{
+    required uint32 result = 1 [default=100];
+    optional uint32 money = 2;
+    optional uint32 eid = 3;
+}
+
+message ReqEffectCardBinding
+{
+    required uint32 uid = 1;
+    required uint32 typeEffect = 2;
+    required uint32 eidNew = 3;
+    optional uint32 eidOld = 4;
+    optional uint32 cid = 5;    // 绑定的卡ID
+    optional string info = 6;   // 昵称
+}
+message RspEffectCardBinding
+{
+    required uint32 result = 1 [default=100];
+    required uint32 typeEffect = 2;
+    required uint32 eidNew = 3; // 初始头像id
+    optional uint32 eidOld = 4;
+    required uint32 seeNew = 5;
+    optional uint32 seeOld = 6;
+    optional string info = 7;   // 昵称
+    optional uint32 cid = 8;    // 绑定的卡ID
+}
+
+message ReqEffectCard
+{
+}
+message PushEffectCard
+{
+    repeated ProtoEffectCardInfo ecinfo = 1;
+}
+
+// 特效卡图鉴
+message ReqEffectCards
+{
+    optional uint32 uid = 1;
+}
+message RspEffectCards
+{
+    optional uint32 result = 1 [default=100];
+    repeated EffectCardExchItem items = 2; // 特效卡列表
+}
+
+//////////////////////////////////////////
